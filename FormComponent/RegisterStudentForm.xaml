@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="FormComponent.RegisterStudentForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormComponent"
+             mc:Ignorable="d" 
+             d:DesignHeight="464" d:DesignWidth="352">
+    <Border CornerRadius="8" Background="#FAFAFA">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="107"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="77"/>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="1" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
+                 <Image Grid.Column="3" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step2Off.png"/>
+                    <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
+                </Grid>
+                <Grid Grid.Column="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="16"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Off.png"/>
+                    <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
+                </Grid>
+                <Grid Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="45"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Height="16" Width="16" Margin="20 12 0 0" Source="/FormComponent;component/Step1.png"/>
+                    <TextBlock Grid.Column="1" FontFamily="Anjoman" FontSize="8px" Margin="0 15 0 0">اطلاعات شخصی</TextBlock>
+                </Grid>    
+                <!--<ToggleButton
+                        
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        
+  Content="1"
+  IsChecked="True"
+                      Width="16"
+                        Height="16"
+                        Padding="0 0 5 5"
+  Style="{StaticResource MaterialDesignActionSecondaryToggleButton}"
+  ToolTip="MaterialDesignActionSecondaryToggleButton"  Checked="ToggleButton_Checked" />-->
+               
+            </Grid>
+            <Grid Grid.Row="1">
+
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="49"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Name="Cancel_Btn" Grid.Column="0" Height="28" Width="29" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="20 0 0 0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Background="#FAFAFA" BorderBrush="#FAFAFA" Foreground="#D90000" FontFamily="Anjoman" FontSize="9px">
+                    <TextBlock Foreground="#D90000" FontFamily="Anjoman" FontSize="9px">لغو</TextBlock>
+                </Button>
+            </Grid>
+        </Grid>
+    </Border>
+
+</UserControl>
