@@ -1,0 +1,198 @@
+﻿<Window xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SAP_Ui"
+        xmlns:FormComponent="clr-namespace:FormComponent;assembly=FormComponent"  x:Class="SAP_Ui.HomePage_Frm"
+        mc:Ignorable="d"
+        Title="خانه" Height="540" Width="960"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        >
+    <Grid>
+        <materialDesign:DialogHost Name="DialogGheybat"
+                                   
+  DialogTheme="Light"
+  DialogContentUniformCornerRadius="8">
+          
+        <Grid>
+            
+        
+        <Grid.Resources>
+            <Style x:Key="myStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="8,8,8,8" x:Name="border1">
+                                <Grid>
+                                    <ContentPresenter/>
+                                </Grid>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+
+
+            <Border Grid.Row="0"  Height="52" BorderBrush="#FFFAFAFA" BorderThickness="0,0,0,1" >
+                
+                <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="3" x:Name="AppLogo"  Height="40" Width="68"  Source="/AppLogo.png"/>
+
+                <Border Grid.Column="2" x:Name="SearchBoxBorder" Width="395" Height="28"  CornerRadius="4" Background="#EFEFEF" >
+                    <Grid  FlowDirection="RightToLeft" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Margin="8,4,8,4" Height="20" Width="20" Source="/search (1).png"/>
+
+                        <TextBox Width="345" Height="28" Grid.Column="1" x:Name="StudentSearch_Txt" Tag="...جستجوی دانش آموز"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="...جستجوی دانش آموز" FontSize="9" HorizontalScrollBarVisibility="Disabled" Foreground="#B8B8B8" Background="#FFEFEFEF"  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
+                    </Grid>
+                </Border>
+                <Grid Grid.Column="1" FlowDirection="RightToLeft" Margin="0 0 101 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0" Source="/calendar_month (1).png" Height="16" Width="16"/>
+                    <TextBlock x:Name="DateHome_TxtBlock" HorizontalAlignment="Center" Foreground="#5E51C7" VerticalAlignment="Center" Grid.Column="1" FontFamily="Anjoman" Text="20 فرودین 1402" />
+                </Grid>
+               
+                    <Border x:Name="GheybatTakhirAdd_Border" Grid.Row="2" Height="28"  CornerRadius="4" Width="94" Background="#7161EF" Margin="70 0 23 0" >
+
+                        <Button  x:Name="GheybatTakhirAdd_Btn"  Click="GheybatTakhirAdd_Btn_Click" Style="{StaticResource myStyle}"  Cursor="Hand" Padding="8,16" FontFamily="Anjoman" FontSize="9" Foreground="#FFFFFF" Background="#7161EF" FlowDirection="RightToLeft">
+                            <Grid  FlowDirection="LeftToRight" HorizontalAlignment="Right" Width="94" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="1" Text="غیبت ها/تاخیرها" 
+                                         HorizontalAlignment="Left" 
+                                         VerticalAlignment="Center" Width="62" 
+                                       Margin="0 0 8 0"/>
+                                <Image Grid.Column="0" Width="12" Height="12" Source="/list_alt_add.png"/>
+                            </Grid>
+                        </Button>
+
+                    </Border>
+
+            </Grid>
+
+        </Border>
+
+        <Grid Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="148"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" BorderBrush="#FFEAEAEA" BorderThickness="1,0,0,0"  Background="#FFFAFAFA">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <WrapPanel Name="PanelCart_WrpPnl" Width="805" FlowDirection="LeftToRight" 
+                                >
+
+                      
+                    </WrapPanel>
+                </ScrollViewer>
+
+            </Border>
+            <Border Grid.Column="1" BorderBrush="#EAEAEA" BorderThickness="1,0,0,0" Margin="0,0,0,0" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" Width="128" Height="86" Margin="0,10,0,16">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="23"/>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+
+                        </Grid.RowDefinitions>
+                        <Border FlowDirection="RightToLeft">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" FontSize="11" FontFamily="Anjoman" Foreground="#000000" Content="پایه" Margin="-2 0 0 0"/>
+                                <Label Grid.Column="1" Width="102" Foreground="#EAEAEA" Margin="0 -6 3 0" Content="__________________________________"/>
+                            </Grid>
+
+                        </Border>
+                        <Border x:Name="ChckBoxDahomBorder" Grid.Row="1" Width="128"  Height="20" CornerRadius="4" >
+                            <CheckBox Cursor="Hand" x:Name="DahomChckBox" Content="دهم"  VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman" FontSize="9" Click="DahomChckBox_Click"  BorderThickness="1 1 1 1"/>
+                        </Border>
+
+                        <Border x:Name="ChckBoxYazdahomBorder" Grid.Row="2" Width="128"  Height="20" CornerRadius="4" >
+                            <CheckBox Cursor="Hand" x:Name="YazdahomChckBox" Content="یازدهم" VerticalContentAlignment="Center"  VerticalAlignment="Center" FlowDirection="RightToLeft" HorizontalAlignment="Right" FontFamily="Anjoman" FontSize="9" Click="YazdahomChckBox_Click"  />
+                        </Border>
+
+                        <Border x:Name="ChckBoxDavazdahomBorder" Grid.Row="3" Width="128"  Height="20" CornerRadius="4" >
+                            <CheckBox Cursor="Hand" x:Name="DavazdahomChckBox" Content="دوازدهم" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft" HorizontalAlignment="Right" FontFamily="Anjoman" FontSize="9" Click="DavazdahomChckBox_Click" Margin="0,0,0,0" />
+                        </Border>
+                    </Grid>
+                    <!--<Border x:Name="BtnAddBorder" Grid.Row="2" Height="56"  CornerRadius="8" Margin="55,24,1660,24"  BorderThickness="1" BorderBrush="#7161EF">
+                            <Grid  FlowDirection="LeftToRight" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="AddStudent_Btn"  Style="{StaticResource myStyle}" Click="AddStudent_Click" Cursor="Hand" Padding="8,16" FontFamily="Anjoman" FontSize="18" Foreground="#7161EF" Background="#ffff" FlowDirection="RightToLeft" Margin="41,4,16,5" >
+                                    <TextBlock Text="افزدون دانش آموز" 
+                                         HorizontalAlignment="Left" 
+                                         VerticalAlignment="Center" Width="146" Margin="4,0,0,0"/>
+                                </Button>
+                                <Image Width="14" Height="14" Source="/add.png" Margin="21,21,168,19" />
+                            </Grid>
+                        </Border>-->
+                    <Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Border FlowDirection="RightToLeft">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" FontSize="12" FontFamily="Anjoman" Foreground="#000000" Content="رشته" Margin="6 0 0 0"/>
+                                <Label Grid.Column="1" Foreground="#EAEAEA" Content="________________________________" Margin="0 -5 0 0"/>
+                            </Grid>
+
+                        </Border>
+                        <Border x:Name="ChckBoxShabakeBorder" Grid.Row="1" Width="128"  Height="20" Margin="0 0 0 2" CornerRadius="4" >
+                            <CheckBox Cursor="Hand" x:Name="ShabakeChckBox" Content="شبکه و نرم افزار" VerticalContentAlignment="Center"  VerticalAlignment="Center" FlowDirection="RightToLeft" HorizontalAlignment="Right" FontFamily="Anjoman" FontSize="9" Click="ShabakeChckBox_Click"  BorderThickness="1,1,1,1"/>
+                        </Border>
+
+                        <Border x:Name="ChckBoxHesabdariBorder" Grid.Row="2" Width="128"  Height="20" CornerRadius="4" >
+                            <CheckBox  Cursor="Hand" x:Name="HesabdariChckBox" Content="حسابداری" VerticalContentAlignment="Center" VerticalAlignment="Center" FlowDirection="RightToLeft" HorizontalAlignment="Right" FontFamily="Anjoman" FontSize="9" Click="HesabdariChckBox_Click"  />
+                        </Border>
+                    </Grid>
+
+                </Grid>
+            </Border>
+        </Grid>
+        </Grid>
+        </materialDesign:DialogHost>
+
+    </Grid>
+</Window>

@@ -1,0 +1,235 @@
+﻿<UserControl x:Class="FormComponent.TakhirForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:FormComponent"
+             mc:Ignorable="d" 
+             Loaded="UserControl_Loaded"
+             d:DesignHeight="256.5" d:DesignWidth="671.5">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Purple.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Border CornerRadius="8" Background="#FAFAFA">
+        <Grid>
+            <Grid.Resources>
+                <Style x:Key="myStyle" TargetType="{x:Type Button}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}" CornerRadius="8,8,8,8" x:Name="border1">
+                                    <Grid>
+                                        <ContentPresenter/>
+                                    </Grid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+            </Grid.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--<Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="4" CornerRadius="4" Background="#E3DFFC" Width="57" Margin="109,12,20,7" Height="24" Grid.RowSpan="2" >
+                    <Button Name="ChoozeDateShow_Btn" BorderThickness="0"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Style="{StaticResource MaterialDesignFlatAccentButton}" Height="20"  Background="#E3DFFC" Foreground="#5E51C7" Margin="0,2,2,2" >
+                        <Grid  Margin="-14,-5,-16,-5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width ="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="1" Foreground="#5E51C7" FontSize="9" FontFamily="Anjoman" Margin="5,6,29,4" >امروز</TextBlock>
+
+                            <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Grid.ColumnSpan="2" Margin="29,3,8,3" />
+
+                        </Grid>
+                    </Button>
+                </Border>
+                <Border Grid.Column="0" CornerRadius="4" Height="40" Width="298.5" Background="#FFFFFF" Margin="186.5,12,0,16"  Padding="2px, 4px, 2px, 4px">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" ></DropShadowEffect>
+                    </Border.Effect>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="143.5"/>
+                            <ColumnDefinition Width="143.5"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Name="BorderBtnTakhir" Grid.Column="0" Background="#FFFFFF" 
+                                CornerRadius="4" Margin="2,0,143,0" 
+                                Grid.ColumnSpan="2">
+                            <Button Name="Takhir_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}"  Click="Takhir_Btn_Click" Background="#FFFFFF"  BorderBrush="White" Height="20" Width="136">
+                                <StackPanel>
+                                    --><!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>--><!--
+                                    <TextBlock Text="تاخیر" FontFamily="Anjoman" FontSize="9" Foreground="#1D1D1D" FontWeight="Medium"/>
+                                </StackPanel>
+                            </Button>
+                        </Border>
+                        <Border Name="BorderBtnGheybat" Grid.Column="1" Background="#E3DFFC"  Width="143.5" BorderThickness="0" CornerRadius="4" Margin="5,0,-5,0">
+                            <Button Name="Gheybat_Btn" Padding="0" Click="BtnGheybat_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#E3DFFC"  BorderBrush="Transparent" BorderThickness="0" Width="140">
+                                <Grid  Width="140" Margin="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Image Grid.Row="0" Source="checklist_rtl (Purple).png"  Width="10" Stretch="Fill" />
+                                    <TextBlock Padding="0" Text="غیبت" Grid.Row="1" 
+                                               FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#7161EF" FontFamily="Anjoman"/>
+                                </Grid>
+                            </Button>
+                        </Border>
+                    </Grid>
+                </Border>
+            </Grid>-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Border CornerRadius="4" Width="630" Grid.Column="1"  Height="54" Background="#FFFFFF" >
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" ></DropShadowEffect>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="BtnAddBorder" Grid.Column="0" Width="80" CornerRadius="4" Background="#7161EF" Margin="8,20,12,8">
+                            <Grid  FlowDirection="LeftToRight" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Button x:Name="AddStudent_Btn"  Style="{StaticResource myStyle}"  Cursor="Hand" Padding="8,16" BorderBrush="#7161EF" FontFamily="Anjoman" FontSize="9" Foreground="#FFFFFF" Background="#7161EF" FlowDirection="RightToLeft"  >
+                                    <TextBlock Text="افزدون غیبت" 
+                                         HorizontalAlignment="Left" 
+                                         VerticalAlignment="Center"  Margin="8,8,0,6" Height="12"/>
+                                </Button>
+                                <Image Grid.Column="0" Width="12" HorizontalAlignment="Left" Height="12" Margin="8,7,0,8" Source="/FormComponent;component/add (3).png" />
+                            </Grid>
+                        </Border>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="187,5,0,3" HorizontalAlignment="Left" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >نوع تاخیر</TextBlock>
+                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="0 0 0 8" BorderBrush="#BFBFBF">
+
+                                <ComboBox Name="GhayebTypeChoooze_CmBox"  BorderThickness="0" Height="20"  Width="218" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" >
+
+                                </ComboBox>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" Margin="196,5,0,3" HorizontalAlignment="Left" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >دانش آموز
+                            </TextBlock>
+                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="12 0 0 8" BorderBrush="#BFBFBF">
+
+                                <ComboBox Name="GhayebChoozeName_CmBox"  BorderThickness="0" Height="20"  Width="218" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" >
+
+                                </ComboBox>
+                            </Border>
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Column="4" CornerRadius="4" Background="#E3DFFC" Width="57"  Height="24" Grid.RowSpan="2" >
+                                <Button Name="ChoozeDateSubmit_Btn" BorderThickness="0"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Style="{StaticResource MaterialDesignFlatAccentButton}" Height="20"  Background="#E3DFFC" Foreground="#5E51C7" Margin="0,2,2,2" >
+                                    <Grid  Margin="-14,-5,-16,-5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width ="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="1" Foreground="#5E51C7" FontSize="9" FontFamily="Anjoman" Margin="5,6,29,4" >امروز</TextBlock>
+
+                                        <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Grid.ColumnSpan="2" Margin="29,3,8,3" />
+
+                                    </Grid>
+                                </Button>
+                            </Border>
+                        </Grid>
+
+                    </Grid>
+                </Border>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Border Background="#EAEAEA" CornerRadius="4 4 0 0" Margin="0 8 0 0" Height="20" Width="631.5">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" ></DropShadowEffect>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Name="TakhirNumber_Lbl" Content="2 تاخیر" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" Foreground="#7161EF" Margin="3,0,0,0" />
+                        <Label Grid.Column="7" Name="DateShow_Lbl" Content="امروز" HorizontalAlignment="Right"  FontFamily="Anjoman" FontSize="9" Foreground="#A5A5A5"/>
+                    </Grid>
+                </Border>
+                <Border Background="#FAFAFA" Grid.Row="1" Margin="0 0 0 0" Height="143" Width="631.5">
+                    <Border.Effect>
+                        <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" ></DropShadowEffect>
+                    </Border.Effect>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <WrapPanel Background="#FAFAFA" Name="TakhirsPanelShow_WrpPnl" Orientation="Vertical" Width="632">
+
+                        </WrapPanel>
+                    </ScrollViewer>
+
+                </Border>
+            </Grid>
+
+            <Button
+                Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
+                Name="Close_Btn"
+                Background="Transparent"
+                BorderThickness="0"
+                Content="بستن"
+                Foreground="#D90000"
+                Grid.Row="3"
+                FontSize="9px"
+                FontFamily="Anjoman"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                >
+
+            </Button>
+        </Grid>
+    </Border>
+
+</UserControl>
