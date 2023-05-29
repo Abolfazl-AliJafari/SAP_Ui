@@ -14,40 +14,45 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="107"/>
-                    <ColumnDefinition Width="32"/>
-                    <ColumnDefinition Width="77"/>
-                    <ColumnDefinition Width="32"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="107"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="77"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
                 <Image Grid.Column="1" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
-                 <Image Grid.Column="3" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
-                <Grid Grid.Column="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step2Off.png"/>
-                    <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
-                </Grid>
-                <Grid Grid.Column="4">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="16"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Off.png"/>
-                    <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
-                </Grid>
-                <Grid Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="45"/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    <Image Grid.Column="0" Height="16" Width="16" Margin="20 12 0 0" Source="/FormComponent;component/Step1.png"/>
-                    <TextBlock Grid.Column="1" FontFamily="Anjoman" FontSize="8px" Margin="0 15 0 0">اطلاعات شخصی</TextBlock>
-                </Grid>    
-                <!--<ToggleButton
+                        <Image Grid.Column="3" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step2Off.png"/>
+                            <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="16"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Off.png"/>
+                            <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات شخصی</TextBlock>
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="45"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Height="16" Width="16" Margin="20 12 0 0" Source="/FormComponent;component/Step1.png"/>
+                            <TextBlock Grid.Column="1" FontFamily="Anjoman" FontSize="8px" Margin="0 15 0 0">اطلاعات شخصی</TextBlock>
+                        </Grid>
+                        <!--<ToggleButton
+=======
+              
+                    <ToggleButton
+>>>>>>> 5365012ff6d80edcf505d42ea2639af7bd422a6c
                         
                         HorizontalContentAlignment="Center"
                         VerticalContentAlignment="Center"
@@ -58,11 +63,16 @@
                         Height="16"
                         Padding="0 0 5 5"
   Style="{StaticResource MaterialDesignActionSecondaryToggleButton}"
+<<<<<<< HEAD
   ToolTip="MaterialDesignActionSecondaryToggleButton"  Checked="ToggleButton_Checked" />-->
-               
-            </Grid>
-            <Grid Grid.Row="1">
 
+                </Grid>
+                <Grid Grid.Row="1">
+
+                </Grid>
+                
+              
+               
             </Grid>
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
