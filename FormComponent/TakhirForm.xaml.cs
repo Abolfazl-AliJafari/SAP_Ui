@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,16 @@ namespace FormComponent
             {
                 TakhirNumber_Lbl.Content = FillTakhir(takhirs) + "تاخیر ";
             }
+        }
+
+        private void ChoozeDateSubmit_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Do something with the selected date
         }
     }
 }

@@ -20,7 +20,31 @@
     </UserControl.Resources>
     <Border CornerRadius="8" Background="#FAFAFA">
         <Grid>
+
             <Grid.Resources>
+
+                <Style TargetType="{x:Type DatePicker}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DatePicker}">
+                                <Grid>
+                                    <Border BorderBrush="#FFABADB3" BorderThickness="1" Background="{TemplateBinding Background}" Padding="0,0,1,0">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <TextBox x:Name="PART_TextBox" Grid.Column="0" Padding="{TemplateBinding Padding}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="True" />
+                                            <Button x:Name="PART_Button"  Grid.Column="1"  Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Style="{StaticResource MaterialDesignFlatAccentButton}"  Padding="0"  >
+                                                <Image Source="/FormComponent;component/calendar_month (1).png" Width="16" Height="16" />
+                                            </Button>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
                 <Style x:Key="myStyle" TargetType="{x:Type Button}">
                     <Setter Property="Template">
                         <Setter.Value>
@@ -75,7 +99,9 @@
                                 Grid.ColumnSpan="2">
                             <Button Name="Takhir_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}"  Click="Takhir_Btn_Click" Background="#FFFFFF"  BorderBrush="White" Height="20" Width="136">
                                 <StackPanel>
-                                    --><!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>--><!--
+                                    -->
+            <!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>-->
+            <!--
                                     <TextBlock Text="تاخیر" FontFamily="Anjoman" FontSize="9" Foreground="#1D1D1D" FontWeight="Medium"/>
                                 </StackPanel>
                             </Button>
@@ -135,9 +161,7 @@
                             <TextBlock Grid.Row="0" Margin="187,5,0,3" HorizontalAlignment="Left" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >نوع تاخیر</TextBlock>
                             <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="0 0 0 8" BorderBrush="#BFBFBF">
 
-                                <ComboBox Name="GhayebTypeChoooze_CmBox"  BorderThickness="0" Height="20"  Width="218" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" >
-
-                                </ComboBox>
+                                <ComboBox Name="GhayebTypeChoooze_CmBox"  BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" Margin="1,0,2,0" />
                             </Border>
                         </Grid>
                         <Grid Grid.Column="2">
@@ -149,9 +173,7 @@
                             </TextBlock>
                             <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="12 0 0 8" BorderBrush="#BFBFBF">
 
-                                <ComboBox Name="GhayebChoozeName_CmBox"  BorderThickness="0" Height="20"  Width="218" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" >
-
-                                </ComboBox>
+                                <ComboBox Name="GhayebChoozeName_CmBox"  BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" Margin="1,0,2,0" />
                             </Border>
                         </Grid>
                         <Grid Grid.Column="3">
@@ -159,19 +181,37 @@
                                 <RowDefinition/>
                                 <RowDefinition/>
                             </Grid.RowDefinitions>
-                            <Border Grid.Column="4" CornerRadius="4" Background="#E3DFFC" Width="57"  Height="24" Grid.RowSpan="2" >
-                                <Button Name="ChoozeDateSubmit_Btn" BorderThickness="0"  HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Style="{StaticResource MaterialDesignFlatAccentButton}" Height="20"  Background="#E3DFFC" Foreground="#5E51C7" Margin="0,2,2,2" >
-                                    <Grid  Margin="-14,-5,-16,-5">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="auto"/>
-                                            <ColumnDefinition Width ="*"/>
-                                        </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="1" Foreground="#5E51C7" FontSize="9" FontFamily="Anjoman" Margin="5,6,29,4" >امروز</TextBlock>
+                            <Border CornerRadius="4" Background="#E3DFFC" Width="57"  Height="24" Grid.RowSpan="2" Margin="9,21,8,9" >
+                                <materialDesign:PopupBox
+            StaysOpen="True"
+            materialDesign:RippleAssist.IsDisabled="True"
+            materialDesign:RippleAssist.RippleSizeMultiplier="0"
+            PlacementMode="BottomAndAlignCentres">
+                                    <materialDesign:PopupBox.ToggleContent>
+                                            <Grid   FlowDirection="RightToLeft">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="30"/>
+                                                    <ColumnDefinition Width ="27"/>
+                                                </Grid.ColumnDefinitions>
 
-                                        <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Grid.ColumnSpan="2" Margin="29,3,8,3" />
 
-                                    </Grid>
-                                </Button>
+                                                <TextBlock Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  >امروز</TextBlock>
+
+                                                <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
+
+                                            </Grid>
+                                    </materialDesign:PopupBox.ToggleContent>
+                                    <StackPanel>
+                                        <Calendar
+                                            materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+                                Background="#7161EF"
+                                Foreground="#E3DFFC"
+                                Style="{StaticResource MaterialDesignCalendarPortraitForeground}"
+                                            
+                    SelectionMode="SingleDate"
+                    x:Name="calendar"/>
+                                    </StackPanel>
+                                </materialDesign:PopupBox>
                             </Border>
                         </Grid>
 
@@ -206,12 +246,11 @@
                         <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" ></DropShadowEffect>
                     </Border.Effect>
                     <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                        <WrapPanel Background="#FAFAFA" Name="TakhirsPanelShow_WrpPnl" Orientation="Vertical" Width="632">
-
-                        </WrapPanel>
+                        <WrapPanel Background="#FAFAFA" Name="TakhirsPanelShow_WrpPnl" Orientation="Vertical" Width="632"/>
                     </ScrollViewer>
 
                 </Border>
+
             </Grid>
 
             <Button

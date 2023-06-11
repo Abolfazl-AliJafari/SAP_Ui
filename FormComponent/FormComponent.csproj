@@ -66,6 +66,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertDate.cs" />
     <Compile Include="GhayebComponent.xaml.cs">
       <DependentUpon>GhayebComponent.xaml</DependentUpon>
     </Compile>
@@ -91,11 +92,26 @@
     <Compile Include="RegisterStep1.xaml.cs">
       <DependentUpon>RegisterStep1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RegisterStep2.xaml.cs">
+      <DependentUpon>RegisterStep2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterStep3.xaml.cs">
+      <DependentUpon>RegisterStep3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegisterStudentForm.xaml.cs">
       <DependentUpon>RegisterStudentForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SelectParentDead.xaml.cs">
+      <DependentUpon>SelectParentDead.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentCards.xaml.cs">
       <DependentUpon>StudentCards.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentGhebatComponent.xaml.cs">
+      <DependentUpon>StudentGhebatComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTakhirComponent.xaml.cs">
+      <DependentUpon>StudentTakhirComponent.xaml</DependentUpon>
     </Compile>
     <Compile Include="TakhirComponent.xaml.cs">
       <DependentUpon>TakhirComponent.xaml</DependentUpon>
@@ -130,11 +146,31 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="RegisterStep2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RegisterStep3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="RegisterStudentForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SelectParentDead.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentCards.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentGhebatComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentTakhirComponent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,6 +209,36 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="school-disciplinary-system-website-favicon-color.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="add_a_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cheked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Step2Purpple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Step3%28Purpple%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Step2Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Step1Purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Step3Gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="deleteHome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="delete %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

@@ -73,5 +73,9 @@ namespace FormComponent
             ShowPanel(gheybatForm,takhirForm);
         }
 
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowDate_TxtBlock.Text = calendar.SelectedDate.ToString(); //شمسی کانورت شود
+        }
     }
 }

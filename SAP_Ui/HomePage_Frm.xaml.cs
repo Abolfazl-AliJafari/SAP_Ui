@@ -3,6 +3,7 @@ using FormComponent;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ using System.Windows.Shapes;
 
 namespace SAP_Ui
 {
+
+
     /// <summary>
     /// Interaction logic for HomePage_Frm.xaml
     /// </summary>
@@ -138,49 +141,32 @@ namespace SAP_Ui
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //WrapPanel panel = new WrapPanel();
-            //panel.Orientation = Orientation.Horizontal;
-            //panel.Height = 488;
-            //panel.Width = PanelCart_WrpPnl.Width;
-            //panel.Height = PanelCart_WrpPnl.Height;
-            //panel.FlowDirection = FlowDirection.LeftToRight;
-            //for (int i = 0; i < 100; i++)
-            //{
-            //    panel.Children.Add(new FormComponent.StudentCards() { Width = 161.5, Height = 171, FullName = "محمد مهدی درویش پور" + i, Payeh = "یازدهم" + i, Reshte = "شبکه نرم افزار " + i, ProfileAddress = "AppLogo.png" });
-            //}
-            //PanelCart_WrpPnl.Children.Add(panel);
+            DateHome_TxtBlock.Text = ConvertDate.MiladiToShamsiWithMonthName(DateTime.Now);
 
         }
 
         private void GheybatTakhirAdd_Btn_Click(object sender, RoutedEventArgs e)
         {
-            List<Ghayeb> ghayeb = new List<Ghayeb>()
-            {
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="1ابوالفضل علی جعفری",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری2",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری3",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری4",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری5",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری6",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری7",Type="موجه"},
-                new Ghayeb(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری8",Type="موجه"},
-            };
-            List<Takhir> takhir = new List<Takhir>()
-            {
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="1ابوالفضل علی جعفری",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری2",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری3",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری4",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری5",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری6",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری7",Type="موجه"},
-                new Takhir(){ Date = "1401/12/29",Name="ابوالفضل علی جعفری8",Type="موجه"},
-            };
+          
 
-            DialogGheybat.ShowDialog(new GheybatTakhir(ghayeb,takhir){ Width = 671.5 , Height = 315.5}); 
+            DialogGheybat.ShowDialog(new GheybatTakhir{ Width = 671.5 , Height = 315.5}); 
            
+        }
+
+        private  void Import_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            new StudentInfo().ShowDialog();
+        }
+
+        private void AddStudent_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            DialogGheybat.ShowDialog(new RegisterStudentForm());
+
+        }
+
+        private void DeleteStudent_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

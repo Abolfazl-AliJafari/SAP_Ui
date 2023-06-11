@@ -1,0 +1,257 @@
+﻿<UserControl x:Class="FormComponent.RegisterStep2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FormComponent"
+             mc:Ignorable="d" 
+             d:DesignHeight="358" d:DesignWidth="352">
+    <Border Background="#FAFAFA" CornerRadius="8 8 0 0">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0 0 0 10">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="107"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="77"/>
+                        <ColumnDefinition Width="32"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="1" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
+                    <Image Grid.Column="3" Width="32" Height="1" Margin="0 20 4 7" Source="/FormComponent;component/Line 12.png" />
+                    <Grid Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step2Purpple.png"/>
+                        <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#000000" FontSize="8px" Margin="4 15 0 0">اطلاعات والدین</TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Off.png"/>
+                        <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات تکمیلی</TextBlock>
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="45"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Column="0" Height="16" Width="16" Margin="20 12 0 0" Source="/FormComponent;component/Cheked.png"/>
+                        <TextBlock Grid.Column="1" FontFamily="Anjoman" FontSize="8px" Margin="0 15 0 0">اطلاعات شخصی</TextBlock>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+            <Grid Grid.Row="1" Width="312">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="38"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontFamily="Inter" FontWeight="ExtraBold" Margin="0 0 0 0">اطلاعات والدین</TextBlock>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="2" FlowDirection="RightToLeft">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >نام خانوادگی</TextBlock>
+                            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
+                                <TextBox Name="FatherName_Txt" TextChanged="FatherName_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Column="1" FlowDirection="RightToLeft">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شغل پدر</TextBlock>
+                            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
+                                <TextBox Name="FatherJob_Txt" TextChanged="FatherJob_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Grid.Column="0" FlowDirection="RightToLeft">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره تلفن پدر</TextBlock>
+                            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
+                                <TextBox Name="FatherMobile_Txt" TextChanged="FatherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            </Border>
+                        </Grid>
+                    </Grid>
+
+
+
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Margin="0 3 0 0" Grid.Column="0" FlowDirection="RightToLeft">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره تلفن مادر</TextBlock>
+                            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
+                                <TextBox Name="MotherJob_Txt" TextChanged="MotherJob_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            </Border>
+                        </Grid>
+
+                        <Grid Margin="0 3 0 0" Grid.Column="1" FlowDirection="RightToLeft">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="18"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شغل مادر</TextBlock>
+                            <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
+                                <TextBox Name="MotherMobile_Txt" TextChanged="MotherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            </Border>
+                        </Grid>
+
+
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="44"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0" FlowDirection="RightToLeft">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <ToggleButton
+                        Name="LeftParentToggle"
+                        IsEnabledChanged="LeftParentToggle_IsEnabledChanged"
+                         VerticalAlignment="Center"
+                         Grid.Column="0"
+  IsChecked="True"
+                         
+                    HorizontalAlignment="Left"
+                    Width="26" Height="16"
+  Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
+  ToolTip="MaterialDesignSwitchDarkToggleButton" Background="#FF7161EF"
+                         
+                    />
+                        <TextBlock VerticalAlignment="Center" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" Margin=" 0 0 0 3" FontSize="9px" >جدایی والدین</TextBlock>
+                    </Grid>
+
+                    <Grid Grid.Row="1" FlowDirection="RightToLeft">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <ToggleButton
+                        Name="ParentDeadToggle"
+                  IsEnabledChanged="ParentDeadToggle_IsEnabledChanged"
+                        
+                         VerticalAlignment="Top"
+                         Grid.Column="0"
+  IsChecked="True"
+                         
+                    HorizontalAlignment="Left"
+                    Width="26" Height="16"
+  Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
+  ToolTip="MaterialDesignSwitchDarkToggleButton" Background="#FF7161EF"
+                         
+                    />
+                        <TextBlock VerticalAlignment="Top" Width="70" HorizontalAlignment="Left" Margin="30 0 0 0" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" FontSize="9px" >فوت یکی از والدین</TextBlock>
+                        <Grid Grid.Row="1" Grid.Column="0">
+                            <Grid Width="150" HorizontalAlignment="Left">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="0" Name="BothBtn_Border" Width="40" CornerRadius="4" Background="#FFFFFF">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
+                                    </Border.Effect>
+                                    <Button Name="Both_Btn" Click="Both_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                        <TextBlock FontSize="9" FontFamily="Anjoman">هردو</TextBlock>
+                                    </Button>
+                                </Border>
+
+                                <Border Grid.Column="1" Name="MotherBtn_Border" Width="40" CornerRadius="4" Background="#FFFFFF">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
+                                    </Border.Effect>
+                                    <Button Name="Mother_Btn" Click="Mother_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                        <TextBlock FontSize="9" FontFamily="Anjoman">مادر</TextBlock>
+                                    </Button>
+                                </Border>
+
+                                <Border Grid.Column="2" Name="FatherBtn_Border" Width="40" CornerRadius="4" Background="#FFFFFF">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
+                                    </Border.Effect>
+                                    <Button Name="Father_Btn" Click="Father_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                        <TextBlock FontSize="9" FontFamily="Anjoman">پدر</TextBlock>
+                                    </Button>
+                                </Border>
+                            </Grid>
+                            <!--<local:SelectParentDead x:Name="Selector" Width="150" HorizontalAlignment="Left"></local:SelectParentDead>-->
+                        </Grid>
+                    </Grid>
+
+                    <Grid Margin="0 12 0 0" Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="24"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" FlowDirection="RightToLeft">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <ToggleButton
+                            Name="BimaryParentToggle"
+                         VerticalAlignment="Center"
+                         Grid.Column="0"
+  IsChecked="True"
+                         
+                    HorizontalAlignment="Left"
+                    Width="26" Height="16"
+  Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
+  ToolTip="MaterialDesignSwitchDarkToggleButton" Background="#FF7161EF"
+                         
+                    />
+                            <TextBlock VerticalAlignment="Center" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" Margin=" 0 0 0 3" FontSize="9px" >والدین دانش آموز بیماری خواصی دارند</TextBlock>
+                        </Grid>
+
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
