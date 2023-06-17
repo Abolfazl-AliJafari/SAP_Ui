@@ -113,6 +113,12 @@
     <Compile Include="StudentTakhirComponent.xaml.cs">
       <DependentUpon>StudentTakhirComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentTashvighComponent.xaml.cs">
+      <DependentUpon>StudentTashvighComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTazakorComponent1.xaml.cs">
+      <DependentUpon>StudentTazakorComponent1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TakhirComponent.xaml.cs">
       <DependentUpon>TakhirComponent.xaml</DependentUpon>
     </Compile>
@@ -171,6 +177,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentTakhirComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentTashvighComponent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentTazakorComponent1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

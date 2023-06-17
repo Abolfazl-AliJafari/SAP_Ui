@@ -28,21 +28,21 @@ namespace FormComponent
             InitializeComponent();
 
         }
-        public List<Ghayeb> ghayebs = new List<Ghayeb>();
-        public GheybatForm(List<Ghayeb> Ghayebs)
+        public List<GetGhayeb> ghayebs = new List<GetGhayeb>();
+        public GheybatForm(List<GetGhayeb> Ghayebs)
         {
             InitializeComponent();
             ghayebs = Ghayebs;
         }
         public string Date { get; set; }
         public string DateSelect { get; set; }
-        public string FillGhayeb(List<Ghayeb> ghayebs)
+        public string FillGhayeb(List<GetGhayeb> ghayebs)
         {
             WrapPanel panel = new WrapPanel();
             panel.Orientation = Orientation.Horizontal;
             panel.Width = GhayebsPanelShow_WrpPnl.Width;
             panel.Height = GhayebsPanelShow_WrpPnl.Height;
-            foreach (Ghayeb ghayeb in ghayebs)
+            foreach (GetGhayeb ghayeb in ghayebs)
             {
                 panel.FlowDirection = FlowDirection.LeftToRight;
                 panel.Children.Add(new GhayebComponent() {ghayeb =ghayeb });

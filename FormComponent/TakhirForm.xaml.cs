@@ -26,21 +26,21 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public List<Takhir> takhirs = new List<Takhir>();
-        public TakhirForm(List<Takhir> Takhirs)
+        public List<GetTakhir> takhirs = new List<GetTakhir>();
+        public TakhirForm(List<GetTakhir> Takhirs)
         {
             InitializeComponent();
             takhirs = Takhirs;
         }
         public string Date { get; set; }
         public string DateSelect { get; set; }
-        public string FillTakhir(List<Takhir> takhirs)
+        public string FillTakhir(List<GetTakhir> takhirs)
         {
             WrapPanel panel = new WrapPanel();
             panel.Orientation = Orientation.Horizontal;
             panel.Width = TakhirsPanelShow_WrpPnl.Width;
             panel.Height = TakhirsPanelShow_WrpPnl.Height;
-            foreach (Takhir takhir in takhirs)
+            foreach (GetTakhir takhir in takhirs)
             {
                 panel.FlowDirection = FlowDirection.LeftToRight;
                 panel.Children.Add(new TakhirComponent() { takhir = takhir });

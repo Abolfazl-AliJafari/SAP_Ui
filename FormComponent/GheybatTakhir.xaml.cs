@@ -26,9 +26,9 @@ namespace FormComponent
             InitializeComponent();
 
         }
-        List <Ghayeb> ghayebs= new List <Ghayeb>();
-        List<Takhir> takhirs= new List <Takhir>();
-        public GheybatTakhir(List<Ghayeb> Ghayebs,List<Takhir> Takhirs)
+        List <GetGhayeb> ghayebs= new List <GetGhayeb>();
+        List<GetTakhir> takhirs= new List <GetTakhir>();
+        public GheybatTakhir(List<GetGhayeb> Ghayebs,List<GetTakhir> Takhirs)
         {
             InitializeComponent();
             ghayebs = Ghayebs;

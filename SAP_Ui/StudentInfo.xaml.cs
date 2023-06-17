@@ -24,13 +24,16 @@ namespace SAP_Ui
         {
             InitializeComponent();
         }
-
+        GetStudent student;
+        public StudentInfo(GetStudent Student)
+        {
+            InitializeComponent();
+            student = Student;
+        }
         private void EditStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
 
         }
-
-
         void EnzebatiSliderSelect()
         {
             var brush = new BitmapImage();
@@ -87,8 +90,8 @@ namespace SAP_Ui
             Gheybat_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
             TakhirBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
-            Takhir_Grid.Visibility = Visibility.Hidden;
-            Gheybat_Grid.Visibility = Visibility.Visible;
+            Takhir_Scroll.Visibility = Visibility.Hidden;
+            Gheybat_Scroll.Visibility = Visibility.Visible;
         }
 
 
@@ -100,10 +103,97 @@ namespace SAP_Ui
             Gheybat_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
             TakhirBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
-            Gheybat_Grid.Visibility= Visibility.Hidden;
-            Takhir_Grid.Visibility= Visibility.Visible;
+            Gheybat_Scroll.Visibility= Visibility.Hidden;
+            Takhir_Scroll.Visibility= Visibility.Visible;
         }
 
-      
+        private void Tazakor_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            BorderBtnTazakor.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
+            Tazakor_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
+            BorderBtnTashvigh.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+            Tashvigh_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+            TazakorBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
+            TashvighBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
+            Tashvigh_Scroll.Visibility = Visibility.Hidden;
+            Tazakor_Scroll.Visibility = Visibility.Visible;
+            AddTazakor_Border.Visibility = Visibility.Visible;
+            AddTashvigh_Border.Visibility = Visibility.Hidden;
+
+        }
+
+        private void Tashvigh_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            BorderBtnTazakor.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+            Tazakor_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+            BorderBtnTashvigh.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
+            Tashvigh_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
+            TazakorBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
+            TashvighBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
+            Tashvigh_Scroll.Visibility = Visibility.Visible;
+            Tazakor_Scroll.Visibility = Visibility.Hidden;
+            Tashvigh_StckPnl.Visibility = Visibility.Visible;
+            AddTazakor_Border.Visibility = Visibility.Hidden;
+            AddTashvigh_Border.Visibility = Visibility.Visible;
+        }
+
+    
+
+        private void calendar1_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar1.SelectedDate.Value);
+            ShowDate_TxtBlock.Text = selectedDate;
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar.SelectedDate.Value);
+            ShowDate_TxtBlock.Text = selectedDate;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //StudentFullName_TxtBlock.Text = student.FirstName + student.LastName;
+            //Payeh_TxtBlock.Text = student.Payeh;
+            //Reshte_TxtBlock.Text = student.Reshteh;
+            //NationalCode_TxtBlock.Text = student.NationalCode;
+            //StudentCode_TxtBlock.Text = student.StudentCode;
+            //Bimary_TxtBlock.Text = student.BimaryKhas;
+            //HomeAddress_TxtBlock.Text = student.HomeAddress;
+            //HomePhoneNumber_TxtBlock.Text = student.HomePhoneNumber;
+            //FatherName_TxtBlock.Text = student.FatherName;
+            //FatherJob_TxtBlock.Text = student.FatherJob;
+            //FatherMobile_TxtBlock.Text = student.FatherMobile;
+            //MotherJob_TxtBlock.Text = student.MotherJob;
+            //MotherMobile_TxtBlock.Text = student.MotherMobile;
+            //Profile_Border.Background = ConvertImageToBackground(student.Profile);
+            //LeftParent_Img.Source = CheckLeftParent(student.LeftParent);
+
+        }
+
+        BitmapImage CheckLeftParent (bool LeftParent)
+        {
+            BitmapImage brush = new BitmapImage();
+
+            if (LeftParent)
+            {
+                brush = new BitmapImage(new Uri("/done.png", UriKind.Relative));
+            }
+            else
+            {
+                brush = new BitmapImage(new Uri("/EnzebatiIco(Black).png", UriKind.Relative)); //Paste No Icon
+            }
+            return brush;
+        }
+
+        ImageBrush ConvertImageToBackground(string Address)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(Address, UriKind.Relative);
+            bitmapImage.EndInit();
+            ImageBrush imageBrush = new ImageBrush(bitmapImage);
+            return imageBrush;
+        }
     }
 }

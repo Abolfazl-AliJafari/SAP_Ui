@@ -25,7 +25,7 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public Takhir takhir { get; set; }
+        public GetTakhir takhir { get; set; }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {

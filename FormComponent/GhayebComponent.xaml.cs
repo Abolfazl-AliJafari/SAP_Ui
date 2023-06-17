@@ -25,7 +25,7 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public Ghayeb ghayeb { get; set; }
+        public GetGhayeb ghayeb { get; set; }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {

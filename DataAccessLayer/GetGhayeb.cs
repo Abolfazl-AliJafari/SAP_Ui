@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class Ghayeb
+    public class GetGhayeb
     {
         public string Name { get; set; }
         public string Type { get; set; }

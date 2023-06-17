@@ -44,9 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ghayeb.cs" />
+    <Compile Include="GetStudent.cs" />
+    <Compile Include="GetGhayeb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Takhir.cs" />
+    <Compile Include="GetTakhir.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
