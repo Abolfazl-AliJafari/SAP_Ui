@@ -86,5 +86,15 @@ namespace FormComponent
         {
             StudentBimary = BimariKhas_Txt.Text;
         }
+
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
+        {
+            BimariKhas_Txt.IsEnabled = true;
+        }
+
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            BimariKhas_Txt.IsEnabled = false;
+        }
     }
 }

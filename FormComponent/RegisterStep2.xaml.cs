@@ -33,6 +33,9 @@ namespace FormComponent
         public string DeadParent { get; set; }
 
 
+        bool btnfatherClick = false;
+        bool btnMotherClick = false;
+        bool btnBothClick = false;
 
 
         private void FatherName_Txt_TextChanged(object sender, TextChangedEventArgs e)
@@ -92,25 +95,62 @@ namespace FormComponent
 
         private void Both_Btn_Click(object sender, RoutedEventArgs e)
         {
+            DeadParent = Both_Btn.Content.ToString();
+            if (btnBothClick)
+            {
+                btnBothClick = false;
 
-            clickcolor(Both_Btn);
-            noclickcolor(Father_Btn);
-            noclickcolor(Mother_Btn);
+                noclickcolor(Both_Btn);
+            }
+            else
+            {
+                btnBothClick= true;
+                clickcolor(Both_Btn);
+                noclickcolor(Father_Btn);
+                noclickcolor(Mother_Btn);
+            }
+            btnMotherClick = false;
+            btnfatherClick = false;
 
         }
 
         private void Mother_Btn_Click(object sender, RoutedEventArgs e)
         {
-            clickcolor(Mother_Btn);
-            noclickcolor(Father_Btn);
-            noclickcolor(Both_Btn);
+            DeadParent = Mother_Btn.Content.ToString();
+            if (btnMotherClick)
+            {
+                btnMotherClick= false;
+                noclickcolor(Mother_Btn);
+            }
+            else
+            {
+                btnMotherClick= true;
+                clickcolor(Mother_Btn);
+                noclickcolor(Father_Btn);
+                noclickcolor(Both_Btn);
+            }
+                btnfatherClick= false;
+                btnBothClick = false;
         }
 
         private void Father_Btn_Click(object sender, RoutedEventArgs e)
         {
-            clickcolor(Father_Btn);
-            noclickcolor(Both_Btn);
-            noclickcolor(Mother_Btn);
+            DeadParent = Father_Btn.Content.ToString();
+            if(btnfatherClick)
+            {
+                btnfatherClick= false;
+                noclickcolor(Father_Btn);
+            }
+            else
+            {
+                btnfatherClick= true;
+                clickcolor(Father_Btn);
+                noclickcolor(Both_Btn);
+                noclickcolor(Mother_Btn);
+            }
+                btnMotherClick= false;
+            btnBothClick = false;
+
         }
 
         private void ParentDeadToggle_Checked(object sender, RoutedEventArgs e)
@@ -128,6 +168,16 @@ namespace FormComponent
         private void BimariKhas_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void BimaryParentToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            BimariKhas_Txt.IsEnabled = true;
+        }
+
+        private void BimaryParentToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            BimariKhas_Txt.IsEnabled= false;
         }
     }
 }

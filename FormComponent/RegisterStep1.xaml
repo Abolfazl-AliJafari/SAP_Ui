@@ -98,7 +98,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9">نام</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="Name_Txt" TextChanged="Name_Txt_TextChanged" BorderThickness="0"   FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="Name_Txt" Padding="5 0 5 0" TextChanged="Name_Txt_TextChanged" BorderThickness="0"   FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                         </Border>
                     </Grid>
 
@@ -110,7 +110,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >نام خانوادگی</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="LastName_Txt" TextChanged="LastName_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="LastName_Txt" Padding="5 0 5 0" TextChanged="LastName_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                         </Border>
                     </Grid>
 
@@ -121,7 +121,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left"  FontFamily="Anjoman" FontSize="9"  >پایه</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <ComboBox Name="Payeh_CmBox" SelectionChanged="Payeh_CmBox_SelectionChanged" BorderThickness="0" Text="یازدهم" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" Margin="0,0,2,0" ></ComboBox>
+                            <ComboBox Name="Payeh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Payeh_CmBox_SelectionChanged" BorderThickness="0" Text="یازدهم" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" />
                         </Border>
                     </Grid>
 
@@ -132,7 +132,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left"  FontFamily="Anjoman" FontSize="9" >رشته</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <ComboBox Name="Reshteh_CmBox" SelectionChanged="Reshteh_CmBox_SelectionChanged" BorderThickness="0" Text="مهدی" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" Margin="0,0,2,0" ></ComboBox>
+                            <ComboBox Name="Reshteh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Reshteh_CmBox_SelectionChanged" BorderThickness="0" Text="مهدی" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></ComboBox>
                         </Border>
                     </Grid>
 
@@ -143,7 +143,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left"  FontFamily="Anjoman" FontSize="9" >کدملی</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="NationalCode_Txt" TextChanged="NationalCode_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="NationalCode_Txt" Padding="5 0 5 0" TextChanged="NationalCode_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                         </Border>
                     </Grid>
 
@@ -154,7 +154,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره دانش آموزی</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="StudentCode_Txt" TextChanged="StudentCode_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="StudentCode_Txt"  Padding="5 0 5 0" TextChanged="StudentCode_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                         </Border>
                     </Grid>
 
@@ -171,10 +171,12 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <ToggleButton
+                            Cursor="Hand"
                          VerticalAlignment="Center"
                          Grid.Column="0"
   IsChecked="False"
-                         
+                         Checked="ToggleButton_Checked"
+                            Unchecked="ToggleButton_Unchecked"
                     HorizontalAlignment="Left"
                     Width="26" Height="16"
   Style="{StaticResource MaterialDesignSwitchSecondaryToggleButton}"
@@ -184,8 +186,8 @@
                         <TextBlock VerticalAlignment="Center" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" FontSize="9px" >دانش آموز بیماری خاصی دارد</TextBlock>
                     </Grid>
                     <TextBlock Grid.Row="1" Margin="0 0 2 0" VerticalAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" FontSize="9px" >بیماری خاص دانش آموز</TextBlock>
-                    <Border Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FFFFFF" CornerRadius="4" BorderThickness="0.5" BorderBrush="#BFBFBF" Height="52px" Width="150px"> 
-                        <TextBox Name="BimariKhas_Txt" TextChanged="BimariKhas_Txt_TextChanged" BorderThickness="0" FontSize="8" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Anjoman" Foreground="#B8B8B8" Height="50px" Width="148" Cursor="IBeam">
+                    <Border Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FFFFFF" CornerRadius="4" BorderThickness="0.5" BorderBrush="#BFBFBF" Height="52px" Width="150px">
+                        <TextBox Name="BimariKhas_Txt" IsEnabled="False" Padding="5 0 5 0" TextChanged="BimariKhas_Txt_TextChanged" BorderThickness="0" FontSize="8" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Anjoman" Foreground="#B8B8B8" Height="50px" Width="148" Cursor="IBeam">
                             
                         </TextBox>
                     </Border>

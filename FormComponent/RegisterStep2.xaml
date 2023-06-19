@@ -77,7 +77,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >نام خانوادگی</TextBlock>
                             <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                                <TextBox Name="FatherName_Txt" TextChanged="FatherName_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                                <TextBox Name="FatherName_Txt" Padding="5 0 5 0" TextChanged="FatherName_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                             </Border>
                         </Grid>
 
@@ -88,7 +88,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شغل پدر</TextBlock>
                             <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                                <TextBox Name="FatherJob_Txt" TextChanged="FatherJob_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                                <TextBox Name="FatherJob_Txt" Padding="5 0 5 0" TextChanged="FatherJob_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                             </Border>
                         </Grid>
 
@@ -99,7 +99,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره تلفن پدر</TextBlock>
                             <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="98.67px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                                <TextBox Name="FatherMobile_Txt" TextChanged="FatherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                                <TextBox Name="FatherMobile_Txt" Padding="5 0 5 0" TextChanged="FatherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                             </Border>
                         </Grid>
                     </Grid>
@@ -119,7 +119,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره تلفن مادر</TextBlock>
                             <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                                <TextBox Name="MotherJob_Txt" TextChanged="MotherJob_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                                <TextBox Name="MotherJob_Txt" Padding="5 0 5 0" TextChanged="MotherJob_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                             </Border>
                         </Grid>
 
@@ -130,7 +130,7 @@
                             </Grid.RowDefinitions>
                             <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شغل مادر</TextBlock>
                             <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                                <TextBox Name="MotherMobile_Txt" TextChanged="MotherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
+                                <TextBox Name="MotherMobile_Txt" Padding="5 0 5 0" TextChanged="MotherMobile_Txt_TextChanged" BorderThickness="0"  FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></TextBox>
                             </Border>
                         </Grid>
 
@@ -149,6 +149,7 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <ToggleButton
+                            Cursor="Hand"
                         Name="LeftParentToggle"
                         IsEnabledChanged="LeftParentToggle_IsEnabledChanged"
                          VerticalAlignment="Center"
@@ -171,6 +172,7 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <ToggleButton
+                            Cursor="Hand"
                         Name="ParentDeadToggle"
                Unchecked="ParentDeadToggle_Unchecked"
                         Checked="ParentDeadToggle_Checked"
@@ -235,6 +237,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <ToggleButton
+                                Cursor="Hand"
+                                Checked="BimaryParentToggle_Checked"
+                                Unchecked="BimaryParentToggle_Unchecked"
                             Name="BimaryParentToggle"
                          VerticalAlignment="Center"
                          Grid.Column="0"
@@ -251,7 +256,7 @@
                         <TextBlock VerticalAlignment="Center" Grid.Row="1" Foreground="#1D1D1D" FontFamily="Anjoman" HorizontalAlignment="Right" FontSize="9px" >والدین دانش آموز بیماری خواصی دارند</TextBlock>
 
                         <Border Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FFFFFF" CornerRadius="4" BorderThickness="0.5" BorderBrush="#BFBFBF" Height="50" Width="150px">
-                            <TextBox Name="BimariKhas_Txt" TextChanged="BimariKhas_Txt_TextChanged" BorderThickness="0" FontSize="8" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Anjoman" Foreground="#B8B8B8" Height="48" Width="148" Cursor="IBeam">
+                            <TextBox Name="BimariKhas_Txt" IsEnabled="False"  TextChanged="BimariKhas_Txt_TextChanged" BorderThickness="0" FontSize="8" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Anjoman" Foreground="#B8B8B8" Height="48" Width="148" Cursor="IBeam">
 
                             </TextBox>
                         </Border>
