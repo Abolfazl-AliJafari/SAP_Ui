@@ -45,8 +45,8 @@
                                 <ColumnDefinition Width="Auto"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="/User.png" Grid.ColumnSpan="2" Width="20"  Margin="8,4,280,4" />
-                            <TextBox Name="UserName_Txt"  Grid.Column="1" Width="256" Height="28" Tag="نام کاربری"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="نام کاربری" Margin="32,0,0,0" FontSize="10" HorizontalScrollBarVisibility="Disabled" BorderBrush="#FF0040FF" Background="#FFFFFF" Foreground="#FFB8B8B8" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
+                            <Image Grid.Column="0" Source="/User.png"  Width="20"  Margin="8,4,0,4" />
+                            <TextBox Name="UserName_Txt" Margin="0" Grid.Column="1" Style="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}" Width="277" Height="28" Tag="نام کاربری"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="نام کاربری" FontSize="10" HorizontalScrollBarVisibility="Disabled" BorderBrush="#FF0040FF" Background="#FFFFFF" Foreground="#FFB8B8B8" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
 
                         </Grid>
                     </Border>
@@ -55,22 +55,23 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="auto"/>
 
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="/Lock.png" Width="20" Grid.ColumnSpan="2" Margin="8,0,261,0"/>
-                            <TextBox  Name="PassWord_Txt"  Width="256" Height="24"  Grid.Column="1" Tag="رمز عبور"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="رمز عبور" Margin="33,0,0,0" FontSize="10" HorizontalScrollBarVisibility="Disabled" BorderBrush="#FF0040FF" Background="#ffff" Foreground="#B8B8B8" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" Grid.ColumnSpan="2" />
-                            <Button Name="ShowPass_Btn" Cursor="Hand" Height="12" Width="12" Style="{StaticResource ButtonStyle1}" BorderThickness="0" Grid.Column="2" Background="#ffff"  Click="ShowPass_Btn_Click" MouseEnter="ShowPass_Btn_MouseEnter_1" Margin="0,7,8,7">
-                                <Image Name="PassTxt_Img" Height="12" Width="12" Source="/Component 7 (1).png"/>
-                            </Button>
+                            <Image Grid.Column="0" Source="/Lock.png" Width="20"  Margin="8,0,0,0"/>
+                            <PasswordBox Margin="0"  Style="{StaticResource  MaterialDesignOutlinedRevealPasswordBox}" Padding="5 0 5 0" Name="PassWord_PassBx"  Width="277" Height="28"  Grid.Column="1" Tag="رمز عبور" Cursor="IBeam" GotFocus="PassWord_PassBx_GotFocus" LostFocus="PassWord_PassBx_LostFocus" BorderThickness="0" Password="رمز عبور" HorizontalContentAlignment="Left"  FontSize="10"   BorderBrush="#FF0040FF" Background="#ffff" Foreground="#B8B8B8" VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left"  FontFamily="Anjoman" FlowDirection="RightToLeft" >
+                                
+                            </PasswordBox>
+                                <!--<Button Name="ShowPass_Btn" Cursor="Hand" Height="12" Width="12" Style="{StaticResource ButtonStyle1}" BorderThickness="0" Grid.Column="2" Background="#ffff"  Click="ShowPass_Btn_Click" MouseEnter="ShowPass_Btn_MouseEnter_1" Margin="0,7,8,7">
+                                <Image Name="PassTxt_Img" Height="12" Width="12" Source="/ShowPass.png"/>
+                            </Button>-->
                         </Grid>
                     </Border>
                     <Border Grid.Row="3" Background="#7161EF" CornerRadius="4" Height="28" Width="310">
-                       <Button x:Name="Login_Btn" BorderThickness="0" Cursor="Hand" Style="{StaticResource MaterialDesignFlatAccentBgButton}" MouseEnter="Login_Btn_MouseEnter" Click="Login_Btn_Click"   Background="#7161EF" Width="308" Height="26" >
-                        <TextBlock Text="ورود" FontSize="12px" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button> 
+                        <Button x:Name="Login_Btn" BorderThickness="0" Cursor="Hand" Style="{StaticResource MaterialDesignFlatAccentBgButton}"  Click="Login_Btn_Click"   Background="#7161EF" Width="308" Height="26" >
+                            <TextBlock Text="ورود" FontSize="12px" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
                     </Border>
-                    
+
                 </Grid>
             </Border>
         </Grid>

@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer
 {
-    public class Class1
-    {
+    
         public class OperationResult
         {
             public bool Success { get; set; }
@@ -17,5 +16,5 @@ namespace DataAccessLayer
         {
             public T Data { get; set; }
         }
-    }
+    
 }
