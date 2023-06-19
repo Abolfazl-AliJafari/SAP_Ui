@@ -152,7 +152,7 @@ namespace SAP_Ui
         private void calendar1_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar1.SelectedDate.Value);
-            ShowDate_TxtBlock.Text = selectedDate;
+            ShowDate1_TxtBlock.Text = selectedDate;
         }
 
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)

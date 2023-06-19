@@ -29,6 +29,7 @@ namespace SAP_Ui
         {
             InitializeComponent();
         }
+        bool DeleteReady = false;
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -166,7 +167,31 @@ namespace SAP_Ui
 
         private void DeleteStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            if(DeleteReady)
+            {
+                foreach(object card in SudentCard_WrpPnl.Children)
+                {
+                    if(card is StudentCards)
+                    {
+                        (card as StudentCards).HideChckBox();
+                    }
+                }
+                DeleteReady= false;
+                deletepnl_Grid.Visibility = Visibility.Collapsed;
+            }
+            else
+            {
+                foreach (object card in SudentCard_WrpPnl.Children)
+                {
+                    if (card is StudentCards)
+                    {
+                        (card as StudentCards).ShowChckBox();
+                    }
+                }
+                deletepnl_Grid.Visibility = Visibility.Visible;
+                DeleteReady = true;
+            }
+           
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -181,7 +206,15 @@ namespace SAP_Ui
 
         private void MavaredEnzebati_Btn_Click(object sender, RoutedEventArgs e)
         {
+            ShowMavaredEnzebati_Grid.Visibility = Visibility.Visible;
+            ShowStudents_Grid.Visibility = Visibility.Hidden;
 
+        }
+
+        private void GoHome_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowMavaredEnzebati_Grid.Visibility = Visibility.Hidden;
+            ShowStudents_Grid.Visibility = Visibility.Visible;
         }
     }
 }

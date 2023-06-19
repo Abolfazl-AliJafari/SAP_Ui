@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
-             d:DesignHeight="56" d:DesignWidth="476">
+             d:DesignHeight="56" d:DesignWidth="476"
+             Margin="0 12 0 12">
     <Border Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="476">
         <Border.Effect>
             <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
@@ -23,23 +24,23 @@
             </Grid.ColumnDefinitions>
 
 
-          
-            <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">علت تذکر</TextBlock>
+
+            <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نام رفتار</TextBlock>
 
             <Border Grid.Column="0" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <TextBox Name="ElatTazakor_Txt" BorderThickness="0" Padding="5" ></TextBox>
+                <ComboBox Name="MoredName_Txt" BorderThickness="0" Height="23" Padding="0 0 5 0" ></ComboBox>
             </Border>
 
-            <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">اقدام کننده</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نوع</TextBlock>
 
-            <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="151.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <TextBox Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5" ></TextBox>
+            <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                <ComboBox Name="MoredType_Txt" BorderThickness="0" Padding="0 0 5 0" Height="23" ></ComboBox>
             </Border>
 
-            <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نوع تذکر</TextBlock>
+            <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نمره</TextBlock>
 
-            <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="151.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <ComboBox Name="TypeTazakor_CmBox" BorderThickness="0" Padding="5" ></ComboBox>
+            <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                <TextBox Name="MoredScore_CmBox" BorderThickness="0" Padding="5 0 5 0" ></TextBox>
             </Border>
 
             <Border Grid.Column="4" Grid.Row="1" VerticalAlignment="Top" Background="#D90000" CornerRadius="4" Width="32" Height="24">

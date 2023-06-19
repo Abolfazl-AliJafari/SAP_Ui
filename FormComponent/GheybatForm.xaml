@@ -159,6 +159,7 @@
                             </Grid.RowDefinitions>
                             <Border CornerRadius="4" Background="#E3DFFC" Width="57"  Height="24" Grid.RowSpan="2" Margin="9,21,8,9" >
                                 <materialDesign:PopupBox
+                                    
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
@@ -179,6 +180,9 @@
                                     </materialDesign:PopupBox.ToggleContent>
                                     <StackPanel>
                                         <Calendar
+                                                FirstDayOfWeek="Saturday"
+                                                Language="fa-IR"
+                                                FlowDirection="RightToLeft"
                                             materialDesign:ColorZoneAssist.Mode="PrimaryMid"
                                 Background="#7161EF"
                                 Foreground="#E3DFFC"

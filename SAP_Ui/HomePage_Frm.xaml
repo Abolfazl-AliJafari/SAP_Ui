@@ -108,13 +108,19 @@
                         <ColumnDefinition Width="148"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Background="#FAFAFA" Name="ShowMavaredEnzebati_Grid" Visibility="Visible">
+                    <Grid Background="#FAFAFA" Name="ShowMavaredEnzebati_Grid" Visibility="Hidden">
+                        <Button Name="GoHome_Btn" Click="GoHome_Btn_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 16 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Padding="0"> 
+                            <Image Height="24" Width="24" Source="/GoBack.png"/>
+                        </Button>
                         <Grid Width="480">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="88"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Border CornerRadius="4" VerticalAlignment="Center" Height="56" Width="476" Background="#FFFFFF" >
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
+                                </Border.Effect>
                                 <Grid FlowDirection="RightToLeft">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="20"/>
@@ -155,18 +161,22 @@
                             </Border>
                             <ScrollViewer Name="ShowMavared_Scroll" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
                                 <StackPanel Name="ShowMavared_StckPnl">
-                                    
+                                    <FormComponent:MavaredComponent/>
+                                    <FormComponent:MavaredComponent/>
+                                    <FormComponent:MavaredComponent/>
+                                    <FormComponent:MavaredComponent/>
+                                    <FormComponent:MavaredComponent/>
                                 </StackPanel>
                             </ScrollViewer>
                         </Grid>
                         
                     </Grid>
-                    <Grid Name="ShowStudents_Grid" Visibility="Hidden" Background="#FAFAFA"  >
+                    <Grid Name="ShowStudents_Grid" Visibility="Visible" Background="#FAFAFA"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
+                        <Grid Grid.Row="0" Name="deletepnl_Grid" Visibility="Collapsed">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
@@ -183,11 +193,11 @@
                                     </Grid>
                                 </Button>
                             </Border>
-                            <TextBlock Grid.Column="1"></TextBlock>
+                            <TextBlock Grid.Column="1" Foreground="#000000" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 24 0">انتخاب دانش آموز</TextBlock>
                         </Grid>
                         <Border Grid.Row="1" Height="400" Width="743" HorizontalAlignment="Right" BorderBrush="#FFEAEAEA" VerticalAlignment="Bottom" >
                             <ScrollViewer  VerticalScrollBarVisibility="Hidden" >
-                                <WrapPanel Name="PanelCart_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" 
+                                <WrapPanel Name="SudentCard_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" 
                                 >
                                     <FormComponent:StudentCards  Height="185" Width="161.5"/>
                                     <FormComponent:StudentCards  Height="185" Width="161.5"/>

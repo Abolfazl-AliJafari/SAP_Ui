@@ -54,6 +54,10 @@
                         </materialDesign:PopupBox.ToggleContent>
                         <StackPanel>
                             <Calendar
+                                    FirstDayOfWeek="Saturday"
+                                                Language="fa-IR"
+                                                FlowDirection="RightToLeft"
+                                
                                 materialDesign:ColorZoneAssist.Mode="PrimaryMid"
                                 Background="#7161EF"
                                 Foreground="#E3DFFC"

@@ -28,14 +28,16 @@ namespace FormComponent
         public string Payeh { get; set; }
         public string Reshte { get; set; }
         public string FullName { get; set; }
+        public string CodeStudent { get; set; }
         public string ProfileAddress { get; set; }
-        public StudentCards(string payeh, string reshteh, string fullName, string profileaddress)
+        public StudentCards(string payeh, string reshteh, string fullName, string profileaddress, string codeStudent)
         {
             InitializeComponent();
             Payeh = payeh;
             Reshte = reshteh;
             FullName = fullName;
             ProfileAddress = profileaddress;
+            CodeStudent = codeStudent;
         }
 
 
@@ -53,6 +55,18 @@ namespace FormComponent
             }
         }
 
+
+        public void ShowChckBox()
+        {
+            StudentSelect_ChckBox.Visibility = Visibility.Visible;
+        }
+
+        public void HideChckBox()
+        {
+            StudentSelect_ChckBox.Visibility= Visibility.Collapsed;
+            StudentCard_Border.BorderBrush = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+            StudentSelect_ChckBox.IsChecked= false;
+        }
 
         private void StudentSelect_ChckBox_Click(object sender, RoutedEventArgs e)
         {

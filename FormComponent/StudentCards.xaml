@@ -49,7 +49,7 @@
                 <RowDefinition Height="27"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <CheckBox Cursor="Hand" Click="StudentSelect_ChckBox_Click" Margin="0,0,12,0" Height="14" Width="17" Style="{StaticResource MaterialDesignCheckBox}" Background="#7161EF"  Name="StudentSelect_ChckBox" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman"  />
+            <CheckBox Cursor="Hand" Click="StudentSelect_ChckBox_Click" Visibility="Collapsed" Margin="0,0,12,0" Height="14" Width="17" Style="{StaticResource MaterialDesignCheckBox}" Background="#7161EF"  Name="StudentSelect_ChckBox" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman"  />
 
             <Border Name="Profile_Img" Grid.Row="1" VerticalAlignment="Top" CornerRadius="45" Height="52" Width="52" >
                 <Border.Background>

@@ -8,7 +8,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="56" d:DesignWidth="631.5"
              Margin="0 12 0 12"
-             Loaded="UserControl_Loaded">
+             Loaded="UserControl_Loaded"
+             >
     <Border Background="#FFFFFF" CornerRadius="4">
         <Border.Effect>
             <DropShadowEffect Color="Black" BlurRadius="25" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="3" />
@@ -47,6 +48,9 @@
                     </materialDesign:PopupBox.ToggleContent>
                     <StackPanel>
                         <Calendar
+                                FirstDayOfWeek="Saturday"
+                                                Language="fa-IR"
+                                                FlowDirection="RightToLeft"
                                 materialDesign:ColorZoneAssist.Mode="PrimaryMid"
                                 Background="#7161EF"
                                 Foreground="#E3DFFC"
