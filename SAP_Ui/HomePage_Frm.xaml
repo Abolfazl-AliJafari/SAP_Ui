@@ -44,27 +44,34 @@
 
                 <Border Grid.Row="0"  Height="52" BorderBrush="#FFFAFAFA" BorderThickness="0,0,0,1" >
 
-                    <Grid Grid.Row="0">
+                    <Grid Grid.Row="0" >
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="164"/>
+                            <ColumnDefinition Width="88.5"/>
+                            <ColumnDefinition Width="127"/>
+                            <ColumnDefinition Width="386.5"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="3" x:Name="AppLogo"  Height="40" Width="68"  Source="/AppLogo.png"/>
 
-                        <Border Grid.Column="2" x:Name="SearchBoxBorder" Width="395" Height="28"  CornerRadius="4" Background="#EFEFEF" >
+                        <Image Grid.Column="4" x:Name="AppLogo" HorizontalAlignment="Right" Margin="0 0 70 0" Height="40" Width="68"  Source="/AppLogo.png"/>
+
+                        <Border Grid.Column="3" Cursor="IBeam" MouseDown="SearchBoxBorder_MouseDown" Name="SearchBoxBorder" HorizontalAlignment="Right"  Width="220" Height="28"  CornerRadius="4" Background="#EFEFEF" >
                             <Grid  FlowDirection="RightToLeft" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <Image Margin="8,4,8,4" Height="20" Width="20" Source="/search (1).png"/>
+                                <Image Margin="8,4,8,4" Cursor="Hand" MouseDown="Image_MouseDown" Height="20" Width="20" Source="/search (1).png"/>
 
-                                <TextBox Width="345" Height="28" Grid.Column="1" x:Name="StudentSearch_Txt" Tag="...جستجوی دانش آموز"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="...جستجوی دانش آموز" FontSize="9" HorizontalScrollBarVisibility="Disabled" Foreground="#B8B8B8" Background="#FFEFEFEF"  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
+                                <TextBox Width="176" Height="28" Cursor="IBeam" Grid.Column="1" Name="StudentSearch_Txt" Tag="...جستجوی دانش آموز"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="...جستجوی دانش آموز" FontSize="9" HorizontalScrollBarVisibility="Disabled" Foreground="#B8B8B8" Background="#FFEFEFEF"  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
                             </Grid>
                         </Border>
-                        <Grid Grid.Column="1" FlowDirection="RightToLeft" Margin="0 0 101 0">
+                        <Border Grid.Column="1" Width="69" Height="28" CornerRadius="4" Background="Transparent" BorderThickness="0.5" BorderBrush="#7161EF" HorizontalAlignment="Right">
+                            <Button Name="MavaredEnzebati_Btn" Click="MavaredEnzebati_Btn_Click" Padding="0" Width="67" Height="26"  Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                <TextBlock FontFamily="Anjoman" FontSize="9" Foreground="#7161EF">موارد انضباطی</TextBlock>
+                            </Button>
+                        </Border>
+                        <Grid Grid.Column="2" FlowDirection="RightToLeft" HorizontalAlignment="Right">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="auto"/>
                                 <ColumnDefinition Width="*"/>
@@ -73,7 +80,7 @@
                             <TextBlock Name="DateHome_TxtBlock" HorizontalAlignment="Center" Foreground="#5E51C7" VerticalAlignment="Center" Grid.Column="1" FontFamily="Anjoman" Text="20 فرودین 1402" />
                         </Grid>
 
-                        <Border x:Name="GheybatTakhirAdd_Border" Grid.Row="2" Height="28"  CornerRadius="4" Width="94" Background="#7161EF" Margin="70 0 23 0" >
+                        <Border x:Name="GheybatTakhirAdd_Border" Grid.Row="2" Height="28"  CornerRadius="4" Width="94" Background="#7161EF" HorizontalAlignment="Right">
 
                             <Button  x:Name="GheybatTakhirAdd_Btn"  Click="GheybatTakhirAdd_Btn_Click" Style="{StaticResource myStyle}"  Cursor="Hand" Padding="8,16" FontFamily="Anjoman" FontSize="9" Foreground="#FFFFFF" Background="#7161EF" FlowDirection="RightToLeft">
                                 <Grid  FlowDirection="LeftToRight" HorizontalAlignment="Right" Width="94" >
@@ -100,16 +107,112 @@
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="148"/>
                     </Grid.ColumnDefinitions>
-                    <Border Grid.Column="0" BorderBrush="#FFEAEAEA" BorderThickness="1,0,0,0"  Background="#FFFAFAFA">
-                        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-                            <WrapPanel Name="PanelCart_WrpPnl" Width="805" FlowDirection="LeftToRight" 
+
+                    <Grid Background="#FAFAFA" Name="ShowMavaredEnzebati_Grid" Visibility="Visible">
+                        <Grid Width="480">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="88"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border CornerRadius="4" VerticalAlignment="Center" Height="56" Width="476" Background="#FFFFFF" >
+                                <Grid FlowDirection="RightToLeft">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition Width="130"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="29">نام رفتار</TextBlock>
+                                    <TextBlock Grid.Column="1" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="31">نوع رفتار</TextBlock>
+                                    <TextBlock Grid.Column="2" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="17">نمره</TextBlock>
+
+                                    <Border Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
+                                        <TextBox Name="MoredName_Txt" FontSize="9" Foreground="#000000" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
+                                        <ComboBox Name="MoredType_CmBox" Padding="8 0 8 0" Height="24" FontSize="9" Foreground="#000000"  BorderThickness="0"/>
+                                    </Border>
+                                    <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
+                                        <ComboBox Name="MoredScore_CmBox" Padding="8 0 8 0" Height="24"  FontSize="9" Foreground="#000000" BorderThickness="0"/>
+                                    </Border>
+                                    <Border Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Background="#7161EF" Height="28" Width="58" CornerRadius="4" >
+                                        <Button Name="AddMored_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Height="26" Width="56" Padding="0">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="34"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Right">افزودن</TextBlock>
+                                                <Image Grid.Column="1" Height="12" Width="12" Source="/add (1).png" HorizontalAlignment="Left" Margin="4 0 0 0"/>
+                                            </Grid>
+                                        </Button>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ScrollViewer Name="ShowMavared_Scroll" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+                                <StackPanel Name="ShowMavared_StckPnl">
+                                    
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
+                        
+                    </Grid>
+                    <Grid Name="ShowStudents_Grid" Visibility="Hidden" Background="#FAFAFA"  >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Border HorizontalAlignment="Left" Margin="70 0 0 0" CornerRadius="4" Height="28" Width="53" Background="#D90000">
+                                <Button Name="SubmitDelete_Btn" Height="26" Width="51" Padding="0" Background="#D90000"  Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                    <Grid FlowDirection="RightToLeft">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="29"/>
+                                            <ColumnDefinition Width="24"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Width="21" HorizontalAlignment="Right" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" FlowDirection="RightToLeft" >حذف</TextBlock>
+                                        <Image Grid.Column="1" Margin="0 0 4 0" Height="12" Width="12" Source="/delete (3).png"/>
+                                    </Grid>
+                                </Button>
+                            </Border>
+                            <TextBlock Grid.Column="1"></TextBlock>
+                        </Grid>
+                        <Border Grid.Row="1" Height="400" Width="743" HorizontalAlignment="Right" BorderBrush="#FFEAEAEA" VerticalAlignment="Bottom" >
+                            <ScrollViewer  VerticalScrollBarVisibility="Hidden" >
+                                <WrapPanel Name="PanelCart_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" 
                                 >
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
 
+                                </WrapPanel>
+                            </ScrollViewer>
 
-                            </WrapPanel>
-                        </ScrollViewer>
+                        </Border>
+                    </Grid>
 
-                    </Border>
                     <Border Grid.Column="1" BorderBrush="#EAEAEA" BorderThickness="1,0,0,0" Margin="0,0,0,0" >
                         <Grid>
                             <Grid.RowDefinitions>

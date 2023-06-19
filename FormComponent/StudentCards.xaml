@@ -5,12 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
-             d:DesignHeight="171" d:DesignWidth="161.5"
+             d:DesignHeight="187" d:DesignWidth="161.5"
              Loaded="UserControl_Loaded"
-             Margin="18">
-    <Border Grid.Row="0" CornerRadius="6" BorderThickness="2"   Background="White">
+             Margin="0 0 24 24">
+    <Border Name="StudentCard_Border" Grid.Row="0" CornerRadius="6" BorderThickness="1"   Background="White">
         <Border.Effect>
-            <DropShadowEffect Color="Black" BlurRadius="24" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="3"/>
+            <DropShadowEffect Color="Black" BlurRadius="15" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2"/>
         </Border.Effect>
         <Grid>
             <Grid.Resources>
@@ -43,24 +43,25 @@
                 </Style>
             </Grid.Resources>
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="16"/>
+                <RowDefinition Height="27"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Border Name="Profile_Img" Grid.Row="0" Margin="0 12 0 10 " CornerRadius="45" Height="52" Width="52" >
+            <CheckBox Cursor="Hand" Click="StudentSelect_ChckBox_Click" Margin="0,0,12,0" Height="14" Width="17" Style="{StaticResource MaterialDesignCheckBox}" Background="#7161EF"  Name="StudentSelect_ChckBox" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman"  />
+
+            <Border Name="Profile_Img" Grid.Row="1" VerticalAlignment="Top" CornerRadius="45" Height="52" Width="52" >
                 <Border.Background>
                     <ImageBrush ImageSource="/FormComponent;component/28-12.jpg" Stretch="Fill"/>
                 </Border.Background>
                 <Button Cursor="Hand" Name="Profile_Btn"  Height="52" Width="52" BorderThickness="0" Background="Transparent" >
                 </Button>
             </Border>
-            <Label Margin="0 0 0 8" Grid.Row="1" HorizontalContentAlignment="Center">
-                <TextBlock Name="FullName_TxtBlock" Text="نام و نام خانوادگی" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Anjoman" FontSize="12" Foreground="#1D1D1D">
-                    
-                </TextBlock>
+            <Label Grid.Row="2" Height="16" Width="auto" Padding="0" HorizontalContentAlignment="Center">
+                <TextBlock Name="FullName_TxtBlock" Text="نام و نام خانوادگی" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Anjoman" FontSize="12" Foreground="#1D1D1D"/>
             </Label>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal">
                 <Label Height="19" Width="auto" Style="{StaticResource LabelStyle1}" Margin="28.5 0 0 0" Name="Reshteh_Lbl" FontSize="8" Background="#FFD0CAFA" Foreground="#FF4B419F" FontFamily="Anjoman" >
                     <TextBlock  Name="Reshte_TxtBlock" FontSize="8" FontFamily="Anjoman" Padding="6,3,6,6" >رشته</TextBlock>
                 </Label>
@@ -68,14 +69,14 @@
                     <TextBlock  Name="Payeh_TxtBlock" FontSize="8"  FontFamily="Anjoman" Padding="6,3,6,6" >پایه</TextBlock>
                 </Label>
             </StackPanel>
-            <Border Grid.Row="3" Background="#7161EF" Height="28" Width="137.5" CornerRadius="4"> 
-                 <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1">
-                <TextBlock Text="مشاهده دانش آموز" 
+            <Border Grid.Row="5" Background="#7161EF" Height="28" Width="137.5" CornerRadius="4">
+                <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1">
+                    <TextBlock Text="مشاهده دانش آموز" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center" FontSize="9"/>
-            </Button>
+                </Button>
             </Border>
-           
+
         </Grid>
     </Border>
 </UserControl>

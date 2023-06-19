@@ -467,8 +467,8 @@
                                 </Border>
                             </Grid>
                         </Border>
-                        <ScrollViewer x:Name="Takhir_Scroll" Grid.Row="1"  VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                            <StackPanel  x:Name="Takhir_StckPnl" >
+                        <ScrollViewer Name="Takhir_Scroll" Grid.Row="1" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                            <StackPanel  Name="Takhir_StckPnl" >
                                 <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
                                 <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
                                 <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
@@ -479,8 +479,8 @@
 
                         </ScrollViewer>
 
-                        <ScrollViewer x:Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
-                            <StackPanel x:Name="Gheybat_StckPnl"  >
+                        <ScrollViewer Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
+                            <StackPanel Name="Gheybat_StckPnl"  >
                                 <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
                                 <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
                                 <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
@@ -585,19 +585,19 @@
                                 <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تذکر"/></TextBlock>
 
                                 <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="ElatTazakor_Txt" BorderThickness="0" Padding="5" />
+                                    <TextBox x:Name="ElatTazakor_Txt" BorderThickness="0"  Padding="5 0 5 0" />
                                 </Border>
 
                                 <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
                                 <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5" />
+                                    <TextBox x:Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5 0 5 0"  />
                                 </Border>
 
                                 <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تذکر"/></TextBlock>
 
                                 <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <ComboBox x:Name="TypeTazakor_CmBox" BorderThickness="0" Padding="5" />
+                                    <ComboBox x:Name="TypeTazakor_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
                                 </Border>
 
                                 <Border Background="#7161EF" Width="76" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
@@ -671,19 +671,19 @@
                                 <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تشویق"/></TextBlock>
 
                                 <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5" />
+                                    <TextBox x:Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  />
                                 </Border>
 
                                 <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
                                 <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5" />
+                                    <TextBox x:Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0" />
                                 </Border>
 
                                 <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تشویق"/></TextBlock>
 
                                 <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <ComboBox x:Name="TypeTashvigh_CmBox" BorderThickness="0" Padding="5" />
+                                    <ComboBox x:Name="TypeTashvigh_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
                                 </Border>
 
                                 <Border Background="#7161EF" Width="85" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
@@ -716,8 +716,8 @@
                             </StackPanel>
                         </ScrollViewer>
 
-                        <ScrollViewer x:Name="Tashvigh_Scroll" Grid.Row="2"  VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                            <StackPanel x:Name="Tashvigh_StckPnl" Visibility="Hidden">
+                        <ScrollViewer x:Name="Tashvigh_Scroll" Grid.Row="2" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                            <StackPanel x:Name="Tashvigh_StckPnl" >
                                 <FormComponent:StudentTashvighComponent/>
                                 <FormComponent:StudentTashvighComponent/>
                                 <FormComponent:StudentTashvighComponent/>

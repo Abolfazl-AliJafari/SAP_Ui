@@ -81,5 +81,10 @@ namespace FormComponent
         {
             StudentCode = StudentCode_Txt.Text;
         }
+
+        private void BimariKhas_Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            StudentBimary = BimariKhas_Txt.Text;
+        }
     }
 }

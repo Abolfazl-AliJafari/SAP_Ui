@@ -33,10 +33,7 @@ namespace FormComponent
         public string DeadParent { get; set; }
 
 
-        private void ParentDeadToggle_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            enable(ParentDeadToggle.IsEnabled);
-        }
+
 
         private void FatherName_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -114,6 +111,23 @@ namespace FormComponent
             clickcolor(Father_Btn);
             noclickcolor(Both_Btn);
             noclickcolor(Mother_Btn);
+        }
+
+        private void ParentDeadToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            bool check = (bool)ParentDeadToggle.IsChecked;
+            enable(check);
+        }
+
+        private void ParentDeadToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            bool check = (bool)ParentDeadToggle.IsChecked;
+            enable(check);
+        }
+
+        private void BimariKhas_Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

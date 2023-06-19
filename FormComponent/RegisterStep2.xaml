@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
-             d:DesignHeight="358" d:DesignWidth="352">
+             d:DesignHeight="380" d:DesignWidth="352">
     <Border Background="#FAFAFA" CornerRadius="8 8 0 0">
         <Grid>
             <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
                             <ColumnDefinition Width="16"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Off.png"/>
+                        <Image Grid.Column="0" Height="16" Width="16" Margin="0,12,0,0" Source="/FormComponent;component/Step3Gray.png"/>
                         <TextBlock Grid.Column="1" FontFamily="Anjoman" Foreground="#A5A5A5" FontSize="8px" Margin="4 15 0 0">اطلاعات تکمیلی</TextBlock>
                     </Grid>
                     <Grid Grid.Column="0">
@@ -153,7 +153,7 @@
                         IsEnabledChanged="LeftParentToggle_IsEnabledChanged"
                          VerticalAlignment="Center"
                          Grid.Column="0"
-  IsChecked="True"
+  IsChecked="False"
                          
                     HorizontalAlignment="Left"
                     Width="26" Height="16"
@@ -172,11 +172,11 @@
                         </Grid.RowDefinitions>
                         <ToggleButton
                         Name="ParentDeadToggle"
-                  IsEnabledChanged="ParentDeadToggle_IsEnabledChanged"
-                        
+               Unchecked="ParentDeadToggle_Unchecked"
+                        Checked="ParentDeadToggle_Checked"
                          VerticalAlignment="Top"
                          Grid.Column="0"
-  IsChecked="True"
+  IsChecked="False"
                          
                     HorizontalAlignment="Left"
                     Width="26" Height="16"
@@ -196,7 +196,7 @@
                                     <Border.Effect>
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
-                                    <Button Name="Both_Btn" Click="Both_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                    <Button IsEnabled="False" Name="Both_Btn" Click="Both_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
                                         <TextBlock FontSize="9" FontFamily="Anjoman">هردو</TextBlock>
                                     </Button>
                                 </Border>
@@ -205,7 +205,7 @@
                                     <Border.Effect>
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
-                                    <Button Name="Mother_Btn" Click="Mother_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                    <Button IsEnabled="False" Name="Mother_Btn" Click="Mother_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
                                         <TextBlock FontSize="9" FontFamily="Anjoman">مادر</TextBlock>
                                     </Button>
                                 </Border>
@@ -214,7 +214,7 @@
                                     <Border.Effect>
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
-                                    <Button Name="Father_Btn" Click="Father_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
+                                    <Button IsEnabled="False" Name="Father_Btn" Click="Father_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
                                         <TextBlock FontSize="9" FontFamily="Anjoman">پدر</TextBlock>
                                     </Button>
                                 </Border>
@@ -226,7 +226,7 @@
                     <Grid Margin="0 12 0 0" Grid.Row="2">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="24"/>
-                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="24"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid Grid.Row="0" FlowDirection="RightToLeft">
@@ -238,7 +238,7 @@
                             Name="BimaryParentToggle"
                          VerticalAlignment="Center"
                          Grid.Column="0"
-  IsChecked="True"
+  IsChecked="False"
                          
                     HorizontalAlignment="Left"
                     Width="26" Height="16"
@@ -248,7 +248,13 @@
                     />
                             <TextBlock VerticalAlignment="Center" Grid.Column="1" Foreground="#1D1D1D" FontFamily="Anjoman" Margin=" 0 0 0 3" FontSize="9px" >والدین دانش آموز بیماری خواصی دارند</TextBlock>
                         </Grid>
+                        <TextBlock VerticalAlignment="Center" Grid.Row="1" Foreground="#1D1D1D" FontFamily="Anjoman" HorizontalAlignment="Right" FontSize="9px" >والدین دانش آموز بیماری خواصی دارند</TextBlock>
 
+                        <Border Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Right" Background="#FFFFFF" CornerRadius="4" BorderThickness="0.5" BorderBrush="#BFBFBF" Height="50" Width="150px">
+                            <TextBox Name="BimariKhas_Txt" TextChanged="BimariKhas_Txt_TextChanged" BorderThickness="0" FontSize="8" VerticalContentAlignment="Top" HorizontalContentAlignment="Right" FontFamily="Anjoman" Foreground="#B8B8B8" Height="48" Width="148" Cursor="IBeam">
+
+                            </TextBox>
+                        </Border>
                     </Grid>
                 </Grid>
             </Grid>

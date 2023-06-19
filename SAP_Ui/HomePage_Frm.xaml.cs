@@ -168,5 +168,20 @@ namespace SAP_Ui
         {
 
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StudentSearch_Txt.Focus();
+        }
+
+        private void SearchBoxBorder_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            StudentSearch_Txt.Focus();
+        }
+
+        private void MavaredEnzebati_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

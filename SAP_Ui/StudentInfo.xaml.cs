@@ -51,6 +51,7 @@ namespace SAP_Ui
 
             Enzebati_Grid.Visibility = Visibility.Visible;
             GheybatTakhir_Grid.Visibility = Visibility.Hidden;
+            Tazakor_Scroll.Visibility = Visibility.Visible;
         }
 
         void GheybatTakhirSliderSelect()
@@ -92,6 +93,8 @@ namespace SAP_Ui
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             Takhir_Scroll.Visibility = Visibility.Hidden;
             Gheybat_Scroll.Visibility = Visibility.Visible;
+            Takhir_StckPnl.Visibility = Visibility.Hidden;
+            Gheybat_StckPnl.Visibility = Visibility.Visible;
         }
 
 
@@ -105,6 +108,9 @@ namespace SAP_Ui
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
             Gheybat_Scroll.Visibility= Visibility.Hidden;
             Takhir_Scroll.Visibility= Visibility.Visible;
+            Gheybat_StckPnl.Visibility = Visibility.Hidden;
+            Takhir_StckPnl.Visibility = Visibility.Visible;
+
         }
 
         private void Tazakor_Btn_Click(object sender, RoutedEventArgs e)
@@ -119,6 +125,8 @@ namespace SAP_Ui
             Tazakor_Scroll.Visibility = Visibility.Visible;
             AddTazakor_Border.Visibility = Visibility.Visible;
             AddTashvigh_Border.Visibility = Visibility.Hidden;
+            Tashvigh_StckPnl.Visibility = Visibility.Hidden;
+            Tazakor_StckPnl.Visibility = Visibility.Visible;
 
         }
 
@@ -135,6 +143,8 @@ namespace SAP_Ui
             Tashvigh_StckPnl.Visibility = Visibility.Visible;
             AddTazakor_Border.Visibility = Visibility.Hidden;
             AddTashvigh_Border.Visibility = Visibility.Visible;
+            Tashvigh_StckPnl.Visibility = Visibility.Visible;
+            Tazakor_StckPnl.Visibility = Visibility.Hidden;
         }
 
     
