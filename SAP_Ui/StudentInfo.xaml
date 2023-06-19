@@ -44,13 +44,11 @@
                             <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="24"/>
-                                        <ColumnDefinition Width="133"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="63"/>
+                                        <ColumnDefinition Width="114"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" Margin="8 0 0 0" Source="/badge.png"/>
-                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" Margin="8 0 0 0">اطلاعات شخصی</TextBlock>
-                                    <Image Grid.Column="2" Height="12" Width="12" HorizontalAlignment="Left" Source="/keyboard_arrow_down (1).png"/>
+                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/badge.png"/>
+                                    <TextBlock Width="59" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 47 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >اطلاعات شخصی</TextBlock>
                                 </Grid>
                             </Border>
                             <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -101,13 +99,11 @@
                             <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="24"/>
-                                        <ColumnDefinition Width="133"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="93.5"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" Margin="8 0 0 0" Source="/cottage.png"/>
-                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" Margin="8 0 0 0">منزل</TextBlock>
-                                    <Image Grid.Column="2" Height="12" Width="12" HorizontalAlignment="Left" Source="/keyboard_arrow_down (1).png"/>
+                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/cottage.png"/>
+                                    <TextBlock  Width="18" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 67.5 0" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >منزل</TextBlock>
                                 </Grid>
                             </Border>
                             <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -153,13 +149,11 @@
                             <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="24"/>
-                                        <ColumnDefinition Width="133"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="99"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" Margin="8 0 0 0" Source="/family_restroom.png"/>
-                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" Margin="8 0 0 0">خانواده</TextBlock>
-                                    <Image Grid.Column="2" Height="12" Width="12" HorizontalAlignment="Left" Source="/keyboard_arrow_down (1).png"/>
+                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/family_restroom.png"/>
+                                    <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 62 0" Width="29"  VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >خانواده</TextBlock>
                                 </Grid>
                             </Border>
                             <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -269,13 +263,11 @@
                             <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="24"/>
-                                        <ColumnDefinition Width="133"/>
                                         <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="112"/>
                                     </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" Margin="8 0 0 0" Source="/article.png"/>
-                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" Margin="8 0 0 0">سایرتوضیحات</TextBlock>
-                                    <Image Grid.Column="2" Height="12" Width="12" HorizontalAlignment="Left" Source="/keyboard_arrow_down (1).png"/>
+                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/article.png"/>
+                                    <TextBlock Width="55" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 49 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman">سایر توضیحات</TextBlock>
                                 </Grid>
                             </Border>
                             <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -290,16 +282,20 @@
                             </Border>
                         </Grid>
                     </Border>
-
-                    <Border Grid.Row="5" CornerRadius="4" Height="28" Width="177" Background="#7161EF">
-                        <Button Name="EditStudent_Btn" Padding="0" Height="28" Width="177" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
-                            <Grid Height="28" Width="177">
+                    <Border Grid.Row="5" VerticalAlignment="Center" Background="#D90000" HorizontalAlignment="Left" Margin="12 0 0 0" CornerRadius="4" Width="32" Height="28">
+                        <Button Name="Delete_Btn" Height="28" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                            <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
+                        </Button>
+                    </Border>
+                    <Border Grid.Row="5" CornerRadius="4" Height="28" Width="137" HorizontalAlignment="Right" Margin="12 0" Background="#7161EF">
+                        <Button Name="EditStudent_Btn" Padding="0" Height="28" Width="137" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
+                            <Grid Height="28" Width="137">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="110"/>
+                                    <ColumnDefinition Width="90"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="51 8 0 8">ویرایش اطلاعات</TextBlock>
+                                <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="31 8 0 8">ویرایش اطلاعات</TextBlock>
                                 <Image Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4 8 0 8" Height="12" Width="12" Source="/Edit.png"/>
                             </Grid>
                         </Button>

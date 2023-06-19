@@ -9,10 +9,10 @@ namespace SAP_Ui
     public class GetStudent
     {
         public string FirstName { get; set; }
-        public string Profile { get; set; }
         public string LastName { get; set; }
         public string StudentCode { get; set; }
         public string NationalCode { get; set; }
+        public string Profile { get; set; } 
         public string Payeh { get; set; }
         public string Reshteh { get; set; }
         public string BimaryKhas { get; set; }
@@ -27,5 +27,6 @@ namespace SAP_Ui
         public string DeadParent { get; set; }
         public string BimaryKhasParent { get; set; }
         public string Other { get; set; }
+        public byte Score { get; set; }
     }
 }
