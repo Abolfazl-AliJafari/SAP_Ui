@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormComponent", "FormCompon
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{8CEEEE88-4A5F-4652-BDB2-9D716C0DFC2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bll", "Bll\Bll.csproj", "{4C2DC9C2-8B5F-412A-A5B7-CB89B25BAA81}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8CEEEE88-4A5F-4652-BDB2-9D716C0DFC2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CEEEE88-4A5F-4652-BDB2-9D716C0DFC2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CEEEE88-4A5F-4652-BDB2-9D716C0DFC2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C2DC9C2-8B5F-412A-A5B7-CB89B25BAA81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C2DC9C2-8B5F-412A-A5B7-CB89B25BAA81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C2DC9C2-8B5F-412A-A5B7-CB89B25BAA81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C2DC9C2-8B5F-412A-A5B7-CB89B25BAA81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -142,6 +142,10 @@
     <Resource Include="school-disciplinary-system-website-favicon-color 2 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bll\Bll.csproj">
+      <Project>{4c2dc9c2-8b5f-412a-a5b7-cb89b25baa81}</Project>
+      <Name>Bll</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
       <Project>{8ceeee88-4a5f-4652-bdb2-9d716c0dfc2f}</Project>
       <Name>DataAccessLayer</Name>
