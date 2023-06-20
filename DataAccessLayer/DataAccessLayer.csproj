@@ -61,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SAPDb.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Student.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
