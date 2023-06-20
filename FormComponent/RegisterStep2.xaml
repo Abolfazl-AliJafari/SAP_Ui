@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
-             d:DesignHeight="380" d:DesignWidth="352">
+             d:DesignHeight="380" d:DesignWidth="352" Loaded="UserControl_Loaded">
     <Border Background="#FAFAFA" CornerRadius="8 8 0 0">
         <Grid>
             <Grid.RowDefinitions>
@@ -151,7 +151,8 @@
                         <ToggleButton
                             Cursor="Hand"
                         Name="LeftParentToggle"
-                        IsEnabledChanged="LeftParentToggle_IsEnabledChanged"
+                        Checked="LeftParentToggle_Checked"
+                            Unchecked="LeftParentToggle_Unchecked"
                          VerticalAlignment="Center"
                          Grid.Column="0"
   IsChecked="False"
@@ -199,7 +200,7 @@
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
                                     <Button IsEnabled="False" Name="Both_Btn" Click="Both_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
-                                        <TextBlock FontSize="9" FontFamily="Anjoman">هردو</TextBlock>
+                                        <TextBlock Name="Both_Btn_TxtBlock" FontSize="9" FontFamily="Anjoman">هردو</TextBlock>
                                     </Button>
                                 </Border>
 
@@ -208,7 +209,7 @@
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
                                     <Button IsEnabled="False" Name="Mother_Btn" Click="Mother_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
-                                        <TextBlock FontSize="9" FontFamily="Anjoman">مادر</TextBlock>
+                                        <TextBlock Name="Mother_Btn_TxtBlock" FontSize="9" FontFamily="Anjoman">مادر</TextBlock>
                                     </Button>
                                 </Border>
 
@@ -217,7 +218,7 @@
                                         <DropShadowEffect Color="Black" BlurRadius="5" Opacity="0.1" RenderingBias="Quality" Direction="300" ShadowDepth="2" ></DropShadowEffect>
                                     </Border.Effect>
                                     <Button IsEnabled="False" Name="Father_Btn" Click="Father_Btn_Click" Height="20" Width="40" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Foreground="Black">
-                                        <TextBlock FontSize="9" FontFamily="Anjoman">پدر</TextBlock>
+                                        <TextBlock Name="Father_Btn_TxtBlock" FontSize="9" FontFamily="Anjoman">پدر</TextBlock>
                                     </Button>
                                 </Border>
                             </Grid>

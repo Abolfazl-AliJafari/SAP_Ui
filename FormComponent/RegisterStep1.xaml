@@ -106,7 +106,7 @@
                     <Grid Grid.Column="0" Grid.Row="0" FlowDirection="RightToLeft">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="18"/>
-                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="32"/>
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >نام خانوادگی</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
@@ -121,7 +121,12 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left"  FontFamily="Anjoman" FontSize="9"  >پایه</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <ComboBox Name="Payeh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Payeh_CmBox_SelectionChanged" BorderThickness="0" Text="یازدهم" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" />
+                            <ComboBox Name="Payeh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Payeh_CmBox_SelectionChanged" BorderThickness="0" Text="یازدهم" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" 
+                                      >
+                                <ComboBoxItem>دهم</ComboBoxItem>
+                                <ComboBoxItem>یازدهم</ComboBoxItem>
+                                <ComboBoxItem>دوازدهم</ComboBoxItem>
+                            </ComboBox>
                         </Border>
                     </Grid>
 
@@ -132,7 +137,11 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left"  FontFamily="Anjoman" FontSize="9" >رشته</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <ComboBox Name="Reshteh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Reshteh_CmBox_SelectionChanged" BorderThickness="0" Text="مهدی" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" ></ComboBox>
+                            <ComboBox Name="Reshteh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Reshteh_CmBox_SelectionChanged" BorderThickness="0" Text="مهدی" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#B8B8B8" >
+                                <ComboBoxItem>حسابداری</ComboBoxItem>
+                                <ComboBoxItem>شبکه و نرم افزار</ComboBoxItem>
+                                
+                            </ComboBox>
                         </Border>
                     </Grid>
 

@@ -24,20 +24,22 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-
+        public string HomeAddress { get; set; }
+        public string HomeNumber { get; set; }
+        public string Other { get; set; }
         private void HomePhoneNumber_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            HomeNumber = HomePhoneNumber_Txt.Text;
         }
 
         private void HomeAddress_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            HomeAddress= HomeAddress_Txt.Text;
         }
 
         private void OtherAbout_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            Other= OtherAbout_Txt.Text;
         }
     }
 }

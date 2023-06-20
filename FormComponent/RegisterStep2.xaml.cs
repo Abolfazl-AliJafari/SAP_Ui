@@ -31,6 +31,7 @@ namespace FormComponent
         public string MotherMobile { get; set; }
         public bool LeftParent { get; set; }
         public string DeadParent { get; set; }
+        public string BimaryKhasParent { get; set; }
 
 
         bool btnfatherClick = false;
@@ -63,16 +64,6 @@ namespace FormComponent
             MotherJob= MotherJob_Txt.Text;
         }
 
-        private void LeftParentToggle_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            LeftParent = LeftParentToggle.IsEnabled;
-        }
-
-
-
-
-   
-
         public void enable(bool Status)
         {
             Both_Btn.IsEnabled = Status;
@@ -85,7 +76,7 @@ namespace FormComponent
             Elm.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             Elm.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
             Button elm = Elm as Button;
-            DeadParent = elm.Content.ToString();
+           
         }
         void noclickcolor(Control Elm)
         {
@@ -95,7 +86,7 @@ namespace FormComponent
 
         private void Both_Btn_Click(object sender, RoutedEventArgs e)
         {
-            DeadParent = Both_Btn.Content.ToString();
+            DeadParent = Both_Btn_TxtBlock.Text;
             if (btnBothClick)
             {
                 btnBothClick = false;
@@ -116,7 +107,7 @@ namespace FormComponent
 
         private void Mother_Btn_Click(object sender, RoutedEventArgs e)
         {
-            DeadParent = Mother_Btn.Content.ToString();
+            DeadParent = Mother_Btn_TxtBlock.Text;
             if (btnMotherClick)
             {
                 btnMotherClick= false;
@@ -135,7 +126,7 @@ namespace FormComponent
 
         private void Father_Btn_Click(object sender, RoutedEventArgs e)
         {
-            DeadParent = Father_Btn.Content.ToString();
+            DeadParent = Father_Btn_TxtBlock.Text;
             if(btnfatherClick)
             {
                 btnfatherClick= false;
@@ -167,7 +158,7 @@ namespace FormComponent
 
         private void BimariKhas_Txt_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            BimaryKhasParent = BimariKhas_Txt.Text;
         }
 
         private void BimaryParentToggle_Checked(object sender, RoutedEventArgs e)
@@ -178,6 +169,25 @@ namespace FormComponent
         private void BimaryParentToggle_Unchecked(object sender, RoutedEventArgs e)
         {
             BimariKhas_Txt.IsEnabled= false;
+            noclickcolor(Father_Btn);
+            noclickcolor(Both_Btn);
+            noclickcolor(Mother_Btn);
+            DeadParent = "";
+        }
+
+        private void LeftParentToggle_Checked(object sender, RoutedEventArgs e)
+        {
+            LeftParent = (bool)LeftParentToggle.IsChecked;
+        }
+
+        private void LeftParentToggle_Unchecked(object sender, RoutedEventArgs e)
+        {
+            LeftParent = (bool)LeftParentToggle.IsChecked;
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            LeftParent = false;
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.5, 8.875" name="SAPDb">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.5, 8.75" name="SAPDb">
   <DataContextMoniker Name="/SAPDbDataContext" />
   <nestedChildShapes>
     <classShape Id="65c4cc56-0a19-4d5c-a8a1-04e8679d6ce8" absoluteBounds="3.75, 1.125, 2, 1.7708968098958331">
@@ -21,32 +21,12 @@
         <classShapeMoniker Id="65c4cc56-0a19-4d5c-a8a1-04e8679d6ce8" />
       </nodes>
     </associationConnector>
-    <classShape Id="369b52ad-c89a-417f-8efd-455d75a7da37" absoluteBounds="5.25, 3.625, 2, 5.0400211588541657">
-      <DataClassMoniker Name="/SAPDbDataContext/Student_Tbl" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f538d718-2a5b-4de3-a9c7-c4fddae3f97a" absoluteBounds="5.265, 4.085, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(5.5 : 3.625); (5.5 : 2.89589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Gheybat_Tbl" />
-      <nodes>
-        <classShapeMoniker Id="369b52ad-c89a-417f-8efd-455d75a7da37" />
-        <classShapeMoniker Id="65c4cc56-0a19-4d5c-a8a1-04e8679d6ce8" />
-      </nodes>
-    </associationConnector>
     <classShape Id="aefae2e1-5b1c-474b-8cd2-a1e80df76c93" absoluteBounds="8.75, 4.25, 2, 1.9631982421875">
       <DataClassMoniker Name="/SAPDbDataContext/Tashvigh_Tbl" />
       <nestedChildShapes>
         <elementListCompartment Id="55b3c856-3976-46cc-bcbd-0b71ec0c3bd2" absoluteBounds="8.765, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(7.25 : 5.23159912109375); (8.75 : 5.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Tashvigh_Tbl" />
-      <nodes>
-        <classShapeMoniker Id="369b52ad-c89a-417f-8efd-455d75a7da37" />
-        <classShapeMoniker Id="aefae2e1-5b1c-474b-8cd2-a1e80df76c93" />
-      </nodes>
-    </associationConnector>
     <classShape Id="a6a17230-978b-47d3-bd90-db641435f213" absoluteBounds="10.25, 1.875, 2, 1.7708968098958331">
       <DataClassMoniker Name="/SAPDbDataContext/Takhir_Tbl" />
       <nestedChildShapes>
@@ -60,30 +40,16 @@
         <classShapeMoniker Id="a6a17230-978b-47d3-bd90-db641435f213" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(7.25 : 7.47035970052083); (11.53125 : 7.47035970052083); (11.53125 : 3.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Takhir_Tbl" />
-      <nodes>
-        <classShapeMoniker Id="369b52ad-c89a-417f-8efd-455d75a7da37" />
-        <classShapeMoniker Id="a6a17230-978b-47d3-bd90-db641435f213" />
-      </nodes>
-    </associationConnector>
     <classShape Id="2fa49493-54c5-4031-93c9-6556a9a1725f" absoluteBounds="1.5, 4.625, 2, 1.9631982421875">
       <DataClassMoniker Name="/SAPDbDataContext/Tazakor_Tbl" />
       <nestedChildShapes>
         <elementListCompartment Id="46d0c46e-a736-499a-8afa-5f5686f560e0" absoluteBounds="1.5150000000000001, 5.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(8.5 : 3.20359537760417); (8.5 : 3.375); (5.58333333333333 : 3.375 : JumpStart); (5.41666666666667 : 3.375 : JumpEnd); (3.875 : 3.375); (3.875 : 5.08454756054688); (3.5 : 5.08454756054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.5 : 3.20359537760417); (8.5 : 3.45359537760417); (7.25 : 3.45359537760417); (7.25 : 3.25); (5.58333333333333 : 3.25 : JumpStart); (5.41666666666667 : 3.25 : JumpEnd); (3.875 : 3.25); (3.875 : 5.60659912109375); (3.5 : 5.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SAPDbDataContext/Mavared_Tbl/Mavared_Tbl_Tazakor_Tbl" />
       <nodes>
         <classShapeMoniker Id="a05c0b5e-d157-480b-b6ac-159ef4407f3c" />
-        <classShapeMoniker Id="2fa49493-54c5-4031-93c9-6556a9a1725f" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 5.60659912109375); (3.5 : 5.60659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Tazakor_Tbl" />
-      <nodes>
-        <classShapeMoniker Id="369b52ad-c89a-417f-8efd-455d75a7da37" />
         <classShapeMoniker Id="2fa49493-54c5-4031-93c9-6556a9a1725f" />
       </nodes>
     </associationConnector>
@@ -93,5 +59,39 @@
         <elementListCompartment Id="78a53d55-ac60-438b-a91d-f9444e75dc27" absoluteBounds="1.5150000000000001, 1.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="22dd28f1-98df-43cf-8f5d-702ce5d41b3c" absoluteBounds="5.25, 3.5, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/SAPDbDataContext/Student_Tbl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c465e48f-acb1-4d89-9043-bbf57395eca1" absoluteBounds="5.265, 3.96, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 3.5); (5.5 : 2.89589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Gheybat_Tbl" />
+      <nodes>
+        <classShapeMoniker Id="22dd28f1-98df-43cf-8f5d-702ce5d41b3c" />
+        <classShapeMoniker Id="65c4cc56-0a19-4d5c-a8a1-04e8679d6ce8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 5.23159912109375); (8.75 : 5.23159912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Tashvigh_Tbl" />
+      <nodes>
+        <classShapeMoniker Id="22dd28f1-98df-43cf-8f5d-702ce5d41b3c" />
+        <classShapeMoniker Id="aefae2e1-5b1c-474b-8cd2-a1e80df76c93" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.25 : 7.40785970052083); (11.53125 : 7.40785970052083); (11.53125 : 3.64589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Takhir_Tbl" />
+      <nodes>
+        <classShapeMoniker Id="22dd28f1-98df-43cf-8f5d-702ce5d41b3c" />
+        <classShapeMoniker Id="a6a17230-978b-47d3-bd90-db641435f213" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.25 : 5.05329956054688); (3.95833333333333 : 5.05329956054687 : JumpStart); (3.79166666666667 : 5.05329956054688 : JumpEnd); (3.5 : 5.05329956054688)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SAPDbDataContext/Student_Tbl/Student_Tbl_Tazakor_Tbl" />
+      <nodes>
+        <classShapeMoniker Id="22dd28f1-98df-43cf-8f5d-702ce5d41b3c" />
+        <classShapeMoniker Id="2fa49493-54c5-4031-93c9-6556a9a1725f" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

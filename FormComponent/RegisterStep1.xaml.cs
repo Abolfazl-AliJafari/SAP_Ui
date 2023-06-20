@@ -64,12 +64,15 @@ namespace FormComponent
 
         private void Payeh_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            StudentPayeh = Payeh_CmBox.SelectedItem.ToString();
+            string item = Payeh_CmBox.SelectedItem.ToString();
+            StudentPayeh = item.Split(':')[1];
+
         }
 
         private void Reshteh_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            StudentReshte = Reshteh_CmBox.SelectedItem.ToString();
+            string item = Reshteh_CmBox.SelectedItem.ToString();
+            StudentReshte = item.Split(':')[1];
         }
 
         private void NationalCode_Txt_TextChanged(object sender, TextChangedEventArgs e)
@@ -95,6 +98,8 @@ namespace FormComponent
         private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
             BimariKhas_Txt.IsEnabled = false;
+            BimariKhas_Txt.Text = "";
+            StudentBimary = "";
         }
     }
 }

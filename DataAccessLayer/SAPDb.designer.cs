@@ -36,9 +36,6 @@ namespace DataAccessLayer
     partial void InsertMavared_Tbl(Mavared_Tbl instance);
     partial void UpdateMavared_Tbl(Mavared_Tbl instance);
     partial void DeleteMavared_Tbl(Mavared_Tbl instance);
-    partial void InsertStudent_Tbl(Student_Tbl instance);
-    partial void UpdateStudent_Tbl(Student_Tbl instance);
-    partial void DeleteStudent_Tbl(Student_Tbl instance);
     partial void InsertTashvigh_Tbl(Tashvigh_Tbl instance);
     partial void UpdateTashvigh_Tbl(Tashvigh_Tbl instance);
     partial void DeleteTashvigh_Tbl(Tashvigh_Tbl instance);
@@ -51,6 +48,9 @@ namespace DataAccessLayer
     partial void InsertUser_Tbl(User_Tbl instance);
     partial void UpdateUser_Tbl(User_Tbl instance);
     partial void DeleteUser_Tbl(User_Tbl instance);
+    partial void InsertStudent_Tbl(Student_Tbl instance);
+    partial void UpdateStudent_Tbl(Student_Tbl instance);
+    partial void DeleteStudent_Tbl(Student_Tbl instance);
     #endregion
 		
 		public SAPDbDataContext() : 
@@ -99,14 +99,6 @@ namespace DataAccessLayer
 			}
 		}
 		
-		public System.Data.Linq.Table<Student_Tbl> Student_Tbls
-		{
-			get
-			{
-				return this.GetTable<Student_Tbl>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Tashvigh_Tbl> Tashvigh_Tbls
 		{
 			get
@@ -136,6 +128,14 @@ namespace DataAccessLayer
 			get
 			{
 				return this.GetTable<User_Tbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Student_Tbl> Student_Tbls
+		{
+			get
+			{
+				return this.GetTable<Student_Tbl>();
 			}
 		}
 	}
@@ -595,684 +595,6 @@ namespace DataAccessLayer
 		{
 			this.SendPropertyChanging();
 			entity.Mavared_Tbl = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student_Tbl")]
-	public partial class Student_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _StudentCode;
-		
-		private string _StudentFirstName;
-		
-		private string _StudentLastName;
-		
-		private string _StudentPayeh;
-		
-		private string _StudentReshteh;
-		
-		private string _StudentNationalCode;
-		
-		private string _StudentProfile;
-		
-		private string _StudentBimaryKhas;
-		
-		private string _StudentFatherName;
-		
-		private string _StudentFatherJob;
-		
-		private string _StudentFatherMobile;
-		
-		private string _StudentMotherJob;
-		
-		private string _StudentMotherMobile;
-		
-		private bool _StudentLeftParent;
-		
-		private string _StudentDeadParent;
-		
-		private string _StudentParentBimary;
-		
-		private string _StudentHomeAddress;
-		
-		private string _StudentHomeNumber;
-		
-		private string _StudentOther;
-		
-		private short _StudentScore;
-		
-		private string _StudentRegisterDate;
-		
-		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
-		
-		private EntitySet<Tashvigh_Tbl> _Tashvigh_Tbls;
-		
-		private EntitySet<Takhir_Tbl> _Takhir_Tbls;
-		
-		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnStudentCodeChanging(string value);
-    partial void OnStudentCodeChanged();
-    partial void OnStudentFirstNameChanging(string value);
-    partial void OnStudentFirstNameChanged();
-    partial void OnStudentLastNameChanging(string value);
-    partial void OnStudentLastNameChanged();
-    partial void OnStudentPayehChanging(string value);
-    partial void OnStudentPayehChanged();
-    partial void OnStudentReshtehChanging(string value);
-    partial void OnStudentReshtehChanged();
-    partial void OnStudentNationalCodeChanging(string value);
-    partial void OnStudentNationalCodeChanged();
-    partial void OnStudentProfileChanging(string value);
-    partial void OnStudentProfileChanged();
-    partial void OnStudentBimaryKhasChanging(string value);
-    partial void OnStudentBimaryKhasChanged();
-    partial void OnStudentFatherNameChanging(string value);
-    partial void OnStudentFatherNameChanged();
-    partial void OnStudentFatherJobChanging(string value);
-    partial void OnStudentFatherJobChanged();
-    partial void OnStudentFatherMobileChanging(string value);
-    partial void OnStudentFatherMobileChanged();
-    partial void OnStudentMotherJobChanging(string value);
-    partial void OnStudentMotherJobChanged();
-    partial void OnStudentMotherMobileChanging(string value);
-    partial void OnStudentMotherMobileChanged();
-    partial void OnStudentLeftParentChanging(bool value);
-    partial void OnStudentLeftParentChanged();
-    partial void OnStudentDeadParentChanging(string value);
-    partial void OnStudentDeadParentChanged();
-    partial void OnStudentParentBimaryChanging(string value);
-    partial void OnStudentParentBimaryChanged();
-    partial void OnStudentHomeAddressChanging(string value);
-    partial void OnStudentHomeAddressChanged();
-    partial void OnStudentHomeNumberChanging(string value);
-    partial void OnStudentHomeNumberChanged();
-    partial void OnStudentOtherChanging(string value);
-    partial void OnStudentOtherChanged();
-    partial void OnStudentScoreChanging(short value);
-    partial void OnStudentScoreChanged();
-    partial void OnStudentRegisterDateChanging(string value);
-    partial void OnStudentRegisterDateChanged();
-    #endregion
-		
-		public Student_Tbl()
-		{
-			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
-			this._Tashvigh_Tbls = new EntitySet<Tashvigh_Tbl>(new Action<Tashvigh_Tbl>(this.attach_Tashvigh_Tbls), new Action<Tashvigh_Tbl>(this.detach_Tashvigh_Tbls));
-			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
-			this._Tazakor_Tbls = new EntitySet<Tazakor_Tbl>(new Action<Tazakor_Tbl>(this.attach_Tazakor_Tbls), new Action<Tazakor_Tbl>(this.detach_Tazakor_Tbls));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentCode", DbType="VarChar(11) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string StudentCode
-		{
-			get
-			{
-				return this._StudentCode;
-			}
-			set
-			{
-				if ((this._StudentCode != value))
-				{
-					this.OnStudentCodeChanging(value);
-					this.SendPropertyChanging();
-					this._StudentCode = value;
-					this.SendPropertyChanged("StudentCode");
-					this.OnStudentCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFirstName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string StudentFirstName
-		{
-			get
-			{
-				return this._StudentFirstName;
-			}
-			set
-			{
-				if ((this._StudentFirstName != value))
-				{
-					this.OnStudentFirstNameChanging(value);
-					this.SendPropertyChanging();
-					this._StudentFirstName = value;
-					this.SendPropertyChanged("StudentFirstName");
-					this.OnStudentFirstNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentLastName", DbType="NVarChar(170) NOT NULL", CanBeNull=false)]
-		public string StudentLastName
-		{
-			get
-			{
-				return this._StudentLastName;
-			}
-			set
-			{
-				if ((this._StudentLastName != value))
-				{
-					this.OnStudentLastNameChanging(value);
-					this.SendPropertyChanging();
-					this._StudentLastName = value;
-					this.SendPropertyChanged("StudentLastName");
-					this.OnStudentLastNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentPayeh", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string StudentPayeh
-		{
-			get
-			{
-				return this._StudentPayeh;
-			}
-			set
-			{
-				if ((this._StudentPayeh != value))
-				{
-					this.OnStudentPayehChanging(value);
-					this.SendPropertyChanging();
-					this._StudentPayeh = value;
-					this.SendPropertyChanged("StudentPayeh");
-					this.OnStudentPayehChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentReshteh", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string StudentReshteh
-		{
-			get
-			{
-				return this._StudentReshteh;
-			}
-			set
-			{
-				if ((this._StudentReshteh != value))
-				{
-					this.OnStudentReshtehChanging(value);
-					this.SendPropertyChanging();
-					this._StudentReshteh = value;
-					this.SendPropertyChanged("StudentReshteh");
-					this.OnStudentReshtehChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentNationalCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string StudentNationalCode
-		{
-			get
-			{
-				return this._StudentNationalCode;
-			}
-			set
-			{
-				if ((this._StudentNationalCode != value))
-				{
-					this.OnStudentNationalCodeChanging(value);
-					this.SendPropertyChanging();
-					this._StudentNationalCode = value;
-					this.SendPropertyChanged("StudentNationalCode");
-					this.OnStudentNationalCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentProfile", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string StudentProfile
-		{
-			get
-			{
-				return this._StudentProfile;
-			}
-			set
-			{
-				if ((this._StudentProfile != value))
-				{
-					this.OnStudentProfileChanging(value);
-					this.SendPropertyChanging();
-					this._StudentProfile = value;
-					this.SendPropertyChanged("StudentProfile");
-					this.OnStudentProfileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentBimaryKhas", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string StudentBimaryKhas
-		{
-			get
-			{
-				return this._StudentBimaryKhas;
-			}
-			set
-			{
-				if ((this._StudentBimaryKhas != value))
-				{
-					this.OnStudentBimaryKhasChanging(value);
-					this.SendPropertyChanging();
-					this._StudentBimaryKhas = value;
-					this.SendPropertyChanged("StudentBimaryKhas");
-					this.OnStudentBimaryKhasChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string StudentFatherName
-		{
-			get
-			{
-				return this._StudentFatherName;
-			}
-			set
-			{
-				if ((this._StudentFatherName != value))
-				{
-					this.OnStudentFatherNameChanging(value);
-					this.SendPropertyChanging();
-					this._StudentFatherName = value;
-					this.SendPropertyChanged("StudentFatherName");
-					this.OnStudentFatherNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherJob", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string StudentFatherJob
-		{
-			get
-			{
-				return this._StudentFatherJob;
-			}
-			set
-			{
-				if ((this._StudentFatherJob != value))
-				{
-					this.OnStudentFatherJobChanging(value);
-					this.SendPropertyChanging();
-					this._StudentFatherJob = value;
-					this.SendPropertyChanged("StudentFatherJob");
-					this.OnStudentFatherJobChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherMobile", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
-		public string StudentFatherMobile
-		{
-			get
-			{
-				return this._StudentFatherMobile;
-			}
-			set
-			{
-				if ((this._StudentFatherMobile != value))
-				{
-					this.OnStudentFatherMobileChanging(value);
-					this.SendPropertyChanging();
-					this._StudentFatherMobile = value;
-					this.SendPropertyChanged("StudentFatherMobile");
-					this.OnStudentFatherMobileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentMotherJob", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string StudentMotherJob
-		{
-			get
-			{
-				return this._StudentMotherJob;
-			}
-			set
-			{
-				if ((this._StudentMotherJob != value))
-				{
-					this.OnStudentMotherJobChanging(value);
-					this.SendPropertyChanging();
-					this._StudentMotherJob = value;
-					this.SendPropertyChanged("StudentMotherJob");
-					this.OnStudentMotherJobChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentMotherMobile", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
-		public string StudentMotherMobile
-		{
-			get
-			{
-				return this._StudentMotherMobile;
-			}
-			set
-			{
-				if ((this._StudentMotherMobile != value))
-				{
-					this.OnStudentMotherMobileChanging(value);
-					this.SendPropertyChanging();
-					this._StudentMotherMobile = value;
-					this.SendPropertyChanged("StudentMotherMobile");
-					this.OnStudentMotherMobileChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentLeftParent", DbType="Bit NOT NULL")]
-		public bool StudentLeftParent
-		{
-			get
-			{
-				return this._StudentLeftParent;
-			}
-			set
-			{
-				if ((this._StudentLeftParent != value))
-				{
-					this.OnStudentLeftParentChanging(value);
-					this.SendPropertyChanging();
-					this._StudentLeftParent = value;
-					this.SendPropertyChanged("StudentLeftParent");
-					this.OnStudentLeftParentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentDeadParent", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string StudentDeadParent
-		{
-			get
-			{
-				return this._StudentDeadParent;
-			}
-			set
-			{
-				if ((this._StudentDeadParent != value))
-				{
-					this.OnStudentDeadParentChanging(value);
-					this.SendPropertyChanging();
-					this._StudentDeadParent = value;
-					this.SendPropertyChanged("StudentDeadParent");
-					this.OnStudentDeadParentChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentParentBimary", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string StudentParentBimary
-		{
-			get
-			{
-				return this._StudentParentBimary;
-			}
-			set
-			{
-				if ((this._StudentParentBimary != value))
-				{
-					this.OnStudentParentBimaryChanging(value);
-					this.SendPropertyChanging();
-					this._StudentParentBimary = value;
-					this.SendPropertyChanged("StudentParentBimary");
-					this.OnStudentParentBimaryChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentHomeAddress", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string StudentHomeAddress
-		{
-			get
-			{
-				return this._StudentHomeAddress;
-			}
-			set
-			{
-				if ((this._StudentHomeAddress != value))
-				{
-					this.OnStudentHomeAddressChanging(value);
-					this.SendPropertyChanging();
-					this._StudentHomeAddress = value;
-					this.SendPropertyChanged("StudentHomeAddress");
-					this.OnStudentHomeAddressChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentHomeNumber", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string StudentHomeNumber
-		{
-			get
-			{
-				return this._StudentHomeNumber;
-			}
-			set
-			{
-				if ((this._StudentHomeNumber != value))
-				{
-					this.OnStudentHomeNumberChanging(value);
-					this.SendPropertyChanging();
-					this._StudentHomeNumber = value;
-					this.SendPropertyChanged("StudentHomeNumber");
-					this.OnStudentHomeNumberChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentOther", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
-		public string StudentOther
-		{
-			get
-			{
-				return this._StudentOther;
-			}
-			set
-			{
-				if ((this._StudentOther != value))
-				{
-					this.OnStudentOtherChanging(value);
-					this.SendPropertyChanging();
-					this._StudentOther = value;
-					this.SendPropertyChanged("StudentOther");
-					this.OnStudentOtherChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentScore", DbType="SmallInt NOT NULL")]
-		public short StudentScore
-		{
-			get
-			{
-				return this._StudentScore;
-			}
-			set
-			{
-				if ((this._StudentScore != value))
-				{
-					this.OnStudentScoreChanging(value);
-					this.SendPropertyChanging();
-					this._StudentScore = value;
-					this.SendPropertyChanged("StudentScore");
-					this.OnStudentScoreChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentRegisterDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string StudentRegisterDate
-		{
-			get
-			{
-				return this._StudentRegisterDate;
-			}
-			set
-			{
-				if ((this._StudentRegisterDate != value))
-				{
-					this.OnStudentRegisterDateChanging(value);
-					this.SendPropertyChanging();
-					this._StudentRegisterDate = value;
-					this.SendPropertyChanged("StudentRegisterDate");
-					this.OnStudentRegisterDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="StudentCode", OtherKey="GheybatStudentCode")]
-		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
-		{
-			get
-			{
-				return this._Gheybat_Tbls;
-			}
-			set
-			{
-				this._Gheybat_Tbls.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tashvigh_Tbl", Storage="_Tashvigh_Tbls", ThisKey="StudentCode", OtherKey="TashvighStudentCode")]
-		public EntitySet<Tashvigh_Tbl> Tashvigh_Tbls
-		{
-			get
-			{
-				return this._Tashvigh_Tbls;
-			}
-			set
-			{
-				this._Tashvigh_Tbls.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Takhir_Tbl", Storage="_Takhir_Tbls", ThisKey="StudentCode", OtherKey="TakhirStudentCode")]
-		public EntitySet<Takhir_Tbl> Takhir_Tbls
-		{
-			get
-			{
-				return this._Takhir_Tbls;
-			}
-			set
-			{
-				this._Takhir_Tbls.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="StudentCode", OtherKey="TazakorStudentCode")]
-		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
-		{
-			get
-			{
-				return this._Tazakor_Tbls;
-			}
-			set
-			{
-				this._Tazakor_Tbls.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = this;
-		}
-		
-		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = null;
-		}
-		
-		private void attach_Tashvigh_Tbls(Tashvigh_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = this;
-		}
-		
-		private void detach_Tashvigh_Tbls(Tashvigh_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = null;
-		}
-		
-		private void attach_Takhir_Tbls(Takhir_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = this;
-		}
-		
-		private void detach_Takhir_Tbls(Takhir_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = null;
-		}
-		
-		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = this;
-		}
-		
-		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = null;
 		}
 	}
 	
@@ -2110,6 +1432,684 @@ namespace DataAccessLayer
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student_Tbl")]
+	public partial class Student_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _StudentCode;
+		
+		private string _StudentFirstName;
+		
+		private string _StudentLastName;
+		
+		private string _StudentPayeh;
+		
+		private string _StudentReshteh;
+		
+		private string _StudentNationalCode;
+		
+		private string _StudentProfile;
+		
+		private string _StudentBimaryKhas;
+		
+		private string _StudentFatherName;
+		
+		private string _StudentFatherJob;
+		
+		private string _StudentFatherMobile;
+		
+		private string _StudentMotherJob;
+		
+		private string _StudentMotherMobile;
+		
+		private System.Nullable<bool> _StudentLeftParent;
+		
+		private string _StudentDeadParent;
+		
+		private string _StudentParentBimary;
+		
+		private string _StudentHomeAddress;
+		
+		private string _StudentHomeNumber;
+		
+		private string _StudentOther;
+		
+		private short _StudentScore;
+		
+		private string _StudentRegisterDate;
+		
+		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
+		
+		private EntitySet<Tashvigh_Tbl> _Tashvigh_Tbls;
+		
+		private EntitySet<Takhir_Tbl> _Takhir_Tbls;
+		
+		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnStudentCodeChanging(string value);
+    partial void OnStudentCodeChanged();
+    partial void OnStudentFirstNameChanging(string value);
+    partial void OnStudentFirstNameChanged();
+    partial void OnStudentLastNameChanging(string value);
+    partial void OnStudentLastNameChanged();
+    partial void OnStudentPayehChanging(string value);
+    partial void OnStudentPayehChanged();
+    partial void OnStudentReshtehChanging(string value);
+    partial void OnStudentReshtehChanged();
+    partial void OnStudentNationalCodeChanging(string value);
+    partial void OnStudentNationalCodeChanged();
+    partial void OnStudentProfileChanging(string value);
+    partial void OnStudentProfileChanged();
+    partial void OnStudentBimaryKhasChanging(string value);
+    partial void OnStudentBimaryKhasChanged();
+    partial void OnStudentFatherNameChanging(string value);
+    partial void OnStudentFatherNameChanged();
+    partial void OnStudentFatherJobChanging(string value);
+    partial void OnStudentFatherJobChanged();
+    partial void OnStudentFatherMobileChanging(string value);
+    partial void OnStudentFatherMobileChanged();
+    partial void OnStudentMotherJobChanging(string value);
+    partial void OnStudentMotherJobChanged();
+    partial void OnStudentMotherMobileChanging(string value);
+    partial void OnStudentMotherMobileChanged();
+    partial void OnStudentLeftParentChanging(System.Nullable<bool> value);
+    partial void OnStudentLeftParentChanged();
+    partial void OnStudentDeadParentChanging(string value);
+    partial void OnStudentDeadParentChanged();
+    partial void OnStudentParentBimaryChanging(string value);
+    partial void OnStudentParentBimaryChanged();
+    partial void OnStudentHomeAddressChanging(string value);
+    partial void OnStudentHomeAddressChanged();
+    partial void OnStudentHomeNumberChanging(string value);
+    partial void OnStudentHomeNumberChanged();
+    partial void OnStudentOtherChanging(string value);
+    partial void OnStudentOtherChanged();
+    partial void OnStudentScoreChanging(short value);
+    partial void OnStudentScoreChanged();
+    partial void OnStudentRegisterDateChanging(string value);
+    partial void OnStudentRegisterDateChanged();
+    #endregion
+		
+		public Student_Tbl()
+		{
+			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
+			this._Tashvigh_Tbls = new EntitySet<Tashvigh_Tbl>(new Action<Tashvigh_Tbl>(this.attach_Tashvigh_Tbls), new Action<Tashvigh_Tbl>(this.detach_Tashvigh_Tbls));
+			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
+			this._Tazakor_Tbls = new EntitySet<Tazakor_Tbl>(new Action<Tazakor_Tbl>(this.attach_Tazakor_Tbls), new Action<Tazakor_Tbl>(this.detach_Tazakor_Tbls));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentCode", DbType="VarChar(11) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string StudentCode
+		{
+			get
+			{
+				return this._StudentCode;
+			}
+			set
+			{
+				if ((this._StudentCode != value))
+				{
+					this.OnStudentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StudentCode = value;
+					this.SendPropertyChanged("StudentCode");
+					this.OnStudentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFirstName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string StudentFirstName
+		{
+			get
+			{
+				return this._StudentFirstName;
+			}
+			set
+			{
+				if ((this._StudentFirstName != value))
+				{
+					this.OnStudentFirstNameChanging(value);
+					this.SendPropertyChanging();
+					this._StudentFirstName = value;
+					this.SendPropertyChanged("StudentFirstName");
+					this.OnStudentFirstNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentLastName", DbType="NVarChar(170) NOT NULL", CanBeNull=false)]
+		public string StudentLastName
+		{
+			get
+			{
+				return this._StudentLastName;
+			}
+			set
+			{
+				if ((this._StudentLastName != value))
+				{
+					this.OnStudentLastNameChanging(value);
+					this.SendPropertyChanging();
+					this._StudentLastName = value;
+					this.SendPropertyChanged("StudentLastName");
+					this.OnStudentLastNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentPayeh", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string StudentPayeh
+		{
+			get
+			{
+				return this._StudentPayeh;
+			}
+			set
+			{
+				if ((this._StudentPayeh != value))
+				{
+					this.OnStudentPayehChanging(value);
+					this.SendPropertyChanging();
+					this._StudentPayeh = value;
+					this.SendPropertyChanged("StudentPayeh");
+					this.OnStudentPayehChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentReshteh", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string StudentReshteh
+		{
+			get
+			{
+				return this._StudentReshteh;
+			}
+			set
+			{
+				if ((this._StudentReshteh != value))
+				{
+					this.OnStudentReshtehChanging(value);
+					this.SendPropertyChanging();
+					this._StudentReshteh = value;
+					this.SendPropertyChanged("StudentReshteh");
+					this.OnStudentReshtehChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentNationalCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string StudentNationalCode
+		{
+			get
+			{
+				return this._StudentNationalCode;
+			}
+			set
+			{
+				if ((this._StudentNationalCode != value))
+				{
+					this.OnStudentNationalCodeChanging(value);
+					this.SendPropertyChanging();
+					this._StudentNationalCode = value;
+					this.SendPropertyChanged("StudentNationalCode");
+					this.OnStudentNationalCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentProfile", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string StudentProfile
+		{
+			get
+			{
+				return this._StudentProfile;
+			}
+			set
+			{
+				if ((this._StudentProfile != value))
+				{
+					this.OnStudentProfileChanging(value);
+					this.SendPropertyChanging();
+					this._StudentProfile = value;
+					this.SendPropertyChanged("StudentProfile");
+					this.OnStudentProfileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentBimaryKhas", DbType="NVarChar(MAX)")]
+		public string StudentBimaryKhas
+		{
+			get
+			{
+				return this._StudentBimaryKhas;
+			}
+			set
+			{
+				if ((this._StudentBimaryKhas != value))
+				{
+					this.OnStudentBimaryKhasChanging(value);
+					this.SendPropertyChanging();
+					this._StudentBimaryKhas = value;
+					this.SendPropertyChanged("StudentBimaryKhas");
+					this.OnStudentBimaryKhasChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string StudentFatherName
+		{
+			get
+			{
+				return this._StudentFatherName;
+			}
+			set
+			{
+				if ((this._StudentFatherName != value))
+				{
+					this.OnStudentFatherNameChanging(value);
+					this.SendPropertyChanging();
+					this._StudentFatherName = value;
+					this.SendPropertyChanged("StudentFatherName");
+					this.OnStudentFatherNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherJob", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string StudentFatherJob
+		{
+			get
+			{
+				return this._StudentFatherJob;
+			}
+			set
+			{
+				if ((this._StudentFatherJob != value))
+				{
+					this.OnStudentFatherJobChanging(value);
+					this.SendPropertyChanging();
+					this._StudentFatherJob = value;
+					this.SendPropertyChanged("StudentFatherJob");
+					this.OnStudentFatherJobChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentFatherMobile", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string StudentFatherMobile
+		{
+			get
+			{
+				return this._StudentFatherMobile;
+			}
+			set
+			{
+				if ((this._StudentFatherMobile != value))
+				{
+					this.OnStudentFatherMobileChanging(value);
+					this.SendPropertyChanging();
+					this._StudentFatherMobile = value;
+					this.SendPropertyChanged("StudentFatherMobile");
+					this.OnStudentFatherMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentMotherJob", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string StudentMotherJob
+		{
+			get
+			{
+				return this._StudentMotherJob;
+			}
+			set
+			{
+				if ((this._StudentMotherJob != value))
+				{
+					this.OnStudentMotherJobChanging(value);
+					this.SendPropertyChanging();
+					this._StudentMotherJob = value;
+					this.SendPropertyChanged("StudentMotherJob");
+					this.OnStudentMotherJobChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentMotherMobile", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string StudentMotherMobile
+		{
+			get
+			{
+				return this._StudentMotherMobile;
+			}
+			set
+			{
+				if ((this._StudentMotherMobile != value))
+				{
+					this.OnStudentMotherMobileChanging(value);
+					this.SendPropertyChanging();
+					this._StudentMotherMobile = value;
+					this.SendPropertyChanged("StudentMotherMobile");
+					this.OnStudentMotherMobileChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentLeftParent", DbType="Bit")]
+		public System.Nullable<bool> StudentLeftParent
+		{
+			get
+			{
+				return this._StudentLeftParent;
+			}
+			set
+			{
+				if ((this._StudentLeftParent != value))
+				{
+					this.OnStudentLeftParentChanging(value);
+					this.SendPropertyChanging();
+					this._StudentLeftParent = value;
+					this.SendPropertyChanged("StudentLeftParent");
+					this.OnStudentLeftParentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentDeadParent", DbType="NVarChar(10)")]
+		public string StudentDeadParent
+		{
+			get
+			{
+				return this._StudentDeadParent;
+			}
+			set
+			{
+				if ((this._StudentDeadParent != value))
+				{
+					this.OnStudentDeadParentChanging(value);
+					this.SendPropertyChanging();
+					this._StudentDeadParent = value;
+					this.SendPropertyChanged("StudentDeadParent");
+					this.OnStudentDeadParentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentParentBimary", DbType="NVarChar(MAX)")]
+		public string StudentParentBimary
+		{
+			get
+			{
+				return this._StudentParentBimary;
+			}
+			set
+			{
+				if ((this._StudentParentBimary != value))
+				{
+					this.OnStudentParentBimaryChanging(value);
+					this.SendPropertyChanging();
+					this._StudentParentBimary = value;
+					this.SendPropertyChanged("StudentParentBimary");
+					this.OnStudentParentBimaryChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentHomeAddress", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string StudentHomeAddress
+		{
+			get
+			{
+				return this._StudentHomeAddress;
+			}
+			set
+			{
+				if ((this._StudentHomeAddress != value))
+				{
+					this.OnStudentHomeAddressChanging(value);
+					this.SendPropertyChanging();
+					this._StudentHomeAddress = value;
+					this.SendPropertyChanged("StudentHomeAddress");
+					this.OnStudentHomeAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentHomeNumber", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string StudentHomeNumber
+		{
+			get
+			{
+				return this._StudentHomeNumber;
+			}
+			set
+			{
+				if ((this._StudentHomeNumber != value))
+				{
+					this.OnStudentHomeNumberChanging(value);
+					this.SendPropertyChanging();
+					this._StudentHomeNumber = value;
+					this.SendPropertyChanged("StudentHomeNumber");
+					this.OnStudentHomeNumberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentOther", DbType="NVarChar(MAX)")]
+		public string StudentOther
+		{
+			get
+			{
+				return this._StudentOther;
+			}
+			set
+			{
+				if ((this._StudentOther != value))
+				{
+					this.OnStudentOtherChanging(value);
+					this.SendPropertyChanging();
+					this._StudentOther = value;
+					this.SendPropertyChanged("StudentOther");
+					this.OnStudentOtherChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentScore", DbType="SmallInt NOT NULL")]
+		public short StudentScore
+		{
+			get
+			{
+				return this._StudentScore;
+			}
+			set
+			{
+				if ((this._StudentScore != value))
+				{
+					this.OnStudentScoreChanging(value);
+					this.SendPropertyChanging();
+					this._StudentScore = value;
+					this.SendPropertyChanged("StudentScore");
+					this.OnStudentScoreChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_StudentRegisterDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string StudentRegisterDate
+		{
+			get
+			{
+				return this._StudentRegisterDate;
+			}
+			set
+			{
+				if ((this._StudentRegisterDate != value))
+				{
+					this.OnStudentRegisterDateChanging(value);
+					this.SendPropertyChanging();
+					this._StudentRegisterDate = value;
+					this.SendPropertyChanged("StudentRegisterDate");
+					this.OnStudentRegisterDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="StudentCode", OtherKey="GheybatStudentCode")]
+		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
+		{
+			get
+			{
+				return this._Gheybat_Tbls;
+			}
+			set
+			{
+				this._Gheybat_Tbls.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tashvigh_Tbl", Storage="_Tashvigh_Tbls", ThisKey="StudentCode", OtherKey="TashvighStudentCode")]
+		public EntitySet<Tashvigh_Tbl> Tashvigh_Tbls
+		{
+			get
+			{
+				return this._Tashvigh_Tbls;
+			}
+			set
+			{
+				this._Tashvigh_Tbls.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Takhir_Tbl", Storage="_Takhir_Tbls", ThisKey="StudentCode", OtherKey="TakhirStudentCode")]
+		public EntitySet<Takhir_Tbl> Takhir_Tbls
+		{
+			get
+			{
+				return this._Takhir_Tbls;
+			}
+			set
+			{
+				this._Takhir_Tbls.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="StudentCode", OtherKey="TazakorStudentCode")]
+		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
+		{
+			get
+			{
+				return this._Tazakor_Tbls;
+			}
+			set
+			{
+				this._Tazakor_Tbls.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = this;
+		}
+		
+		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = null;
+		}
+		
+		private void attach_Tashvigh_Tbls(Tashvigh_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = this;
+		}
+		
+		private void detach_Tashvigh_Tbls(Tashvigh_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = null;
+		}
+		
+		private void attach_Takhir_Tbls(Takhir_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = this;
+		}
+		
+		private void detach_Takhir_Tbls(Takhir_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = null;
+		}
+		
+		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = this;
+		}
+		
+		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
+		{
+			this.SendPropertyChanging();
+			entity.Student_Tbl = null;
 		}
 	}
 }
