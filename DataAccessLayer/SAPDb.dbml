@@ -2,97 +2,95 @@
   <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SAP_Db;Integrated Security=True" SettingsObjectName="DataAccessLayer.Properties.Settings" SettingsPropertyName="SAP_DbConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Gheybat_Tbl" Member="Gheybat_Tbls">
     <Type Name="Gheybat_Tbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="GheybatDate" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GheybatDate" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GheybatStudentName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="GheybatStudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="GheybatStudentName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="GheybatType" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
-      <Association Name="Mored_Tbl_Gheybat_Tbl" Member="Mored_Tbl" ThisKey="GheybatType" OtherKey="MoredName" Type="Mored_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Column Name="GheybatMoredTypeTitle" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="Mavared_Tbl_Gheybat_Tbl" Member="Mavared_Tbl" ThisKey="GheybatMoredTypeTitle" OtherKey="MoredTitle" Type="Mavared_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Student_Tbl_Gheybat_Tbl" Member="Student_Tbl" ThisKey="GheybatStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Mored_Tbl" Member="Mored_Tbls">
-    <Type Name="Mored_Tbl">
+  <Table Name="dbo.Mavared_Tbl" Member="Mavared_Tbls">
+    <Type Name="Mavared_Tbl">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MoredName" Type="System.String" DbType="NVarChar(70) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MoredTitle" Type="System.String" DbType="NVarChar(150) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MoredType" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MoredScore" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Association Name="Mored_Tbl_Gheybat_Tbl" Member="Gheybat_Tbls" ThisKey="MoredName" OtherKey="GheybatType" Type="Gheybat_Tbl" />
-      <Association Name="Mored_Tbl_Takhir_Tbl" Member="Takhir_Tbls" ThisKey="MoredName" OtherKey="TakhirType" Type="Takhir_Tbl" />
-      <Association Name="Mored_Tbl_Tashvigh_Tbl" Member="Tashvigh_Tbls" ThisKey="MoredName" OtherKey="TashvighType" Type="Tashvigh_Tbl" />
-      <Association Name="Mored_Tbl_Tazakor_Tbl" Member="Tazakor_Tbls" ThisKey="MoredName" OtherKey="TazakorType" Type="Tazakor_Tbl" />
+      <Association Name="Mavared_Tbl_Gheybat_Tbl" Member="Gheybat_Tbls" ThisKey="MoredTitle" OtherKey="GheybatMoredTypeTitle" Type="Gheybat_Tbl" />
+      <Association Name="Mavared_Tbl_Takhir_Tbl" Member="Takhir_Tbls" ThisKey="MoredTitle" OtherKey="TakhirMoredTypeTitle" Type="Takhir_Tbl" />
+      <Association Name="Mavared_Tbl_Tazakor_Tbl" Member="Tazakor_Tbls" ThisKey="MoredTitle" OtherKey="TazakorMoredTypeTitle" Type="Tazakor_Tbl" />
     </Type>
   </Table>
   <Table Name="dbo.Student_Tbl" Member="Student_Tbls">
     <Type Name="Student_Tbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="StudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="StudentFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="StudentLastName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="StudentPayeh" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="StudentReshteh" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentFirstName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentLastName" Type="System.String" DbType="NVarChar(170) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentPayeh" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentReshteh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="StudentNationalCode" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="StudentProfile" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="StudentBimary" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="FatherFirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="FatherJob" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="FatherMobile" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="MotherJob" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
-      <Column Name="MotherMobile" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="ParentLeft" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="ParentDead" Type="System.String" DbType="NVarChar(7) NOT NULL" CanBeNull="false" />
-      <Column Name="ParentBimary" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="HomeAddress" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="HomeTelNumber" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentProfile" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentBimaryKhas" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentFatherName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentFatherJob" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentFatherMobile" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentMotherJob" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentMotherMobile" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentLeftParent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StudentDeadParent" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentParentBimary" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentHomeAddress" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentHomeNumber" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentOther" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="StudentScore" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="Other" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="RegisterDate" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="StudentRegisterDate" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="Student_Tbl_Gheybat_Tbl" Member="Gheybat_Tbls" ThisKey="StudentCode" OtherKey="GheybatStudentCode" Type="Gheybat_Tbl" />
-      <Association Name="Student_Tbl_Takhir_Tbl" Member="Takhir_Tbls" ThisKey="StudentCode" OtherKey="TakhirStudentCode" Type="Takhir_Tbl" />
       <Association Name="Student_Tbl_Tashvigh_Tbl" Member="Tashvigh_Tbls" ThisKey="StudentCode" OtherKey="TashvighStudentCode" Type="Tashvigh_Tbl" />
+      <Association Name="Student_Tbl_Takhir_Tbl" Member="Takhir_Tbls" ThisKey="StudentCode" OtherKey="TakhirStudentCode" Type="Takhir_Tbl" />
       <Association Name="Student_Tbl_Tazakor_Tbl" Member="Tazakor_Tbls" ThisKey="StudentCode" OtherKey="TazakorStudentCode" Type="Tazakor_Tbl" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Takhir_Tbl" Member="Takhir_Tbls">
-    <Type Name="Takhir_Tbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TakhirDate" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="TakhirStudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="TakhirStudentName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TakhirType" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
-      <Association Name="Mored_Tbl_Takhir_Tbl" Member="Mored_Tbl" ThisKey="TakhirType" OtherKey="MoredName" Type="Mored_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="Student_Tbl_Takhir_Tbl" Member="Student_Tbl" ThisKey="TakhirStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tashvigh_Tbl" Member="Tashvigh_Tbls">
     <Type Name="Tashvigh_Tbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TashvighDate" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TashvighElat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="TashvighEghdamKonande" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="TashvighType" Type="System.String" DbType="NVarChar(70)" CanBeNull="true" />
-      <Column Name="TashvighStudentCode" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
-      <Association Name="Mored_Tbl_Tashvigh_Tbl" Member="Mored_Tbl" ThisKey="TashvighType" OtherKey="MoredName" Type="Mored_Tbl" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="Student_Tbl_Tashvigh_Tbl" Member="Student_Tbl" ThisKey="TashvighStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TashvighDate" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TashvighElat" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="TashvighEghdamKonande" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TashvighMoredTypeTitle" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="TashvighStudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Association Name="Student_Tbl_Tashvigh_Tbl" Member="Student_Tbl" ThisKey="TashvighStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Takhir_Tbl" Member="Takhir_Tbls">
+    <Type Name="Takhir_Tbl">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TakhirDate" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TakhirStudentName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TakhirStudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="TakhirMoredTypeTitle" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Association Name="Mavared_Tbl_Takhir_Tbl" Member="Mavared_Tbl" ThisKey="TakhirMoredTypeTitle" OtherKey="MoredTitle" Type="Mavared_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Student_Tbl_Takhir_Tbl" Member="Student_Tbl" ThisKey="TakhirStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tazakor_Tbl" Member="Tazakor_Tbls">
     <Type Name="Tazakor_Tbl">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TazakorDate" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TazakorDate" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TazakorElat" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="TazakorEghdamKonande" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="TazakorType" Type="System.String" DbType="NVarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="TazakorMoredTypeTitle" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
       <Column Name="TazakorStudentCode" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Association Name="Mored_Tbl_Tazakor_Tbl" Member="Mored_Tbl" ThisKey="TazakorType" OtherKey="MoredName" Type="Mored_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="Mavared_Tbl_Tazakor_Tbl" Member="Mavared_Tbl" ThisKey="TazakorMoredTypeTitle" OtherKey="MoredTitle" Type="Mavared_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
       <Association Name="Student_Tbl_Tazakor_Tbl" Member="Student_Tbl" ThisKey="TazakorStudentCode" OtherKey="StudentCode" Type="Student_Tbl" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.User_Tbl" Member="User_Tbls">
     <Type Name="User_Tbl">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="PassWord" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassWord" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
