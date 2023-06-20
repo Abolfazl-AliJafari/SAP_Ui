@@ -30,6 +30,9 @@ namespace SAP_Ui
             InitializeComponent();
         }
         bool DeleteReady = false;
+        public string dahom { get; set; }
+        public string yazdahom { get; set; }
+        public string davazdahom { get; set; }
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -74,12 +77,24 @@ namespace SAP_Ui
             {
                 ChckBoxDahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
                 DahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
+                dahom = DahomChckBox.Content.ToString();
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
 
             }
             else
             {
                 ChckBoxDahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
                 DahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+                dahom = "khali";
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
             }
 
         }
@@ -90,11 +105,23 @@ namespace SAP_Ui
             {
                 ChckBoxYazdahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
                 YazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
+                yazdahom = YazdahomChckBox.Content.ToString();
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
             }
             else
             {
                 ChckBoxYazdahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
                 YazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+                yazdahom = "khali";
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
             }
         }
 
@@ -104,11 +131,23 @@ namespace SAP_Ui
             {
                 ChckBoxDavazdahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
                 DavazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
+                davazdahom = DavazdahomChckBox.Content.ToString();
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
             }
             else
             {
                 ChckBoxDavazdahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
                 DavazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+                davazdahom = "khali";
+                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                if (check.Success == false)
+                {
+                    MessageBox.Show(check.Message);
+                }
             }
         }
 
