@@ -153,8 +153,47 @@ namespace Bll
                     Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
                 };
             }
-
-
         }
+        public static OperationResult Delete(List<string> code)
+        {
+            for (int i = 0; i < code.Count; i++)
+            {
+                var query = DataAccessLayer.Student.Delete(code);
+                if (query.Success == false)
+                {
+                    return new OperationResult
+                    {
+                        Success = false,
+                        Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
+                    };
+                }
+            }
+            return new OperationResult
+            {
+                Success = true,
+                Message = "حذف با موفقیت انجام شد"
+            };
+        }
+        public static OperationResult DeletePayeh(string Payeh)
+        {
+            var query = DataAccessLayer.Student.DeletePayeh(Payeh);
+            if (query.Success == true)
+            {
+                return new OperationResult
+                {
+                    Success = true,
+                    Message = "حذف با موفقیت انجام شد"
+                };
+            }
+            else
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
+                };
+            }
+        }
+
     }
 }

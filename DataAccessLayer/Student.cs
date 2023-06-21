@@ -77,5 +77,47 @@ namespace DataAccessLayer
             }
 
         }
+        public static OperationResult Delete(string code)
+        {
+            try
+            {
+                SAPDbDataContext sql = new SAPDbDataContext();
+                var query = sql.Student_Tbls.Where(p => p.StudentCode == code).Single();
+                sql.Student_Tbls.DeleteOnSubmit(query);
+                sql.SubmitChanges();
+                return new OperationResult
+                {
+                    Success = true
+                };
+            }
+            catch 
+            {
+                return new OperationResult
+                {
+                    Success = false
+                };
+            }
+        }
+        public static OperationResult DeletePayeh(string Payeh)
+        {
+            try
+            {
+                SAPDbDataContext sql = new SAPDbDataContext();
+                var query = sql.Student_Tbls.Where(p => p.StudentPayeh == Payeh);
+                sql.Student_Tbls.DeleteAllOnSubmit(query);
+                sql.SubmitChanges();
+                return new OperationResult
+                {
+                    Success = true
+                };
+            }
+            catch
+            {
+                return new OperationResult
+                {
+                    Success = false
+                };
+            }
+        }
     }
 }
