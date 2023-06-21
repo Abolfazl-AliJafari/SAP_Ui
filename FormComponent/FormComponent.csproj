@@ -107,9 +107,6 @@
     <Compile Include="SelectParentDead.xaml.cs">
       <DependentUpon>SelectParentDead.xaml</DependentUpon>
     </Compile>
-    <Compile Include="StudentCards.xaml.cs">
-      <DependentUpon>StudentCards.xaml</DependentUpon>
-    </Compile>
     <Compile Include="StudentGhebatComponent.xaml.cs">
       <DependentUpon>StudentGhebatComponent.xaml</DependentUpon>
     </Compile>
@@ -175,13 +172,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StudentCards.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="StudentGhebatComponent.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="StudentTakhirComponent.xaml">
       <SubType>Designer</SubType>

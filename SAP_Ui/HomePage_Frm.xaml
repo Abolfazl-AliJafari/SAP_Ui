@@ -202,25 +202,7 @@
                         </Grid>
                         <Border Grid.Row="1" Height="400" Width="743" HorizontalAlignment="Right" BorderBrush="#FFEAEAEA" VerticalAlignment="Bottom" >
                             <ScrollViewer  VerticalScrollBarVisibility="Hidden" >
-                                <WrapPanel Name="SudentCard_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" 
-                                >
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
-                                    <FormComponent:StudentCards  Height="185" Width="161.5"/>
+                                <WrapPanel Name="SudentCard_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" >
 
                                 </WrapPanel>
                             </ScrollViewer>

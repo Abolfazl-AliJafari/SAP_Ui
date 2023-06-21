@@ -1,4 +1,5 @@
-﻿using FormComponent;
+﻿using DataAccessLayer;
+using FormComponent;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,8 @@ namespace SAP_Ui
         {
             InitializeComponent();
         }
-        GetStudent student;
-        public StudentInfo(GetStudent Student)
+        Student_Tbl student;
+        public StudentInfo(Student_Tbl Student)
         {
             InitializeComponent();
             student = Student;
@@ -163,21 +164,23 @@ namespace SAP_Ui
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //StudentFullName_TxtBlock.Text = student.FirstName + student.LastName;
-            //Payeh_TxtBlock.Text = student.Payeh;
-            //Reshte_TxtBlock.Text = student.Reshteh;
-            //NationalCode_TxtBlock.Text = student.NationalCode;
-            //StudentCode_TxtBlock.Text = student.StudentCode;
-            //Bimary_TxtBlock.Text = student.BimaryKhas;
-            //HomeAddress_TxtBlock.Text = student.HomeAddress;
-            //HomePhoneNumber_TxtBlock.Text = student.HomePhoneNumber;
-            //FatherName_TxtBlock.Text = student.FatherName;
-            //FatherJob_TxtBlock.Text = student.FatherJob;
-            //FatherMobile_TxtBlock.Text = student.FatherMobile;
-            //MotherJob_TxtBlock.Text = student.MotherJob;
-            //MotherMobile_TxtBlock.Text = student.MotherMobile;
-            //Profile_Border.Background = ConvertImageToBackground(student.Profile);
-            //LeftParent_Img.Source = CheckLeftParent(student.LeftParent);
+           StudentFullName_TxtBlock.Text = student.StudentFirstName + student.StudentLastName;
+           Payeh_TxtBlock.Text = student.StudentPayeh;
+           Reshte_TxtBlock.Text = student.StudentReshteh;
+           NationalCode_TxtBlock.Text = student.StudentNationalCode;
+           StudentCode_TxtBlock.Text = student.StudentCode;
+           Bimary_TxtBlock.Text = student.StudentBimaryKhas;
+           HomeAddress_TxtBlock.Text = student.StudentHomeAddress;
+           HomePhoneNumber_TxtBlock.Text = student.StudentHomeNumber;
+           FatherName_TxtBlock.Text = student.StudentFatherName;
+           FatherJob_TxtBlock.Text = student.StudentFatherJob;
+           FatherMobile_TxtBlock.Text = student.StudentFatherMobile;
+           MotherJob_TxtBlock.Text = student.StudentMotherJob;
+            ParentDead_TxtBlock.Text = student.StudentDeadParent;
+           MotherMobile_TxtBlock.Text = student.StudentMotherMobile;
+            BimaryParent_TxtBlock.Text = student.StudentParentBimary;
+           Profile_Border.Background = ConvertImageToBackground(student.StudentProfile);
+           LeftParent_Img.Source = CheckLeftParent((bool)student.StudentLeftParent);
 
         }
 

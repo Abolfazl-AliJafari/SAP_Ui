@@ -179,10 +179,14 @@ namespace SAP_Ui
             }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private  void Window_Loaded(object sender, RoutedEventArgs e)
         {
             DateHome_TxtBlock.Text = ConvertDate.MiladiToShamsiWithMonthName(DateTime.Now);
-
+            var result = Bll.Student.Select();
+            foreach(var student in result.Data)
+            {
+                SudentCard_WrpPnl.Children.Add(new StudentCards(student) { Height = 185 ,Width = 161.5 });
+            }
         }
 
         private void GheybatTakhirAdd_Btn_Click(object sender, RoutedEventArgs e)

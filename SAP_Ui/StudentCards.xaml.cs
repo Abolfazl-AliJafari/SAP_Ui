@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DataAccessLayer;
+using SAP_Ui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -25,32 +27,23 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public string Payeh { get; set; }
-        public string Reshte { get; set; }
-        public string FullName { get; set; }
-        public string CodeStudent { get; set; }
-        public string ProfileAddress { get; set; }
-        public StudentCards(string payeh, string reshteh, string fullName, string profileaddress, string codeStudent)
+        public StudentCards(Student_Tbl Student)
         {
             InitializeComponent();
-            Payeh = payeh;
-            Reshte = reshteh;
-            FullName = fullName;
-            ProfileAddress = profileaddress;
-            CodeStudent = codeStudent;
+            student = Student;
         }
 
-
+        Student_Tbl student; 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (Payeh != null && Reshte != null && FullName != null && ProfileAddress != null)
+            if (student != null)
             {
-                FullName_TxtBlock.Text = FullName;
-                Payeh_TxtBlock.Text = Payeh;
-                Reshte_TxtBlock.Text = Reshte;
+                FullName_TxtBlock.Text = student.StudentFirstName+"  "+student.StudentLastName;
+                Payeh_TxtBlock.Text = student.StudentPayeh;
+                Reshte_TxtBlock.Text = student.StudentReshteh;
 
                 var brush = new ImageBrush();
-                brush.ImageSource = new BitmapImage(new Uri(ProfileAddress, UriKind.Relative));
+                brush.ImageSource = new BitmapImage(new Uri(student.StudentProfile, UriKind.Relative));
                 Profile_Img.Background = brush;
             }
         }
@@ -76,6 +69,11 @@ namespace FormComponent
             }
             else
                 StudentCard_Border.BorderBrush = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new StudentInfo().ShowDialog();
         }
     }
 }

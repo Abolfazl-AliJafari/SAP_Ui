@@ -70,7 +70,7 @@
                 </Label>
             </StackPanel>
             <Border Grid.Row="5" Background="#7161EF" Height="28" Width="137.5" CornerRadius="4">
-                <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1">
+                <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1" Click="Button_Click">
                     <TextBlock Text="مشاهده دانش آموز" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center" FontSize="9"/>
