@@ -713,7 +713,7 @@ namespace DataAccessLayer
 			this._Tashvigh_Tbls = new EntitySet<Tashvigh_Tbl>(new Action<Tashvigh_Tbl>(this.attach_Tashvigh_Tbls), new Action<Tashvigh_Tbl>(this.detach_Tashvigh_Tbls));
 			this._Tazakor_Tbls = new EntitySet<Tazakor_Tbl>(new Action<Tazakor_Tbl>(this.attach_Tazakor_Tbls), new Action<Tazakor_Tbl>(this.detach_Tazakor_Tbls));
 			OnCreated();
-		}
+	}
 		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="Int NOT NULL")]
 		public int Id

@@ -67,7 +67,7 @@ namespace FormComponent
             if (Payeh_CmBox.SelectedItem != null)
             {
                 string item = Payeh_CmBox.SelectedItem.ToString();
-                StudentPayeh = item.Split(':')[1];
+                StudentPayeh = item.Split(':')[1].Trim();
             }
         }
 
@@ -76,7 +76,7 @@ namespace FormComponent
             if (Reshteh_CmBox.SelectedItem != null)
             {
                 string item = Reshteh_CmBox.SelectedItem.ToString();
-                StudentReshte = item.Split(':')[1];
+                StudentReshte = item.Split(':')[1].Trim();
             }
         }
 

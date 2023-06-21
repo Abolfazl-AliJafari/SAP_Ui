@@ -33,7 +33,7 @@ namespace FormComponent
             student = Student;
         }
 
-        Student_Tbl student; 
+        public Student_Tbl student { get; set; }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             if (student != null)

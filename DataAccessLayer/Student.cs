@@ -61,9 +61,7 @@ namespace DataAccessLayer
             {
                 SAPDbDataContext sql = new SAPDbDataContext();
                 var query = sql.Student_Tbls.Where(p =>
-                p.StudentPayeh == dahom ||
-                p.StudentPayeh == yazdahom ||
-                p.StudentPayeh == davazdahom).ToList();
+                p.StudentPayeh == dahom).ToList();
                 return new OperationResult<List<Student_Tbl>>
                 {
                     Success = true,

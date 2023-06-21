@@ -237,7 +237,7 @@
 
                                 </Border>
                                 <Border x:Name="ChckBoxDahomBorder" Grid.Row="1" Width="128"  Height="20" CornerRadius="4" >
-                                    <CheckBox Cursor="Hand" x:Name="DahomChckBox" Content="دهم"  VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman" FontSize="9" Click="DahomChckBox_Click"  BorderThickness="1 1 1 1"/>
+                                    <CheckBox Cursor="Hand" x:Name="DahomChckBox" Content="دهم"  VerticalContentAlignment="Center" HorizontalAlignment="Right" VerticalAlignment="Center" FlowDirection="RightToLeft"  FontFamily="Anjoman" FontSize="9" Click="DahomChckBox_Click"  BorderThickness="1 1 1 1" Checked="DahomChckBox_Checked"/>
                                 </Border>
 
                                 <Border x:Name="ChckBoxYazdahomBorder" Grid.Row="2" Width="128"  Height="20" CornerRadius="4" >

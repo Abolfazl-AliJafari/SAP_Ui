@@ -123,9 +123,9 @@
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="150px" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
                             <ComboBox Name="Payeh_CmBox" Padding="5 0 5 0" Height="23" SelectionChanged="Payeh_CmBox_SelectionChanged" BorderThickness="0" Text="یازدهم" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Center" Foreground="#000000" 
                                       >
-                                <ComboBoxItem>دهم</ComboBoxItem>
-                                <ComboBoxItem>یازدهم</ComboBoxItem>
-                                <ComboBoxItem>دوازدهم</ComboBoxItem>
+                                <ComboBoxItem FontFamily="Anjoman">دهم</ComboBoxItem>
+                                <ComboBoxItem FontFamily="Anjoman">یازدهم</ComboBoxItem>
+                                <ComboBoxItem FontFamily="Anjoman">دوازدهم</ComboBoxItem>
                             </ComboBox>
                         </Border>
                     </Grid>

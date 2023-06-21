@@ -78,10 +78,25 @@ namespace SAP_Ui
                 ChckBoxDahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
                 DahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
                 dahom = DahomChckBox.Content.ToString();
-                var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                var check = Bll.Student.SelectFilter(DahomChckBox.Content.ToString(), yazdahom, davazdahom);
                 if (check.Success == false)
                 {
                     MessageBox.Show(check.Message);
+                }
+                for (int i = 0; i <= check.Data.Count; i++)
+                {
+                    foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+                    {
+                        if (studentCards.student.StudentReshteh == check.Data[i].StudentReshteh)
+                        {
+                            studentCards.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            studentCards.Visibility = Visibility.Hidden;
+                        }
+                    }
+                    //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
                 }
 
             }
@@ -107,6 +122,22 @@ namespace SAP_Ui
                 YazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
                 yazdahom = YazdahomChckBox.Content.ToString();
                 var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                
+                for (int i = 0; i <= check.Data.Count; i++)
+                {
+                    foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+                    {
+                        if(studentCards.student.StudentReshteh == check.Data[i].StudentReshteh)
+                        {
+                            studentCards.Visibility= Visibility.Visible;
+                        }
+                        else
+                        {
+                            studentCards.Visibility= Visibility.Hidden;
+                        }
+                    }
+                    //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
+                }
                 if (check.Success == false)
                 {
                     MessageBox.Show(check.Message);
@@ -133,6 +164,21 @@ namespace SAP_Ui
                 DavazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
                 davazdahom = DavazdahomChckBox.Content.ToString();
                 var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                for (int i = 0; i <= check.Data.Count; i++)
+                {
+                    foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+                    {
+                        if (studentCards.student.StudentReshteh == check.Data[i].StudentReshteh)
+                        {
+                            studentCards.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            studentCards.Visibility = Visibility.Hidden;
+                        }
+                    }
+                    //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
+                }
                 if (check.Success == false)
                 {
                     MessageBox.Show(check.Message);
@@ -144,6 +190,21 @@ namespace SAP_Ui
                 DavazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
                 davazdahom = "khali";
                 var check = Bll.Student.SelectFilter(dahom, yazdahom, davazdahom);
+                for (int i = 0; i <= check.Data.Count; i++)
+                {
+                    foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+                    {
+                        if (studentCards.student.StudentReshteh == check.Data[i].StudentReshteh)
+                        {
+                            studentCards.Visibility = Visibility.Visible;
+                        }
+                        else
+                        {
+                            studentCards.Visibility = Visibility.Hidden;
+                        }
+                    }
+                    //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
+                }
                 if (check.Success == false)
                 {
                     MessageBox.Show(check.Message);
@@ -181,6 +242,9 @@ namespace SAP_Ui
 
         private  void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            dahom = " ";
+            yazdahom = " ";
+            davazdahom= " ";
             DateHome_TxtBlock.Text = ConvertDate.MiladiToShamsiWithMonthName(DateTime.Now);
             var result = Bll.Student.Select();
             foreach(var student in result.Data)
@@ -258,6 +322,11 @@ namespace SAP_Ui
         {
             ShowMavaredEnzebati_Grid.Visibility = Visibility.Hidden;
             ShowStudents_Grid.Visibility = Visibility.Visible;
+        }
+
+        private void DahomChckBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
