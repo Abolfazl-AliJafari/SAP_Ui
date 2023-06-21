@@ -9,7 +9,7 @@ namespace DataAccessLayer
 {
     public class Student
     {
-        public static OperationResult Insert (Student_Tbl student)
+        public static OperationResult Insert(Student_Tbl student)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace DataAccessLayer
                     Message = "ثبت نام با موفقیت انجام شد"
                 };
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return new OperationResult()
                 {
@@ -31,6 +31,37 @@ namespace DataAccessLayer
                 };
             }
         }
-            
+        public static OperationResult<List<Student_Tbl>> Select(string search = "")
+        {
+            var query = DataAccessLayer.Student.Select(search);
+            if (query.Success == true)
+            {
+                return query;
+            }
+            else
+            {
+                return new OperationResult<List<Student_Tbl>>
+                {
+                    Success = false,
+                    Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
+                };
+            }
+        }
+        public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom)
+        {
+            var query = DataAccessLayer.Student.SelectFilter(dahom, yazdahom, davazdahom);
+            if (query.Success == true)
+            {
+                return query;
+            }
+            else
+            {
+                return new OperationResult<List<Student_Tbl>>
+                {
+                    Success = false,
+                    Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
+                };
+            }
+
+        }
     }
-}
