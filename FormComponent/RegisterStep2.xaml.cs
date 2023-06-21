@@ -71,14 +71,14 @@ namespace FormComponent
             Mother_Btn.IsEnabled = Status;
         }
 
-        void clickcolor(Control Elm)
+        public static void clickcolor(Control Elm)
         {
             Elm.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             Elm.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
             Button elm = Elm as Button;
            
         }
-        void noclickcolor(Control Elm)
+        public static void noclickcolor(Control Elm)
         {
             Elm.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
             Elm.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#000000"));
@@ -154,6 +154,10 @@ namespace FormComponent
         {
             bool check = (bool)ParentDeadToggle.IsChecked;
             enable(check);
+            noclickcolor(Father_Btn);
+            noclickcolor(Both_Btn);
+            noclickcolor(Mother_Btn);
+            DeadParent = "";
         }
 
         private void BimariKhas_Txt_TextChanged(object sender, TextChangedEventArgs e)
@@ -169,10 +173,7 @@ namespace FormComponent
         private void BimaryParentToggle_Unchecked(object sender, RoutedEventArgs e)
         {
             BimariKhas_Txt.IsEnabled= false;
-            noclickcolor(Father_Btn);
-            noclickcolor(Both_Btn);
-            noclickcolor(Mother_Btn);
-            DeadParent = "";
+             
         }
 
         private void LeftParentToggle_Checked(object sender, RoutedEventArgs e)
@@ -188,6 +189,29 @@ namespace FormComponent
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             LeftParent = false;
+        }
+        public  void Registered()
+        {
+            BimariKhas_Txt.Clear();
+            FatherMobile_Txt.Clear();
+            FatherName_Txt.Clear();
+            FatherJob_Txt.Clear();
+            MotherJob_Txt.Clear();
+            MotherMobile_Txt.Clear();
+
+            LeftParentToggle.IsChecked = false;
+            BimaryParentToggle.IsChecked = false;
+            ParentDeadToggle.IsChecked = false;
+            noclickcolor(Father_Btn);
+            noclickcolor(Both_Btn);
+            noclickcolor(Mother_Btn);
+            DeadParent = "";
+            BimaryKhasParent = "";
+            FatherJob = "";
+            FatherName = "";
+            FatherMobile = "";
+            MotherJob = "";
+            MotherMobile = "";
         }
     }
 }

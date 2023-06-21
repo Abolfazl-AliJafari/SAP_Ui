@@ -37,9 +37,9 @@
                         <ColumnDefinition Width="83"/>
                     </Grid.ColumnDefinitions>
                     <Button
+                        Name="Cancel_Btn"
                         Grid.Column="0"
          Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}"
-                Name="Close_Btn"
                 Background="Transparent"
                 BorderThickness="0"
                 Content="لغو"

@@ -41,5 +41,15 @@ namespace FormComponent
         {
             Other= OtherAbout_Txt.Text;
         }
+        public void Registered()
+        {
+            HomeAddress = "";
+            HomeNumber = "";
+            Other = "";
+          HomeAddress_Txt.Clear();
+          HomePhoneNumber_Txt.Clear();
+          OtherAbout_Txt.Clear();
+
+        }
     }
 }

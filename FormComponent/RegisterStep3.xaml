@@ -72,7 +72,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >آدرس منزل</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="52px" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="HomeAddress_Txt" TextChanged="HomeAddress_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Top" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="HomeAddress_Txt" TextChanged="HomeAddress_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="10" VerticalContentAlignment="Top" Foreground="#000000" Padding="5 0 5 0" ></TextBox>
                         </Border>
                     </Grid>
 
@@ -83,7 +83,7 @@
                         </Grid.RowDefinitions>
                         <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >شماره تلفن منزل</TextBlock>
                         <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="23" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                            <TextBox Name="HomePhoneNumber_Txt" TextChanged="HomePhoneNumber_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Top" Foreground="#B8B8B8" ></TextBox>
+                            <TextBox Name="HomePhoneNumber_Txt" VerticalContentAlignment="Center" TextChanged="HomePhoneNumber_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8"  Foreground="#000000" Padding="5 0 5 0" ></TextBox>
                         </Border>
                     </Grid>
                 </Grid>
@@ -95,7 +95,7 @@
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" HorizontalAlignment="Left" FontFamily="Anjoman" FontSize="9" >سایر توضیحات(اختیاری)</TextBlock>
                     <Border Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFFFF" Width="152" Height="52px" CornerRadius="4" BorderBrush="#BFBFBF" BorderThickness="0.5">
-                        <TextBox Name="OtherAbout_Txt" TextChanged="OtherAbout_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="8" VerticalContentAlignment="Top" Foreground="#B8B8B8" ></TextBox>
+                        <TextBox Name="OtherAbout_Txt" TextChanged="OtherAbout_Txt_TextChanged" BorderThickness="0" FontFamily="Anjoman" FontSize="10" VerticalContentAlignment="Top" Foreground="#000000" Padding="5 0 5 0" ></TextBox>
                     </Border>
                 </Grid>
             </Grid>

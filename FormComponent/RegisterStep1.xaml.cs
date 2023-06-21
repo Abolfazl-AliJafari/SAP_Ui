@@ -64,15 +64,20 @@ namespace FormComponent
 
         private void Payeh_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string item = Payeh_CmBox.SelectedItem.ToString();
-            StudentPayeh = item.Split(':')[1];
-
+            if (Payeh_CmBox.SelectedItem != null)
+            {
+                string item = Payeh_CmBox.SelectedItem.ToString();
+                StudentPayeh = item.Split(':')[1];
+            }
         }
 
         private void Reshteh_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string item = Reshteh_CmBox.SelectedItem.ToString();
-            StudentReshte = item.Split(':')[1];
+            if (Reshteh_CmBox.SelectedItem != null)
+            {
+                string item = Reshteh_CmBox.SelectedItem.ToString();
+                StudentReshte = item.Split(':')[1];
+            }
         }
 
         private void NationalCode_Txt_TextChanged(object sender, TextChangedEventArgs e)
@@ -100,6 +105,32 @@ namespace FormComponent
             BimariKhas_Txt.IsEnabled = false;
             BimariKhas_Txt.Text = "";
             StudentBimary = "";
+        }
+        public void Registered()
+        {
+            Name_Txt.Clear();
+            LastName_Txt.Clear();
+            Payeh_CmBox.SelectedValue = "";
+            Reshteh_CmBox.SelectedValue= "";
+            NationalCode_Txt.Clear();
+            StudentCode_Txt.Clear();
+            BimariKhas_Txt.Clear();
+            BimariToggle.IsChecked = false;
+            StudentName = "";
+            StudentLastName = "";
+            StudentNationalCode = "";
+            StudentCode = "";
+            StudentPayeh = "";
+            StudentReshte = "";
+            StudentProfileAddress = "";
+            StudentBimary = "";
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri("/FormComponent;component/add_a_photo.png", UriKind.Relative);
+            bitmapImage.EndInit();
+            Profile_Img.Source = bitmapImage;
+            ProfileImg_Border.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#EFEFEF"));
+
         }
     }
 }

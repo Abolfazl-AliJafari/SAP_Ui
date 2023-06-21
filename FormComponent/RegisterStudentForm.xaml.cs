@@ -1,5 +1,6 @@
 ﻿using Bll;
 using DataAccessLayer;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using SAP_Ui;
 
 namespace FormComponent
 {
@@ -27,7 +29,6 @@ namespace FormComponent
             InitializeComponent();
         }
         byte step = 1;
-        bool next = true;
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -39,7 +40,7 @@ namespace FormComponent
                
             
            
-                if (step + 1 <= 4 && step + 1 >= 1)
+                if (step + 1 <= 4 && step + 1 >= 0)
                 {
                     step++;
                 }
@@ -83,6 +84,16 @@ namespace FormComponent
 
                 var result = Bll.Student.Insert(student);
                 MessageBox.Show(result.Message);
+                if (result.Success == true)
+                {
+                 
+                    Step1.Registered();
+              
+                    Step2.Registered();
+                    Step3.Registered();
+                    step = 0;
+                    NextStep_Btn_Click(sender, e);
+                }
             }
             
         }
@@ -112,7 +123,6 @@ namespace FormComponent
         }
         private void PerviuosStep_Btn_Click(object sender, RoutedEventArgs e)
         {
-            next = false;
             if (step-1 <=3 && step-1>=1)
             {
                 step--;
