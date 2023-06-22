@@ -13,561 +13,565 @@
         ResizeMode="NoResize"
         Loaded="Window_Loaded">
     <Border Background="#FAFAFA">
-        <Grid FlowDirection="RightToLeft">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="201px"/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Border Grid.Column="0" Background="#FFFFFF" BorderThickness="0 0 0.5 0" BorderBrush="#EAEAEA">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="34"/>
-                        <RowDefinition Height="97"/>
-                        <RowDefinition Height="84.5"/>
-                        <RowDefinition Height="199.5"/>
-                        <RowDefinition Height="55"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <TextBlock Grid.Row="0" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Center">اطلاعات دانش آموز</TextBlock>
-                    <Border Margin="12 12 12 0" Grid.Row="1" CornerRadius="4" Background="#FFFFFF" >
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
-                        </Border.Effect>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="24"/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="63"/>
-                                        <ColumnDefinition Width="114"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/badge.png"/>
-                                    <TextBlock Width="59" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 47 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >اطلاعات شخصی</TextBlock>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کدملی:</TextBlock>
-                                    <TextBlock Name="NationalCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="2" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کددانش آموزی:</TextBlock>
-                                    <TextBlock Name="StudentCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="3" BorderBrush="#A5A5A5" >
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">بیماری خواص:</TextBlock>
-                                    <TextBlock Name="Bimary_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >بیماری گوارشی</TextBlock>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Border>
-
-                    <Border Margin="12 12 12 0" Grid.Row="2" CornerRadius="4" Background="#FFFFFF" >
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
-                        </Border.Effect>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="24"/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="93.5"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/cottage.png"/>
-                                    <TextBlock  Width="18" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 67.5 0" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >منزل</TextBlock>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">آدرس منزل:</TextBlock>
-                                    <TextBlock Name="HomeAddress_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >ایران-اصفهان-کاشان</TextBlock>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="2" >
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره تلفن منزل:</TextBlock>
-                                    <TextBlock Name="HomePhoneNumber_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Border>
-
-                    <Border Margin="12 12 12 0" Grid.Row="3" CornerRadius="4" Background="#FFFFFF" >
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
-                        </Border.Effect>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="24"/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="99"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/family_restroom.png"/>
-                                    <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 62 0" Width="29"  VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >خانواده</TextBlock>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">نام پدر:</TextBlock>
-                                    <TextBlock Name="FatherName_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >مجید</TextBlock>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="2" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل پدر:</TextBlock>
-                                    <TextBlock Name="FatherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >راننده ماشین سنگین</TextBlock>
-                                </Grid>
-                            </Border>
-
-                            <Border Grid.Row="3" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره پدر:</TextBlock>
-                                    <TextBlock Name="FatherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
-                                </Grid>
-                            </Border>
-
-
-                            <Border Grid.Row="4" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل مادر:</TextBlock>
-                                    <TextBlock Name="MotherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خانه دار</TextBlock>
-                                </Grid>
-                            </Border>
-
-
-                            <Border Grid.Row="5" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره مادر:</TextBlock>
-                                    <TextBlock Name="MotherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
-                                </Grid>
-                            </Border>
-
-
-
-                            <Border Grid.Row="6" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">جدایی والدین:</TextBlock>
-                                    <Image Name="LeftParent_Img" Grid.Column="1" Height="12" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 8 0" Source="/done.png" />
-                                </Grid>
-                            </Border>
-
-
-                            <Border Grid.Row="7" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">فوت والدین:</TextBlock>
-                                    <TextBlock Name="ParentDead_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خیر</TextBlock>
-                                </Grid>
-                            </Border>
-
-
-                            <Border Grid.Row="8">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Left" Margin="8 0 0 0" Grid.ColumnSpan="2" >بیماری خواص:</TextBlock>
-                                    <TextBlock Name="BimaryParent_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >سرطان مادر,سرطان پدر,مشکل قلبی</TextBlock>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Border>
-                    <Border Margin="12 12 12 0" Grid.Row="4" CornerRadius="4" Background="#FFFFFF" >
-                        <Border.Effect>
-                            <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
-                        </Border.Effect>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="24"/>
-                                <RowDefinition Height="20"/>
-                            </Grid.RowDefinitions>
-                            <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="112"/>
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/article.png"/>
-                                    <TextBlock Width="55" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 49 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman">سایر توضیحات</TextBlock>
-                                </Grid>
-                            </Border>
-                            <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
-                                <Grid>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">سایرتوضیحات:</TextBlock>
-                                    <TextBlock Name="OtherAbout_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >تحت پوشش کمیته امداد</TextBlock>
-                                </Grid>
-                            </Border>
-                        </Grid>
-                    </Border>
-                    <Border Grid.Row="5" VerticalAlignment="Center" Background="#D90000" HorizontalAlignment="Left" Margin="12 0 0 0" CornerRadius="4" Width="32" Height="28">
-                        <Button Name="Delete_Btn" Height="28" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
-                            <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
-                        </Button>
-                    </Border>
-                    <Border Grid.Row="5" CornerRadius="4" Height="28" Width="137" HorizontalAlignment="Right" Margin="12 0" Background="#7161EF">
-                        <Button Name="EditStudent_Btn" Padding="0" Height="28" Width="137" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
-                            <Grid Height="28" Width="137">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="90"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-
-                                <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="31 8 0 8">ویرایش اطلاعات</TextBlock>
-                                <Image Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4 8 0 8" Height="12" Width="12" Source="/Edit.png"/>
-                            </Grid>
-                        </Button>
-                    </Border>
-                </Grid>
-            </Border>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="68"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Border Grid.Row="0" Background="#FFFFFF" >
-                    <Border.Effect>
-                        <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.1"/>
-                    </Border.Effect>
+        <Grid>
+            <materialDesign:DialogHost Name="ShowDialog_DgHost">
+                
+            </materialDesign:DialogHost>
+            <Grid FlowDirection="RightToLeft">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="201px"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0" Background="#FFFFFF" BorderThickness="0 0 0.5 0" BorderBrush="#EAEAEA">
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="230"/>
-                            <ColumnDefinition Width="auto"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34"/>
+                            <RowDefinition Height="97"/>
+                            <RowDefinition Height="84.5"/>
+                            <RowDefinition Height="199.5"/>
+                            <RowDefinition Height="55"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                        <Grid Grid.Column="0">
-                            <Grid.Resources>
-                                <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="{x:Type Label}">
-                                                <Border Background="{TemplateBinding Background}" CornerRadius="4" HorizontalAlignment="Center" x:Name="border1">
-                                                    <Grid>
-                                                        <ContentPresenter/>
-                                                    </Grid>
-                                                </Border>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Style>
-                            </Grid.Resources>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Border x:Name="Profile_Border" Grid.Column="0" FlowDirection="LeftToRight" Margin="16 8 0 8" CornerRadius="50" Height="52" Width="52">
-                                <Border.Background>
-                                    <ImageBrush ImageSource="/UserDefualt.png"/>
-                                </Border.Background>
-                            </Border>
-                            <Grid Margin="8 0 0 0" Grid.Column="1">
+                        <TextBlock Grid.Row="0" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Center">اطلاعات دانش آموز</TextBlock>
+                        <Border Margin="12 12 12 0" Grid.Row="1" CornerRadius="4" Background="#FFFFFF" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
+                            </Border.Effect>
+                            <Grid>
                                 <Grid.RowDefinitions>
+                                    <RowDefinition Height="24"/>
+                                    <RowDefinition/>
                                     <RowDefinition/>
                                     <RowDefinition/>
                                 </Grid.RowDefinitions>
-                                <TextBlock x:Name="StudentFullName_TxtBlock" Height="17" VerticalAlignment="Top" Margin="0 11 0 0" Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="12"><Run Text="نام و نام خانوادگی"/></TextBlock>
-                                <Grid Grid.Row="1">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Label Height="19"  Grid.Column="1" Width="auto" Style="{StaticResource LabelStyle1}" Margin="8 0 0 0" x:Name="Reshteh_Lbl" FontSize="8" Background="#E3DFFC" Foreground="#7161EF" FontFamily="Anjoman" >
-                                        <TextBlock  x:Name="Reshte_TxtBlock" FontSize="8" FontFamily="Anjoman" Padding="6,3,6,6" ><Run Text="شبکه و نرم افزار"/></TextBlock>
-                                    </Label>
-                                    <Label Height="19"  Grid.Column="0" Width="auto" Style="{StaticResource LabelStyle1}"  x:Name="Payeh_Lbl" FontSize="8" Background="#E3DFFC" Foreground="#7161EF" FontFamily="Anjoman" >
-                                        <TextBlock  x:Name="Payeh_TxtBlock" FontSize="8"  FontFamily="Anjoman" Padding="6,3,6,6" ><Run Text="یازدهم"/></TextBlock>
-                                    </Label>
-                                </Grid>
+                                <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="63"/>
+                                            <ColumnDefinition Width="114"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/badge.png"/>
+                                        <TextBlock Width="59" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 47 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >اطلاعات شخصی</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کدملی:</TextBlock>
+                                        <TextBlock Name="NationalCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
+                                    </Grid>
+                                </Border>
 
+                                <Border Grid.Row="2" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کددانش آموزی:</TextBlock>
+                                        <TextBlock Name="StudentCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Row="3" BorderBrush="#A5A5A5" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">بیماری خواص:</TextBlock>
+                                        <TextBlock Name="Bimary_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >بیماری گوارشی</TextBlock>
+                                    </Grid>
+                                </Border>
                             </Grid>
-                        </Grid>
+                        </Border>
 
-                        <Grid Grid.Column="1" Width="222" Height="27" Margin="55 39 0 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="auto"/>
-                                <ColumnDefinition Width="13"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Button x:Name="GheybatTakhirSlider_Btn" Click="GheybatTakhirSlider_Btn_Click" Width="111" Height="27" Padding="0" Grid.Column="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
-                                <Grid >
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="24"/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0"  >
+                        <Border Margin="12 12 12 0" Grid.Row="2" CornerRadius="4" Background="#FFFFFF" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24"/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
+                                    <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="28"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="93.5"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/cottage.png"/>
+                                        <TextBlock  Width="18" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 67.5 0" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >منزل</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:Name="GheybatTakhirTabHeader_Img" Height="20" Width="20" Source="/GheybatTakhirIco(Purpple).png" Margin="0 0 8 0"/>
-                                        <TextBlock x:Name="GheybatTakhirTabHeader_TxtBlock" Grid.Column="1" FontFamily="Anjoman" FontSize="10" Foreground="#7161EF" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Text="غیبت ها و تاخیر ها"/></TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">آدرس منزل:</TextBlock>
+                                        <TextBlock Name="HomeAddress_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >ایران-اصفهان-کاشان</TextBlock>
                                     </Grid>
-                                    <Image x:Name="GheybatTakhirTabBorder_Img" Grid.Row="1" Height="3" Width="103" Source="/Border(Purpple).png" Margin="0 0 8 0"/>
-                                </Grid>
-                            </Button>
+                                </Border>
 
-                            <Button x:Name="EnzebatiSlider_Btn" Click="EnzebatiSlider_Btn_Click" Grid.Column="2" Height="27" Padding="0"  Style="{StaticResource MaterialDesignFlatAccentButton}">
-                                <Grid >
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="24"/>
-                                        <RowDefinition/>
-                                    </Grid.RowDefinitions>
-                                    <Grid Grid.Row="0" FlowDirection="RightToLeft">
+                                <Border Grid.Row="2" >
+                                    <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="28"/>
+                                            <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image x:Name="EnzebatiTabHeader_Img" Height="20" Width="20" Source="/EnzebatiIco(Black).png" Margin="0 0 8 0"/>
-                                        <TextBlock x:Name="EnzebatiTabHeader_TxtBlock" Grid.Column="1" FontFamily="Anjoman" FontSize="10" Foreground="#1D1D1D" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Text="موارد انضباطی"/></TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره تلفن منزل:</TextBlock>
+                                        <TextBlock Name="HomePhoneNumber_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
                                     </Grid>
-                                    <Image x:Name="EnzebatiTabBorder_Img" Grid.Row="1" Height="3" Width="87"  Margin="0 0 4 0" />
+                                </Border>
+                            </Grid>
+                        </Border>
+
+                        <Border Margin="12 12 12 0" Grid.Row="3" CornerRadius="4" Background="#FFFFFF" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24"/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="99"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/family_restroom.png"/>
+                                        <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 62 0" Width="29"  VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >خانواده</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">نام پدر:</TextBlock>
+                                        <TextBlock Name="FatherName_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >مجید</TextBlock>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Row="2" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل پدر:</TextBlock>
+                                        <TextBlock Name="FatherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >راننده ماشین سنگین</TextBlock>
+                                    </Grid>
+                                </Border>
+
+                                <Border Grid.Row="3" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره پدر:</TextBlock>
+                                        <TextBlock Name="FatherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
+                                    </Grid>
+                                </Border>
+
+
+                                <Border Grid.Row="4" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل مادر:</TextBlock>
+                                        <TextBlock Name="MotherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خانه دار</TextBlock>
+                                    </Grid>
+                                </Border>
+
+
+                                <Border Grid.Row="5" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره مادر:</TextBlock>
+                                        <TextBlock Name="MotherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
+                                    </Grid>
+                                </Border>
+
+
+
+                                <Border Grid.Row="6" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">جدایی والدین:</TextBlock>
+                                        <Image Name="LeftParent_Img" Grid.Column="1" Height="12" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 8 0" Source="/done.png" />
+                                    </Grid>
+                                </Border>
+
+
+                                <Border Grid.Row="7" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">فوت والدین:</TextBlock>
+                                        <TextBlock Name="ParentDead_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خیر</TextBlock>
+                                    </Grid>
+                                </Border>
+
+
+                                <Border Grid.Row="8">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Left" Margin="8 0 0 0" Grid.ColumnSpan="2" >بیماری خواص:</TextBlock>
+                                        <TextBlock Name="BimaryParent_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >سرطان مادر,سرطان پدر,مشکل قلبی</TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <Border Margin="12 12 12 0" Grid.Row="4" CornerRadius="4" Background="#FFFFFF" >
+                            <Border.Effect>
+                                <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
+                            </Border.Effect>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="24"/>
+                                    <RowDefinition Height="20"/>
+                                </Grid.RowDefinitions>
+                                <Border Grid.Row="0" CornerRadius="4 4 0 0" Background="#EAEAEA">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="112"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/article.png"/>
+                                        <TextBlock Width="55" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 49 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman">سایر توضیحات</TextBlock>
+                                    </Grid>
+                                </Border>
+                                <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">سایرتوضیحات:</TextBlock>
+                                        <TextBlock Name="OtherAbout_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >تحت پوشش کمیته امداد</TextBlock>
+                                    </Grid>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <Border Grid.Row="5" VerticalAlignment="Center" Background="#D90000" HorizontalAlignment="Left" Margin="12 0 0 0" CornerRadius="4" Width="32" Height="28">
+                            <Button Name="Delete_Btn" Height="28" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Click="Delete_Btn_Click">
+                                <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
+                            </Button>
+                        </Border>
+                        <Border Grid.Row="5" CornerRadius="4" Height="28" Width="137" HorizontalAlignment="Right" Margin="12 0" Background="#7161EF">
+                            <Button Name="EditStudent_Btn" Padding="0" Height="28" Width="137" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
+                                <Grid Height="28" Width="137">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="31 8 0 8">ویرایش اطلاعات</TextBlock>
+                                    <Image Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4 8 0 8" Height="12" Width="12" Source="/Edit.png"/>
                                 </Grid>
                             </Button>
-
-
-                        </Grid>
-                        <Border Grid.Column="2" Height="28" Width="81" HorizontalAlignment="Right" CornerRadius="4" Background="#7161EF" Margin="0 0 70 0" >
-                            <Button Height="28" Padding="0" Width="81" Style="{StaticResource MaterialDesignFlatAccentButton}">
-                                <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="57"/>
-                                    <ColumnDefinition Width="24"/>
-                                </Grid.ColumnDefinitions>
-                                <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right">مشاهده نمره</TextBlock>
-                                <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Source="/ShowScore.png" Margin="4 0 0 0"></Image>
-                            </Grid> 
-                            </Button>
-                           
-                            
                         </Border>
                     </Grid>
                 </Border>
-                <Grid Grid.Row="1">
-                    <Grid x:Name="GheybatTakhir_Grid"  Visibility="Visible">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="57"/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Border  CornerRadius="4" Height="31" Width="298.5" Background="#FFFFFF"  Padding="2px, 4px, 2px, 4px" VerticalAlignment="Bottom">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" />
-                            </Border.Effect>
-                            <Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="68"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="#FFFFFF" >
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="10" ShadowDepth="5" Opacity="0.1"/>
+                        </Border.Effect>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="230"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid Grid.Column="0">
+                                <Grid.Resources>
+                                    <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Label}">
+                                                    <Border Background="{TemplateBinding Background}" CornerRadius="4" HorizontalAlignment="Center" x:Name="border1">
+                                                        <Grid>
+                                                            <ContentPresenter/>
+                                                        </Grid>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Grid.Resources>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="143.5"/>
-                                    <ColumnDefinition Width="143.5"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="auto"/>
                                 </Grid.ColumnDefinitions>
-                                <Border x:Name="BorderBtnTakhir" Grid.Column="0" Background="#FFFFFF"  CornerRadius="4" Margin="2,0,143,0" Grid.ColumnSpan="2">
-                                    <Button x:Name="Takhir_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}"  Click="Takhir_Btn_Click" Background="#FFFFFF"  BorderBrush="White" Height="20" Width="136">
-                                        <StackPanel>
-                                            <!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>-->
-                                            <TextBlock x:Name="TakhirBtn_TextBlock" Text="تاخیر" FontFamily="Anjoman" FontSize="9" Foreground="#1D1D1D" FontWeight="Medium"/>
-                                        </StackPanel>
-                                    </Button>
+                                <Border x:Name="Profile_Border" Grid.Column="0" FlowDirection="LeftToRight" Margin="16 8 0 8" CornerRadius="50" Height="52" Width="52">
+                                    <Border.Background>
+                                        <ImageBrush ImageSource="/UserDefualt.png"/>
+                                    </Border.Background>
                                 </Border>
+                                <Grid Margin="8 0 0 0" Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock x:Name="StudentFullName_TxtBlock" Height="17" VerticalAlignment="Top" Margin="0 11 0 0" Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="12"><Run Text="نام و نام خانوادگی"/></TextBlock>
+                                    <Grid Grid.Row="1">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Height="19"  Grid.Column="1" Width="auto" Style="{StaticResource LabelStyle1}" Margin="8 0 0 0" x:Name="Reshteh_Lbl" FontSize="8" Background="#E3DFFC" Foreground="#7161EF" FontFamily="Anjoman" >
+                                            <TextBlock  x:Name="Reshte_TxtBlock" FontSize="8" FontFamily="Anjoman" Padding="6,3,6,6" ><Run Text="شبکه و نرم افزار"/></TextBlock>
+                                        </Label>
+                                        <Label Height="19"  Grid.Column="0" Width="auto" Style="{StaticResource LabelStyle1}"  x:Name="Payeh_Lbl" FontSize="8" Background="#E3DFFC" Foreground="#7161EF" FontFamily="Anjoman" >
+                                            <TextBlock  x:Name="Payeh_TxtBlock" FontSize="8"  FontFamily="Anjoman" Padding="6,3,6,6" ><Run Text="یازدهم"/></TextBlock>
+                                        </Label>
+                                    </Grid>
 
-                                <Border x:Name="BorderBtnGheybat" Grid.Column="1" Background="#E3DFFC"  Width="143.5" BorderThickness="0" CornerRadius="4" Margin="5,0,-5,0">
-                                    <Button  x:Name="Gheybat_Btn" Click="BtnGheybat_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#E3DFFC"  BorderBrush="Transparent" BorderThickness="0" Height="20" Width="140">
-                                        <Grid  Height="20" Width="140" Margin="-16 -4 0 0">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="auto"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <TextBlock x:Name="GheybatBtn_TextBlock" Text="غیبت" Grid.Row="1" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#7161EF" FontFamily="Anjoman"/>
-                                        </Grid>
-                                    </Button>
-                                </Border>
+                                </Grid>
                             </Grid>
-                        </Border>
-                        <ScrollViewer Name="Takhir_Scroll" Grid.Row="1" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                            <StackPanel  Name="Takhir_StckPnl" >
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                            </StackPanel>
 
-                        </ScrollViewer>
-
-                        <ScrollViewer Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
-                            <StackPanel Name="Gheybat_StckPnl"  >
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-
-                            </StackPanel>
-
-                        </ScrollViewer>
-
-                    </Grid>
-                    <Grid x:Name="Enzebati_Grid" Visibility="Hidden">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="57"/>
-                            <RowDefinition Height="80"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Border  CornerRadius="4" Height="31" Width="298.5" Background="#FFFFFF"  Padding="2px, 4px, 2px, 4px" VerticalAlignment="Bottom">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" />
-                            </Border.Effect>
-                            <Grid>
+                            <Grid Grid.Column="1" Width="222" Height="27" Margin="55 39 0 0">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="143.5"/>
-                                    <ColumnDefinition Width="143.5"/>
-                                </Grid.ColumnDefinitions>
-                                <Border x:Name="BorderBtnTazakor" Grid.Column="0" Background="#E3DFFC"  CornerRadius="4" Margin="2,0,143,0" Grid.ColumnSpan="2">
-                                    <Button x:Name="Tazakor_Btn" Click="Tazakor_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#E3DFFC"  BorderBrush="White" Height="20" Width="136">
-                                        <StackPanel>
-                                            <!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>-->
-                                            <TextBlock x:Name="TazakorBtn_TextBlock" Text="تذکر" FontFamily="Anjoman" FontSize="9" Foreground="#7161EF" FontWeight="Medium"/>
-                                        </StackPanel>
-                                    </Button>
-                                </Border>
-
-                                <Border x:Name="BorderBtnTashvigh" Grid.Column="1" Background="#FFFFFF"  Width="143.5" BorderThickness="0" CornerRadius="4" Margin="5,0,-5,0">
-                                    <Button x:Name="Tashvigh_Btn" Click="Tashvigh_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#FFFFFF"  BorderBrush="Transparent" BorderThickness="0" Height="20" Width="140">
-                                        <Grid  Height="20" Width="140" Margin="-16 -4 0 0">
-                                            <Grid.RowDefinitions>
-                                                <RowDefinition Height="auto"/>
-                                                <RowDefinition Height="*"/>
-                                            </Grid.RowDefinitions>
-                                            <TextBlock x:Name="TashvighBtn_TextBlock" Text="تشویق" Grid.Row="1" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#1D1D1D" FontFamily="Anjoman"/>
-                                        </Grid>
-                                    </Button>
-                                </Border>
-                            </Grid>
-                        </Border>
-
-                        <Border x:Name="AddTazakor_Border" Visibility="Visible"  Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="631.5">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
-                            </Border.Effect>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition Height="32"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="65"/>
-                                    <ColumnDefinition Width="156.83"/>
-                                    <ColumnDefinition Width="156.83"/>
-                                    <ColumnDefinition Width="156.83"/>
+                                    <ColumnDefinition Width="auto"/>
+                                    <ColumnDefinition Width="13"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
+                                <Button x:Name="GheybatTakhirSlider_Btn" Click="GheybatTakhirSlider_Btn_Click" Width="111" Height="27" Padding="0" Grid.Column="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="24"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0"  >
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="28"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image x:Name="GheybatTakhirTabHeader_Img" Height="20" Width="20" Source="/GheybatTakhirIco(Purpple).png" Margin="0 0 8 0"/>
+                                            <TextBlock x:Name="GheybatTakhirTabHeader_TxtBlock" Grid.Column="1" FontFamily="Anjoman" FontSize="10" Foreground="#7161EF" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Text="غیبت ها و تاخیر ها"/></TextBlock>
+                                        </Grid>
+                                        <Image x:Name="GheybatTakhirTabBorder_Img" Grid.Row="1" Height="3" Width="103" Source="/Border(Purpple).png" Margin="0 0 8 0"/>
+                                    </Grid>
+                                </Button>
 
-                                <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
-                                    <materialDesign:PopupBox
+                                <Button x:Name="EnzebatiSlider_Btn" Click="EnzebatiSlider_Btn_Click" Grid.Column="2" Height="27" Padding="0"  Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                    <Grid >
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="24"/>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        <Grid Grid.Row="0" FlowDirection="RightToLeft">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="28"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Image x:Name="EnzebatiTabHeader_Img" Height="20" Width="20" Source="/EnzebatiIco(Black).png" Margin="0 0 8 0"/>
+                                            <TextBlock x:Name="EnzebatiTabHeader_TxtBlock" Grid.Column="1" FontFamily="Anjoman" FontSize="10" Foreground="#1D1D1D" VerticalAlignment="Center" HorizontalAlignment="Left"><Run Text="موارد انضباطی"/></TextBlock>
+                                        </Grid>
+                                        <Image x:Name="EnzebatiTabBorder_Img" Grid.Row="1" Height="3" Width="87"  Margin="0 0 4 0" />
+                                    </Grid>
+                                </Button>
+
+
+                            </Grid>
+                            <Border Grid.Column="2" Height="28" Width="81" HorizontalAlignment="Right" CornerRadius="4" Background="#7161EF" Margin="0 0 70 0" >
+                                <Button Height="28" Padding="0" Width="81" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="57"/>
+                                            <ColumnDefinition Width="24"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right">مشاهده نمره</TextBlock>
+                                        <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Source="/ShowScore.png" Margin="4 0 0 0"></Image>
+                                    </Grid>
+                                </Button>
+
+
+                            </Border>
+                        </Grid>
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <Grid x:Name="GheybatTakhir_Grid"  Visibility="Visible">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="57"/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Border  CornerRadius="4" Height="31" Width="298.5" Background="#FFFFFF"  Padding="2px, 4px, 2px, 4px" VerticalAlignment="Bottom">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="143.5"/>
+                                        <ColumnDefinition Width="143.5"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BorderBtnTakhir" Grid.Column="0" Background="#FFFFFF"  CornerRadius="4" Margin="2,0,143,0" Grid.ColumnSpan="2">
+                                        <Button x:Name="Takhir_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}"  Click="Takhir_Btn_Click" Background="#FFFFFF"  BorderBrush="White" Height="20" Width="136">
+                                            <StackPanel>
+                                                <!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>-->
+                                                <TextBlock x:Name="TakhirBtn_TextBlock" Text="تاخیر" FontFamily="Anjoman" FontSize="9" Foreground="#1D1D1D" FontWeight="Medium"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+
+                                    <Border x:Name="BorderBtnGheybat" Grid.Column="1" Background="#E3DFFC"  Width="143.5" BorderThickness="0" CornerRadius="4" Margin="5,0,-5,0">
+                                        <Button  x:Name="Gheybat_Btn" Click="BtnGheybat_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#E3DFFC"  BorderBrush="Transparent" BorderThickness="0" Height="20" Width="140">
+                                            <Grid  Height="20" Width="140" Margin="-16 -4 0 0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock x:Name="GheybatBtn_TextBlock" Text="غیبت" Grid.Row="1" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#7161EF" FontFamily="Anjoman"/>
+                                            </Grid>
+                                        </Button>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ScrollViewer Name="Takhir_Scroll" Grid.Row="1" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                                <StackPanel  Name="Takhir_StckPnl" >
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
+                                </StackPanel>
+
+                            </ScrollViewer>
+
+                            <ScrollViewer Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
+                                <StackPanel Name="Gheybat_StckPnl"  >
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
+
+                                </StackPanel>
+
+                            </ScrollViewer>
+
+                        </Grid>
+                        <Grid x:Name="Enzebati_Grid" Visibility="Hidden">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="57"/>
+                                <RowDefinition Height="80"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Border  CornerRadius="4" Height="31" Width="298.5" Background="#FFFFFF"  Padding="2px, 4px, 2px, 4px" VerticalAlignment="Bottom">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="10" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="143.5"/>
+                                        <ColumnDefinition Width="143.5"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border x:Name="BorderBtnTazakor" Grid.Column="0" Background="#E3DFFC"  CornerRadius="4" Margin="2,0,143,0" Grid.ColumnSpan="2">
+                                        <Button x:Name="Tazakor_Btn" Click="Tazakor_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#E3DFFC"  BorderBrush="White" Height="20" Width="136">
+                                            <StackPanel>
+                                                <!--<Image Source="/FormComponent;component/Bounding box (2).png" Height="12" Width="12" Stretch="Fill"/>-->
+                                                <TextBlock x:Name="TazakorBtn_TextBlock" Text="تذکر" FontFamily="Anjoman" FontSize="9" Foreground="#7161EF" FontWeight="Medium"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </Border>
+
+                                    <Border x:Name="BorderBtnTashvigh" Grid.Column="1" Background="#FFFFFF"  Width="143.5" BorderThickness="0" CornerRadius="4" Margin="5,0,-5,0">
+                                        <Button x:Name="Tashvigh_Btn" Click="Tashvigh_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#FFFFFF"  BorderBrush="Transparent" BorderThickness="0" Height="20" Width="140">
+                                            <Grid  Height="20" Width="140" Margin="-16 -4 0 0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="auto"/>
+                                                    <RowDefinition Height="*"/>
+                                                </Grid.RowDefinitions>
+                                                <TextBlock x:Name="TashvighBtn_TextBlock" Text="تشویق" Grid.Row="1" FontSize="9" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#1D1D1D" FontFamily="Anjoman"/>
+                                            </Grid>
+                                        </Button>
+                                    </Border>
+                                </Grid>
+                            </Border>
+
+                            <Border x:Name="AddTazakor_Border" Visibility="Visible"  Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="631.5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition Height="32"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65"/>
+                                        <ColumnDefinition Width="156.83"/>
+                                        <ColumnDefinition Width="156.83"/>
+                                        <ColumnDefinition Width="156.83"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
+                                        <materialDesign:PopupBox
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
             PlacementMode="BottomAndAlignCentres">
-                                        <materialDesign:PopupBox.ToggleContent>
-                                            <Grid   FlowDirection="RightToLeft">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="30"/>
-                                                    <ColumnDefinition Width ="27"/>
-                                                </Grid.ColumnDefinitions>
+                                            <materialDesign:PopupBox.ToggleContent>
+                                                <Grid   FlowDirection="RightToLeft">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width ="27"/>
+                                                    </Grid.ColumnDefinitions>
 
 
-                                                <TextBlock x:Name="ShowDate_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
+                                                    <TextBlock x:Name="ShowDate_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
 
-                                                <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
+                                                    <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
 
-                                            </Grid>
-                                        </materialDesign:PopupBox.ToggleContent>
-                                        <StackPanel>
-                                            <Calendar
+                                                </Grid>
+                                            </materialDesign:PopupBox.ToggleContent>
+                                            <StackPanel>
+                                                <Calendar
                                                     FirstDayOfWeek="Saturday"
                                                 Language="fa-IR"
                                                 FlowDirection="RightToLeft"
@@ -578,85 +582,85 @@
                                     SelectedDatesChanged="calendar_SelectedDatesChanged"
                     SelectionMode="SingleDate"
                     x:Name="calendar"/>
-                                        </StackPanel>
-                                    </materialDesign:PopupBox>
-                                </Border>
-                                <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تذکر"/></TextBlock>
+                                            </StackPanel>
+                                        </materialDesign:PopupBox>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تذکر"/></TextBlock>
 
-                                <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="ElatTazakor_Txt" BorderThickness="0"  Padding="5 0 5 0" />
-                                </Border>
+                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <TextBox x:Name="ElatTazakor_Txt" BorderThickness="0"  Padding="5 0 5 0" />
+                                    </Border>
 
-                                <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
-                                <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5 0 5 0"  />
-                                </Border>
+                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <TextBox x:Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5 0 5 0"  />
+                                    </Border>
 
-                                <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تذکر"/></TextBlock>
+                                    <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تذکر"/></TextBlock>
 
-                                <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <ComboBox x:Name="TypeTazakor_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
-                                </Border>
+                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <ComboBox x:Name="TypeTazakor_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
+                                    </Border>
 
-                                <Border Background="#7161EF" Width="76" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
-                                    <Button x:Name="AddTazakor_Btn" Padding="0" Width="74" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="52"/>
-                                                <ColumnDefinition Width="24"/>
-                                            </Grid.ColumnDefinitions>
+                                    <Border Background="#7161EF" Width="76" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
+                                        <Button x:Name="AddTazakor_Btn" Padding="0" Width="74" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="52"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                </Grid.ColumnDefinitions>
 
-                                            <TextBlock Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" HorizontalAlignment="Right"><Run Text="افزودن تذکر"/></TextBlock>
-                                            <Image Grid.Column="1" Margin="0 0 4 0" Height="12" Width="12" Source="/add (1).png"/>
-                                        </Grid>
+                                                <TextBlock Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" HorizontalAlignment="Right"><Run Text="افزودن تذکر"/></TextBlock>
+                                                <Image Grid.Column="1" Margin="0 0 4 0" Height="12" Width="12" Source="/add (1).png"/>
+                                            </Grid>
 
-                                    </Button>
-                                </Border>
-                            </Grid>
+                                        </Button>
+                                    </Border>
+                                </Grid>
 
-                        </Border>
+                            </Border>
 
-                        <Border x:Name="AddTashvigh_Border"  Visibility="Hidden" Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="631.5">
-                            <Border.Effect>
-                                <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
-                            </Border.Effect>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition />
-                                    <RowDefinition Height="32"/>
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="65"/>
-                                    <ColumnDefinition Width="153.83"/>
-                                    <ColumnDefinition Width="153.83"/>
-                                    <ColumnDefinition Width="153.83"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
+                            <Border x:Name="AddTashvigh_Border"  Visibility="Hidden" Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="631.5">
+                                <Border.Effect>
+                                    <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition Height="32"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="65"/>
+                                        <ColumnDefinition Width="153.83"/>
+                                        <ColumnDefinition Width="153.83"/>
+                                        <ColumnDefinition Width="153.83"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
 
 
-                                <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
-                                    <materialDesign:PopupBox
+                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
+                                        <materialDesign:PopupBox
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
             PlacementMode="BottomAndAlignCentres">
-                                        <materialDesign:PopupBox.ToggleContent>
-                                            <Grid   FlowDirection="RightToLeft">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="30"/>
-                                                    <ColumnDefinition Width ="27"/>
-                                                </Grid.ColumnDefinitions>
+                                            <materialDesign:PopupBox.ToggleContent>
+                                                <Grid   FlowDirection="RightToLeft">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="30"/>
+                                                        <ColumnDefinition Width ="27"/>
+                                                    </Grid.ColumnDefinitions>
 
 
-                                                <TextBlock x:Name="ShowDate1_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
+                                                    <TextBlock x:Name="ShowDate1_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
 
-                                                <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
+                                                    <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
 
-                                            </Grid>
-                                        </materialDesign:PopupBox.ToggleContent>
-                                        <StackPanel>
-                                            <Calendar
+                                                </Grid>
+                                            </materialDesign:PopupBox.ToggleContent>
+                                            <StackPanel>
+                                                <Calendar
                                                 FirstDayOfWeek="Saturday"
                                                 Language="fa-IR"
                                                 FlowDirection="RightToLeft"
@@ -667,71 +671,73 @@
                                     SelectedDatesChanged="calendar1_SelectedDatesChanged"
                     SelectionMode="SingleDate"
                     x:Name="calendar1"/>
-                                        </StackPanel>
-                                    </materialDesign:PopupBox>
-                                </Border>
-                                <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تشویق"/></TextBlock>
+                                            </StackPanel>
+                                        </materialDesign:PopupBox>
+                                    </Border>
+                                    <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تشویق"/></TextBlock>
 
-                                <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  />
-                                </Border>
+                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <TextBox x:Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  />
+                                    </Border>
 
-                                <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
+                                    <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
-                                <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <TextBox x:Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0" />
-                                </Border>
+                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <TextBox x:Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0" />
+                                    </Border>
 
-                                <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تشویق"/></TextBlock>
+                                    <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تشویق"/></TextBlock>
 
-                                <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                                    <ComboBox x:Name="TypeTashvigh_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
-                                </Border>
+                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                        <ComboBox x:Name="TypeTashvigh_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
+                                    </Border>
 
-                                <Border Background="#7161EF" Width="85" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
-                                    <Button x:Name="AddTashvigh_Btn" Padding="0" Width="83" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
-                                        <Grid>
-                                            <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="61"/>
-                                                <ColumnDefinition Width="24"/>
-                                            </Grid.ColumnDefinitions>
+                                    <Border Background="#7161EF" Width="85" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
+                                        <Button x:Name="AddTashvigh_Btn" Padding="0" Width="83" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="61"/>
+                                                    <ColumnDefinition Width="24"/>
+                                                </Grid.ColumnDefinitions>
 
-                                            <TextBlock Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" HorizontalAlignment="Right"><Run Text="افزودن تشویق"/></TextBlock>
-                                            <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Margin="4 1 0 0" Source="/add (1).png"/>
-                                        </Grid>
+                                                <TextBlock Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" HorizontalAlignment="Right"><Run Text="افزودن تشویق"/></TextBlock>
+                                                <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Margin="4 1 0 0" Source="/add (1).png"/>
+                                            </Grid>
 
-                                    </Button>
-                                </Border>
-                            </Grid>
-                        </Border>
-                        <ScrollViewer x:Name="Tazakor_Scroll" Grid.Row="2"  VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                            <StackPanel x:Name="Tazakor_StckPnl">
+                                        </Button>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                            <ScrollViewer x:Name="Tazakor_Scroll" Grid.Row="2"  VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                                <StackPanel x:Name="Tazakor_StckPnl">
 
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                                <FormComponent:StudentTazakorComponent1/>
-                            </StackPanel>
-                        </ScrollViewer>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                    <FormComponent:StudentTazakorComponent1/>
+                                </StackPanel>
+                            </ScrollViewer>
 
-                        <ScrollViewer x:Name="Tashvigh_Scroll" Grid.Row="2" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                            <StackPanel x:Name="Tashvigh_StckPnl" >
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                                <FormComponent:StudentTashvighComponent/>
-                            </StackPanel>
-                        </ScrollViewer>
+                            <ScrollViewer x:Name="Tashvigh_Scroll" Grid.Row="2" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                                <StackPanel x:Name="Tashvigh_StckPnl" >
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                    <FormComponent:StudentTashvighComponent/>
+                                </StackPanel>
+                            </ScrollViewer>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
         </Grid>
+
     </Border>
 </Window>

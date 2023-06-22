@@ -29,6 +29,7 @@ namespace FormComponent
             InitializeComponent();
         }
         byte step = 1;
+        public bool Inserted { get; set; }
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -36,10 +37,6 @@ namespace FormComponent
 
         private void NextStep_Btn_Click(object sender, RoutedEventArgs e)
         {
-            
-               
-            
-           
                 if (step + 1 <= 4 && step + 1 >= 0)
                 {
                     step++;
@@ -83,16 +80,21 @@ namespace FormComponent
                 student.StudentScore = 20;
 
                 var result = Bll.Student.Insert(student);
-                MessageBox.Show(result.Message);
+                
+                
                 if (result.Success == true)
                 {
-                 
+                    Inserted = true;
                     Step1.Registered();
               
                     Step2.Registered();
                     Step3.Registered();
                     step = 0;
                     NextStep_Btn_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show(result.Message);
                 }
             }
             

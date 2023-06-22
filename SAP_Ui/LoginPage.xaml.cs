@@ -26,7 +26,7 @@ namespace SAP_Ui
         {
             InitializeComponent();
         }
-        bool ShowPass = false;
+
         public void RemoveText(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;

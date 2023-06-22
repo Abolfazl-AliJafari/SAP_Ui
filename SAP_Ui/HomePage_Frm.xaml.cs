@@ -202,6 +202,16 @@ namespace SAP_Ui
             }
         }
 
+        private void Refresh ()
+        {
+            SudentCard_WrpPnl.Children.Clear();
+            var result = Bll.Student.Select();
+            foreach (var student in result.Data)
+            {
+                SudentCard_WrpPnl.Children.Add(new StudentCards(student) { Height = 185, Width = 161.5 });
+            }
+        }
+
         private  void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Shabake = "";
@@ -210,11 +220,7 @@ namespace SAP_Ui
             Yazdahom = "";
             Davazdahom= "";
             DateHome_TxtBlock.Text = ConvertDate.MiladiToShamsiWithMonthName(DateTime.Now);
-            var result = Bll.Student.Select();
-            foreach(var student in result.Data)
-            {
-                SudentCard_WrpPnl.Children.Add(new StudentCards(student) { Height = 185 ,Width = 161.5 });
-            }
+            Refresh();
         }
 
         private void GheybatTakhirAdd_Btn_Click(object sender, RoutedEventArgs e)
@@ -227,13 +233,16 @@ namespace SAP_Ui
 
         private  void Import_Btn_Click(object sender, RoutedEventArgs e)
         {
-            new StudentInfo().ShowDialog();
         }
 
-        private void AddStudent_Btn_Click(object sender, RoutedEventArgs e)
+        private async void AddStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
-            DialogGheybat.ShowDialog(new RegisterStudentForm());
-
+            RegisterStudentForm registerStudent = new RegisterStudentForm();
+            await DialogGheybat.ShowDialog(registerStudent);
+            if (registerStudent.Inserted)
+            {
+                Refresh();
+            }
         }
 
         private void DeleteStudent_Btn_Click(object sender, RoutedEventArgs e)
@@ -291,6 +300,34 @@ namespace SAP_Ui
         private void DahomChckBox_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void SubmitDelete_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            List<Student_Tbl> students= new List<Student_Tbl>();
+            foreach (StudentCards studentCard in SudentCard_WrpPnl.Children)
+            {
+                if (studentCard.StudentSelect_ChckBox.IsChecked == true)
+                {
+                    students.Add(studentCard.student);
+                }
+            }
+
+            SubmitDelete submitDelete = new SubmitDelete("از حذف دانش آموزان مطمئن هستید؟", students) { Height = 90, Width = 299 };
+            await DialogGheybat.ShowDialog(submitDelete);
+            if (submitDelete.CloseOrOpen)
+            {
+                if (submitDelete.Result)
+                {
+                    Refresh();
+                    deletepnl_Grid.Visibility = Visibility.Hidden;
+                    DeleteReady = false;
+                }
+                else
+                {
+                    MessageBox.Show("حذف موفقیت آمیز نبود");
+                }
+            }
         }
     }
 }

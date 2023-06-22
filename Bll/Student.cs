@@ -134,27 +134,38 @@ namespace Bll
                 return new OperationResult<List<Student_Tbl>>
                 {
                     Success = false,
-                    Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
+                    Message = "خطایی رخ داده لطفا  تماس فرماید"
                 };
             }
         }
-        public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom)
+        //public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom)
+        //{
+        //    var query = DataAccessLayer.Student.SelectFilter(dahom, yazdahom, davazdahom);
+        //    if (query.Success == true)
+        //    {
+        //        return query;
+        //    }
+        //    else
+        //    {
+        //        return new OperationResult<List<Student_Tbl>>
+        //        {
+        //            Success = false,
+        //            Message = "خطایی رخ داده لطفا  تماس فرماید"
+        //        };
+        //    }
+
+
+        //}
+        public static OperationResult Delete(Student_Tbl student)
         {
-            var query = DataAccessLayer.Student.SelectFilter(dahom, yazdahom, davazdahom);
-            if (query.Success == true)
-            {
-                return query;
-            }
-            else
-            {
-                return new OperationResult<List<Student_Tbl>>
-                {
-                    Success = false,
-                    Message = "خطایی رخ داده لطفا با جعفر تماس فرماید"
-                };
-            }
+            var result = DataAccessLayer.Student.Delete(student);
+            return result;
+        }
 
-
+        public static OperationResult DeleteStudents(List<Student_Tbl> students)
+        {
+            var result = DataAccessLayer.Student.DeleteStudents(students);
+            return result;
         }
     }
 }

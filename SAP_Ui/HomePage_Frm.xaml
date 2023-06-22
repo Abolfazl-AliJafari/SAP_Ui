@@ -101,15 +101,14 @@
                     </Grid>
 
                 </Border>
-
                 <Grid Grid.Row="1" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="148"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Background="#FAFAFA" Name="ShowMavaredEnzebati_Grid" Visibility="Hidden">
-                        <Button Name="GoHome_Btn" Click="GoHome_Btn_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 16 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Padding="0"> 
+                    <Grid Background="#FAFAFA" x:Name="ShowMavaredEnzebati_Grid" Visibility="Hidden">
+                        <Button x:Name="GoHome_Btn" Click="GoHome_Btn_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 16 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Padding="0">
                             <Image Height="24" Width="24" Source="/GoBack.png"/>
                         </Button>
                         <Grid Width="480">
@@ -132,40 +131,40 @@
                                         <ColumnDefinition Width="130"/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
-                                    <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="29">نام رفتار</TextBlock>
-                                    <TextBlock Grid.Column="1" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="31">نوع رفتار</TextBlock>
-                                    <TextBlock Grid.Column="2" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="17">نمره</TextBlock>
+                                    <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="29"><Run Text="نام رفتار"/></TextBlock>
+                                    <TextBlock Grid.Column="1" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="31"><Run Text="نوع رفتار"/></TextBlock>
+                                    <TextBlock Grid.Column="2" FontSize="9" FontFamily="Anjoman" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,0" Width="17"><Run Text="نمره"/></TextBlock>
 
                                     <Border Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
-                                        <TextBox Name="MoredName_Txt" Padding="5 0 5 0" FontSize="9" Foreground="#000000" BorderThickness="0"/>
+                                        <TextBox x:Name="MoredName_Txt" Padding="5 0 5 0" FontSize="9" Foreground="#000000" BorderThickness="0"/>
                                     </Border>
                                     <Border Grid.Column="1" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
-                                        <ComboBox Name="MoredType_CmBox" Padding="5 0 5 0" VerticalContentAlignment="Center" Height="24" FontSize="9" Foreground="#000000"  BorderThickness="0">
-                                            <ComboBoxItem>تاخیر</ComboBoxItem>
-                                            <ComboBoxItem>غیبت</ComboBoxItem>
-                                            <ComboBoxItem>تشویق</ComboBoxItem>
-                                            <ComboBoxItem>تذکر</ComboBoxItem>
+                                        <ComboBox x:Name="MoredType_CmBox" Padding="5 0 5 0" VerticalContentAlignment="Center" Height="24" FontSize="9" Foreground="#000000"  BorderThickness="0">
+                                            <ComboBoxItem Content="تاخیر"/>
+                                            <ComboBoxItem Content="غیبت"/>
+                                            <ComboBoxItem Content="تشویق"/>
+                                            <ComboBoxItem Content="تذکر"/>
                                         </ComboBox>
                                     </Border>
                                     <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
-                                        <TextBox Name="MoredScore_CmBox" Padding="5 0 5 0" Height="24"  FontSize="9" Foreground="#000000" BorderThickness="0"/>
+                                        <TextBox x:Name="MoredScore_CmBox" Padding="5 0 5 0" Height="24"  FontSize="9" Foreground="#000000" BorderThickness="0"/>
                                     </Border>
                                     <Border Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Background="#7161EF" Height="28" Width="58" CornerRadius="4" >
-                                        <Button Name="AddMored_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Height="26" Width="56" Padding="0">
+                                        <Button x:Name="AddMored_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Height="26" Width="56" Padding="0">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="34"/>
                                                     <ColumnDefinition Width="24"/>
                                                 </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Column="0" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Right">افزودن</TextBlock>
+                                                <TextBlock Grid.Column="0" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Right"><Run Text="افزودن"/></TextBlock>
                                                 <Image Grid.Column="1" Height="12" Width="12" Source="/add (1).png" HorizontalAlignment="Left" Margin="4 0 0 0"/>
                                             </Grid>
                                         </Button>
                                     </Border>
                                 </Grid>
                             </Border>
-                            <ScrollViewer Name="ShowMavared_Scroll" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
-                                <StackPanel Name="ShowMavared_StckPnl">
+                            <ScrollViewer x:Name="ShowMavared_Scroll" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
+                                <StackPanel x:Name="ShowMavared_StckPnl">
                                     <FormComponent:MavaredComponent/>
                                     <FormComponent:MavaredComponent/>
                                     <FormComponent:MavaredComponent/>
@@ -174,37 +173,35 @@
                                 </StackPanel>
                             </ScrollViewer>
                         </Grid>
-                        
+
                     </Grid>
-                    <Grid Name="ShowStudents_Grid" Visibility="Visible" Background="#FAFAFA"  >
+                    <Grid x:Name="ShowStudents_Grid" Visibility="Visible" Background="#FAFAFA"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="auto"/>
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0" Name="deletepnl_Grid" Visibility="Collapsed">
+                        <Grid Grid.Row="0" x:Name="deletepnl_Grid" Visibility="Collapsed">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Border HorizontalAlignment="Left" Margin="70 0 0 0" CornerRadius="4" Height="28" Width="53" Background="#D90000">
-                                <Button Name="SubmitDelete_Btn" Height="26" Width="51" Padding="0" Background="#D90000"  Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                <Button x:Name="SubmitDelete_Btn" Click="SubmitDelete_Btn_Click" Height="26" Width="51" Padding="0" Background="#D90000"  Style="{StaticResource MaterialDesignFlatAccentButton}">
                                     <Grid FlowDirection="RightToLeft">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="29"/>
                                             <ColumnDefinition Width="24"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Width="21" HorizontalAlignment="Right" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" FlowDirection="RightToLeft" >حذف</TextBlock>
+                                        <TextBlock Grid.Column="0" Width="21" HorizontalAlignment="Right" Foreground="#FFFFFF" FontFamily="Anjoman" FontSize="9" FlowDirection="RightToLeft" ><Run Text="حذف"/></TextBlock>
                                         <Image Grid.Column="1" Margin="0 0 4 0" Height="12" Width="12" Source="/delete (3).png"/>
                                     </Grid>
                                 </Button>
                             </Border>
-                            <TextBlock Grid.Column="1" Foreground="#000000" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 24 0">انتخاب دانش آموز</TextBlock>
+                            <TextBlock Grid.Column="1" Foreground="#000000" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 24 0"><Run Text="انتخاب دانش آموز"/></TextBlock>
                         </Grid>
                         <Border Grid.Row="1" Height="400" Width="743" HorizontalAlignment="Right" BorderBrush="#FFEAEAEA" VerticalAlignment="Bottom" >
                             <ScrollViewer  VerticalScrollBarVisibility="Hidden" >
-                                <WrapPanel Name="SudentCard_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" >
-
-                                </WrapPanel>
+                                <WrapPanel x:Name="SudentCard_WrpPnl" Width="751" FlowDirection="LeftToRight" Height="1000" />
                             </ScrollViewer>
 
                         </Border>
@@ -289,19 +286,19 @@
                             </Grid>
                             <Grid Grid.Row="2" FlowDirection="RightToLeft">
                                 <Border Grid.Column="1" Width="38.67" Height="32" Margin="0 0 8 0" HorizontalAlignment="Right" CornerRadius="4" BorderThickness="0.5" BorderBrush="#0077E5">
-                                    <Button Name="Import_Btn" Click="Import_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
+                                    <Button x:Name="Import_Btn" Click="Import_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
                                         <Image Height="16" Width="16" Source="/system_update_alt.png" />
                                     </Button>
                                 </Border>
 
                                 <Border Grid.Column="1" Width="38.67" Height="32" Margin="0 0 0 0" HorizontalAlignment="Center" CornerRadius="4" BorderThickness="0.5" BorderBrush="#4BB216">
-                                    <Button Name="AddStudent_Btn" Click="AddStudent_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
+                                    <Button x:Name="AddStudent_Btn" Click="AddStudent_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" HorizontalAlignment="Right" Width="38"  >
                                         <Image Height="16" Width="16" Source="/add.png" />
                                     </Button>
                                 </Border>
 
                                 <Border Grid.Column="1" Width="38.67" Height="32" Margin="8 0 0 0" HorizontalAlignment="Left" CornerRadius="4" BorderThickness="0.5" BorderBrush="#D90000">
-                                    <Button Name="DeleteStudent_Btn" Click="DeleteStudent_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
+                                    <Button x:Name="DeleteStudent_Btn" Click="DeleteStudent_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
                                         <Image Height="16" Width="16" Source="/delete (2).png" />
                                     </Button>
                                 </Border>

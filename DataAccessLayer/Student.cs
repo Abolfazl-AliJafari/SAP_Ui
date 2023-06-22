@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace DataAccessLayer
                 return new OperationResult()
                 {
                     Success = true,
-                    Message = "ثبت نام با موفقیت انجام شد"
+                  
                 };
             }
             catch (Exception)
@@ -55,15 +56,18 @@ namespace DataAccessLayer
 
         }
 
-        public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom)
+        public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom
+              , string hesabdari, string shabake)
         {
             try
             {
                 SAPDbDataContext sql = new SAPDbDataContext();
                 var query = sql.Student_Tbls.Where(p =>
                 p.StudentPayeh == dahom||
-                p.StudentPayeh == yazdahom ||
-                p.StudentPayeh == davazdahom).ToList();
+                p.StudentPayeh == yazdahom||
+                p.StudentPayeh == davazdahom||
+                p.StudentReshteh == hesabdari||
+                p.StudentReshteh == shabake).ToList();
                 return new OperationResult<List<Student_Tbl>>
                 {
                     Success = true,
@@ -78,6 +82,61 @@ namespace DataAccessLayer
                 };
             }
 
+        }
+        public static OperationResult Delete(Student_Tbl student)
+        {
+            SAPDbDataContext sql = new SAPDbDataContext();
+
+            try
+            {
+                var student_ = sql.Student_Tbls.Single(user => user.StudentCode == student.StudentCode);
+                sql.Student_Tbls.DeleteOnSubmit(student_);
+                //for (int i = 0; i < code.Count; i++)
+                //{
+                //    var query = sql.Student_Tbls.Where(p => p.StudentCode == code[i]).Single();
+                //    sql.Student_Tbls.DeleteOnSubmit(query);
+                //}
+                sql.SubmitChanges();
+                return new OperationResult
+                {
+                    Success = true,
+                    
+                };
+            }
+            catch(Exception ec)
+            {
+                return new OperationResult
+                {
+                    Message= ec.ToString(),
+                    Success = false
+                };
+            }
+        }
+        public static OperationResult DeleteStudents(List<Student_Tbl> students)
+        {
+            SAPDbDataContext sql = new SAPDbDataContext();
+
+            List<Student_Tbl> students_ = new List<Student_Tbl>();
+            try
+            {
+                foreach (Student_Tbl student in students)
+                {
+                   students_.Add(sql.Student_Tbls.Single(user => user.StudentCode == student.StudentCode));
+                }
+                sql.Student_Tbls.DeleteAllOnSubmit(students_);
+                sql.SubmitChanges();
+                return new OperationResult
+                {
+                    Success = true
+                };
+            }
+            catch(Exception)
+            {
+                return new OperationResult
+                {
+                    Success = false
+                };
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using DataAccessLayer;
 using FormComponent;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +32,7 @@ namespace SAP_Ui
             InitializeComponent();
             student = Student;
         }
+        public bool Deleted { get; set; }
         private void EditStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
 
@@ -207,6 +209,24 @@ namespace SAP_Ui
             bitmapImage.EndInit();
             ImageBrush imageBrush = new ImageBrush(bitmapImage);
             return imageBrush;
+        }
+
+        private async void Delete_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            SubmitDelete submitDelete = new SubmitDelete("از حذف دانش آموز مطمئن هستید؟", student) { Height = 90, Width = 299 };
+           await ShowDialog_DgHost.ShowDialog(submitDelete);
+            if (submitDelete.CloseOrOpen)
+            {
+                if (submitDelete.Result)
+                {
+                    Deleted = true;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("حذف موفقیت آمیز نبود");
+                }
+            }
         }
     }
 }

@@ -76,6 +76,9 @@
     <Compile Include="StudentInfo.xaml.cs">
       <DependentUpon>StudentInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SubmitDelete.xaml.cs">
+      <DependentUpon>SubmitDelete.xaml</DependentUpon>
+    </Compile>
     <Page Include="HomePage_Frm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,6 +104,10 @@
     <Page Include="StudentInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SubmitDelete.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
