@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Linq;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -138,5 +139,42 @@ namespace DataAccessLayer
                 };
             }
         }
+
+        public static OperationResult Update(string LastStudentCode,Student_Tbl Student)
+        {
+            SAPDbDataContext sql = new SAPDbDataContext();
+            try
+            {
+                var student = sql.Student_Tbls.Where(x => x.StudentCode == LastStudentCode).Single();
+                student.StudentFirstName = Student.StudentFirstName;
+                student.StudentLastName = Student.StudentLastName;
+                student.StudentPayeh = Student.StudentPayeh;
+                student.StudentReshteh = Student.StudentReshteh;
+                student.StudentNationalCode = Student.StudentNationalCode;
+                student.StudentCode = Student.StudentCode;
+                student.StudentProfile = Student.StudentProfile;
+                student.StudentBimaryKhas = Student.StudentBimaryKhas;
+                student.StudentFatherName = Student.StudentFatherName;
+                student.StudentFatherJob = Student.StudentFatherJob;
+                student.StudentFatherMobile = Student.StudentFatherMobile;
+                student.StudentMotherJob = Student.StudentMotherJob;
+                student.StudentMotherMobile = Student.StudentMotherMobile;
+                student.StudentLeftParent = Student.StudentLeftParent;
+                student.StudentDeadParent = Student.StudentDeadParent;
+                student.StudentParentBimary = Student.StudentParentBimary;
+                student.StudentHomeAddress = Student.StudentHomeAddress;
+                student.StudentHomeNumber = Student.StudentHomeNumber;
+                student.StudentOther = Student.StudentOther;
+                sql.SubmitChanges();
+                return new OperationResult { Success = true };
+
+            }
+            catch(Exception)
+            {
+                return new OperationResult { Success = false };
+
+            }
+        }
+        
     }
 }

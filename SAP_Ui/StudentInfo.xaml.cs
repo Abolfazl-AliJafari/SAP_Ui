@@ -33,9 +33,14 @@ namespace SAP_Ui
             student = Student;
         }
         public bool Deleted { get; set; }
-        private void EditStudent_Btn_Click(object sender, RoutedEventArgs e)
+        private async void EditStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
-
+            RegisterStudentForm registerStudentForm = new RegisterStudentForm(student);
+            await ShowDialog_DgHost.ShowDialog(registerStudentForm);
+            if(registerStudentForm.Edited)
+            {
+                RefreshStudentInfo();
+            }
         }
         void EnzebatiSliderSelect()
         {
@@ -163,27 +168,32 @@ namespace SAP_Ui
             string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar.SelectedDate.Value);
             ShowDate_TxtBlock.Text = selectedDate;
         }
+         
+        private void RefreshStudentInfo ()
+        {
+            StudentFullName_TxtBlock.Text = student.StudentFirstName + student.StudentLastName;
+            Payeh_TxtBlock.Text = student.StudentPayeh;
+            Reshte_TxtBlock.Text = student.StudentReshteh;
+            NationalCode_TxtBlock.Text = student.StudentNationalCode;
+            StudentCode_TxtBlock.Text = student.StudentCode;
+            Bimary_TxtBlock.Text = student.StudentBimaryKhas;
+            HomeAddress_TxtBlock.Text = student.StudentHomeAddress;
+            HomePhoneNumber_TxtBlock.Text = student.StudentHomeNumber;
+            FatherName_TxtBlock.Text = student.StudentFatherName;
+            FatherJob_TxtBlock.Text = student.StudentFatherJob;
+            FatherMobile_TxtBlock.Text = student.StudentFatherMobile;
+            MotherJob_TxtBlock.Text = student.StudentMotherJob;
+            ParentDead_TxtBlock.Text = student.StudentDeadParent;
+            MotherMobile_TxtBlock.Text = student.StudentMotherMobile;
+            BimaryParent_TxtBlock.Text = student.StudentParentBimary;
+            Profile_Border.Background = ConvertImageToBackground(student.StudentProfile);
+            LeftParent_Img.Source = CheckLeftParent((bool)student.StudentLeftParent);
+        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-           StudentFullName_TxtBlock.Text = student.StudentFirstName + student.StudentLastName;
-           Payeh_TxtBlock.Text = student.StudentPayeh;
-           Reshte_TxtBlock.Text = student.StudentReshteh;
-           NationalCode_TxtBlock.Text = student.StudentNationalCode;
-           StudentCode_TxtBlock.Text = student.StudentCode;
-           Bimary_TxtBlock.Text = student.StudentBimaryKhas;
-           HomeAddress_TxtBlock.Text = student.StudentHomeAddress;
-           HomePhoneNumber_TxtBlock.Text = student.StudentHomeNumber;
-           FatherName_TxtBlock.Text = student.StudentFatherName;
-           FatherJob_TxtBlock.Text = student.StudentFatherJob;
-           FatherMobile_TxtBlock.Text = student.StudentFatherMobile;
-           MotherJob_TxtBlock.Text = student.StudentMotherJob;
-            ParentDead_TxtBlock.Text = student.StudentDeadParent;
-           MotherMobile_TxtBlock.Text = student.StudentMotherMobile;
-            BimaryParent_TxtBlock.Text = student.StudentParentBimary;
-           Profile_Border.Background = ConvertImageToBackground(student.StudentProfile);
-           LeftParent_Img.Source = CheckLeftParent((bool)student.StudentLeftParent);
-
+            RefreshStudentInfo();
+            
         }
 
         BitmapImage CheckLeftParent (bool LeftParent)

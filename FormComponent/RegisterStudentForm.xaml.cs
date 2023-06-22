@@ -28,8 +28,23 @@ namespace FormComponent
         {
             InitializeComponent();
         }
+        public RegisterStudentForm(Student_Tbl Student)
+        {
+            InitializeComponent();
+            edit = true;
+            lastStudentCode = Student.StudentCode;
+            student = Student;
+        }
+
+        RegisterStep1 step1;
+        RegisterStep2 step2;
+        RegisterStep3 step3;
+        Student_Tbl student;
         byte step = 1;
+        string lastStudentCode;
+        bool edit= false;
         public bool Inserted { get; set; }
+        public bool Edited { get; set; }
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
 
@@ -37,10 +52,10 @@ namespace FormComponent
 
         private void NextStep_Btn_Click(object sender, RoutedEventArgs e)
         {
-                if (step + 1 <= 4 && step + 1 >= 0)
-                {
-                    step++;
-                }
+            if (step + 1 <= 4 && step + 1 >= 0)
+            {
+                step++;
+            }
             if (step == 1)
             {
                 ShowStep1();
@@ -56,45 +71,62 @@ namespace FormComponent
             }
             else
             {
-                Student_Tbl student = new Student_Tbl();
-                student.StudentFirstName = Step1.StudentName;
-                student.StudentLastName = Step1.StudentLastName;
-                student.StudentPayeh = Step1.StudentPayeh;
-                student.StudentReshteh = Step1.StudentReshte;
-                student.StudentNationalCode = Step1.StudentNationalCode;
-                student.StudentCode = Step1.StudentCode;
-                student.StudentProfile = Step1.StudentProfileAddress;
-                student.StudentBimaryKhas = Step1.StudentBimary;
-                student.StudentFatherName = Step2.FatherName;
-                student.StudentFatherJob = Step2.FatherJob;
-                student.StudentFatherMobile = Step2.FatherMobile;
-                student.StudentMotherJob = Step2.MotherJob;
-                student.StudentMotherMobile = Step2.MotherMobile;
-                student.StudentParentBimary = Step2.BimaryKhasParent;
-                student.StudentLeftParent = Step2.LeftParent;
-                student.StudentDeadParent = Step2.DeadParent;
-                student.StudentRegisterDate = DateTime.Now.ToShortDateString();
-                student.StudentHomeAddress = Step3.HomeAddress;
-                student.StudentHomeNumber = Step3.HomeNumber;
-                student.StudentOther = Step3.Other;
-                student.StudentScore = 20;
+                Student_Tbl student_ = new Student_Tbl();
+                student.StudentFirstName = step1.StudentName;
+                student.StudentLastName = step1.StudentLastName;
+                student.StudentPayeh = step1.StudentPayeh;
+                student.StudentReshteh = step1.StudentReshte;
+                student.StudentNationalCode = step1.StudentNationalCode;
+                student.StudentCode = step1.StudentCode;
+                student.StudentProfile = step1.StudentProfileAddress;
+                student.StudentBimaryKhas = step1.StudentBimary;
+                student.StudentFatherName = step2.FatherName;
+                student.StudentFatherJob = step2.FatherJob;
+                student.StudentFatherMobile = step2.FatherMobile;
+                student.StudentMotherJob = step2.MotherJob;
+                student.StudentMotherMobile = step2.MotherMobile;
+                student.StudentParentBimary = step2.BimaryKhasParent;
+                student.StudentLeftParent = step2.LeftParent;
+                student.StudentDeadParent = step2.DeadParent;
 
-                var result = Bll.Student.Insert(student);
-                
-                
-                if (result.Success == true)
+                student.StudentHomeAddress = step3.HomeAddress;
+                student.StudentHomeNumber = step3.HomeNumber;
+                student.StudentOther = step3.Other;
+                student.StudentScore = 20;
+                if (!edit)
                 {
-                    Inserted = true;
-                    Step1.Registered();
-              
-                    Step2.Registered();
-                    Step3.Registered();
-                    step = 0;
-                    NextStep_Btn_Click(sender, e);
+
+                    student.StudentRegisterDate = DateTime.Now.ToShortDateString();
+                    var result = Bll.Student.Insert(student_);
+
+
+                    if (result.Success)
+                    {
+                        Inserted = true;
+                        step1.Registered();
+
+                        step2.Registered();
+                        step3.Registered();
+                        step = 0;
+                        NextStep_Btn_Click(sender, e);
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.Message);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show(result.Message);
+                    var result = Bll.Student.Update(lastStudentCode, student);
+                    if(result.Success)
+                    {
+                        Edited= true;
+                        DialogHost.CloseDialogCommand.Execute(null,null);
+                    }
+                    else
+                    {
+                        MessageBox.Show(result.Message);
+                    }
                 }
             }
             
@@ -102,26 +134,34 @@ namespace FormComponent
 
         void ShowStep1()
         {
-            Step1.Visibility = Visibility.Visible;  
-            Step2.Visibility = Visibility.Hidden;
-            Step3.Visibility = Visibility.Hidden;
+            step1.Visibility = Visibility.Visible;  
+            step2.Visibility = Visibility.Hidden;
+            step3.Visibility = Visibility.Hidden;
             NextStep_Btn.Content = "بعدی";
         }
 
         void ShowStep2()
         {
-            Step2.Visibility = Visibility.Visible;
-            Step1.Visibility = Visibility.Hidden;
-            Step3.Visibility = Visibility.Hidden;
+            step2.Visibility = Visibility.Visible;
+            step1.Visibility = Visibility.Hidden;
+            step3.Visibility = Visibility.Hidden;
             NextStep_Btn.Content = "بعدی";
         }
 
         void ShowStep3()
         {
-            Step3.Visibility = Visibility.Visible;
-            Step2.Visibility = Visibility.Hidden;
-            Step1.Visibility = Visibility.Hidden;
-            NextStep_Btn.Content = "ثبت";
+            step3.Visibility = Visibility.Visible;
+            step2.Visibility = Visibility.Hidden;
+            step1.Visibility = Visibility.Hidden;
+            if (edit)
+            {
+                NextStep_Btn.Content = "ویرایش";
+
+            }
+            else
+            {
+                NextStep_Btn.Content = "ثبت";
+            }
         }
         private void PerviuosStep_Btn_Click(object sender, RoutedEventArgs e)
         {
@@ -140,6 +180,59 @@ namespace FormComponent
             else
             {
                 ShowStep3();
+            }
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (edit == true)
+            {
+                 step1 = new RegisterStep1(student.StudentFirstName, student.StudentLastName, student.StudentPayeh, student.StudentReshteh, student.StudentNationalCode, student.StudentCode, student.StudentProfile, student.StudentBimaryKhas)
+                {
+                    VerticalAlignment= VerticalAlignment.Top,
+                    Width = 352
+                };
+                 step2 = new RegisterStep2(student.StudentFatherName, student.StudentFatherJob, student.StudentFatherMobile, student.StudentMotherJob, student.StudentMotherMobile,
+                    (bool)student.StudentLeftParent, student.StudentDeadParent, student.StudentParentBimary)
+                {
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Visibility = Visibility.Hidden,
+                    Width = 352
+                };
+                 step3 = new RegisterStep3(student.StudentHomeAddress, student.StudentHomeNumber, student.StudentOther)
+                {
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Visibility = Visibility.Hidden,
+                    Width = 352
+                };
+                ShowStep_Grid.Children.Add(step1);
+                ShowStep_Grid.Children.Add(step2);
+                ShowStep_Grid.Children.Add(step3);
+
+            }
+            else
+            {
+                 step1 = new RegisterStep1()
+                {
+
+                    VerticalAlignment= VerticalAlignment.Top,
+                    Width = 352
+                };
+                 step2 = new RegisterStep2()
+                {
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Visibility = Visibility.Hidden,
+                    Width = 352
+                };
+                 step3 = new RegisterStep3()
+                {
+                    VerticalAlignment = VerticalAlignment.Top,
+                    Visibility = Visibility.Hidden,
+                    Width = 352
+                };
+                ShowStep_Grid.Children.Add(step1);
+                ShowStep_Grid.Children.Add(step2);
+                ShowStep_Grid.Children.Add(step3);
             }
         }
     }

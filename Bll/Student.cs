@@ -9,9 +9,9 @@ namespace Bll
 {
     public class Student
     {
-        public static OperationResult Insert(Student_Tbl student)
-        {
 
+        public static OperationResult Validation (Student_Tbl student)
+        {
             if (string.IsNullOrEmpty(student.StudentFirstName))
                 return new OperationResult
                 {
@@ -100,12 +100,35 @@ namespace Bll
                     Message = "شماره تلفن خانه را وارد کنید"
                 };
 
-            if (string.IsNullOrEmpty(student.StudentFirstName))
-                return new OperationResult
-                {
-                    Success = false,
-                    Message = "نام را وارد کنید"
-                };
+            return new OperationResult
+            {
+                Success = true
+            };
+        }
+
+        public static OperationResult Update ( string LastStudentCode,Student_Tbl student)
+        {
+            var validationResult = Validation(student);
+            if (!validationResult.Success)
+            {
+                return validationResult;
+            }
+            var result = DataAccessLayer.Student.Update(LastStudentCode, student);
+            if (!result.Success)
+            {
+                result.Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید.";
+            }
+            return result;
+        }
+
+        public static OperationResult Insert(Student_Tbl student)
+        {
+
+            var validationResult = Validation(student);
+            if (!validationResult.Success)
+            {
+                return validationResult;
+            }
 
             try
             {
@@ -134,7 +157,7 @@ namespace Bll
                 return new OperationResult<List<Student_Tbl>>
                 {
                     Success = false,
-                    Message = "خطایی رخ داده لطفا  تماس فرماید"
+                    Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید."
                 };
             }
         }
@@ -158,13 +181,27 @@ namespace Bll
         //}
         public static OperationResult Delete(Student_Tbl student)
         {
+            
             var result = DataAccessLayer.Student.Delete(student);
+            if(result.Success == false)
+            {
+                result.Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید.";
+                return result;
+            }
+            
             return result;
+            
         }
 
         public static OperationResult DeleteStudents(List<Student_Tbl> students)
         {
             var result = DataAccessLayer.Student.DeleteStudents(students);
+            if (result.Success == false)
+            {
+                result.Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید.";
+                return result;
+            }
+
             return result;
         }
     }

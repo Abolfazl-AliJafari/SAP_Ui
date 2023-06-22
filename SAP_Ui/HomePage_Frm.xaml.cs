@@ -76,35 +76,42 @@ namespace SAP_Ui
 
         void Filter(string Dahom,string Yazdahom, string Davazdahom, string Hesabdari, string Shabake)
         {
-
-            foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+            if (string.IsNullOrEmpty(Dahom) && string.IsNullOrEmpty(Yazdahom) && string.IsNullOrEmpty(Davazdahom) && string.IsNullOrEmpty(Hesabdari) && string.IsNullOrEmpty(Shabake))
             {
-                if (studentCards.student.StudentPayeh == Dahom || studentCards.student.StudentPayeh == Yazdahom || studentCards.student.StudentPayeh == Davazdahom  ) //رشته کار نمیکنه
+                foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+                    studentCards.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
                 {
-                    if(Hesabdari!="" || Shabake!="")
+                    if (studentCards.student.StudentPayeh == Dahom || studentCards.student.StudentPayeh == Yazdahom || studentCards.student.StudentPayeh == Davazdahom) //رشته کار نمیکنه
                     {
-                        if(studentCards.student.StudentReshteh == Hesabdari || studentCards.student.StudentReshteh == Shabake)
+                        if (Hesabdari != "" || Shabake != "")
                         {
-                            studentCards.Visibility = Visibility.Visible;
+                            if (studentCards.student.StudentReshteh == Hesabdari || studentCards.student.StudentReshteh == Shabake)
+                            {
+                                studentCards.Visibility = Visibility.Visible;
+                            }
+                            else
+                            {
+                                studentCards.Visibility = Visibility.Collapsed;
+                            }
                         }
                         else
                         {
-                            studentCards.Visibility = Visibility.Collapsed;
+                            studentCards.Visibility = Visibility.Visible;
+
                         }
+
                     }
                     else
                     {
-                        studentCards.Visibility = Visibility.Visible;
-
+                        studentCards.Visibility = Visibility.Collapsed;
                     }
 
+                    //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
                 }
-                else
-                {
-                    studentCards.Visibility = Visibility.Collapsed;
-                }
-
-                //(SudentCard_WrpPnl.Children[i] as StudentCards).student = check.Data[i];
             }
         }
 

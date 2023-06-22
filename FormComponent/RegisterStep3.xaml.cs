@@ -24,6 +24,13 @@ namespace FormComponent
         {
             InitializeComponent();
         }
+        public RegisterStep3(string HomeAddress,string HomeNumber,string Other)
+        {
+            InitializeComponent();
+            HomeAddress_Txt.Text = HomeAddress;
+            OtherAbout_Txt.Text = Other;
+            HomePhoneNumber_Txt.Text = HomeNumber;
+        }
         public string HomeAddress { get; set; }
         public string HomeNumber { get; set; }
         public string Other { get; set; }
@@ -50,6 +57,13 @@ namespace FormComponent
           HomePhoneNumber_Txt.Clear();
           OtherAbout_Txt.Clear();
 
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            HomePhoneNumber_Txt_TextChanged(null, null);
+            HomePhoneNumber_Txt_TextChanged(null, null);
+            OtherAbout_Txt_TextChanged(null, null);
         }
     }
 }

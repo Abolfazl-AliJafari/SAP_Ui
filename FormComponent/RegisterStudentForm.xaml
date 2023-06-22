@@ -6,7 +6,8 @@
                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
-             d:DesignHeight="464" d:DesignWidth="352">
+             d:DesignHeight="464" d:DesignWidth="352"
+             Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -25,9 +26,7 @@
             </Grid.RowDefinitions>
 
             <Grid Name="ShowStep_Grid" Grid.Row="0">
-                <local:RegisterStep1 x:Name="Step1" Visibility="Visible" VerticalAlignment="Top" Width="352"></local:RegisterStep1>
-                <local:RegisterStep2 x:Name="Step2" Visibility="Hidden" VerticalAlignment="Top" Width="352"></local:RegisterStep2>
-                <local:RegisterStep3 x:Name="Step3" Visibility="Hidden" VerticalAlignment="Top" Width="352"></local:RegisterStep3>
+
             </Grid>
             <Border Grid.Row="1" Background="#FAFAFA" BorderThickness="0" CornerRadius="0 0 8 8">
                 <Grid FlowDirection="LeftToRight" >

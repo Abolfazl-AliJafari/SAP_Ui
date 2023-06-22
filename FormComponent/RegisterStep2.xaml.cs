@@ -24,6 +24,45 @@ namespace FormComponent
         {
             InitializeComponent();
         }
+        public RegisterStep2(string FatherName,string FatherJob,string FatherMobile,string MotherJob,string MotherMobile,bool LeftParents,string DeadParents
+            ,string BimaryParent)
+        {
+            InitializeComponent();
+            FatherName_Txt.Text = FatherName;
+            FatherJob_Txt.Text = FatherJob;
+            FatherMobile_Txt.Text = FatherMobile;
+            MotherJob_Txt.Text = MotherJob;
+            MotherMobile_Txt.Text = MotherMobile;
+            LeftParentToggle.IsChecked = LeftParents;
+            LeftParent = LeftParents;
+            if (!string.IsNullOrEmpty(DeadParents))
+            {
+                ParentDeadToggle.IsChecked = true;
+                if(DeadParents == Both_Btn_TxtBlock.Text)
+                {
+                    clickcolor(Both_Btn);
+
+                }
+                if (DeadParents == Father_Btn_TxtBlock.Text)
+                {                           
+                    clickcolor(Father_Btn); 
+                }                           
+                if (DeadParents == Mother_Btn_TxtBlock.Text)
+                {
+                    clickcolor(Both_Btn);
+                }
+                DeadParent = DeadParents;
+            }
+            if (!string.IsNullOrEmpty(BimaryParent))
+            {
+                BimariKhas_Txt.Text = BimaryParent;
+                BimaryParentToggle.IsChecked = true;
+            }
+            Edit = true;
+
+        }
+        bool Edit = false;
+
         public string FatherName { get; set; }
         public string FatherJob { get; set; }
         public string FatherMobile { get; set; }
@@ -188,7 +227,17 @@ namespace FormComponent
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            LeftParent = false;
+            if (!Edit)
+            {
+                LeftParent = false;
+            }
+            FatherName_Txt_TextChanged(null, null);
+            FatherJob_Txt_TextChanged(null, null);
+            FatherMobile_Txt_TextChanged(null, null);
+            MotherMobile_Txt_TextChanged(null, null);
+            MotherJob_Txt_TextChanged(null, null);
+            BimariKhas_Txt_TextChanged(null, null);
+            
         }
         public  void Registered()
         {

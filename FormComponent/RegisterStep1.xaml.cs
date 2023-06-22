@@ -22,10 +22,38 @@ namespace FormComponent
     /// </summary>
     public partial class RegisterStep1 : UserControl
     {
+
         public RegisterStep1()
         {
             InitializeComponent();
         }
+        public RegisterStep1(string FirstName , string LastName, string Payeh , string Reshteh , string NationalCode , string StudentCode
+            ,string ProfileAddress,string Bimary)
+        {
+            InitializeComponent();
+            Name_Txt.Text = FirstName;
+            LastName_Txt.Text = LastName;
+            Payeh_CmBox.Text = Payeh;
+            Reshteh_CmBox.Text= Reshteh;
+            NationalCode_Txt.Text = NationalCode;
+            StudentCode_Txt.Text = StudentCode;
+            if(!string.IsNullOrEmpty(Bimary))
+            {
+                BimariKhas_Txt.Text = Bimary;
+                BimariToggle.IsChecked = true;
+            }
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(ProfileAddress, UriKind.Relative);
+            bitmapImage.EndInit();
+            Profile_Img.Source = null;
+            ImageBrush imageBrush = new ImageBrush(bitmapImage);
+            ProfileImg_Border.Background = imageBrush;
+            Edit = true;
+            StudentProfileAddress = ProfileAddress;
+
+        }
+        bool Edit = false;
         public string StudentName { get; set; }
         public string StudentLastName { get; set; }
         public string StudentPayeh { get; set; }
@@ -131,6 +159,18 @@ namespace FormComponent
             Profile_Img.Source = bitmapImage;
             ProfileImg_Border.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#EFEFEF"));
 
+        }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            Name_Txt_TextChanged(null,null) ;
+            LastName_Txt_TextChanged(null,null) ;
+            Payeh_CmBox_SelectionChanged(null,null) ;
+            Reshteh_CmBox_SelectionChanged(null,null) ;
+            NationalCode_Txt_TextChanged(null,null) ;
+            StudentCode_Txt_TextChanged(null,null) ;
+            BimariKhas_Txt_TextChanged(null,null);
+            ToggleButton_Checked(null,null);
         }
     }
 }
