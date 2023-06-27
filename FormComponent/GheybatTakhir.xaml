@@ -32,23 +32,26 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Border Grid.Column="4" CornerRadius="4" Background="#E3DFFC" Width="57" Margin="109,12,20,7" Height="24" Grid.RowSpan="2" >
+               
+                <Border Background="#E3DFFC" CornerRadius="4" Grid.Column="1" Width="80" Height="24" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 12 19.5 0">
                     <materialDesign:PopupBox
+                            
+                            Width="80"
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
             PlacementMode="BottomAndAlignCentres">
                         <materialDesign:PopupBox.ToggleContent>
-                            <Grid   FlowDirection="RightToLeft">
+                            <Grid  Width="80" FlowDirection="RightToLeft">
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="30"/>
-                                    <ColumnDefinition Width ="27"/>
+                                    <ColumnDefinition Width="26"/>
+                                    <ColumnDefinition Width ="auto"/>
                                 </Grid.ColumnDefinitions>
 
 
-                                <TextBlock Name="ShowDate_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  >امروز</TextBlock>
+                                <TextBlock Name="ShowDate_TxtBlock" Width="auto" Grid.Column="1" Foreground="#5E51C7" VerticalAlignment="Center" FontSize="9" FontFamily="Anjoman"  >امروز</TextBlock>
 
-                                <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
+                                <Image Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
 
                             </Grid>
                         </materialDesign:PopupBox.ToggleContent>
@@ -57,7 +60,6 @@
                                     FirstDayOfWeek="Saturday"
                                                 Language="fa-IR"
                                                 FlowDirection="RightToLeft"
-                                
                                 materialDesign:ColorZoneAssist.Mode="PrimaryMid"
                                 Background="#7161EF"
                                 Foreground="#E3DFFC"

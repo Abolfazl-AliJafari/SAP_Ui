@@ -139,29 +139,29 @@
                             <ColumnDefinition Width="auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Border x:Name="BtnAddBorder" Grid.Column="0" Width="80" CornerRadius="4" Background="#7161EF" Margin="8,20,12,8">
-                            <Grid  FlowDirection="LeftToRight" >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Button x:Name="AddStudent_Btn"  Style="{StaticResource myStyle}"  Cursor="Hand" Padding="8,16" BorderBrush="#7161EF" FontFamily="Anjoman" FontSize="9" Foreground="#FFFFFF" Background="#7161EF" FlowDirection="RightToLeft"  >
-                                    <TextBlock Text="افزدون غیبت" 
+                        <Border x:Name="BtnAddBorder" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="8 0 12 8" Height="28" Width="80" CornerRadius="4" Background="#7161EF" >
+                                <Button Name="AddTakhir_Btn" Click="AddTakhir_Btn_Click" Style="{StaticResource myStyle}"  Cursor="Hand" Padding="8,16" BorderBrush="#7161EF" FontFamily="Anjoman" FontSize="9" Foreground="#FFFFFF" Background="#7161EF" FlowDirection="RightToLeft"  >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="56"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="افزدون تاخیر" 
                                          HorizontalAlignment="Left" 
-                                         VerticalAlignment="Center"  Margin="8,8,0,6" Height="12"/>
+                                         VerticalAlignment="Bottom"  Margin="8,0,0,8" Height="12"/>
+                                        <Image Grid.Column="1" Width="12" HorizontalAlignment="Right" Height="12" Margin="0,0,8,8" VerticalAlignment="Bottom" Source="/FormComponent;component/add (3).png" />
+                                    </Grid>
                                 </Button>
-                                <Image Grid.Column="0" Width="12" HorizontalAlignment="Left" Height="12" Margin="8,7,0,8" Source="/FormComponent;component/add (3).png" />
-                            </Grid>
                         </Border>
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="187,5,0,3" HorizontalAlignment="Left" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >نوع تاخیر</TextBlock>
-                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="0 0 0 8" BorderBrush="#BFBFBF">
+                            <TextBlock Grid.Row="0"  HorizontalAlignment="Right" Margin="0 4 0 0" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >نوع تاخیر</TextBlock>
+                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="211.5" Height="24" Margin="0 0 0 8" VerticalAlignment="Bottom" BorderBrush="#BFBFBF">
 
-                                <ComboBox Name="GhayebTypeChoooze_CmBox"  BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" Margin="1,0,2,0" />
+                                <ComboBox Name="TakhirTypeChoooze_CmBox" Cursor="Hand"  BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="0 0 5 0" Foreground="#000000" FlowDirection="RightToLeft" Margin="1,0,2,0" />
                             </Border>
                         </Grid>
                         <Grid Grid.Column="2">
@@ -169,46 +169,54 @@
                                 <RowDefinition Height="auto"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBlock Grid.Row="0" Margin="196,5,0,3" HorizontalAlignment="Left" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >دانش آموز
+                            <TextBlock Grid.Row="0"  HorizontalAlignment="Right" Margin="0 4 0 0" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >دانش آموز
                             </TextBlock>
-                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="221.5" Height="24" Margin="12 0 0 8" BorderBrush="#BFBFBF">
+                            <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="4" BorderThickness="1" Width="211.5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="24" Margin="12 0 0 8" BorderBrush="#BFBFBF">
 
-                                <ComboBox Name="GhayebChoozeName_CmBox"  BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="5" Foreground="#B8B8B8" FlowDirection="RightToLeft" Margin="1,0,2,0" />
+                                <ComboBox Name="TakhirChoozeName_CmBox" Cursor="Hand" BorderThickness="0" Height="20" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="0 0 5 0" Foreground="#000000" FlowDirection="RightToLeft" Margin="1,0,2,0" SelectionChanged="TakhirChoozeName_CmBox_SelectionChanged" />
                             </Border>
                         </Grid>
                         <Grid Grid.Column="3">
                             <Grid.RowDefinitions>
                                 <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition Height="auto"/>
                             </Grid.RowDefinitions>
-                            <Border CornerRadius="4" Background="#E3DFFC" Width="57"  Height="24" Grid.RowSpan="2" Margin="9,21,8,9" >
+                            <TextBlock  Width="20" Height="14" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0 0 8 4" Foreground="#000000" FontFamily="Anjoman" FontSize="9" >تاریخ
+                            </TextBlock>
+                            <Border Background="#E3DFFC" CornerRadius="4" Grid.Column="1" Width="80" Height="24" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0 0 8 8">
                                 <materialDesign:PopupBox
+                            
+                            Width="80"
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
             PlacementMode="BottomAndAlignCentres">
                                     <materialDesign:PopupBox.ToggleContent>
-                                            <Grid   FlowDirection="RightToLeft">
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="30"/>
-                                                    <ColumnDefinition Width ="27"/>
-                                                </Grid.ColumnDefinitions>
+                                        <Grid  Width="80" FlowDirection="RightToLeft">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="26"/>
+                                                <ColumnDefinition Width ="auto"/>
+                                            </Grid.ColumnDefinitions>
 
 
-                                                <TextBlock Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  >امروز</TextBlock>
+                                            <TextBlock Name="ShowDate_TxtBlock" Width="auto" Grid.Column="1" Foreground="#5E51C7" VerticalAlignment="Center" FontSize="9" FontFamily="Anjoman"  >امروز</TextBlock>
 
-                                                <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
+                                            <Image Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
 
-                                            </Grid>
+                                        </Grid>
                                     </materialDesign:PopupBox.ToggleContent>
                                     <StackPanel>
                                         <Calendar
-                                            materialDesign:ColorZoneAssist.Mode="PrimaryMid"
+                                    FirstDayOfWeek="Saturday"
+                                                Language="fa-IR"
+                                                FlowDirection="RightToLeft"
+                                materialDesign:ColorZoneAssist.Mode="PrimaryMid"
                                 Background="#7161EF"
                                 Foreground="#E3DFFC"
                                 Style="{StaticResource MaterialDesignCalendarPortraitForeground}"
-                                            
+                       
                     SelectionMode="SingleDate"
+                                SelectedDatesChanged="calendar_SelectedDatesChanged"
                     x:Name="calendar"/>
                                     </StackPanel>
                                 </materialDesign:PopupBox>

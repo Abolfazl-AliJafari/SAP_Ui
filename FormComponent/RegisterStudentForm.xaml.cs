@@ -15,14 +15,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SAP_Ui;
-
 namespace FormComponent
 {
     /// <summary>
     /// Interaction logic for RegisterStudentForm.xaml
     /// </summary>
-    public partial class RegisterStudentForm : UserControl
+    public partial class RegisterStudentForm : UserControl ,IDisposable
     {
         public RegisterStudentForm()
         {
@@ -72,31 +70,30 @@ namespace FormComponent
             else
             {
                 Student_Tbl student_ = new Student_Tbl();
-                student.StudentFirstName = step1.StudentName;
-                student.StudentLastName = step1.StudentLastName;
-                student.StudentPayeh = step1.StudentPayeh;
-                student.StudentReshteh = step1.StudentReshte;
-                student.StudentNationalCode = step1.StudentNationalCode;
-                student.StudentCode = step1.StudentCode;
-                student.StudentProfile = step1.StudentProfileAddress;
-                student.StudentBimaryKhas = step1.StudentBimary;
-                student.StudentFatherName = step2.FatherName;
-                student.StudentFatherJob = step2.FatherJob;
-                student.StudentFatherMobile = step2.FatherMobile;
-                student.StudentMotherJob = step2.MotherJob;
-                student.StudentMotherMobile = step2.MotherMobile;
-                student.StudentParentBimary = step2.BimaryKhasParent;
-                student.StudentLeftParent = step2.LeftParent;
-                student.StudentDeadParent = step2.DeadParent;
-
-                student.StudentHomeAddress = step3.HomeAddress;
-                student.StudentHomeNumber = step3.HomeNumber;
-                student.StudentOther = step3.Other;
-                student.StudentScore = 20;
+                student_.StudentFirstName = step1.StudentName;
+                student_.StudentLastName = step1.StudentLastName;
+                student_.StudentPayeh = step1.StudentPayeh;
+                student_.StudentReshteh = step1.StudentReshte;
+                student_.StudentNationalCode = step1.StudentNationalCode;
+                student_.StudentCode = step1.StudentCode;
+                student_.StudentProfile = step1.StudentProfileAddress;
+                student_.StudentBimaryKhas = step1.StudentBimary;
+                student_.StudentFatherName = step2.FatherName;
+                student_.StudentFatherJob = step2.FatherJob;
+                student_.StudentFatherMobile = step2.FatherMobile;
+                student_.StudentMotherJob = step2.MotherJob;
+                student_.StudentMotherMobile = step2.MotherMobile;
+                student_.StudentParentBimary = step2.BimaryKhasParent;
+                student_.StudentLeftParent = step2.LeftParent;
+                student_.StudentDeadParent = step2.DeadParent;
+                student_.StudentHomeAddress = step3.HomeAddress;
+                student_.StudentHomeNumber = step3.HomeNumber;
+                student_.StudentOther = step3.Other;
+                student_.StudentScore = 20;
                 if (!edit)
                 {
 
-                    student.StudentRegisterDate = DateTime.Now.ToShortDateString();
+                    student_.StudentRegisterDate = DateTime.Now.ToShortDateString();
                     var result = Bll.Student.Insert(student_);
 
 
@@ -114,10 +111,11 @@ namespace FormComponent
                     {
                         MessageBox.Show(result.Message);
                     }
+                    
                 }
                 else
                 {
-                    var result = Bll.Student.Update(lastStudentCode, student);
+                    var result = Bll.Student.Update(lastStudentCode, student_);
                     if(result.Success)
                     {
                         Edited= true;
@@ -185,7 +183,7 @@ namespace FormComponent
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (edit == true)
+            if (edit)
             {
                  step1 = new RegisterStep1(student.StudentFirstName, student.StudentLastName, student.StudentPayeh, student.StudentReshteh, student.StudentNationalCode, student.StudentCode, student.StudentProfile, student.StudentBimaryKhas)
                 {
@@ -235,5 +233,26 @@ namespace FormComponent
                 ShowStep_Grid.Children.Add(step3);
             }
         }
+        bool disposed;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposed)
+            {
+                if (disposing)
+                {
+                    //dispose managed resources
+                }
+            }
+            //dispose unmanaged resources
+            disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
     }
 }

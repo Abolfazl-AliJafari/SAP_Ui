@@ -14,7 +14,15 @@ namespace Bll
         {
             if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(PassWord))
             {
-                return DataAccessLayer.User.Login(UserName, PassWord);
+                var result = DataAccessLayer.User.Login(UserName, PassWord);
+                if(!result.Success)
+                {
+                    return new OperationResult
+                    {
+                        Success = true,
+                        Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید."
+                    };
+                }
             }
             else
                 return new OperationResult()
@@ -22,6 +30,10 @@ namespace Bll
                     Success = false,
                     Message = "پر کردن تمامی فیلد ها الزامی است ."
                 };
+            return new OperationResult
+            {
+                Success = true
+            };
         }
     }
 }

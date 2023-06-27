@@ -63,7 +63,7 @@
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="8,4,8,4" Cursor="Hand" MouseDown="Image_MouseDown" Height="20" Width="20" Source="/search (1).png"/>
 
-                                <TextBox Width="176" Height="28" Cursor="IBeam" Grid.Column="1" Name="StudentSearch_Txt" Tag="...جستجوی دانش آموز"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="...جستجوی دانش آموز" FontSize="9" HorizontalScrollBarVisibility="Disabled" Foreground="#B8B8B8" Background="#FFEFEFEF"  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" />
+                                <TextBox Width="176" Height="28" Cursor="IBeam" Grid.Column="1" Name="StudentSearch_Txt" Tag="...جستجوی دانش آموز"  GotFocus="RemoveText" LostFocus="AddText" BorderThickness="0" Text="...جستجوی دانش آموز" FontSize="9" HorizontalScrollBarVisibility="Disabled" Foreground="#B8B8B8" Background="#FFEFEFEF"  VerticalContentAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" TextAlignment="Right" FontFamily="Anjoman" FlowDirection="LeftToRight" TextChanged="StudentSearch_Txt_TextChanged" />
                             </Grid>
                         </Border>
                         <Border Grid.Column="1" Width="69" Height="28" CornerRadius="4" Background="Transparent" BorderThickness="0.5" BorderBrush="#7161EF" HorizontalAlignment="Right">
@@ -107,7 +107,7 @@
                         <ColumnDefinition Width="148"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Background="#FAFAFA" x:Name="ShowMavaredEnzebati_Grid" Visibility="Hidden">
+                    <Grid Background="#FAFAFA" x:Name="ShowMavaredEnzebati_Grid" Visibility="Visible">
                         <Button x:Name="GoHome_Btn" Click="GoHome_Btn_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 16 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Padding="0">
                             <Image Height="24" Width="24" Source="/GoBack.png"/>
                         </Button>
@@ -147,10 +147,10 @@
                                         </ComboBox>
                                     </Border>
                                     <Border Grid.Column="2" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Height="24" Width="120" Background="#FFFFFF" BorderBrush="#BFBFBF" BorderThickness="0.5" HorizontalAlignment="Right" CornerRadius="4" >
-                                        <TextBox x:Name="MoredScore_CmBox" Padding="5 0 5 0" Height="24"  FontSize="9" Foreground="#000000" BorderThickness="0"/>
+                                        <TextBox x:Name="MoredScore_Txt" Padding="5 0 5 0" Height="24"  FontSize="9" Foreground="#000000" BorderThickness="0"/>
                                     </Border>
                                     <Border Grid.Column="3" Grid.Row="1" VerticalAlignment="Bottom" Margin="0 0 0 8" Background="#7161EF" Height="28" Width="58" CornerRadius="4" >
-                                        <Button x:Name="AddMored_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Height="26" Width="56" Padding="0">
+                                        <Button x:Name="AddMored_Btn"  Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Height="26" Width="56" Padding="0" Click="AddMored_Btn_Click">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="34"/>
@@ -165,17 +165,13 @@
                             </Border>
                             <ScrollViewer x:Name="ShowMavared_Scroll" VerticalScrollBarVisibility="Hidden" Grid.Row="1">
                                 <StackPanel x:Name="ShowMavared_StckPnl">
-                                    <FormComponent:MavaredComponent/>
-                                    <FormComponent:MavaredComponent/>
-                                    <FormComponent:MavaredComponent/>
-                                    <FormComponent:MavaredComponent/>
-                                    <FormComponent:MavaredComponent/>
+                                  
                                 </StackPanel>
                             </ScrollViewer>
                         </Grid>
 
                     </Grid>
-                    <Grid x:Name="ShowStudents_Grid" Visibility="Visible" Background="#FAFAFA"  >
+                    <Grid x:Name="ShowStudents_Grid" Visibility="Hidden" Background="#FAFAFA"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="auto"/>
@@ -287,7 +283,7 @@
                             <Grid Grid.Row="2" FlowDirection="RightToLeft">
                                 <Border Grid.Column="1" Width="38.67" Height="32" Margin="0 0 8 0" HorizontalAlignment="Right" CornerRadius="4" BorderThickness="0.5" BorderBrush="#0077E5">
                                     <Button x:Name="Import_Btn" Click="Import_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
-                                        <Image Height="16" Width="16" Source="/system_update_alt.png" />
+                                        <Image Height="16" Width="16" Source="/system_update_alt (1).png" />
                                     </Button>
                                 </Border>
 

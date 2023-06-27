@@ -70,11 +70,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Forms.cs" />
+    <Compile Include="MavaredComponent.xaml.cs">
+      <DependentUpon>MavaredComponent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentCards.xaml.cs">
       <DependentUpon>StudentCards.xaml</DependentUpon>
     </Compile>
+    <Compile Include="StudentGhebatComponent.xaml.cs">
+      <DependentUpon>StudentGhebatComponent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentInfo.xaml.cs">
       <DependentUpon>StudentInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTakhirComponent.xaml.cs">
+      <DependentUpon>StudentTakhirComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTashvighComponent.xaml.cs">
+      <DependentUpon>StudentTashvighComponent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StudentTazakorComponent1.xaml.cs">
+      <DependentUpon>StudentTazakorComponent1.xaml</DependentUpon>
     </Compile>
     <Compile Include="SubmitDelete.xaml.cs">
       <DependentUpon>SubmitDelete.xaml</DependentUpon>
@@ -97,13 +113,33 @@
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="MavaredComponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="StudentCards.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentGhebatComponent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="StudentInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StudentTakhirComponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentTashvighComponent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StudentTazakorComponent1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="SubmitDelete.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -218,9 +254,6 @@
     <Resource Include="Src\Images\add %283%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="system_update_alt.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -282,6 +315,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="GoBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="system_update_alt %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

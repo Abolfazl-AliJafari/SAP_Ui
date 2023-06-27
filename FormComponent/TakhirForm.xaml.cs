@@ -1,4 +1,5 @@
-﻿using DataAccessLayer;
+﻿using Bll;
+using DataAccessLayer;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
@@ -22,60 +23,123 @@ namespace FormComponent
     /// </summary>
     public partial class TakhirForm : UserControl
     {
-        public TakhirForm()
+        public TakhirForm(string Date)
         {
             InitializeComponent();
+            date= Date;
         }
-        public List<GetTakhir> takhirs = new List<GetTakhir>();
-        public TakhirForm(List<GetTakhir> Takhirs)
-        {
-            InitializeComponent();
-            takhirs = Takhirs;
-        }
+
+        string date;
+        List<string> studentsCode;
         public string Date { get; set; }
         public string DateSelect { get; set; }
-        public string FillTakhir(List<GetTakhir> takhirs)
+        public string FillTakhir()
         {
-            WrapPanel panel = new WrapPanel();
-            panel.Orientation = Orientation.Horizontal;
-            panel.Width = TakhirsPanelShow_WrpPnl.Width;
-            panel.Height = TakhirsPanelShow_WrpPnl.Height;
-            foreach (GetTakhir takhir in takhirs)
+            TakhirsPanelShow_WrpPnl.Children.Clear();
+            var takhirs = Bll.Takhir.Select(date);
+            if (!takhirs.Success)
             {
-                panel.FlowDirection = FlowDirection.LeftToRight;
-                panel.Children.Add(new TakhirComponent() { takhir = takhir });
+                MessageBox.Show(takhirs.Message);
+            }
+            else
+            {
+                foreach (Takhir_Tbl takhir in takhirs.Data)
+                {
+                    TakhirsPanelShow_WrpPnl.Children.Add(new TakhirComponent(takhir) { Height = 56, Width = 631.5 });
+                }
+            }
+            return takhirs.Data.Count.ToString();
+
+        }
+
+        
+
+        public  void GetTakhirFilter (string Date)
+        {
+            TakhirsPanelShow_WrpPnl.Children.Clear();
+            var result = Bll.Takhir.Select(Date);
+            if(!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                foreach (Takhir_Tbl takhir in result.Data)
+                {
+                    TakhirsPanelShow_WrpPnl.Children.Add(new TakhirComponent(takhir) { Height = 56, Width = 631.5 });
+                }
+            }
+        }
+
+
+        void FillComboBoxes()
+        {
+            var result = Bll.Mored.SelectTitles("تاخیر");
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                TakhirTypeChoooze_CmBox.ItemsSource = result.Data;
+            }
+            var Names = Bll.Student.GetstudentName();
+            if (!Names.Success)
+            {
+                MessageBox.Show(Names.Message);
+            }
+            else
+            {
+                TakhirChoozeName_CmBox.ItemsSource = Names.Data;
+
             }
 
-            TakhirsPanelShow_WrpPnl.Children.Add(panel);
-            return takhirs.Count.ToString();
-
-        }
-        private void Takhir_Btn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnGheybat_Click(object sender, RoutedEventArgs e)
-        {
-
+            var codes = Bll.Student.GetstudentCode();
+            if (!codes.Success)
+            {
+                MessageBox.Show(codes.Message);
+            }
+            else
+            {
+                studentsCode = codes.Data;
+            }
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if (takhirs != null)
+            calendar.SelectedDate = DateTime.Now;
+
+            TakhirNumber_Lbl.Content = FillTakhir() + "تاخیر ";
+            FillComboBoxes();
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar.SelectedDate.Value);
+            ShowDate_TxtBlock.Text = selectedDate;
+        }
+
+        private void AddTakhir_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Takhir_Tbl takhir = new Takhir_Tbl
             {
-                TakhirNumber_Lbl.Content = FillTakhir(takhirs) + "تاخیر ";
+                TakhirStudentName = TakhirChoozeName_CmBox.SelectedItem.ToString(),
+                TakhirMoredTypeTitle = TakhirTypeChoooze_CmBox.SelectedItem.ToString(),
+                TakhirDate = ShowDate_TxtBlock.Text,
+                TakhirStudentCode = studentsCode[TakhirChoozeName_CmBox.SelectedIndex],
+            };
+
+            var result = Bll.Takhir.Insert(takhir);
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
             }
+            TakhirNumber_Lbl.Content = FillTakhir() + "تاخیر ";
         }
 
-        private void ChoozeDateSubmit_Btn_Click(object sender, RoutedEventArgs e)
+        private void TakhirChoozeName_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-        }
-
-        private void DatePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
-        {
-            // Do something with the selected date
         }
     }
 }

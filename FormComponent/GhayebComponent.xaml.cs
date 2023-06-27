@@ -25,13 +25,62 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public GetGhayeb ghayeb { get; set; }
-
+        public GhayebComponent(Gheybat_Tbl Ghayeb)
+        {
+            InitializeComponent();
+            ghayeb = Ghayeb;
+        }
+        public Gheybat_Tbl ghayeb { get; set; }
+        public string MoredTitle{ get; set; }
+        void FillComboBox()
+        {
+            var result = Bll.Mored.SelectTitles("غیبت");
+            var names = Bll.Student.GetstudentName();
+            if (!names.Success)
+            {
+                MessageBox.Show(names.Message);
+            }
+            else
+            {
+                GheybatName_CmBox.ItemsSource = names.Data;
+            }
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                GheybatType_CmBox.ItemsSource = result.Data;
+            }
+        }
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            GhayebName_CmBox.SelectedItem= ghayeb.Name;
-            TypeGheybat_CmBox.SelectedItem = ghayeb.Type;
-            ShowDate_TxtBlock.Text = ghayeb.Date;
+            FillComboBox();
+            GheybatName_CmBox.Text= ghayeb.GheybatStudentName;
+            GheybatType_CmBox.Text= ghayeb.GheybatMoredTypeTitle;
+            ShowDate_TxtBlock.Text = ghayeb.GheybatDate;
+
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+         
+        }
+
+
+        private void GheybatType_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ghayeb.GheybatMoredTypeTitle = GheybatType_CmBox.SelectedItem.ToString();
+            var result = Bll.Gheybat.Update(ghayeb);
+            if(!result.Success) 
+            {
+                MessageBox.Show(result.Message);
+            }
+        }
+
+        private void GheybatName_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

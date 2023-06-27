@@ -25,13 +25,54 @@ namespace FormComponent
         {
             InitializeComponent();
         }
-        public GetTakhir takhir { get; set; }
+        public TakhirComponent(Takhir_Tbl takhir)
+        {
+            InitializeComponent();
+            Takhir = takhir;
+        }
+        public Takhir_Tbl Takhir { get; set; }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            GhayebName_CmBox.SelectedItem = takhir.Name;
-            TypeGheybat_CmBox.SelectedItem = takhir.Type;
-            ShowDate_TxtBlock.Text = takhir.Date;
+            FillComboBox();
+            TakhirName_CmBox.Text = Takhir.TakhirStudentName;
+            TakhirType_CmBox.Text = Takhir.TakhirMoredTypeTitle;
+            ShowDate_TxtBlock.Text = Takhir.TakhirDate;
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+        void FillComboBox()
+        {
+            var result = Bll.Mored.SelectTitles("تاخیر");
+            var names = Bll.Student.GetstudentName();
+            if(!names.Success)
+            {
+                MessageBox.Show(names.Message);
+            }
+            else
+            {
+                TakhirName_CmBox.ItemsSource = names.Data;
+            }
+            if(!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                TakhirType_CmBox.ItemsSource = result.Data;
+            }
+        }
+        private void TakhirType_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Takhir.TakhirMoredTypeTitle = TakhirType_CmBox.SelectedItem.ToString();
+            var result = Bll.Takhir.Update(Takhir);
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
         }
     }
 }

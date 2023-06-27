@@ -27,10 +27,14 @@ namespace FormComponent
         {
             InitializeComponent();
         }
+        bool Edit = false;
+
         public RegisterStep1(string FirstName , string LastName, string Payeh , string Reshteh , string NationalCode , string StudentCode
             ,string ProfileAddress,string Bimary)
         {
             InitializeComponent();
+            StudentCode_Txt.IsReadOnly= true;
+            NationalCode_Txt.IsReadOnly= true;
             Name_Txt.Text = FirstName;
             LastName_Txt.Text = LastName;
             Payeh_CmBox.Text = Payeh;
@@ -53,7 +57,6 @@ namespace FormComponent
             StudentProfileAddress = ProfileAddress;
 
         }
-        bool Edit = false;
         public string StudentName { get; set; }
         public string StudentLastName { get; set; }
         public string StudentPayeh { get; set; }
@@ -163,14 +166,17 @@ namespace FormComponent
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            Name_Txt_TextChanged(null,null) ;
-            LastName_Txt_TextChanged(null,null) ;
-            Payeh_CmBox_SelectionChanged(null,null) ;
-            Reshteh_CmBox_SelectionChanged(null,null) ;
-            NationalCode_Txt_TextChanged(null,null) ;
-            StudentCode_Txt_TextChanged(null,null) ;
-            BimariKhas_Txt_TextChanged(null,null);
-            ToggleButton_Checked(null,null);
+            if (Edit)
+            {
+                Name_Txt_TextChanged(null, null);
+                LastName_Txt_TextChanged(null, null);
+                Payeh_CmBox_SelectionChanged(null, null);
+                Reshteh_CmBox_SelectionChanged(null, null);
+                NationalCode_Txt_TextChanged(null, null);
+                StudentCode_Txt_TextChanged(null, null);
+                BimariKhas_Txt_TextChanged(null, null);
+                ToggleButton_Checked(null, null);
+            }
         }
     }
 }

@@ -26,22 +26,57 @@ namespace SAP_Ui
         {
             InitializeComponent();
         }
-        Student_Tbl student;
+
         public StudentInfo(Student_Tbl Student)
         {
             InitializeComponent();
             student = Student;
         }
         public bool Deleted { get; set; }
+        public  Student_Tbl student { get; set; }
         private async void EditStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
-            RegisterStudentForm registerStudentForm = new RegisterStudentForm(student);
+            var result = Bll.Student.SelectStudent(student.StudentCode);
+            if(!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            RegisterStudentForm registerStudentForm = new RegisterStudentForm(result.Data);
             await ShowDialog_DgHost.ShowDialog(registerStudentForm);
             if(registerStudentForm.Edited)
             {
                 RefreshStudentInfo();
             }
         }
+
+
+        void NowDate()
+        {
+            calendar.SelectedDate = DateTime.Now;
+            calendar1.SelectedDate = DateTime.Now;
+        }
+        void FillComboBoxes()
+        {
+            var tashvighMavared = Bll.Mored.SelectTitles("تشویق");
+            if(!tashvighMavared.Success)
+            {
+                MessageBox.Show(tashvighMavared.Message);
+            }
+            else
+            {
+                TypeTashvigh_CmBox.ItemsSource = tashvighMavared.Data;
+            }
+            var tazakorMavared = Bll.Mored.SelectTitles("تذکر");
+            if (!tazakorMavared.Success)
+            {
+                MessageBox.Show(tazakorMavared.Message);
+            }
+            else
+            {
+                TypeTazakor_CmBox.ItemsSource = tazakorMavared.Data;
+            }
+        }
+
         void EnzebatiSliderSelect()
         {
             var brush = new BitmapImage();
@@ -169,31 +204,108 @@ namespace SAP_Ui
             ShowDate_TxtBlock.Text = selectedDate;
         }
          
-        private void RefreshStudentInfo ()
+
+        public void RefreshGheybat()
         {
-            StudentFullName_TxtBlock.Text = student.StudentFirstName + student.StudentLastName;
-            Payeh_TxtBlock.Text = student.StudentPayeh;
-            Reshte_TxtBlock.Text = student.StudentReshteh;
-            NationalCode_TxtBlock.Text = student.StudentNationalCode;
-            StudentCode_TxtBlock.Text = student.StudentCode;
-            Bimary_TxtBlock.Text = student.StudentBimaryKhas;
-            HomeAddress_TxtBlock.Text = student.StudentHomeAddress;
-            HomePhoneNumber_TxtBlock.Text = student.StudentHomeNumber;
-            FatherName_TxtBlock.Text = student.StudentFatherName;
-            FatherJob_TxtBlock.Text = student.StudentFatherJob;
-            FatherMobile_TxtBlock.Text = student.StudentFatherMobile;
-            MotherJob_TxtBlock.Text = student.StudentMotherJob;
-            ParentDead_TxtBlock.Text = student.StudentDeadParent;
-            MotherMobile_TxtBlock.Text = student.StudentMotherMobile;
-            BimaryParent_TxtBlock.Text = student.StudentParentBimary;
-            Profile_Border.Background = ConvertImageToBackground(student.StudentProfile);
-            LeftParent_Img.Source = CheckLeftParent((bool)student.StudentLeftParent);
+            Gheybat_StckPnl.Children.Clear();
+            var gheybats = Bll.Gheybat.SelectGheybatsStudent(student.StudentCode);
+            if(!gheybats.Success)
+            {
+                MessageBox.Show(gheybats.Message);
+            }
+            else
+            {
+                foreach (Gheybat_Tbl gheybat in gheybats.Data)
+                {
+                    Gheybat_StckPnl.Children.Add(new StudentGhebatComponent(gheybat) { Height = 56 ,Width = 631.5 });
+                }
+            }
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        public void RefreshTakhir()
         {
+            Takhir_StckPnl.Children.Clear();
+            var takhirs = Bll.Takhir.SelectTakhirsStudent(student.StudentCode);
+            if (!takhirs.Success)
+            {
+                MessageBox.Show(takhirs.Message);
+            }
+            else
+            {
+                foreach (Takhir_Tbl takhir in takhirs.Data)
+                {
+                    Takhir_StckPnl.Children.Add(new StudentTakhirComponent(takhir) { Height = 56, Width = 631.5 });
+                }
+            }
+        }
+
+        public void RefreshTazakor()
+        {
+            Tazakor_StckPnl.Children.Clear();
+
+            var tazakors = Bll.Tazakor.SelectTazakorsStudent(student.StudentCode);
+            if (!tazakors.Success)
+            {
+                MessageBox.Show(tazakors.Message);
+            }
+            else
+            {
+                foreach (Tazakor_Tbl tazakor in tazakors.Data)
+                {
+                    Tazakor_StckPnl.Children.Add(new StudentTazakorComponent1(tazakor) { Height = 56, Width = 631.5 });
+                }
+            }
+        }
+
+        public void RefreshTashvigh()
+        {
+            Tashvigh_StckPnl.Children.Clear();
+            var tashvighs = Bll.Tashvigh.SelectTashvighsStudent(student.StudentCode);
+            if (!tashvighs.Success)
+            {
+                MessageBox.Show(tashvighs.Message);
+            }
+            else
+            {
+                foreach (Tashvigh_Tbl tashvigh in tashvighs.Data)
+                {
+                    Tashvigh_StckPnl.Children.Add(new StudentTashvighComponent(tashvigh) { Height = 56, Width = 631.5 });
+                }
+            }
+
+        }
+        private void RefreshStudentInfo ()
+        {
+            var result = Bll.Student.SelectStudent(student.StudentCode);
+            StudentFullName_TxtBlock.Text = result.Data.StudentFirstName +"  "+ result.Data.StudentLastName;
+            Payeh_TxtBlock.Text = result.Data.StudentPayeh;
+            Reshte_TxtBlock.Text = result.Data.StudentReshteh;
+            NationalCode_TxtBlock.Text = result.Data.StudentNationalCode;
+            StudentCode_TxtBlock.Text = result.Data.StudentCode;
+            Bimary_TxtBlock.Text = result.Data.StudentBimaryKhas;
+            HomeAddress_TxtBlock.Text = result.Data.StudentHomeAddress;
+            HomePhoneNumber_TxtBlock.Text = result.Data.StudentHomeNumber;
+            FatherName_TxtBlock.Text = result.Data.StudentFatherName;
+            FatherJob_TxtBlock.Text = result.Data.StudentFatherJob;
+            FatherMobile_TxtBlock.Text = result.Data.StudentFatherMobile;
+            MotherJob_TxtBlock.Text = result.Data.StudentMotherJob;
+            ParentDead_TxtBlock.Text = result.Data.StudentDeadParent;
+            MotherMobile_TxtBlock.Text = result.Data.StudentMotherMobile;
+            BimaryParent_TxtBlock.Text = result.Data.StudentParentBimary;
+            Profile_Border.Background = ConvertImageToBackground(result.Data.StudentProfile);
+            LeftParent_Img.Source = CheckLeftParent((bool)result.Data.StudentLeftParent);
+            OtherAbout_TxtBlock.Text = result.Data.StudentOther;
+        }
+
+        public void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            NowDate();
             RefreshStudentInfo();
-            
+            FillComboBoxes();
+            RefreshGheybat();
+            RefreshTakhir();
+            RefreshTashvigh();  
+            RefreshTazakor();
         }
 
         BitmapImage CheckLeftParent (bool LeftParent)
@@ -206,7 +318,7 @@ namespace SAP_Ui
             }
             else
             {
-                brush = new BitmapImage(new Uri("/EnzebatiIco(Black).png", UriKind.Relative)); //Paste No Icon
+                brush = new BitmapImage(new Uri("/cross.png", UriKind.Relative)); //Paste No Icon
             }
             return brush;
         }
@@ -236,6 +348,54 @@ namespace SAP_Ui
                 {
                     MessageBox.Show("حذف موفقیت آمیز نبود");
                 }
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel= true;
+            this.Hide();
+        }
+
+        private void AddTazakor_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Tazakor_Tbl tazakor = new Tazakor_Tbl()
+            {
+                TazakorElat = ElatTazakor_Txt.Text,
+                TazakorEghdamKonande = EghdamKonandeTazakor_Txt.Text,
+                TazakorDate = ShowDate_TxtBlock.Text,
+                TazakorMoredTypeTitle = TypeTazakor_CmBox.SelectedItem.ToString(),
+                TazakorStudentCode = student.StudentCode
+            };
+            var result = Bll.Tazakor.Insert(tazakor);
+            if(!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                RefreshTazakor();
+            }
+        }
+
+        private void AddTashvigh_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Tashvigh_Tbl tashvigh = new Tashvigh_Tbl()
+            {
+                TashvighElat = ElatTashvigh_Txt.Text,
+                TashvighEghdamKonande = EghdamKonandeTashvigh_Txt.Text,
+                TashvighDate = ShowDate1_TxtBlock.Text,
+                TashvighMoredTypeTitle= TypeTashvigh_CmBox.SelectedItem.ToString(),
+                TashvighStudentCode = student.StudentCode
+            };
+            var result = Bll.Tashvigh.Insert(tashvigh);
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                RefreshTashvigh();
             }
         }
     }

@@ -11,12 +11,11 @@
         Width="960"  
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Loaded="Window_Loaded">
-    <Border Background="#FAFAFA">
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Border >
         <Grid>
-            <materialDesign:DialogHost Name="ShowDialog_DgHost">
-                
-            </materialDesign:DialogHost>
+            <materialDesign:DialogHost x:Name="ShowDialog_DgHost"/>
             <Grid FlowDirection="RightToLeft">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="201px"/>
@@ -33,7 +32,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Grid.Row="0" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Center">اطلاعات دانش آموز</TextBlock>
+                        <TextBlock Grid.Row="0" FontFamily="Anjoman" FontSize="16" VerticalAlignment="Bottom" HorizontalAlignment="Center"><Run Text="اطلاعات دانش آموز"/></TextBlock>
                         <Border Margin="12 12 12 0" Grid.Row="1" CornerRadius="4" Background="#FFFFFF" >
                             <Border.Effect>
                                 <DropShadowEffect Color="Black" BlurRadius="40" Opacity="0.1" RenderingBias="Quality" Direction="240" ShadowDepth="4" />
@@ -52,7 +51,7 @@
                                             <ColumnDefinition Width="114"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/badge.png"/>
-                                        <TextBlock Width="59" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 47 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >اطلاعات شخصی</TextBlock>
+                                        <TextBlock Width="59" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 47 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" ><Run Text="اطلاعات شخصی"/></TextBlock>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -61,8 +60,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کدملی:</TextBlock>
-                                        <TextBlock Name="NationalCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="کدملی:"/></TextBlock>
+                                        <TextBlock x:Name="NationalCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -72,8 +71,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">کددانش آموزی:</TextBlock>
-                                        <TextBlock Name="StudentCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="کددانش آموزی:"/></TextBlock>
+                                        <TextBlock x:Name="StudentCode_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -83,8 +82,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">بیماری خواص:</TextBlock>
-                                        <TextBlock Name="Bimary_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >بیماری گوارشی</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="بیماری خواص:"/></TextBlock>
+                                        <TextBlock x:Name="Bimary_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -107,7 +106,7 @@
                                             <ColumnDefinition Width="93.5"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/cottage.png"/>
-                                        <TextBlock  Width="18" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 67.5 0" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >منزل</TextBlock>
+                                        <TextBlock  Width="18" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 67.5 0" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" ><Run Text="منزل"/></TextBlock>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -116,8 +115,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">آدرس منزل:</TextBlock>
-                                        <TextBlock Name="HomeAddress_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >ایران-اصفهان-کاشان</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="آدرس منزل:"/></TextBlock>
+                                        <TextBlock x:Name="HomeAddress_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -127,8 +126,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره تلفن منزل:</TextBlock>
-                                        <TextBlock Name="HomePhoneNumber_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >1234567890</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="شماره تلفن منزل:"/></TextBlock>
+                                        <TextBlock x:Name="HomePhoneNumber_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -157,7 +156,7 @@
                                             <ColumnDefinition Width="99"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/family_restroom.png"/>
-                                        <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 62 0" Width="29"  VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" >خانواده</TextBlock>
+                                        <TextBlock Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 62 0" Width="29"  VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman" ><Run Text="خانواده"/></TextBlock>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -166,8 +165,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">نام پدر:</TextBlock>
-                                        <TextBlock Name="FatherName_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >مجید</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="نام پدر:"/></TextBlock>
+                                        <TextBlock x:Name="FatherName_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -177,8 +176,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل پدر:</TextBlock>
-                                        <TextBlock Name="FatherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >راننده ماشین سنگین</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="شغل پدر:"/></TextBlock>
+                                        <TextBlock x:Name="FatherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -188,8 +187,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره پدر:</TextBlock>
-                                        <TextBlock Name="FatherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="شماره پدر:"/></TextBlock>
+                                        <TextBlock x:Name="FatherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -200,8 +199,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شغل مادر:</TextBlock>
-                                        <TextBlock Name="MotherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خانه دار</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="شغل مادر:"/></TextBlock>
+                                        <TextBlock x:Name="MotherJob_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -212,8 +211,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">شماره مادر:</TextBlock>
-                                        <TextBlock Name="MotherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >09053611296</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="شماره مادر:"/></TextBlock>
+                                        <TextBlock x:Name="MotherMobile_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -225,8 +224,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">جدایی والدین:</TextBlock>
-                                        <Image Name="LeftParent_Img" Grid.Column="1" Height="12" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 8 0" Source="/done.png" />
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="جدایی والدین:"/></TextBlock>
+                                        <Image x:Name="LeftParent_Img" Grid.Column="1" Height="12" Width="12" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 0 8 0"  />
                                     </Grid>
                                 </Border>
 
@@ -237,8 +236,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">فوت والدین:</TextBlock>
-                                        <TextBlock Name="ParentDead_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >خیر</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="فوت والدین:"/></TextBlock>
+                                        <TextBlock x:Name="ParentDead_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
 
@@ -249,8 +248,8 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Left" Margin="8 0 0 0" Grid.ColumnSpan="2" >بیماری خواص:</TextBlock>
-                                        <TextBlock Name="BimaryParent_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >سرطان مادر,سرطان پدر,مشکل قلبی</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Left" Margin="8 0 0 0" Grid.ColumnSpan="2" ><Run Text="بیماری خواص:"/></TextBlock>
+                                        <TextBlock x:Name="BimaryParent_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
                             </Grid>
@@ -271,7 +270,7 @@
                                             <ColumnDefinition Width="112"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Grid.Column="0" Height="16" Width="16" HorizontalAlignment="Right" Source="/article.png"/>
-                                        <TextBlock Width="55" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 49 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman">سایر توضیحات</TextBlock>
+                                        <TextBlock Width="55" Grid.Column="1" HorizontalAlignment="Right" Margin="0 0 49 0" VerticalAlignment="Center" Foreground="#A5A5A5" FontSize="9" FontFamily="Anjoman"><Run Text="سایر توضیحات"/></TextBlock>
                                     </Grid>
                                 </Border>
                                 <Border Grid.Row="1" BorderBrush="#A5A5A5" BorderThickness="0 0 0 0.5">
@@ -280,26 +279,26 @@
                                             <ColumnDefinition Width="auto"/>
                                             <ColumnDefinition Width="*"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0">سایرتوضیحات:</TextBlock>
-                                        <TextBlock Name="OtherAbout_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" >تحت پوشش کمیته امداد</TextBlock>
+                                        <TextBlock Grid.Column="0" Foreground="#1D1D1D" FontSize="9" VerticalAlignment="Center"  FontFamily="Anjoman" HorizontalAlignment="Right" Margin="8 0 0 0"><Run Text="سایرتوضیحات:"/></TextBlock>
+                                        <TextBlock x:Name="OtherAbout_TxtBlock" Grid.Column="1" FlowDirection="RightToLeft" Foreground="#1D1D1D" FontSize="6" VerticalAlignment="Center" FontFamily="Anjoman" HorizontalAlignment="Right" Margin="0 0 8 0" ></TextBlock>
                                     </Grid>
                                 </Border>
                             </Grid>
                         </Border>
                         <Border Grid.Row="5" VerticalAlignment="Center" Background="#D90000" HorizontalAlignment="Left" Margin="12 0 0 0" CornerRadius="4" Width="32" Height="28">
-                            <Button Name="Delete_Btn" Height="28" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Click="Delete_Btn_Click">
+                            <Button x:Name="Delete_Btn" Height="28" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Click="Delete_Btn_Click">
                                 <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
                             </Button>
                         </Border>
                         <Border Grid.Row="5" CornerRadius="4" Height="28" Width="137" HorizontalAlignment="Right" Margin="12 0" Background="#7161EF">
-                            <Button Name="EditStudent_Btn" Padding="0" Height="28" Width="137" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
+                            <Button x:Name="EditStudent_Btn" Padding="0" Height="28" Width="137" Click="EditStudent_Btn_Click" Style="{StaticResource MaterialDesignFlatAccentButton}" >
                                 <Grid Height="28" Width="137">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="90"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
-                                    <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="31 8 0 8">ویرایش اطلاعات</TextBlock>
+                                    <TextBlock FontFamily="Anjoman" FontSize="9" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="#FFFFFF" Margin="31 8 0 8"><Run Text="ویرایش اطلاعات"/></TextBlock>
                                     <Image Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="4 8 0 8" Height="12" Width="12" Source="/Edit.png"/>
                                 </Grid>
                             </Button>
@@ -421,8 +420,8 @@
                                             <ColumnDefinition Width="57"/>
                                             <ColumnDefinition Width="24"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right">مشاهده نمره</TextBlock>
-                                        <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Source="/ShowScore.png" Margin="4 0 0 0"></Image>
+                                        <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right"><Run Text="مشاهده نمره"/></TextBlock>
+                                        <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Source="/ShowScore.png" Margin="4 0 0 0"/>
                                     </Grid>
                                 </Button>
 
@@ -430,7 +429,7 @@
                             </Border>
                         </Grid>
                     </Border>
-                    <Grid Grid.Row="1">
+                    <Grid Grid.Row="1" Background="#FAFAFA">
                         <Grid x:Name="GheybatTakhir_Grid"  Visibility="Visible">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="57"/>
@@ -467,29 +466,13 @@
                                     </Border>
                                 </Grid>
                             </Border>
-                            <ScrollViewer Name="Takhir_Scroll" Grid.Row="1" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                                <StackPanel  Name="Takhir_StckPnl" >
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentTakhirComponent Height="56" Width="631.5"/>
-                                </StackPanel>
+                            <ScrollViewer x:Name="Takhir_Scroll" Grid.Row="1" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
+                                <StackPanel  x:Name="Takhir_StckPnl" />
 
                             </ScrollViewer>
 
-                            <ScrollViewer Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
-                                <StackPanel Name="Gheybat_StckPnl"  >
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-                                    <FormComponent:StudentGhebatComponent Height="56" Width="631.5"/>
-
-                                </StackPanel>
+                            <ScrollViewer x:Name="Gheybat_Scroll" Grid.Row="1" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0" >
+                                <StackPanel x:Name="Gheybat_StckPnl"  />
 
                             </ScrollViewer>
 
@@ -542,16 +525,17 @@
                                         <RowDefinition Height="32"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="65"/>
-                                        <ColumnDefinition Width="156.83"/>
-                                        <ColumnDefinition Width="156.83"/>
-                                        <ColumnDefinition Width="156.83"/>
+                                        <ColumnDefinition Width="87"/>
+                                        <ColumnDefinition Width="149.17"/>
+                                        <ColumnDefinition Width="149.17"/>
+                                        <ColumnDefinition Width="149.17"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
 
-                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
+                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="80"  Height="24" Grid.Row="1" >
                                         <materialDesign:PopupBox
+                                            Width="80"
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
@@ -560,11 +544,11 @@
                                                 <Grid   FlowDirection="RightToLeft">
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="30"/>
-                                                        <ColumnDefinition Width ="27"/>
+                                                        <ColumnDefinition Width ="auto"/>
                                                     </Grid.ColumnDefinitions>
 
 
-                                                    <TextBlock x:Name="ShowDate_TxtBlock" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
+                                                    <TextBlock x:Name="ShowDate_TxtBlock" Width="auto" Grid.Column="1" Foreground="#5E51C7" Margin="0 2 0 0" FontSize="9" FontFamily="Anjoman"  ><Run Text="امروز"/></TextBlock>
 
                                                     <Image Grid.Column="0" Source="/FormComponent;component/calendar_month (1).png"  Height="16" Width="16" HorizontalAlignment="Center" />
 
@@ -587,24 +571,24 @@
                                     </Border>
                                     <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تذکر"/></TextBlock>
 
-                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <TextBox x:Name="ElatTazakor_Txt" BorderThickness="0"  Padding="5 0 5 0" />
                                     </Border>
 
                                     <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
-                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <TextBox x:Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5 0 5 0"  />
                                     </Border>
 
                                     <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تذکر"/></TextBlock>
 
-                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="144.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <ComboBox x:Name="TypeTazakor_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
                                     </Border>
 
                                     <Border Background="#7161EF" Width="76" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
-                                        <Button x:Name="AddTazakor_Btn" Padding="0" Width="74" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                        <Button x:Name="AddTazakor_Btn" Click="AddTazakor_Btn_Click" Padding="0" Width="74" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="52"/>
@@ -631,16 +615,17 @@
                                         <RowDefinition Height="32"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="65"/>
-                                        <ColumnDefinition Width="153.83"/>
-                                        <ColumnDefinition Width="153.83"/>
-                                        <ColumnDefinition Width="153.83"/>
+                                        <ColumnDefinition Width="87"/>
+                                        <ColumnDefinition Width="149.17"/>
+                                        <ColumnDefinition Width="149.17"/>
+                                        <ColumnDefinition Width="149.17"/>
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
 
 
-                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="57"  Height="24" Grid.Row="1" >
+                                    <Border  CornerRadius="4" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#E3DFFC" Width="80"  Height="24" Grid.Row="1" >
                                         <materialDesign:PopupBox
+                                            Width="80"
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
@@ -649,7 +634,7 @@
                                                 <Grid   FlowDirection="RightToLeft">
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="30"/>
-                                                        <ColumnDefinition Width ="27"/>
+                                                        <ColumnDefinition Width ="auto"/>
                                                     </Grid.ColumnDefinitions>
 
 
@@ -676,24 +661,24 @@
                                     </Border>
                                     <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="علت تشویق"/></TextBlock>
 
-                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <TextBox x:Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  />
                                     </Border>
 
                                     <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="اقدام کننده"/></TextBlock>
 
-                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <TextBox x:Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0" />
                                     </Border>
 
                                     <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left"><Run Text="نوع تشویق"/></TextBlock>
 
-                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="141.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                                    <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
                                         <ComboBox x:Name="TypeTashvigh_CmBox" Height="23" BorderThickness="0" Padding="0 0 5 0" />
                                     </Border>
 
                                     <Border Background="#7161EF" Width="85" Height="28" CornerRadius="4" Grid.Column="4" VerticalAlignment="Top" Margin="10,20,10,0" Grid.RowSpan="2">
-                                        <Button x:Name="AddTashvigh_Btn" Padding="0" Width="83" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                                        <Button x:Name="AddTashvigh_Btn" Click="AddTashvigh_Btn_Click" Padding="0" Width="83" Height="26" Background="#7161EF" Style="{StaticResource MaterialDesignFlatAccentButton}">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="61"/>
@@ -711,27 +696,12 @@
                             <ScrollViewer x:Name="Tazakor_Scroll" Grid.Row="2"  VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
                                 <StackPanel x:Name="Tazakor_StckPnl">
 
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
-                                    <FormComponent:StudentTazakorComponent1/>
+
                                 </StackPanel>
                             </ScrollViewer>
 
                             <ScrollViewer x:Name="Tashvigh_Scroll" Grid.Row="2" Visibility="Hidden" VerticalScrollBarVisibility="Hidden" Margin="0 16 0 0">
-                                <StackPanel x:Name="Tashvigh_StckPnl" >
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                    <FormComponent:StudentTashvighComponent/>
-                                </StackPanel>
+                                <StackPanel x:Name="Tashvigh_StckPnl" />
                             </ScrollViewer>
                         </Grid>
                     </Grid>

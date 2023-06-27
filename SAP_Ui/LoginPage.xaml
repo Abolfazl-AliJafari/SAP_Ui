@@ -7,7 +7,8 @@
         xmlns:local="clr-namespace:SAP_Ui"
         xmlns:FormComponent="clr-namespace:FormComponent;assembly=FormComponent" x:Class="SAP_Ui.LoginPage"
         mc:Ignorable="d"
-        Title="ورود" Height="540px" Width="960px" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="ورود" Height="540px" Width="960px" Background="Transparent" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+    Closing="Window_Closing">
     <Border Background="#FAFAFA" CornerRadius="4">
         <Grid>
 

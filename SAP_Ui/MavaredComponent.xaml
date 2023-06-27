@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:FormComponent"
              mc:Ignorable="d" 
              d:DesignHeight="56" d:DesignWidth="476"
-             Margin="0 12 0 12">
+             Margin="0 12 0 12"
+             Loaded="UserControl_Loaded">
     <Border Grid.Row="1" Background="#FFFFFF" VerticalAlignment="Bottom" CornerRadius="4" Height="56" Width="476">
         <Border.Effect>
             <DropShadowEffect Color="Black" BlurRadius="20" Opacity="0.1" RenderingBias="Quality" Direction="260" ShadowDepth="2" />
@@ -28,23 +29,28 @@
             <TextBlock Grid.Column="0" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نام رفتار</TextBlock>
 
             <Border Grid.Column="0" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <ComboBox Name="MoredName_Txt" BorderThickness="0" Height="23" Padding="0 0 5 0" ></ComboBox>
+                <TextBox Name="MoredName_Txt" BorderThickness="0" Height="23" Padding="5 0 5 0" ></TextBox>
             </Border>
 
             <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نوع</TextBlock>
 
             <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <ComboBox Name="MoredType_Txt" BorderThickness="0" Padding="0 0 5 0" Height="23" ></ComboBox>
+                <ComboBox Name="MoredType_CmBox" BorderThickness="0" Padding="0 0 5 0" Height="23" >
+                    <ComboBoxItem Content="تاخیر"/>
+                    <ComboBoxItem Content="غیبت"/>
+                    <ComboBoxItem Content="تشویق"/>
+                    <ComboBoxItem Content="تذکر"/>
+                </ComboBox>
             </Border>
 
             <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="10 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نمره</TextBlock>
 
             <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="130.67" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <TextBox Name="MoredScore_CmBox" BorderThickness="0" Padding="5 0 5 0" ></TextBox>
+                <TextBox Name="MoredScore_Txt" BorderThickness="0" Padding="5 0 5 0" ></TextBox>
             </Border>
 
             <Border Grid.Column="4" Grid.Row="1" VerticalAlignment="Top" Background="#D90000" CornerRadius="4" Width="32" Height="24">
-                <Button Name="Delete_Btn" Height="24" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                <Button Name="Delete_Btn" Height="24" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Click="Delete_Btn_Click">
                     <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
                 </Button>
             </Border>

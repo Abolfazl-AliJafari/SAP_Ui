@@ -76,9 +76,6 @@
     <Compile Include="GheybatTakhir.xaml.cs">
       <DependentUpon>GheybatTakhir.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MavaredComponent.xaml.cs">
-      <DependentUpon>MavaredComponent.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,18 +103,6 @@
     </Compile>
     <Compile Include="SelectParentDead.xaml.cs">
       <DependentUpon>SelectParentDead.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StudentGhebatComponent.xaml.cs">
-      <DependentUpon>StudentGhebatComponent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StudentTakhirComponent.xaml.cs">
-      <DependentUpon>StudentTakhirComponent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StudentTashvighComponent.xaml.cs">
-      <DependentUpon>StudentTashvighComponent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="StudentTazakorComponent1.xaml.cs">
-      <DependentUpon>StudentTazakorComponent1.xaml</DependentUpon>
     </Compile>
     <Compile Include="TakhirComponent.xaml.cs">
       <DependentUpon>TakhirComponent.xaml</DependentUpon>
@@ -148,10 +133,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MavaredComponent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="RegisterStep1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -169,22 +150,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SelectParentDead.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="StudentGhebatComponent.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="StudentTakhirComponent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="StudentTashvighComponent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="StudentTazakorComponent1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,6 +225,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="arrow_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.8.0\build\MaterialDesignThemes.targets')" />

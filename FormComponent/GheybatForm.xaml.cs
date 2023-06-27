@@ -1,7 +1,9 @@
-﻿using DataAccessLayer;
+﻿using Bll;
+using DataAccessLayer;
 using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,57 +25,115 @@ namespace FormComponent
     /// </summary>
     public partial class GheybatForm : UserControl
     {
-        public GheybatForm()
+        public GheybatForm(string Date)
         {
             InitializeComponent();
+            date = Date;
+        }
+        string date;
+        List<string> studentsCode;
+        public string DateSelect { get; set; }
+        public string FillGhayeb()
+        {
+            GhayebsPanelShow_WrpPnl.Children.Clear();
+            var gheybats = Bll.Gheybat.Select(date);
+            if (!gheybats.Success)
+            {
+                MessageBox.Show(gheybats.Message);
+            }
+            else
+            {
+                foreach (Gheybat_Tbl ghayeb in gheybats.Data)
+                {
+                    GhayebsPanelShow_WrpPnl.Children.Add(new GhayebComponent(ghayeb) { Height = 56, Width = 631.5 });
+                }
+            }
+            DateShow_Lbl.Content= date;
+            return gheybats.Data.Count.ToString();
 
         }
-        public List<GetGhayeb> ghayebs = new List<GetGhayeb>();
-        public GheybatForm(List<GetGhayeb> Ghayebs)
+
+        public void GetGheybatFilter(string Date)
         {
-            InitializeComponent();
-            ghayebs = Ghayebs;
-        }
-        public string Date { get; set; }
-        public string DateSelect { get; set; }
-        public string FillGhayeb(List<GetGhayeb> ghayebs)
-        {
-            WrapPanel panel = new WrapPanel();
-            panel.Orientation = Orientation.Horizontal;
-            panel.Width = GhayebsPanelShow_WrpPnl.Width;
-            panel.Height = GhayebsPanelShow_WrpPnl.Height;
-            foreach (GetGhayeb ghayeb in ghayebs)
+            GhayebsPanelShow_WrpPnl.Children.Clear();
+
+            var result = Bll.Gheybat.Select(Date);
+            if (!result.Success)
             {
-                panel.FlowDirection = FlowDirection.LeftToRight;
-                panel.Children.Add(new GhayebComponent() {ghayeb =ghayeb });
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                foreach (Gheybat_Tbl ghayeb in result.Data)
+                {
+                    GhayebsPanelShow_WrpPnl.Children.Add(new GhayebComponent(ghayeb) { Height = 56, Width = 631.5 });
+                }
+                DateShow_Lbl.Content = Date;
+
+            }
+        }
+        void FillComboBoxes()
+        {
+            var result = Bll.Mored.SelectTitles("غیبت");
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                GhayebTypeChoooze_CmBox.ItemsSource = result.Data;
+            }
+            var Names = Bll.Student.GetstudentName();
+            if (!Names.Success)
+            {
+                MessageBox.Show(Names.Message);
+            }
+            else
+            {
+                GhayebChoozeName_CmBox.ItemsSource = Names.Data;
+
             }
 
-            GhayebsPanelShow_WrpPnl.Children.Add(panel);
-            return ghayebs.Count.ToString();
-
+            var codes = Bll.Student.GetstudentCode();
+            if (!codes.Success)
+            {
+                MessageBox.Show(codes.Message);
+            }
+            else
+            {
+                studentsCode = codes.Data;
+            }
         }
-        //private void BtnGheybat_Click(object sender, RoutedEventArgs e)
-        //{
-        //    BorderBtnTakhir.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
-        //    Takhir_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
-        //    BorderBtnGheybat.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
-        //    Gheybat_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
-        //}
-
-        //private void Takhir_Btn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //BorderBtnTakhir.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
-        //    //Takhir_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
-        //    //BorderBtnGheybat.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
-        //    //Gheybat_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
-        //}
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            if(ghayebs != null)
+            calendar.SelectedDate = DateTime.Now;
+            FillComboBoxes();
+            GhayebNumber_Lbl.Content = "غایب"+FillGhayeb();
+        }
+
+        private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+         {
+            string selectedDate = ConvertDate.MiladiToShamsiNumberDate(calendar.SelectedDate.Value);
+            ShowDate_TxtBlock.Text = selectedDate;
+        }
+
+        private void AddGheybat_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Gheybat_Tbl gheybat = new Gheybat_Tbl
             {
-               GhayebNumber_Lbl.Content = FillGhayeb(ghayebs)+"غایب ";
+                GheybatStudentName = GhayebChoozeName_CmBox.SelectedItem.ToString(),
+                GheybatMoredTypeTitle = GhayebTypeChoooze_CmBox.SelectedItem.ToString(),
+                GheybatDate = ShowDate_TxtBlock.Text,
+                GheybatStudentCode = studentsCode[GhayebChoozeName_CmBox.SelectedIndex],
+            };
+
+            var result = Bll.Gheybat.Insert(gheybat);
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
             }
+            GhayebNumber_Lbl.Content = FillGhayeb();
         }
     }
 }

@@ -74,7 +74,7 @@ namespace SAP_Ui
 
         }
 
-        void Filter(string Dahom,string Yazdahom, string Davazdahom, string Hesabdari, string Shabake)
+        void Filter(string Dahom, string Yazdahom, string Davazdahom, string Hesabdari, string Shabake)
         {
             if (string.IsNullOrEmpty(Dahom) && string.IsNullOrEmpty(Yazdahom) && string.IsNullOrEmpty(Davazdahom) && string.IsNullOrEmpty(Hesabdari) && string.IsNullOrEmpty(Shabake))
             {
@@ -105,6 +105,25 @@ namespace SAP_Ui
                         }
 
                     }
+                    else if (studentCards.student.StudentReshteh == Hesabdari || studentCards.student.StudentReshteh == Shabake)
+                    {
+                        if (Dahom != "" || Yazdahom != "" || Davazdahom != "")
+                        {
+                            if (studentCards.student.StudentPayeh == Dahom || studentCards.student.StudentPayeh == Yazdahom || studentCards.student.StudentPayeh == Davazdahom)
+                            {
+                                studentCards.Visibility = Visibility.Visible;
+                            }
+                            else
+                            {
+                                studentCards.Visibility = Visibility.Collapsed;
+                            }
+                        }
+                        else
+                        {
+                            studentCards.Visibility = Visibility.Visible;
+                        }
+
+                    }
                     else
                     {
                         studentCards.Visibility = Visibility.Collapsed;
@@ -131,9 +150,8 @@ namespace SAP_Ui
                 DahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
                 Dahom = "";
                 Filter(Dahom, Yazdahom, Davazdahom, Hesabdari, Shabake);
-              
-            }
 
+            }
         }
 
         private void YazdahomChckBox_Click(object sender, RoutedEventArgs e)
@@ -161,7 +179,7 @@ namespace SAP_Ui
             {
                 ChckBoxDavazdahomBorder.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#E3DFFC"));
                 DavazdahomChckBox.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#6750A4"));
-               Davazdahom = DavazdahomChckBox.Content.ToString();
+                Davazdahom = DavazdahomChckBox.Content.ToString();
                 Filter(Dahom, Yazdahom, Davazdahom, Hesabdari, Shabake);
             }
             else
@@ -209,36 +227,59 @@ namespace SAP_Ui
             }
         }
 
-        private void Refresh ()
+        public void Refresh()
         {
             SudentCard_WrpPnl.Children.Clear();
             var result = Bll.Student.Select();
-            foreach (var student in result.Data)
+            if (!result.Success)
             {
-                SudentCard_WrpPnl.Children.Add(new StudentCards(student) { Height = 185, Width = 161.5 });
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                foreach (var student in result.Data)
+                {
+                    SudentCard_WrpPnl.Children.Add(new StudentCards(student) { Height = 185, Width = 161.5 });
+                }
             }
         }
 
-        private  void Window_Loaded(object sender, RoutedEventArgs e)
+        public void ShowMavared()
+        {
+            ShowMavared_StckPnl.Children.Clear();
+            var result = Bll.Mored.Select();
+            if (!result.Success)
+            {
+                MessageBox.Show(result.Message);
+            }
+            else
+            {
+                foreach (var mored in result.Data)
+                {
+                    ShowMavared_StckPnl.Children.Add(new MavaredComponent(mored) { Height = 56, Width = 476 });
+                }
+
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Shabake = "";
             Hesabdari = "";
             Dahom = "";
             Yazdahom = "";
-            Davazdahom= "";
+            Davazdahom = "";
             DateHome_TxtBlock.Text = ConvertDate.MiladiToShamsiWithMonthName(DateTime.Now);
             Refresh();
+            ShowMavared();
         }
 
         private void GheybatTakhirAdd_Btn_Click(object sender, RoutedEventArgs e)
         {
-          
-
-            DialogGheybat.ShowDialog(new GheybatTakhir{ Width = 671.5 , Height = 315.5}); 
-           
+            DialogGheybat.ShowDialog(new GheybatTakhir { Width = 671.5, Height = 315.5 });
         }
 
-        private  void Import_Btn_Click(object sender, RoutedEventArgs e)
+        private void Import_Btn_Click(object sender, RoutedEventArgs e)
         {
         }
 
@@ -254,16 +295,16 @@ namespace SAP_Ui
 
         private void DeleteStudent_Btn_Click(object sender, RoutedEventArgs e)
         {
-            if(DeleteReady)
+            if (DeleteReady)
             {
-                foreach(object card in SudentCard_WrpPnl.Children)
+                foreach (object card in SudentCard_WrpPnl.Children)
                 {
-                    if(card is StudentCards)
+                    if (card is StudentCards)
                     {
                         (card as StudentCards).HideChckBox();
                     }
                 }
-                DeleteReady= false;
+                DeleteReady = false;
                 deletepnl_Grid.Visibility = Visibility.Collapsed;
             }
             else
@@ -278,7 +319,7 @@ namespace SAP_Ui
                 deletepnl_Grid.Visibility = Visibility.Visible;
                 DeleteReady = true;
             }
-           
+
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -311,7 +352,7 @@ namespace SAP_Ui
 
         private async void SubmitDelete_Btn_Click(object sender, RoutedEventArgs e)
         {
-            List<Student_Tbl> students= new List<Student_Tbl>();
+            List<Student_Tbl> students = new List<Student_Tbl>();
             foreach (StudentCards studentCard in SudentCard_WrpPnl.Children)
             {
                 if (studentCard.StudentSelect_ChckBox.IsChecked == true)
@@ -334,6 +375,59 @@ namespace SAP_Ui
                 {
                     MessageBox.Show("حذف موفقیت آمیز نبود");
                 }
+            }
+        }
+
+        void Search(string search)
+        {
+            foreach (StudentCards studentCards in SudentCard_WrpPnl.Children)
+            {
+                if (studentCards.student.StudentFirstName.Contains(search) || studentCards.student.StudentLastName.Contains(search))
+                {
+                    studentCards.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    studentCards.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
+        private void StudentSearch_Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (StudentSearch_Txt.Text != StudentSearch_Txt.Tag.ToString())
+            {
+                string search = StudentSearch_Txt.Text;
+                Search(search);
+            }
+        }
+
+        private void AddMored_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(MoredName_Txt.Text))
+            {
+                double.TryParse(MoredScore_Txt.Text, out double a);
+                Mavared_Tbl mored = new Mavared_Tbl()
+                {
+                    MoredTitle = MoredName_Txt.Text,
+                    MoredType = MoredType_CmBox.Text,
+                    MoredScore = a
+                };
+                var result = Bll.Mored.Insert(mored);
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                else
+                {
+                    MoredName_Txt.Clear();
+                    MoredScore_Txt.Clear();
+                    MoredType_CmBox.Text = "";
+                }
+                ShowMavared();
+            }
+            else
+            {
+                MessageBox.Show("ابتدا عنوان را وارد کنید");
             }
         }
     }

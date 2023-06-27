@@ -10,7 +10,7 @@ namespace DataAccessLayer
     public class User
     {
         public static OperationResult Login(string UserName, string PassWord)
-        {
+         {
             using (var dataContext = new SAPDbDataContext())
             {
                 var user = dataContext.User_Tbls.FirstOrDefault(User => User.UserName == UserName);
@@ -19,7 +19,6 @@ namespace DataAccessLayer
                 {
                     return new OperationResult()
                     {
-                        Message = "ورود موفقیت آمیز بود",
                         Success = true
                     };
                 }
@@ -27,7 +26,6 @@ namespace DataAccessLayer
                 {
                     return new OperationResult()
                     {
-                        Message = "ورود موفقیت آمیز نبود",
                         Success = false
                     };
                 }

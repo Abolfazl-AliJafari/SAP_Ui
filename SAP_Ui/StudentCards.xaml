@@ -59,7 +59,7 @@
                 </Button>
             </Border>
             <Label Grid.Row="2" Height="16" Width="auto" Padding="0" HorizontalContentAlignment="Center">
-                <TextBlock Name="FullName_TxtBlock" Text="نام و نام خانوادگی" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Anjoman" FontSize="12" Foreground="#1D1D1D"/>
+                <TextBlock Name="FullName_TxtBlock" Text="نام و نام خانوادگی" VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Anjoman" FontSize="11" Foreground="#1D1D1D"/>
             </Label>
             <StackPanel Grid.Row="3" VerticalAlignment="Bottom" Orientation="Horizontal">
                 <Label Height="19" Width="auto" Style="{StaticResource LabelStyle1}" Margin="28.5 0 0 0" Name="Reshteh_Lbl" FontSize="8" Background="#FFD0CAFA" Foreground="#FF4B419F" FontFamily="Anjoman" >

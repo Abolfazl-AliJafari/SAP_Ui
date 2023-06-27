@@ -77,9 +77,10 @@ namespace SAP_Ui
             string userName = UserName_Txt.Text;
             string passWord = PassWord_PassBx.Password;
             OperationResult result = Bll.User.Login(userName, passWord);
+            Forms.homePage = new HomePage_Frm();
             if(result.Success== true)
             {
-                new HomePage_Frm().ShowDialog();
+                Forms.homePage.ShowDialog();
             }
             else
             {
@@ -108,6 +109,11 @@ namespace SAP_Ui
         {
             if (PassWord_PassBx.Password == PassWord_PassBx.Tag.ToString())
                 PassWord_PassBx.Password = "";
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
     }
 }

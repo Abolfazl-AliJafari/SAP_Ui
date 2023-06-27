@@ -26,20 +26,17 @@ namespace FormComponent
             InitializeComponent();
 
         }
-        List <GetGhayeb> ghayebs= new List <GetGhayeb>();
-        List<GetTakhir> takhirs= new List <GetTakhir>();
-        public GheybatTakhir(List<GetGhayeb> Ghayebs,List<GetTakhir> Takhirs)
-        {
-            InitializeComponent();
-            ghayebs = Ghayebs;
-            takhirs = Takhirs;
-        }
+        bool TakhirShow = false;
+     
+     
         TakhirForm takhirForm;
         GheybatForm gheybatForm;
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            takhirForm = new TakhirForm() { takhirs = takhirs , Width=671.5 , Height= 256.5 };
-            gheybatForm = new GheybatForm() { ghayebs = ghayebs,Width = 671.5, Height = 256.5 };
+            calendar.SelectedDate = DateTime.Now;
+
+            takhirForm = new TakhirForm(ShowDate_TxtBlock.Text) { Width=671.5 , Height= 256.5 };
+            gheybatForm = new GheybatForm(ShowDate_TxtBlock.Text) { Width = 671.5, Height = 256.5 };
             Show_WrpPnl.Children.Add(takhirForm);
             Show_WrpPnl.Children.Add(gheybatForm);
             ShowPanel(takhirForm,gheybatForm);
@@ -60,6 +57,8 @@ namespace FormComponent
             TakhirBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             ShowPanel(takhirForm, gheybatForm);
+            TakhirShow = false;
+
         }
 
         private void Takhir_Btn_Click(object sender, RoutedEventArgs e)
@@ -70,12 +69,24 @@ namespace FormComponent
             Gheybat_Btn.Background = (SolidColorBrush)(new BrushConverter().ConvertFrom("#FFFFFF"));
             TakhirBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#7161EF"));
             GheybatBtn_TextBlock.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#1D1D1D"));
+            TakhirShow = true;
             ShowPanel(gheybatForm,takhirForm);
         }
 
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
-            ShowDate_TxtBlock.Text = calendar.SelectedDate.ToString(); //شمسی کانورت شود
+            if (!(gheybatForm == null || takhirForm == null))
+            {
+                ShowDate_TxtBlock.Text = ConvertDate.MiladiToShamsiNumberDate((DateTime)calendar.SelectedDate); //شمسی کانورت شود
+                    takhirForm.GetTakhirFilter(ShowDate_TxtBlock.Text);
+                    gheybatForm.GetGheybatFilter(ShowDate_TxtBlock.Text);
+            }
+            else
+            {
+                ShowDate_TxtBlock.Text = ConvertDate.MiladiToShamsiNumberDate((DateTime)calendar.SelectedDate); //شمسی کانورت شود
+
+            }
         }
+       
     }
 }

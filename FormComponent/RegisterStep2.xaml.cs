@@ -93,15 +93,7 @@ namespace FormComponent
             FatherMobile= FatherMobile_Txt.Text;
         }
 
-        private void MotherMobile_Txt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            MotherMobile= MotherMobile_Txt.Text;
-        }
-
-        private void MotherJob_Txt_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            MotherJob= MotherJob_Txt.Text;
-        }
+        
 
         public void enable(bool Status)
         {
@@ -234,8 +226,8 @@ namespace FormComponent
             FatherName_Txt_TextChanged(null, null);
             FatherJob_Txt_TextChanged(null, null);
             FatherMobile_Txt_TextChanged(null, null);
-            MotherMobile_Txt_TextChanged(null, null);
-            MotherJob_Txt_TextChanged(null, null);
+            MotherMobile_Txt_TextChanged_1(null, null);
+            MotherJob_Txt_TextChanged_1(null, null);
             BimariKhas_Txt_TextChanged(null, null);
             
         }
@@ -261,6 +253,16 @@ namespace FormComponent
             FatherMobile = "";
             MotherJob = "";
             MotherMobile = "";
+        }
+
+        private void MotherJob_Txt_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            MotherJob = MotherJob_Txt.Text;
+        }
+
+        private void MotherMobile_Txt_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            MotherMobile = MotherMobile_Txt.Text;
         }
     }
 }

@@ -1,7 +1,7 @@
-﻿<UserControl x:Class="FormComponent.StudentTazakorComponent1"
+﻿<UserControl x:Class="FormComponent.StudentTashvighComponent"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:FormComponent"
@@ -20,15 +20,17 @@
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="88"/>
-                <ColumnDefinition Width="163.83"/>
-                <ColumnDefinition Width="163.83"/>
-                <ColumnDefinition Width="163.83"/>
+                <ColumnDefinition Width="149.17"/>
+                <ColumnDefinition Width="149.17"/>
+                <ColumnDefinition Width="149.17"/>
+                <ColumnDefinition Width="44"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
 
             <Border Background="#E3DFFC" CornerRadius="4" Grid.Column="0" Width="80" Height="24" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <materialDesign:PopupBox
+                    IsEnabled="False"
             StaysOpen="True"
             materialDesign:RippleAssist.IsDisabled="True"
             materialDesign:RippleAssist.RippleSizeMultiplier="0"
@@ -63,27 +65,32 @@
                     </StackPanel>
                 </materialDesign:PopupBox>
             </Border>
-            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">علت تذکر</TextBlock>
+            <TextBlock Grid.Column="1" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">علت تشویق</TextBlock>
 
-            <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="151.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <TextBox Name="ElatTazakor_Txt" BorderThickness="0" Padding="5 0 5 0"  ></TextBox>
+            <Border Grid.Column="1" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                <TextBox Name="ElatTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  ></TextBox>
             </Border>
 
             <TextBlock Grid.Column="2" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">اقدام کننده</TextBlock>
 
-            <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="151.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <TextBox Name="EghdamKonandeTazakor_Txt" BorderThickness="0" Padding="5 0 5 0" ></TextBox>
+            <Border Grid.Column="2" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                <TextBox Name="EghdamKonandeTashvigh_Txt" BorderThickness="0" Padding="5 0 5 0"  ></TextBox>
             </Border>
 
-            <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نوع تذکر</TextBlock>
+            <TextBlock Grid.Column="3" Grid.Row="0" FontFamily="Anjoman" FontSize="9" Margin="12 0 0 0" VerticalAlignment="Center" Width="auto"  HorizontalAlignment="Left">نوع تشویق</TextBlock>
 
-            <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="151.83" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
-                <ComboBox Name="TypeTazakor_CmBox" BorderThickness="0" Height="23" Padding="0 0 5 0"  ></ComboBox>
+            <Border Grid.Column="3" Grid.Row="1" Height="23.5" CornerRadius="4" Width="137.17" HorizontalAlignment="Right" Background="#FFFFFF" BorderBrush="#BFBFBF" VerticalAlignment="Top" BorderThickness="0.5">
+                <ComboBox Name="TypeTashvigh_CmBox" BorderThickness="0" Height="23" Padding="0 0 5 0"  ></ComboBox>
             </Border>
 
-            <Border Grid.Column="4" Grid.Row="1" VerticalAlignment="Top" Background="#D90000" CornerRadius="4" Width="32" Height="24">
-                <Button Name="Delete_Btn" Height="24" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
+            <Border Grid.Column="4" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Background="#D90000" CornerRadius="4" Width="32" Height="24">
+                <Button Name="Delete_Btn" Click="Delete_Btn_Click" Height="24" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
                     <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/delete (1).png"/>
+                </Button>
+            </Border>
+            <Border Grid.Column="5" Grid.Row="1" VerticalAlignment="Top" Background="#4BB216" CornerRadius="4" Width="32" Height="24">
+                <Button Name="Edit_Btn" Height="24" Click="Edit_Btn_Click" Width="32" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}">
+                    <Image Height="16" Width="16" VerticalAlignment="Center" HorizontalAlignment="Center" Source="/FormComponent;component/Edit.png"/>
                 </Button>
             </Border>
         </Grid>

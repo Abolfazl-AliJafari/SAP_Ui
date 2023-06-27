@@ -73,9 +73,9 @@ namespace FormComponent
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StudentInfo studentInfo = new StudentInfo(student);
-            studentInfo.ShowDialog();
-            if(studentInfo.Deleted)
+            Forms.studentInfo = new StudentInfo(student);
+            Forms.studentInfo.ShowDialog();
+            if(Forms.studentInfo.Deleted)
             {
                 this.Visibility = Visibility.Collapsed;
             }
