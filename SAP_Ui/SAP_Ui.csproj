@@ -74,6 +74,9 @@
     <Compile Include="MavaredComponent.xaml.cs">
       <DependentUpon>MavaredComponent.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ShowScore.xaml.cs">
+      <DependentUpon>ShowScore.xaml</DependentUpon>
+    </Compile>
     <Compile Include="StudentCards.xaml.cs">
       <DependentUpon>StudentCards.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
     <Page Include="MavaredComponent.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShowScore.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="StudentCards.xaml">
       <Generator>MSBuild:Compile</Generator>

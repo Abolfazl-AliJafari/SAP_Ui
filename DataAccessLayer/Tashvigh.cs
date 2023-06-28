@@ -8,11 +8,11 @@ namespace DataAccessLayer
 {
     public class Tashvigh
     {
+        public static SAPDbDataContext dataContext = new SAPDbDataContext();
         public static OperationResult<List<Tashvigh_Tbl>> Select(string search = "")
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Tashvigh_Tbls.Where(p => p.TashvighDate==search).ToList();
                 return new OperationResult<List<Tashvigh_Tbl>>
                 {
@@ -33,7 +33,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Tashvigh_Tbls.Where(p => p.Id == id).Single();
                 dataContext.Tashvigh_Tbls.DeleteOnSubmit(query);
                 dataContext.SubmitChanges();
@@ -54,12 +53,28 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 dataContext.Tashvigh_Tbls.InsertOnSubmit(tashvigh);
                 dataContext.SubmitChanges();
+                var result = Mored.SelectScore(tashvigh.TashvighMoredTypeTitle);
+                if (result.Success)
+                {
+                    var student = Student.SelectStudent(tashvigh.TashvighStudentCode);
+                    if (student.Success)
+                    {
+                        student.Data.StudentScore += result.Data;
+                        var update = Student.Update(student.Data.StudentCode, student.Data);
+                        if (update.Success)
+                        {
+                            return new OperationResult
+                            {
+                                Success = true
+                            };
+                        }
+                    }
+                }
                 return new OperationResult
                 {
-                    Success = true
+                    Success = false
                 };
             }
             catch
@@ -76,7 +91,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Tashvigh_Tbls.Where(p => p.Id == tashvigh.Id).Single();
                 query.TashvighElat = tashvigh.TashvighElat;
                 query.TashvighEghdamKonande = tashvigh.TashvighEghdamKonande;

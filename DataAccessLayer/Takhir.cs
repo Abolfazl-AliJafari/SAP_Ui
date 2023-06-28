@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,13 @@ namespace DataAccessLayer
 {
     public class Takhir
     {
-        public static OperationResult<List<Takhir_Tbl>> Select(string Search)
+        public static SAPDbDataContext dataContext = new SAPDbDataContext();
+
+        public static OperationResult<List<Takhir_Tbl>> Select(string Search = "")
         {
             try
             {
-                SAPDbDataContext linq = new SAPDbDataContext();
-                var query = linq.Takhir_Tbls.Where(p => p.TakhirDate==Search).ToList();
+                var query = dataContext.Takhir_Tbls.Where(p => p.TakhirDate==Search).ToList();
                 return new OperationResult<List<Takhir_Tbl>>
                 {
                     Success = true,
@@ -32,11 +34,10 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext linq = new SAPDbDataContext();
-                var query = linq.Takhir_Tbls.Where(p => p.TakhirStudentCode == code &&
+                var query = dataContext.Takhir_Tbls.Where(p => p.TakhirStudentCode == code &&
                 p.TakhirDate == tarikh).Single();
-                linq.Takhir_Tbls.DeleteOnSubmit(query);
-                linq.SubmitChanges();
+                dataContext.Takhir_Tbls.DeleteOnSubmit(query);
+                dataContext.SubmitChanges();
                 return new OperationResult
                 {
                     Success = true
@@ -54,13 +55,31 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext linq = new SAPDbDataContext();
-                linq.Takhir_Tbls.InsertOnSubmit(takhir);
-                linq.SubmitChanges();
+                dataContext.Takhir_Tbls.InsertOnSubmit(takhir);
+                dataContext.SubmitChanges();
+                var result = Mored.SelectScore(takhir.TakhirMoredTypeTitle);
+                if (result.Success)
+                {
+                    var student = Student.SelectStudent(takhir.TakhirStudentCode);
+                    if (student.Success)
+                    {
+                        student.Data.StudentScore -= result.Data;
+                        var update = Student.Update(student.Data.StudentCode, student.Data);
+                        if(update.Success)
+                        {
+                            return new OperationResult
+                            {
+                                Success = true
+                            };
+                        }
+                    }
+                }
+
                 return new OperationResult
                 {
-                    Success = true
+                    Success = false
                 };
+
             }
             catch
             {
@@ -75,14 +94,13 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext linq = new SAPDbDataContext();
-                var query = linq.Takhir_Tbls.Where(p => p.TakhirStudentCode == takhir.TakhirStudentCode &&
+                var query = dataContext.Takhir_Tbls.Where(p => p.TakhirStudentCode == takhir.TakhirStudentCode &&
                 p.TakhirDate == takhir.TakhirDate).Single();
                 if (query != null)
                 {
                     query.TakhirMoredTypeTitle = takhir.TakhirMoredTypeTitle;
                 }
-                linq.SubmitChanges();
+                dataContext.SubmitChanges();
                 return new OperationResult
                 {
                     Success = true
@@ -101,7 +119,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var takirs = dataContext.Takhir_Tbls.Where(takir => takir.TakhirStudentCode == StudentCode).ToList();
                 return new OperationResult<List<Takhir_Tbl>>
                 {
@@ -116,6 +133,21 @@ namespace DataAccessLayer
                     Success = false,
                 };
             }
+        }
+        public static OperationResult CheckGheybatDateCode(string StudentCode, string Date)
+        {
+            var result = dataContext.Takhir_Tbls.Where(x => x.TakhirStudentCode == StudentCode && x.TakhirDate== Date).ToList();
+            if (result.Count != 0)
+            {
+                return new OperationResult
+                {
+                    Success = false
+                };
+            }
+            return new OperationResult
+            {
+                Success = true
+            };
         }
     }
 

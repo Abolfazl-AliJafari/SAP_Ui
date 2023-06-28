@@ -57,6 +57,7 @@ namespace FormComponent
         public  void GetTakhirFilter (string Date)
         {
             TakhirsPanelShow_WrpPnl.Children.Clear();
+            DateShow_Lbl.Content= Date;
             var result = Bll.Takhir.Select(Date);
             if(!result.Success)
             {
@@ -108,7 +109,7 @@ namespace FormComponent
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             calendar.SelectedDate = DateTime.Now;
-
+            DateShow_Lbl.Content= ShowDate_TxtBlock.Text;
             TakhirNumber_Lbl.Content = FillTakhir() + "تاخیر ";
             FillComboBoxes();
         }

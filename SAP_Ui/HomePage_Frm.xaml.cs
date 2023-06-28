@@ -1,6 +1,7 @@
 ﻿using DataAccessLayer;
 using FormComponent;
 using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -281,6 +282,20 @@ namespace SAP_Ui
 
         private void Import_Btn_Click(object sender, RoutedEventArgs e)
         {
+            //string selectedPath = "";
+            //var dialog = new OpenFileDialog
+            //{
+            //    Title = "لطفا یک فایل اکسل انتخاب کنید",
+            //    Filter = "Excel|*.xlsx",
+            //};
+
+            //if (dialog.ShowDialog() == true)
+            //{
+            //    selectedPath = dialog.FileName;
+            //    // انجام عملیات مورد نظر با مسیر انتخاب شده
+            //}
+
+            //var result = DataAccessLayer.ExportImport.ExportToExcel(selectedPath);
         }
 
         private async void AddStudent_Btn_Click(object sender, RoutedEventArgs e)

@@ -17,7 +17,14 @@ namespace Bll
                     Success = false,
                     Message = "تاریخ را وارد کنید"
                 };
-
+            else if(!(DataAccessLayer.Gheybat.CheckGheybatDateCode(gheybat.GheybatStudentCode,gheybat.GheybatDate).Success))
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "غیبت برای این دانش آموز قبلا در این تاریخ ثبت شده است"
+                };
+            }
             else if (string.IsNullOrEmpty(gheybat.GheybatStudentName))
                 return new OperationResult
                 {

@@ -10,7 +10,7 @@ namespace DataAccessLayer
     {
         public static SAPDbDataContext dataContext = new SAPDbDataContext();
 
-        public static OperationResult<List<Gheybat_Tbl>> Select(string Search)
+        public static OperationResult<List<Gheybat_Tbl>> Select(string Search = "")
         {
             try
             {
@@ -78,9 +78,26 @@ namespace DataAccessLayer
 
                 dataContext.Gheybat_Tbls.InsertOnSubmit(gheybat);
                 dataContext.SubmitChanges();
+                var result = Mored.SelectScore(gheybat.GheybatMoredTypeTitle);
+                if(result.Success)
+                {
+                    var student = Student.SelectStudent(gheybat.GheybatStudentCode);
+                    if(student.Success)
+                    {
+                        student.Data.StudentScore -= result.Data; 
+                        var update = Student.Update(student.Data.StudentCode,student.Data);
+                        if (update.Success)
+                        {
+                            return new OperationResult
+                            {
+                                Success = true
+                            };
+                        }
+                    }
+                }
                 return new OperationResult
                 {
-                    Success = true
+                    Success = false
                 };
             }
             catch
@@ -140,8 +157,8 @@ namespace DataAccessLayer
 
         public static OperationResult CheckGheybatDateCode(string StudentCode,string Date)
         {
-            var result = dataContext.Gheybat_Tbls.Where(x => x.GheybatStudentCode == StudentCode && x.GheybatDate == Date);
-            if(result!=null)
+            var result = dataContext.Gheybat_Tbls.Where(x => x.GheybatStudentCode == StudentCode && x.GheybatDate == Date).ToList();
+            if(result.Count!=0)
             {
                 return new OperationResult
                 {

@@ -9,9 +9,7 @@
              Loaded="UserControl_Loaded"
              Margin="0 0 24 24">
     <Border Name="StudentCard_Border" Grid.Row="0" CornerRadius="6" BorderThickness="1"   Background="White">
-        <Border.Effect>
-            <DropShadowEffect Color="Black" BlurRadius="15" Opacity="0.1" RenderingBias="Quality" Direction="315" ShadowDepth="2"/>
-        </Border.Effect>
+   
         <Grid>
             <Grid.Resources>
                 <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
@@ -70,7 +68,7 @@
                 </Label>
             </StackPanel>
             <Border Grid.Row="5" Background="#7161EF" Height="28" Width="137.5" CornerRadius="4">
-                <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1" Click="Button_Click">
+                <Button  Cursor="Hand"  Width="135.5" Height="26"  FontSize="20" BorderThickness="0" Style="{StaticResource MaterialDesignFlatAccentBgButton}" Foreground="#FFFFFF" Background="#7161EF"  FontFamily="Anjoman" HorizontalContentAlignment="Center" FlowDirection="RightToLeft" Padding="1,1,1,1" Click="Button_Click" HorizontalAlignment="Left" Margin="1,1,0,1">
                     <TextBlock Text="مشاهده دانش آموز" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center" FontSize="9"/>

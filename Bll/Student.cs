@@ -396,6 +396,19 @@ namespace Bll
             }
             return studentsName;
         }
+        public static OperationResult<double> SelectScore(string StudentCode)
+        {
+            var result = DataAccessLayer.Student.SelectScore(StudentCode);
+            if(result.Success) 
+            {
+                return result;
+            }
+            return new OperationResult<double>
+            {
+                Success = false,
+                Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید."
+            };
+        }
 
 
     }

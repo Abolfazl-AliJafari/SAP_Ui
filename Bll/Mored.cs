@@ -18,6 +18,14 @@ namespace Bll
                     Success = false,
                     Message = "عنوان مورد را وارد کنید"
                 };
+            else if(!(DataAccessLayer.Mored.CheckTitle(mored.MoredTitle).Success))
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "این مورد قبلا ثبت شده است"
+                };
+            }
             else if (!Validation.CheckStringFormat(mored.MoredTitle))
                 return new OperationResult
                 {

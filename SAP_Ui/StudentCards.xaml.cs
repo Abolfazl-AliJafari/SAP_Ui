@@ -73,7 +73,11 @@ namespace FormComponent
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Forms.studentInfo = new StudentInfo(student);
+            Forms.studentInfo = new StudentInfo(student)
+            {
+                Height = 540,
+                Width = 960
+            };
             Forms.studentInfo.ShowDialog();
             if(Forms.studentInfo.Deleted)
             {

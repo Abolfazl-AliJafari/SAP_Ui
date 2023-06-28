@@ -107,7 +107,7 @@
                         <ColumnDefinition Width="148"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Background="#FAFAFA" x:Name="ShowMavaredEnzebati_Grid" Visibility="Visible">
+                    <Grid Background="#FAFAFA" x:Name="ShowMavaredEnzebati_Grid" Visibility="Hidden">
                         <Button x:Name="GoHome_Btn" Click="GoHome_Btn_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="70 16 0 0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Padding="0">
                             <Image Height="24" Width="24" Source="/GoBack.png"/>
                         </Button>
@@ -171,7 +171,7 @@
                         </Grid>
 
                     </Grid>
-                    <Grid x:Name="ShowStudents_Grid" Visibility="Hidden" Background="#FAFAFA"  >
+                    <Grid x:Name="ShowStudents_Grid" Visibility="Visible" Background="#FAFAFA"  >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="auto"/>
@@ -282,7 +282,7 @@
                             </Grid>
                             <Grid Grid.Row="2" FlowDirection="RightToLeft">
                                 <Border Grid.Column="1" Width="38.67" Height="32" Margin="0 0 8 0" HorizontalAlignment="Right" CornerRadius="4" BorderThickness="0.5" BorderBrush="#0077E5">
-                                    <Button x:Name="Import_Btn" Click="Import_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  >
+                                    <Button x:Name="Import_Btn" Click="Import_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent" Height="32" VerticalAlignment="Center" HorizontalAlignment="Right" Width="38"  >
                                         <Image Height="16" Width="16" Source="/system_update_alt (1).png" />
                                     </Button>
                                 </Border>

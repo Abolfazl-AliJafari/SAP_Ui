@@ -23,6 +23,14 @@ namespace Bll
                     Success = false,
                     Message = "نام و نام خانوادگی را وارد کنید"
                 };
+            else if (!(DataAccessLayer.Takhir.CheckGheybatDateCode(takhir.TakhirStudentCode, takhir.TakhirDate).Success))
+            {
+                return new OperationResult
+                {
+                    Success = false,
+                    Message = "تاخیر برای این دانش آموز قبلا در این تاریخ ثبت شده است"
+                };
+            }
             else if (string.IsNullOrEmpty(takhir.TakhirMoredTypeTitle))
                 return new OperationResult
                 {

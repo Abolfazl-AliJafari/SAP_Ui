@@ -8,11 +8,11 @@ namespace DataAccessLayer
 {
     public class Mored
     {
+        public static SAPDbDataContext dataContext = new SAPDbDataContext();
         public static OperationResult<List<Mavared_Tbl>> Select()
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Mavared_Tbls.ToList();
                 return new OperationResult<List<Mavared_Tbl>>
                 {
@@ -33,7 +33,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Mavared_Tbls.Where(p => p.Id == id).Single();
                 dataContext.Mavared_Tbls.DeleteOnSubmit(query);
                 dataContext.SubmitChanges();
@@ -54,7 +53,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 dataContext.Mavared_Tbls.InsertOnSubmit(mored);
                 dataContext.SubmitChanges();
                 return new OperationResult
@@ -76,7 +74,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var query = dataContext.Mavared_Tbls.Where(p => p.MoredTitle == mored.MoredTitle).Single();
                 query.MoredType = mored.MoredType;
                 query.MoredScore = mored.MoredScore;
@@ -100,7 +97,6 @@ namespace DataAccessLayer
         {
             try
             {
-                SAPDbDataContext dataContext = new SAPDbDataContext();
                 var mavared = dataContext.Mavared_Tbls.Where(x => x.MoredType == type);
                 List<string> titles = new List<string>();
                 foreach (Mavared_Tbl mored in mavared)
@@ -117,6 +113,39 @@ namespace DataAccessLayer
             {
                 return new OperationResult<List<string>> { Success = false };
             }
+        }
+
+        public static OperationResult CheckTitle(string title)
+        {
+            var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
+            if(result == null)
+            {
+                return new OperationResult
+                {
+                    Success = true
+                };
+            }
+            return new OperationResult
+            {
+                Success = false
+            };
+        }
+
+        public static OperationResult<double> SelectScore(string title)
+        {
+            var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
+            if(result != null)
+            {
+                return new OperationResult<double>
+                {
+                    Success = true,
+                    Data = result.MoredScore
+                };
+            }
+            return new OperationResult<double>
+            {
+                Success = false
+            };
         }
 
     }

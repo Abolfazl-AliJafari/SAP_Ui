@@ -53,7 +53,7 @@
 
                     </Button>
                     <Border Grid.Column="2" Width="61" Height="28" Margin="0 0 20 0" Background="#7161EF" HorizontalAlignment="Right" CornerRadius="4"  >
-                        <Button Name="NextStep_Btn" Click="NextStep_Btn_Click" FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Width="59" Height="26" Content="مرحله بعدی" HorizontalAlignment="Left" Foreground="#FFFFFF" BorderThickness="0" FontFamily="Anjoman" Margin="2,1,0,0" VerticalAlignment="Top"></Button>
+                        <Button Name="NextStep_Btn" Click="NextStep_Btn_Click" FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="#7161EF" Width="59" Content="مرحله بعدی" HorizontalAlignment="Left" Foreground="#FFFFFF" BorderThickness="0" FontFamily="Anjoman" Margin="2,1,0,1"/>
                     </Border>
                     <Border Grid.Column="1" Width="61" Height="28" Margin="0 0 20 0" HorizontalAlignment="Right" CornerRadius="4" BorderThickness="0.5" BorderBrush="#7161EF" >
                         <Button Name="PerviuosStep_Btn" Click="PerviuosStep_Btn_Click"  FontSize="9" Padding="0" Style="{StaticResource MaterialDesignFlatAccentButton}" Background="Transparent"  Width="61" Height="28" Content="مرحله قبلی"  Foreground="#7161EF"  FontFamily="Anjoman"></Button>

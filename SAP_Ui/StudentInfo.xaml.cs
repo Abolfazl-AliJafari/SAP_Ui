@@ -398,5 +398,10 @@ namespace SAP_Ui
                 RefreshTashvigh();
             }
         }
+
+        private async void  ShowScore_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            await ShowDialog_DgHost.ShowDialog(new ShowScore(student.StudentCode) { Height = 90, Width = 299 });
+        }
     }
 }
