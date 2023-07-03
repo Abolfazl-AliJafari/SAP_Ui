@@ -117,35 +117,57 @@ namespace DataAccessLayer
 
         public static OperationResult CheckTitle(string title)
         {
-            var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
-            if(result == null)
+            try
+            {
+                var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).ToList();
+                if (result.Count == 0)
+                {
+                    return new OperationResult
+                    {
+                        Success = true
+                    };
+                }
+                return new OperationResult
+                {
+                    Success = false,
+                };
+            }
+            catch
             {
                 return new OperationResult
                 {
-                    Success = true
+                    Success = false
                 };
             }
-            return new OperationResult
-            {
-                Success = false
-            };
+            
         }
 
         public static OperationResult<double> SelectScore(string title)
         {
-            var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
-            if(result != null)
+            try
+            {
+                var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
+                if (result != null)
+                {
+                    return new OperationResult<double>
+                    {
+                        Success = true,
+                        Data = result.MoredScore
+                    };
+                }
+                return new OperationResult<double>
+                {
+                    Success = false,
+                };
+            }
+            catch (Exception)
             {
                 return new OperationResult<double>
                 {
-                    Success = true,
-                    Data = result.MoredScore
+                    Success = false
                 };
             }
-            return new OperationResult<double>
-            {
-                Success = false
-            };
+           
         }
 
     }
