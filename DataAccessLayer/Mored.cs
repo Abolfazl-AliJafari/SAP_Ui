@@ -146,13 +146,13 @@ namespace DataAccessLayer
         {
             try
             {
-                var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).Single();
-                if (result != null)
+                var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).ToList();
+                if (result.Count != 0)
                 {
                     return new OperationResult<double>
                     {
                         Success = true,
-                        Data = result.MoredScore
+                        Data = result[0].MoredScore
                     };
                 }
                 return new OperationResult<double>
