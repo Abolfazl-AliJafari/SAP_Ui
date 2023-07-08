@@ -109,7 +109,7 @@ namespace Bll
             {
                 return validation;
             }
-            var result = DataAccessLayer.Tashvigh.Update(tashvigh);
+            var result = DataAccessLayer.Tashvigh.Update(tashvigh,0);
             if(result.Success)
             {
                 return result;

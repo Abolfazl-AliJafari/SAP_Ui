@@ -48,5 +48,39 @@ namespace FormComponent
                 Forms.homePage.ShowMavared();
             }
         }
+
+        private void MoredScore_Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void MoredName_Txt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void MoredType_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Edit_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            double lastScore;
+            if (double.TryParse(MoredScore_Txt.Text, out double score))
+            {
+              lastScore = Mored.MoredScore;
+                Mored.MoredScore = score;
+                var reuslt = Bll.Mored.Update(Mored, lastScore);
+                if (!reuslt.Success)
+                {
+                    MessageBox.Show("مشکلی پیش امد");
+                }
+            }
+            else
+            {
+                MessageBox.Show("نمره را درست وارد کنید");
+            }
+        }
     }
 }

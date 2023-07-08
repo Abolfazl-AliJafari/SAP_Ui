@@ -115,7 +115,7 @@ namespace Bll
                 };
             else
             {
-                var result = DataAccessLayer.Takhir.Update(takhir);
+                var result = DataAccessLayer.Takhir.Update(takhir,0);
                 if (result.Success == true)
                 {
                     return new OperationResult

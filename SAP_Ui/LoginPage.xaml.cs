@@ -31,13 +31,19 @@ namespace SAP_Ui
         {
             TextBox textBox = (TextBox)sender;
             if (textBox.Text == textBox.Tag.ToString())
+            {
                 textBox.Text = "";
+                UserName_Txt.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#000000"));
+            }
         }
         public void AddText(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
             if (string.IsNullOrWhiteSpace(textBox.Text))
+            {
                 textBox.Text = textBox.Tag.ToString();
+                UserName_Txt.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#B8B8B8"));
+            }
         }
 
         private void ShowPass_Btn_MouseEnter_1(object sender, MouseEventArgs e)
@@ -102,13 +108,20 @@ namespace SAP_Ui
         private void PassWord_PassBx_LostFocus(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(PassWord_PassBx.Password))
+            {
                 PassWord_PassBx.Password = PassWord_PassBx.Tag.ToString();
+                PassWord_PassBx.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#B8B8B8"));
+            }
         }
 
         private void PassWord_PassBx_GotFocus(object sender, RoutedEventArgs e)
         {
+
             if (PassWord_PassBx.Password == PassWord_PassBx.Tag.ToString())
+            {
                 PassWord_PassBx.Password = "";
+                PassWord_PassBx.Foreground = (SolidColorBrush)(new BrushConverter().ConvertFrom("#000000"));
+            }
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

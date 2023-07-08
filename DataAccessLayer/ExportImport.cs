@@ -88,7 +88,7 @@ namespace DataAccessLayer
                     Message = "خروجی موفقیت آمیز بود"
                 };
         }
-        catch (Exception ex)
+        catch (Exception)
         {
                 return new OperationResult
                 {

@@ -66,7 +66,7 @@
                     </TextBlock>
                     <Border Grid.Row="1" Background="#FFFFFF"  CornerRadius="4" BorderThickness="1" Width="250.25" Height="24" VerticalAlignment="Bottom" Margin="0 0 0 8"  HorizontalAlignment="Right" BorderBrush="#BFBFBF">
 
-                        <ComboBox   Name="TakhirName_CmBox"  IsReadOnly="True" BorderThickness="0"  Height="20"  Width="245.25" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="0 0 5 0" Foreground="#000000" FlowDirection="RightToLeft" >
+                        <ComboBox   Name="TakhirName_CmBox"  IsEnabled="False" BorderThickness="0"  Height="20"  Width="245.25" Background="#FFFFFF"  VerticalContentAlignment="Center" HorizontalContentAlignment="Right" Padding="0 0 5 0" Foreground="#000000" FlowDirection="RightToLeft" SelectionChanged="TakhirName_CmBox_SelectionChanged" >
 
                         </ComboBox>
                     </Border>

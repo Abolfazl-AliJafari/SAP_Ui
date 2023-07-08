@@ -12,15 +12,15 @@ namespace Bll
 
         public static OperationResult Login(string UserName, string PassWord)
         {
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(PassWord))
+            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(PassWord) && UserName != "نام کاربری" && PassWord != "رمز عبور")
             {
                 var result = DataAccessLayer.User.Login(UserName, PassWord);
                 if(!result.Success)
                 {
                     return new OperationResult
                     {
-                        Success = true,
-                        Message = "خطایی رخ داد لطفا با پشتیبانی تماس بگیرید."
+                        Success = false,
+                        Message = "رمز عبور یا نام کاربری اشتباه است."
                     };
                 }
             }

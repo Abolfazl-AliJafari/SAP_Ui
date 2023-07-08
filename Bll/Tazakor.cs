@@ -110,7 +110,7 @@ namespace Bll
                 return validation;
             }
 
-            var result = DataAccessLayer.Tazakor.Update(tazakor);
+            var result = DataAccessLayer.Tazakor.Update(tazakor,0);
             if (result.Success)
             {
                 return result;

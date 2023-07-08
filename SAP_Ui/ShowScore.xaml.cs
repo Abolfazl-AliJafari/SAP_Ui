@@ -36,6 +36,14 @@ namespace SAP_Ui
             }
             else
             {
+                if (result.Data < 0)
+                {
+                    result.Data = 0;
+                }
+                else if (result.Data > 20)
+                {
+                    result.Data = 20;
+                }
                 Score_TxtBlock.Text = result.Data.ToString();
             }
         }

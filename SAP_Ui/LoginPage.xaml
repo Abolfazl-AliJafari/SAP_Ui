@@ -68,7 +68,7 @@
                         </Grid>
                     </Border>
                     <Border Grid.Row="3" Background="#7161EF" CornerRadius="4" Height="28" Width="310">
-                        <Button x:Name="Login_Btn" BorderThickness="0" Cursor="Hand" Style="{StaticResource MaterialDesignFlatAccentBgButton}"  Click="Login_Btn_Click"   Background="#7161EF" Width="308" Height="26" >
+                        <Button x:Name="Login_Btn" BorderThickness="0" Cursor="Hand" Style="{StaticResource MaterialDesignFlatAccentBgButton}"  Click="Login_Btn_Click"   Background="Transparent" Width="310" Height="28" >
                             <TextBlock Text="ورود" FontSize="12px" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                         </Button>
                     </Border>

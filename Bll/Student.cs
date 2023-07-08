@@ -21,7 +21,7 @@ namespace Bll
             return true;
         }
         
-        public static OperationResult ValidationStudent (Student_Tbl student)
+        public static OperationResult ValidationStudent (Student_Tbl student,bool isedit)
         {
             if (string.IsNullOrEmpty(student.StudentFirstName))
                 return new OperationResult
@@ -70,13 +70,16 @@ namespace Bll
                     Success = false,
                     Message = "کد ملی را وارد کنید"
                 };
-            if (!DataAccessLayer.Student.CheckNationalCode(student.StudentNationalCode).Success) 
+            if (!isedit)
             {
-                return new OperationResult
+                if (!DataAccessLayer.Student.CheckNationalCode(student.StudentNationalCode).Success)
                 {
-                    Success = false,
-                    Message = "کد ملی قبلا ثبت شده است"
-                };
+                    return new OperationResult
+                    {
+                        Success = false,
+                        Message = "کد ملی قبلا ثبت شده است"
+                    };
+                }
             }
             if(!Validation.CheckRangeFormat(student.StudentNationalCode, 10))
             {
@@ -102,13 +105,16 @@ namespace Bll
                     Message = "فرمت عددی کد دانش آموزی را رعایت کنید"
                 };
             }
-            if (!DataAccessLayer.Student.CheckStudentCode(student.StudentCode).Success)
+            if (!isedit)
             {
-                return new OperationResult
+                if (!DataAccessLayer.Student.CheckStudentCode(student.StudentCode).Success)
                 {
-                    Success = false,
-                    Message = "کد دانش آموزی قبلا ثبت شده است"
-                };
+                    return new OperationResult
+                    {
+                        Success = false,
+                        Message = "کد دانش آموزی قبلا ثبت شده است"
+                    };
+                }
             }
             if (!Validation.CheckRangeFormat(student.StudentCode, 10))
             {
@@ -257,7 +263,7 @@ namespace Bll
 
         public static OperationResult Update ( string LastStudentCode,Student_Tbl student)
         {
-            var validationResult = ValidationStudent(student);
+            var validationResult = ValidationStudent(student,true);
             if (validationResult.Success)
             {
                  var result = DataAccessLayer.Student.Update(LastStudentCode, student);
@@ -275,7 +281,7 @@ namespace Bll
         {
 
             
-            var validationResult = ValidationStudent(student);
+            var validationResult = ValidationStudent(student,false);
             if (validationResult.Success)
             {
 

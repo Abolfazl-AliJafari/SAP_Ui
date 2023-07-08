@@ -359,49 +359,81 @@ namespace SAP_Ui
 
         private void AddTazakor_Btn_Click(object sender, RoutedEventArgs e)
         {
-            Tazakor_Tbl tazakor = new Tazakor_Tbl()
+            try
             {
-                TazakorElat = ElatTazakor_Txt.Text,
-                TazakorEghdamKonande = EghdamKonandeTazakor_Txt.Text,
-                TazakorDate = ShowDate_TxtBlock.Text,
-                TazakorMoredTypeTitle = TypeTazakor_CmBox.SelectedItem.ToString(),
-                TazakorStudentCode = student.StudentCode
-            };
-            var result = Bll.Tazakor.Insert(tazakor);
-            if(!result.Success)
-            {
-                MessageBox.Show(result.Message);
+                Tazakor_Tbl tazakor = new Tazakor_Tbl()
+                {
+                    TazakorElat = ElatTazakor_Txt.Text,
+                    TazakorEghdamKonande = EghdamKonandeTazakor_Txt.Text,
+                    TazakorDate = ShowDate_TxtBlock.Text,
+                    TazakorMoredTypeTitle = TypeTazakor_CmBox.SelectedItem.ToString(),
+                    TazakorStudentCode = student.StudentCode
+                };
+                var result = Bll.Tazakor.Insert(tazakor);
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                else
+                {
+                    RefreshTazakor();
+                    ElatTazakor_Txt.Clear();
+                    EghdamKonandeTazakor_Txt.Clear();
+                    TypeTazakor_CmBox.Text = string.Empty;
+                    calendar.SelectedDate = DateTime.Now;
+                }
             }
-            else
+            catch (Exception)
             {
-                RefreshTazakor();
+                MessageBox.Show("فیلد ها را پر کنید");
             }
+           
         }
 
         private void AddTashvigh_Btn_Click(object sender, RoutedEventArgs e)
         {
-            Tashvigh_Tbl tashvigh = new Tashvigh_Tbl()
+            try
             {
-                TashvighElat = ElatTashvigh_Txt.Text,
-                TashvighEghdamKonande = EghdamKonandeTashvigh_Txt.Text,
-                TashvighDate = ShowDate1_TxtBlock.Text,
-                TashvighMoredTypeTitle= TypeTashvigh_CmBox.SelectedItem.ToString(),
-                TashvighStudentCode = student.StudentCode
-            };
-            var result = Bll.Tashvigh.Insert(tashvigh);
-            if (!result.Success)
-            {
-                MessageBox.Show(result.Message);
+                Tashvigh_Tbl tashvigh = new Tashvigh_Tbl()
+                {
+                    TashvighElat = ElatTashvigh_Txt.Text,
+                    TashvighEghdamKonande = EghdamKonandeTashvigh_Txt.Text,
+                    TashvighDate = ShowDate1_TxtBlock.Text,
+                    TashvighMoredTypeTitle = TypeTashvigh_CmBox.SelectedItem.ToString(),
+                    TashvighStudentCode = student.StudentCode
+                };
+                var result = Bll.Tashvigh.Insert(tashvigh);
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                else
+                {
+                    RefreshTashvigh();
+                    ElatTashvigh_Txt.Clear();
+                    EghdamKonandeTashvigh_Txt.Clear();
+                    TypeTashvigh_CmBox.Text= string.Empty;
+                    calendar1.SelectedDate = DateTime.Now;
+                }
             }
-            else
+            catch (Exception)
             {
-                RefreshTashvigh();
+                MessageBox.Show("فیلد ها را پر کنید");
             }
+            
         }
 
         private async void  ShowScore_Btn_Click(object sender, RoutedEventArgs e)
         {
-            await ShowDialog_DgHost.ShowDialog(new ShowScore(student.StudentCode) { Height = 90, Width = 299 });
+            try
+            {
+                await ShowDialog_DgHost.ShowDialog(new ShowScore(student.StudentCode) { Height = 90, Width = 299 });
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("دیالوگ باز است");
+            }
+            
         }
     }
 }

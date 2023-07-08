@@ -120,20 +120,28 @@ namespace FormComponent
 
         private void AddGheybat_Btn_Click(object sender, RoutedEventArgs e)
         {
-            Gheybat_Tbl gheybat = new Gheybat_Tbl
-            {
-                GheybatStudentName = GhayebChoozeName_CmBox.SelectedItem.ToString(),
-                GheybatMoredTypeTitle = GhayebTypeChoooze_CmBox.SelectedItem.ToString(),
-                GheybatDate = ShowDate_TxtBlock.Text,
-                GheybatStudentCode = studentsCode[GhayebChoozeName_CmBox.SelectedIndex],
-            };
 
-            var result = Bll.Gheybat.Insert(gheybat);
-            if (!result.Success)
+            try
             {
-                MessageBox.Show(result.Message);
+                Gheybat_Tbl gheybat = new Gheybat_Tbl
+                {
+                    GheybatStudentName = GhayebChoozeName_CmBox.SelectedItem.ToString(),
+                    GheybatMoredTypeTitle = GhayebTypeChoooze_CmBox.SelectedItem.ToString(),
+                    GheybatDate = ShowDate_TxtBlock.Text,
+                    GheybatStudentCode = studentsCode[GhayebChoozeName_CmBox.SelectedIndex],
+                };
+
+                var result = Bll.Gheybat.Insert(gheybat);
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                GhayebNumber_Lbl.Content = FillGhayeb();
             }
-            GhayebNumber_Lbl.Content = FillGhayeb();
+            catch(Exception)
+            {
+                MessageBox.Show("فیلد ها را پر کنید");
+            }
         }
     }
 }

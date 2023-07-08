@@ -12,9 +12,9 @@ namespace DataAccessLayer
 {
     public class Student
     {
-        public static SAPDbDataContext dataContext = new SAPDbDataContext();
         public static OperationResult Insert(Student_Tbl student)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 dataContext.Student_Tbls.InsertOnSubmit(student);
@@ -37,6 +37,7 @@ namespace DataAccessLayer
 
        public static OperationResult<List<string>> GetstudentCode()
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var students = dataContext.Student_Tbls.ToList();
@@ -61,6 +62,7 @@ namespace DataAccessLayer
         }
         public static OperationResult<List<string>> GetstudentName()
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var students = dataContext.Student_Tbls.ToList();
@@ -85,6 +87,7 @@ namespace DataAccessLayer
         }
         public static OperationResult<List<Student_Tbl>> Select(string search = "")
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var query = dataContext.Student_Tbls.Where(p =>
@@ -108,6 +111,7 @@ namespace DataAccessLayer
        
         public static OperationResult<Student_Tbl> SelectStudent(string StudentCode)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var query = dataContext.Student_Tbls.Where(p => p.StudentCode == StudentCode).First();
@@ -130,6 +134,7 @@ namespace DataAccessLayer
         public static OperationResult<List<Student_Tbl>> SelectFilter(string dahom, string yazdahom, string davazdahom
               , string hesabdari, string shabake)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var query = dataContext.Student_Tbls.Where(p =>
@@ -155,7 +160,7 @@ namespace DataAccessLayer
         }
         public static OperationResult Delete(Student_Tbl student)
         {
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
 
             try
             {
@@ -185,7 +190,7 @@ namespace DataAccessLayer
         public static OperationResult DeleteStudents(List<Student_Tbl> students)
         {
 
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             List<Student_Tbl> students_ = new List<Student_Tbl>();
             try
             {
@@ -211,9 +216,10 @@ namespace DataAccessLayer
 
         public static OperationResult Update(string LastStudentCode,Student_Tbl Student)
         {
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
+              
                 var student = dataContext.Student_Tbls.Where(x => x.StudentCode == LastStudentCode).Single();
                 student.StudentFirstName = Student.StudentFirstName;
                 student.StudentLastName = Student.StudentLastName;
@@ -233,6 +239,7 @@ namespace DataAccessLayer
                 student.StudentParentBimary = Student.StudentParentBimary;
                 student.StudentHomeAddress = Student.StudentHomeAddress;
                 student.StudentHomeNumber = Student.StudentHomeNumber;
+                student.StudentScore= Student.StudentScore;
                 student.StudentOther = Student.StudentOther;
                 dataContext.SubmitChanges();
                 return new OperationResult { Success = true };
@@ -247,7 +254,7 @@ namespace DataAccessLayer
         
         public static OperationResult<double> ScoreCalculat(string StudentCode)
         {
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var gheybats = dataContext.Gheybat_Tbls.Where(x => x.GheybatStudentCode == StudentCode).ToList();
@@ -309,7 +316,7 @@ namespace DataAccessLayer
                     Data = FinalScore
                 };
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 return new OperationResult<double>
                 {
@@ -319,7 +326,7 @@ namespace DataAccessLayer
         }
         public static OperationResult CheckStudentCode(string StudentCode)
         {
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             var result = dataContext.Student_Tbls.Where(x => x.StudentCode == StudentCode).ToList();
             if (result.Count != 0)
             {
@@ -336,7 +343,7 @@ namespace DataAccessLayer
 
         public static OperationResult CheckNationalCode(string NationalCode)
         {
-
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             var result = dataContext.Student_Tbls.Where(x => x.StudentNationalCode == NationalCode).ToList();
             if (result.Count != 0)
             {
@@ -353,6 +360,7 @@ namespace DataAccessLayer
 
         public static OperationResult<double> SelectScore(string StudentCode)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             var result = dataContext.Student_Tbls.Where(x => x.StudentCode == StudentCode).Single();
             if (result != null)
             {

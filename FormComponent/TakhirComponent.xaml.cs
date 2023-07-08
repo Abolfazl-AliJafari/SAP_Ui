@@ -74,5 +74,10 @@ namespace FormComponent
                 MessageBox.Show(result.Message);
             }
         }
+
+        private void TakhirName_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

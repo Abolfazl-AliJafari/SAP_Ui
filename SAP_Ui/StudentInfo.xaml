@@ -420,7 +420,7 @@
                                             <ColumnDefinition Width="57"/>
                                             <ColumnDefinition Width="24"/>
                                         </Grid.ColumnDefinitions>
-                                        <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Center" HorizontalAlignment="Right"><Run Text="مشاهده نمره"/></TextBlock>
+                                        <TextBlock Grid.Column="0" FontSize="9" FontFamily="Anjoman"  Foreground="#FFFFFF" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="9,0,0,0"><Run Text="مشاهده نمره"/></TextBlock>
                                         <Image Grid.Column="1" HorizontalAlignment="Left" Height="12" Width="12" Source="/ShowScore.png" Margin="4 0 0 0"/>
                                     </Grid>
                                 </Button>

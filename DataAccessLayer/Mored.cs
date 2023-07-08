@@ -8,9 +8,9 @@ namespace DataAccessLayer
 {
     public class Mored
     {
-        public static SAPDbDataContext dataContext = new SAPDbDataContext();
         public static OperationResult<List<Mavared_Tbl>> Select()
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var query = dataContext.Mavared_Tbls.ToList();
@@ -31,11 +31,37 @@ namespace DataAccessLayer
         }
         public static OperationResult Delete(int id)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
+            string title;
             try
             {
                 var query = dataContext.Mavared_Tbls.Where(p => p.Id == id).Single();
+                title = query.MoredTitle;
+                var takhirs = Takhir.SelectByMoredTitle(query.MoredTitle);
+                var tashvighs = Tashvigh.SelectByMoredTitle(query.MoredTitle);
+                var tazakors = Tazakor.SelectByMoredTitle(query.MoredTitle);
+                var gheybats = Gheybat.SelectByMoredTitle(query.MoredTitle);
+                foreach (Takhir_Tbl takhir in takhirs.Data)
+                {
+                    Takhir.MinusScore(takhir, query.MoredScore);
+                }
+                foreach (Tashvigh_Tbl tashvigh in tashvighs.Data)
+                {
+                    Tashvigh.MinusScore(tashvigh, query.MoredScore);
+                }
+                foreach (Tazakor_Tbl tazakor in tazakors.Data)
+                {
+                    Tazakor.MinusScore(tazakor, query.MoredScore);
+                }
+                foreach (Gheybat_Tbl gheybat in gheybats.Data)
+                {
+                    Gheybat.MinusScore(gheybat, query.MoredScore);
+                }
+                
                 dataContext.Mavared_Tbls.DeleteOnSubmit(query);
                 dataContext.SubmitChanges();
+                var score = Mored.SelectScore(title);
+                
                 return new OperationResult
                 {
                     Success = true
@@ -51,6 +77,7 @@ namespace DataAccessLayer
         }
         public static OperationResult Insert(Mavared_Tbl mored)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 dataContext.Mavared_Tbls.InsertOnSubmit(mored);
@@ -70,18 +97,38 @@ namespace DataAccessLayer
 
 
         }
-        public static OperationResult Update(Mavared_Tbl mored)
+        public static OperationResult Update(Mavared_Tbl mored,double lastScore)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var query = dataContext.Mavared_Tbls.Where(p => p.MoredTitle == mored.MoredTitle).Single();
-                query.MoredType = mored.MoredType;
                 query.MoredScore = mored.MoredScore;
-                query.MoredTitle = mored.MoredTitle;
                 dataContext.SubmitChanges();
+                var takhirs = Takhir.SelectByMoredTitle(query.MoredTitle);
+                var tashvighs = Tashvigh.SelectByMoredTitle(query.MoredTitle);
+                var tazakors = Tazakor.SelectByMoredTitle(query.MoredTitle);
+                var gheybats = Gheybat.SelectByMoredTitle(query.MoredTitle);
+                foreach (Takhir_Tbl takhir in takhirs.Data)
+                {
+                    Takhir.Update(takhir, lastScore, true);
+                }
+                foreach (Tashvigh_Tbl tashvigh in tashvighs.Data)
+                {
+                    Tashvigh.Update(tashvigh, lastScore, true);
+                }
+                foreach (Tazakor_Tbl tazakor in tazakors.Data)
+                {
+                    Tazakor.Update(tazakor, lastScore,true);
+                }
+                foreach (Gheybat_Tbl gheybat in gheybats.Data)
+                {
+                    Gheybat.Update(gheybat, lastScore,true);
+                }
                 return new OperationResult
                 {
-                    Success = true
+                    Success = true,
+
                 };
             }
             catch
@@ -95,6 +142,7 @@ namespace DataAccessLayer
 
         public static OperationResult<List<string>> SelectTitles(string type)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var mavared = dataContext.Mavared_Tbls.Where(x => x.MoredType == type);
@@ -117,6 +165,7 @@ namespace DataAccessLayer
 
         public static OperationResult CheckTitle(string title)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).ToList();
@@ -144,6 +193,7 @@ namespace DataAccessLayer
 
         public static OperationResult<double> SelectScore(string title)
         {
+            SAPDbDataContext dataContext = new SAPDbDataContext();
             try
             {
                 var result = dataContext.Mavared_Tbls.Where(x => x.MoredTitle == title).ToList();

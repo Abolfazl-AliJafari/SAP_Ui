@@ -10,22 +10,27 @@ namespace Bll
     public class Mored
     {
 
-        public static OperationResult ValidationMored(Mavared_Tbl mored)
+        public static OperationResult ValidationMored(Mavared_Tbl mored,bool isedit)
         {
+
             if (string.IsNullOrEmpty(mored.MoredTitle))
                 return new OperationResult
                 {
                     Success = false,
                     Message = "عنوان مورد را وارد کنید"
                 };
-            else if(!(DataAccessLayer.Mored.CheckTitle(mored.MoredTitle).Success))
+            else if (!isedit)
             {
-                return new OperationResult
+                if (!(DataAccessLayer.Mored.CheckTitle(mored.MoredTitle).Success))
                 {
-                    Success = false,
-                    Message = "این مورد قبلا ثبت شده است"
-                };
+                    return new OperationResult
+                    {
+                        Success = false,
+                        Message = "این مورد قبلا ثبت شده است"
+                    };
+                }
             }
+
             else if (!Validation.CheckStringFormat(mored.MoredTitle))
                 return new OperationResult
                 {
@@ -72,7 +77,7 @@ namespace Bll
 
         public static OperationResult Insert(Mavared_Tbl mored)
         {
-            var validation = ValidationMored(mored);
+            var validation = ValidationMored(mored,false);
             if(!validation.Success)
             {
                 return validation;
@@ -88,14 +93,14 @@ namespace Bll
             }
             return result;
         }
-        public static OperationResult Update(Mavared_Tbl mored)
+        public static OperationResult Update(Mavared_Tbl mored,double lastScore)
         {
-            var validation = ValidationMored(mored);
+            var validation = ValidationMored(mored,true);
             if (!validation.Success)
             {
                 return validation;
             }
-            var result = DataAccessLayer.Mored.Update(mored);
+            var result = DataAccessLayer.Mored.Update(mored,lastScore);
             if (!result.Success)
             {
                 return new OperationResult

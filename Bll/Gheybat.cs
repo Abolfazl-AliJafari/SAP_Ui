@@ -111,7 +111,7 @@ namespace Bll
                 };
             else
             {
-                var result = DataAccessLayer.Gheybat.Update( gheybat);
+                var result = DataAccessLayer.Gheybat.Update( gheybat,0);
                 if (result.Success == true)
                 {
                     return new OperationResult

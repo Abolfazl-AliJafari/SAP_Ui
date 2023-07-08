@@ -30,27 +30,27 @@ namespace DataAccessLayer
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertGheybat_Tbl(Gheybat_Tbl instance);
-    partial void UpdateGheybat_Tbl(Gheybat_Tbl instance);
-    partial void DeleteGheybat_Tbl(Gheybat_Tbl instance);
-    partial void InsertTakhir_Tbl(Takhir_Tbl instance);
-    partial void UpdateTakhir_Tbl(Takhir_Tbl instance);
-    partial void DeleteTakhir_Tbl(Takhir_Tbl instance);
     partial void InsertUser_Tbl(User_Tbl instance);
     partial void UpdateUser_Tbl(User_Tbl instance);
     partial void DeleteUser_Tbl(User_Tbl instance);
-    partial void InsertStudent_Tbl(Student_Tbl instance);
-    partial void UpdateStudent_Tbl(Student_Tbl instance);
-    partial void DeleteStudent_Tbl(Student_Tbl instance);
-    partial void InsertTashvigh_Tbl(Tashvigh_Tbl instance);
-    partial void UpdateTashvigh_Tbl(Tashvigh_Tbl instance);
-    partial void DeleteTashvigh_Tbl(Tashvigh_Tbl instance);
     partial void InsertTazakor_Tbl(Tazakor_Tbl instance);
     partial void UpdateTazakor_Tbl(Tazakor_Tbl instance);
     partial void DeleteTazakor_Tbl(Tazakor_Tbl instance);
+    partial void InsertTashvigh_Tbl(Tashvigh_Tbl instance);
+    partial void UpdateTashvigh_Tbl(Tashvigh_Tbl instance);
+    partial void DeleteTashvigh_Tbl(Tashvigh_Tbl instance);
+    partial void InsertTakhir_Tbl(Takhir_Tbl instance);
+    partial void UpdateTakhir_Tbl(Takhir_Tbl instance);
+    partial void DeleteTakhir_Tbl(Takhir_Tbl instance);
+    partial void InsertStudent_Tbl(Student_Tbl instance);
+    partial void UpdateStudent_Tbl(Student_Tbl instance);
+    partial void DeleteStudent_Tbl(Student_Tbl instance);
     partial void InsertMavared_Tbl(Mavared_Tbl instance);
     partial void UpdateMavared_Tbl(Mavared_Tbl instance);
     partial void DeleteMavared_Tbl(Mavared_Tbl instance);
+    partial void InsertGheybat_Tbl(Gheybat_Tbl instance);
+    partial void UpdateGheybat_Tbl(Gheybat_Tbl instance);
+    partial void DeleteGheybat_Tbl(Gheybat_Tbl instance);
     #endregion
 		
 		public SAPDbDataContext() : 
@@ -83,43 +83,11 @@ namespace DataAccessLayer
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Gheybat_Tbl> Gheybat_Tbls
-		{
-			get
-			{
-				return this.GetTable<Gheybat_Tbl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Takhir_Tbl> Takhir_Tbls
-		{
-			get
-			{
-				return this.GetTable<Takhir_Tbl>();
-			}
-		}
-		
 		public System.Data.Linq.Table<User_Tbl> User_Tbls
 		{
 			get
 			{
 				return this.GetTable<User_Tbl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Student_Tbl> Student_Tbls
-		{
-			get
-			{
-				return this.GetTable<Student_Tbl>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Tashvigh_Tbl> Tashvigh_Tbls
-		{
-			get
-			{
-				return this.GetTable<Tashvigh_Tbl>();
 			}
 		}
 		
@@ -131,6 +99,30 @@ namespace DataAccessLayer
 			}
 		}
 		
+		public System.Data.Linq.Table<Tashvigh_Tbl> Tashvigh_Tbls
+		{
+			get
+			{
+				return this.GetTable<Tashvigh_Tbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Takhir_Tbl> Takhir_Tbls
+		{
+			get
+			{
+				return this.GetTable<Takhir_Tbl>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Student_Tbl> Student_Tbls
+		{
+			get
+			{
+				return this.GetTable<Student_Tbl>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Mavared_Tbl> Mavared_Tbls
 		{
 			get
@@ -138,27 +130,27 @@ namespace DataAccessLayer
 				return this.GetTable<Mavared_Tbl>();
 			}
 		}
+		
+		public System.Data.Linq.Table<Gheybat_Tbl> Gheybat_Tbls
+		{
+			get
+			{
+				return this.GetTable<Gheybat_Tbl>();
+			}
+		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gheybat_Tbl")]
-	public partial class Gheybat_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Tbl")]
+	public partial class User_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _GheybatDate;
+		private string _UserName;
 		
-		private string _GheybatStudentCode;
-		
-		private string _GheybatStudentName;
-		
-		private string _GheybatMoredTypeTitle;
-		
-		private EntityRef<Student_Tbl> _Student_Tbl;
-		
-		private EntityRef<Mavared_Tbl> _Mavared_Tbl;
+		private string _PassWord;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -166,20 +158,14 @@ namespace DataAccessLayer
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void OnGheybatDateChanging(string value);
-    partial void OnGheybatDateChanged();
-    partial void OnGheybatStudentCodeChanging(string value);
-    partial void OnGheybatStudentCodeChanged();
-    partial void OnGheybatStudentNameChanging(string value);
-    partial void OnGheybatStudentNameChanged();
-    partial void OnGheybatMoredTypeTitleChanging(string value);
-    partial void OnGheybatMoredTypeTitleChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnPassWordChanging(string value);
+    partial void OnPassWordChanged();
     #endregion
 		
-		public Gheybat_Tbl()
+		public User_Tbl()
 		{
-			this._Student_Tbl = default(EntityRef<Student_Tbl>);
-			this._Mavared_Tbl = default(EntityRef<Mavared_Tbl>);
 			OnCreated();
 		}
 		
@@ -203,95 +189,243 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GheybatDate
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string UserName
 		{
 			get
 			{
-				return this._GheybatDate;
+				return this._UserName;
 			}
 			set
 			{
-				if ((this._GheybatDate != value))
+				if ((this._UserName != value))
 				{
-					this.OnGheybatDateChanging(value);
+					this.OnUserNameChanging(value);
 					this.SendPropertyChanging();
-					this._GheybatDate = value;
-					this.SendPropertyChanged("GheybatDate");
-					this.OnGheybatDateChanged();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string GheybatStudentCode
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PassWord", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string PassWord
 		{
 			get
 			{
-				return this._GheybatStudentCode;
+				return this._PassWord;
 			}
 			set
 			{
-				if ((this._GheybatStudentCode != value))
+				if ((this._PassWord != value))
+				{
+					this.OnPassWordChanging(value);
+					this.SendPropertyChanging();
+					this._PassWord = value;
+					this.SendPropertyChanged("PassWord");
+					this.OnPassWordChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tazakor_Tbl")]
+	public partial class Tazakor_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _TazakorDate;
+		
+		private string _TazakorStudentCode;
+		
+		private string _TazakorElat;
+		
+		private string _TazakorEghdamKonande;
+		
+		private string _TazakorMoredTypeTitle;
+		
+		private EntityRef<Student_Tbl> _Student_Tbl;
+		
+		private EntityRef<Mavared_Tbl> _Mavared_Tbl;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTazakorDateChanging(string value);
+    partial void OnTazakorDateChanged();
+    partial void OnTazakorStudentCodeChanging(string value);
+    partial void OnTazakorStudentCodeChanged();
+    partial void OnTazakorElatChanging(string value);
+    partial void OnTazakorElatChanged();
+    partial void OnTazakorEghdamKonandeChanging(string value);
+    partial void OnTazakorEghdamKonandeChanged();
+    partial void OnTazakorMoredTypeTitleChanging(string value);
+    partial void OnTazakorMoredTypeTitleChanged();
+    #endregion
+		
+		public Tazakor_Tbl()
+		{
+			this._Student_Tbl = default(EntityRef<Student_Tbl>);
+			this._Mavared_Tbl = default(EntityRef<Mavared_Tbl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TazakorDate
+		{
+			get
+			{
+				return this._TazakorDate;
+			}
+			set
+			{
+				if ((this._TazakorDate != value))
+				{
+					this.OnTazakorDateChanging(value);
+					this.SendPropertyChanging();
+					this._TazakorDate = value;
+					this.SendPropertyChanged("TazakorDate");
+					this.OnTazakorDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string TazakorStudentCode
+		{
+			get
+			{
+				return this._TazakorStudentCode;
+			}
+			set
+			{
+				if ((this._TazakorStudentCode != value))
 				{
 					if (this._Student_Tbl.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGheybatStudentCodeChanging(value);
+					this.OnTazakorStudentCodeChanging(value);
 					this.SendPropertyChanging();
-					this._GheybatStudentCode = value;
-					this.SendPropertyChanged("GheybatStudentCode");
-					this.OnGheybatStudentCodeChanged();
+					this._TazakorStudentCode = value;
+					this.SendPropertyChanged("TazakorStudentCode");
+					this.OnTazakorStudentCodeChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatStudentName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string GheybatStudentName
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorElat", DbType="NVarChar(MAX)")]
+		public string TazakorElat
 		{
 			get
 			{
-				return this._GheybatStudentName;
+				return this._TazakorElat;
 			}
 			set
 			{
-				if ((this._GheybatStudentName != value))
+				if ((this._TazakorElat != value))
 				{
-					this.OnGheybatStudentNameChanging(value);
+					this.OnTazakorElatChanging(value);
 					this.SendPropertyChanging();
-					this._GheybatStudentName = value;
-					this.SendPropertyChanged("GheybatStudentName");
-					this.OnGheybatStudentNameChanged();
+					this._TazakorElat = value;
+					this.SendPropertyChanged("TazakorElat");
+					this.OnTazakorElatChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string GheybatMoredTypeTitle
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorEghdamKonande", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TazakorEghdamKonande
 		{
 			get
 			{
-				return this._GheybatMoredTypeTitle;
+				return this._TazakorEghdamKonande;
 			}
 			set
 			{
-				if ((this._GheybatMoredTypeTitle != value))
+				if ((this._TazakorEghdamKonande != value))
+				{
+					this.OnTazakorEghdamKonandeChanging(value);
+					this.SendPropertyChanging();
+					this._TazakorEghdamKonande = value;
+					this.SendPropertyChanged("TazakorEghdamKonande");
+					this.OnTazakorEghdamKonandeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string TazakorMoredTypeTitle
+		{
+			get
+			{
+				return this._TazakorMoredTypeTitle;
+			}
+			set
+			{
+				if ((this._TazakorMoredTypeTitle != value))
 				{
 					if (this._Mavared_Tbl.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnGheybatMoredTypeTitleChanging(value);
+					this.OnTazakorMoredTypeTitleChanging(value);
 					this.SendPropertyChanging();
-					this._GheybatMoredTypeTitle = value;
-					this.SendPropertyChanged("GheybatMoredTypeTitle");
-					this.OnGheybatMoredTypeTitleChanged();
+					this._TazakorMoredTypeTitle = value;
+					this.SendPropertyChanged("TazakorMoredTypeTitle");
+					this.OnTazakorMoredTypeTitleChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Student_Tbl", ThisKey="GheybatStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Student_Tbl", ThisKey="TazakorStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Student_Tbl Student_Tbl
 		{
 			get
@@ -308,24 +442,24 @@ namespace DataAccessLayer
 					if ((previousValue != null))
 					{
 						this._Student_Tbl.Entity = null;
-						previousValue.Gheybat_Tbls.Remove(this);
+						previousValue.Tazakor_Tbls.Remove(this);
 					}
 					this._Student_Tbl.Entity = value;
 					if ((value != null))
 					{
-						value.Gheybat_Tbls.Add(this);
-						this._GheybatStudentCode = value.StudentCode;
+						value.Tazakor_Tbls.Add(this);
+						this._TazakorStudentCode = value.StudentCode;
 					}
 					else
 					{
-						this._GheybatStudentCode = default(string);
+						this._TazakorStudentCode = default(string);
 					}
 					this.SendPropertyChanged("Student_Tbl");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Gheybat_Tbl", Storage="_Mavared_Tbl", ThisKey="GheybatMoredTypeTitle", OtherKey="MoredTitle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Tazakor_Tbl", Storage="_Mavared_Tbl", ThisKey="TazakorMoredTypeTitle", OtherKey="MoredTitle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
 		public Mavared_Tbl Mavared_Tbl
 		{
 			get
@@ -342,19 +476,242 @@ namespace DataAccessLayer
 					if ((previousValue != null))
 					{
 						this._Mavared_Tbl.Entity = null;
-						previousValue.Gheybat_Tbls.Remove(this);
+						previousValue.Tazakor_Tbls.Remove(this);
 					}
 					this._Mavared_Tbl.Entity = value;
 					if ((value != null))
 					{
-						value.Gheybat_Tbls.Add(this);
-						this._GheybatMoredTypeTitle = value.MoredTitle;
+						value.Tazakor_Tbls.Add(this);
+						this._TazakorMoredTypeTitle = value.MoredTitle;
 					}
 					else
 					{
-						this._GheybatMoredTypeTitle = default(string);
+						this._TazakorMoredTypeTitle = default(string);
 					}
 					this.SendPropertyChanged("Mavared_Tbl");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tashvigh_Tbl")]
+	public partial class Tashvigh_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _TashvighDate;
+		
+		private string _TashvighElat;
+		
+		private string _TashvighEghdamKonande;
+		
+		private string _TashvighMoredTypeTitle;
+		
+		private string _TashvighStudentCode;
+		
+		private EntityRef<Student_Tbl> _Student_Tbl;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnTashvighDateChanging(string value);
+    partial void OnTashvighDateChanged();
+    partial void OnTashvighElatChanging(string value);
+    partial void OnTashvighElatChanged();
+    partial void OnTashvighEghdamKonandeChanging(string value);
+    partial void OnTashvighEghdamKonandeChanged();
+    partial void OnTashvighMoredTypeTitleChanging(string value);
+    partial void OnTashvighMoredTypeTitleChanged();
+    partial void OnTashvighStudentCodeChanging(string value);
+    partial void OnTashvighStudentCodeChanged();
+    #endregion
+		
+		public Tashvigh_Tbl()
+		{
+			this._Student_Tbl = default(EntityRef<Student_Tbl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string TashvighDate
+		{
+			get
+			{
+				return this._TashvighDate;
+			}
+			set
+			{
+				if ((this._TashvighDate != value))
+				{
+					this.OnTashvighDateChanging(value);
+					this.SendPropertyChanging();
+					this._TashvighDate = value;
+					this.SendPropertyChanged("TashvighDate");
+					this.OnTashvighDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighElat", DbType="NVarChar(MAX)")]
+		public string TashvighElat
+		{
+			get
+			{
+				return this._TashvighElat;
+			}
+			set
+			{
+				if ((this._TashvighElat != value))
+				{
+					this.OnTashvighElatChanging(value);
+					this.SendPropertyChanging();
+					this._TashvighElat = value;
+					this.SendPropertyChanged("TashvighElat");
+					this.OnTashvighElatChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighEghdamKonande", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string TashvighEghdamKonande
+		{
+			get
+			{
+				return this._TashvighEghdamKonande;
+			}
+			set
+			{
+				if ((this._TashvighEghdamKonande != value))
+				{
+					this.OnTashvighEghdamKonandeChanging(value);
+					this.SendPropertyChanging();
+					this._TashvighEghdamKonande = value;
+					this.SendPropertyChanged("TashvighEghdamKonande");
+					this.OnTashvighEghdamKonandeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string TashvighMoredTypeTitle
+		{
+			get
+			{
+				return this._TashvighMoredTypeTitle;
+			}
+			set
+			{
+				if ((this._TashvighMoredTypeTitle != value))
+				{
+					this.OnTashvighMoredTypeTitleChanging(value);
+					this.SendPropertyChanging();
+					this._TashvighMoredTypeTitle = value;
+					this.SendPropertyChanged("TashvighMoredTypeTitle");
+					this.OnTashvighMoredTypeTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string TashvighStudentCode
+		{
+			get
+			{
+				return this._TashvighStudentCode;
+			}
+			set
+			{
+				if ((this._TashvighStudentCode != value))
+				{
+					if (this._Student_Tbl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnTashvighStudentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._TashvighStudentCode = value;
+					this.SendPropertyChanged("TashvighStudentCode");
+					this.OnTashvighStudentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tashvigh_Tbl", Storage="_Student_Tbl", ThisKey="TashvighStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Student_Tbl Student_Tbl
+		{
+			get
+			{
+				return this._Student_Tbl.Entity;
+			}
+			set
+			{
+				Student_Tbl previousValue = this._Student_Tbl.Entity;
+				if (((previousValue != value) 
+							|| (this._Student_Tbl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Student_Tbl.Entity = null;
+						previousValue.Tashvigh_Tbls.Remove(this);
+					}
+					this._Student_Tbl.Entity = value;
+					if ((value != null))
+					{
+						value.Tashvigh_Tbls.Add(this);
+						this._TashvighStudentCode = value.StudentCode;
+					}
+					else
+					{
+						this._TashvighStudentCode = default(string);
+					}
+					this.SendPropertyChanged("Student_Tbl");
 				}
 			}
 		}
@@ -620,116 +977,6 @@ namespace DataAccessLayer
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.User_Tbl")]
-	public partial class User_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _UserName;
-		
-		private string _PassWord;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnPassWordChanging(string value);
-    partial void OnPassWordChanged();
-    #endregion
-		
-		public User_Tbl()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PassWord", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string PassWord
-		{
-			get
-			{
-				return this._PassWord;
-			}
-			set
-			{
-				if ((this._PassWord != value))
-				{
-					this.OnPassWordChanging(value);
-					this.SendPropertyChanging();
-					this._PassWord = value;
-					this.SendPropertyChanged("PassWord");
-					this.OnPassWordChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student_Tbl")]
 	public partial class Student_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -780,13 +1027,13 @@ namespace DataAccessLayer
 		
 		private string _StudentRegisterDate;
 		
-		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
-		
-		private EntitySet<Takhir_Tbl> _Takhir_Tbls;
+		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
 		
 		private EntitySet<Tashvigh_Tbl> _Tashvigh_Tbls;
 		
-		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
+		private EntitySet<Takhir_Tbl> _Takhir_Tbls;
+		
+		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -840,10 +1087,10 @@ namespace DataAccessLayer
 		
 		public Student_Tbl()
 		{
-			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
-			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
-			this._Tashvigh_Tbls = new EntitySet<Tashvigh_Tbl>(new Action<Tashvigh_Tbl>(this.attach_Tashvigh_Tbls), new Action<Tashvigh_Tbl>(this.detach_Tashvigh_Tbls));
 			this._Tazakor_Tbls = new EntitySet<Tazakor_Tbl>(new Action<Tazakor_Tbl>(this.attach_Tazakor_Tbls), new Action<Tazakor_Tbl>(this.detach_Tazakor_Tbls));
+			this._Tashvigh_Tbls = new EntitySet<Tashvigh_Tbl>(new Action<Tashvigh_Tbl>(this.attach_Tashvigh_Tbls), new Action<Tashvigh_Tbl>(this.detach_Tashvigh_Tbls));
+			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
+			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
 			OnCreated();
 		}
 		
@@ -1287,29 +1534,16 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="StudentCode", OtherKey="GheybatStudentCode")]
-		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="StudentCode", OtherKey="TazakorStudentCode")]
+		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
 		{
 			get
 			{
-				return this._Gheybat_Tbls;
+				return this._Tazakor_Tbls;
 			}
 			set
 			{
-				this._Gheybat_Tbls.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Takhir_Tbl", Storage="_Takhir_Tbls", ThisKey="StudentCode", OtherKey="TakhirStudentCode")]
-		public EntitySet<Takhir_Tbl> Takhir_Tbls
-		{
-			get
-			{
-				return this._Takhir_Tbls;
-			}
-			set
-			{
-				this._Takhir_Tbls.Assign(value);
+				this._Tazakor_Tbls.Assign(value);
 			}
 		}
 		
@@ -1326,16 +1560,29 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="StudentCode", OtherKey="TazakorStudentCode")]
-		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Takhir_Tbl", Storage="_Takhir_Tbls", ThisKey="StudentCode", OtherKey="TakhirStudentCode")]
+		public EntitySet<Takhir_Tbl> Takhir_Tbls
 		{
 			get
 			{
-				return this._Tazakor_Tbls;
+				return this._Takhir_Tbls;
 			}
 			set
 			{
-				this._Tazakor_Tbls.Assign(value);
+				this._Takhir_Tbls.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="StudentCode", OtherKey="GheybatStudentCode")]
+		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
+		{
+			get
+			{
+				return this._Gheybat_Tbls;
+			}
+			set
+			{
+				this._Gheybat_Tbls.Assign(value);
 			}
 		}
 		
@@ -1359,25 +1606,13 @@ namespace DataAccessLayer
 			}
 		}
 		
-		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
+		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student_Tbl = this;
 		}
 		
-		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = null;
-		}
-		
-		private void attach_Takhir_Tbls(Takhir_Tbl entity)
-		{
-			this.SendPropertyChanging();
-			entity.Student_Tbl = this;
-		}
-		
-		private void detach_Takhir_Tbls(Takhir_Tbl entity)
+		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student_Tbl = null;
@@ -1395,503 +1630,28 @@ namespace DataAccessLayer
 			entity.Student_Tbl = null;
 		}
 		
-		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
+		private void attach_Takhir_Tbls(Takhir_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student_Tbl = this;
 		}
 		
-		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
+		private void detach_Takhir_Tbls(Takhir_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Student_Tbl = null;
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tashvigh_Tbl")]
-	public partial class Tashvigh_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _TashvighDate;
-		
-		private string _TashvighElat;
-		
-		private string _TashvighEghdamKonande;
-		
-		private string _TashvighMoredTypeTitle;
-		
-		private string _TashvighStudentCode;
-		
-		private EntityRef<Student_Tbl> _Student_Tbl;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnTashvighDateChanging(string value);
-    partial void OnTashvighDateChanged();
-    partial void OnTashvighElatChanging(string value);
-    partial void OnTashvighElatChanged();
-    partial void OnTashvighEghdamKonandeChanging(string value);
-    partial void OnTashvighEghdamKonandeChanged();
-    partial void OnTashvighMoredTypeTitleChanging(string value);
-    partial void OnTashvighMoredTypeTitleChanged();
-    partial void OnTashvighStudentCodeChanging(string value);
-    partial void OnTashvighStudentCodeChanged();
-    #endregion
-		
-		public Tashvigh_Tbl()
+		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
 		{
-			this._Student_Tbl = default(EntityRef<Student_Tbl>);
-			OnCreated();
+			this.SendPropertyChanging();
+			entity.Student_Tbl = this;
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
+		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
 		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string TashvighDate
-		{
-			get
-			{
-				return this._TashvighDate;
-			}
-			set
-			{
-				if ((this._TashvighDate != value))
-				{
-					this.OnTashvighDateChanging(value);
-					this.SendPropertyChanging();
-					this._TashvighDate = value;
-					this.SendPropertyChanged("TashvighDate");
-					this.OnTashvighDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighElat", DbType="NVarChar(MAX)")]
-		public string TashvighElat
-		{
-			get
-			{
-				return this._TashvighElat;
-			}
-			set
-			{
-				if ((this._TashvighElat != value))
-				{
-					this.OnTashvighElatChanging(value);
-					this.SendPropertyChanging();
-					this._TashvighElat = value;
-					this.SendPropertyChanged("TashvighElat");
-					this.OnTashvighElatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighEghdamKonande", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TashvighEghdamKonande
-		{
-			get
-			{
-				return this._TashvighEghdamKonande;
-			}
-			set
-			{
-				if ((this._TashvighEghdamKonande != value))
-				{
-					this.OnTashvighEghdamKonandeChanging(value);
-					this.SendPropertyChanging();
-					this._TashvighEghdamKonande = value;
-					this.SendPropertyChanged("TashvighEghdamKonande");
-					this.OnTashvighEghdamKonandeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string TashvighMoredTypeTitle
-		{
-			get
-			{
-				return this._TashvighMoredTypeTitle;
-			}
-			set
-			{
-				if ((this._TashvighMoredTypeTitle != value))
-				{
-					this.OnTashvighMoredTypeTitleChanging(value);
-					this.SendPropertyChanging();
-					this._TashvighMoredTypeTitle = value;
-					this.SendPropertyChanged("TashvighMoredTypeTitle");
-					this.OnTashvighMoredTypeTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TashvighStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string TashvighStudentCode
-		{
-			get
-			{
-				return this._TashvighStudentCode;
-			}
-			set
-			{
-				if ((this._TashvighStudentCode != value))
-				{
-					if (this._Student_Tbl.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTashvighStudentCodeChanging(value);
-					this.SendPropertyChanging();
-					this._TashvighStudentCode = value;
-					this.SendPropertyChanged("TashvighStudentCode");
-					this.OnTashvighStudentCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tashvigh_Tbl", Storage="_Student_Tbl", ThisKey="TashvighStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Student_Tbl Student_Tbl
-		{
-			get
-			{
-				return this._Student_Tbl.Entity;
-			}
-			set
-			{
-				Student_Tbl previousValue = this._Student_Tbl.Entity;
-				if (((previousValue != value) 
-							|| (this._Student_Tbl.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student_Tbl.Entity = null;
-						previousValue.Tashvigh_Tbls.Remove(this);
-					}
-					this._Student_Tbl.Entity = value;
-					if ((value != null))
-					{
-						value.Tashvigh_Tbls.Add(this);
-						this._TashvighStudentCode = value.StudentCode;
-					}
-					else
-					{
-						this._TashvighStudentCode = default(string);
-					}
-					this.SendPropertyChanged("Student_Tbl");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tazakor_Tbl")]
-	public partial class Tazakor_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Id;
-		
-		private string _TazakorDate;
-		
-		private string _TazakorStudentCode;
-		
-		private string _TazakorElat;
-		
-		private string _TazakorEghdamKonande;
-		
-		private string _TazakorMoredTypeTitle;
-		
-		private EntityRef<Student_Tbl> _Student_Tbl;
-		
-		private EntityRef<Mavared_Tbl> _Mavared_Tbl;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdChanging(int value);
-    partial void OnIdChanged();
-    partial void OnTazakorDateChanging(string value);
-    partial void OnTazakorDateChanged();
-    partial void OnTazakorStudentCodeChanging(string value);
-    partial void OnTazakorStudentCodeChanged();
-    partial void OnTazakorElatChanging(string value);
-    partial void OnTazakorElatChanged();
-    partial void OnTazakorEghdamKonandeChanging(string value);
-    partial void OnTazakorEghdamKonandeChanged();
-    partial void OnTazakorMoredTypeTitleChanging(string value);
-    partial void OnTazakorMoredTypeTitleChanged();
-    #endregion
-		
-		public Tazakor_Tbl()
-		{
-			this._Student_Tbl = default(EntityRef<Student_Tbl>);
-			this._Mavared_Tbl = default(EntityRef<Mavared_Tbl>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Id
-		{
-			get
-			{
-				return this._Id;
-			}
-			set
-			{
-				if ((this._Id != value))
-				{
-					this.OnIdChanging(value);
-					this.SendPropertyChanging();
-					this._Id = value;
-					this.SendPropertyChanged("Id");
-					this.OnIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
-		public string TazakorDate
-		{
-			get
-			{
-				return this._TazakorDate;
-			}
-			set
-			{
-				if ((this._TazakorDate != value))
-				{
-					this.OnTazakorDateChanging(value);
-					this.SendPropertyChanging();
-					this._TazakorDate = value;
-					this.SendPropertyChanged("TazakorDate");
-					this.OnTazakorDateChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string TazakorStudentCode
-		{
-			get
-			{
-				return this._TazakorStudentCode;
-			}
-			set
-			{
-				if ((this._TazakorStudentCode != value))
-				{
-					if (this._Student_Tbl.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTazakorStudentCodeChanging(value);
-					this.SendPropertyChanging();
-					this._TazakorStudentCode = value;
-					this.SendPropertyChanged("TazakorStudentCode");
-					this.OnTazakorStudentCodeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorElat", DbType="NVarChar(MAX)")]
-		public string TazakorElat
-		{
-			get
-			{
-				return this._TazakorElat;
-			}
-			set
-			{
-				if ((this._TazakorElat != value))
-				{
-					this.OnTazakorElatChanging(value);
-					this.SendPropertyChanging();
-					this._TazakorElat = value;
-					this.SendPropertyChanged("TazakorElat");
-					this.OnTazakorElatChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorEghdamKonande", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string TazakorEghdamKonande
-		{
-			get
-			{
-				return this._TazakorEghdamKonande;
-			}
-			set
-			{
-				if ((this._TazakorEghdamKonande != value))
-				{
-					this.OnTazakorEghdamKonandeChanging(value);
-					this.SendPropertyChanging();
-					this._TazakorEghdamKonande = value;
-					this.SendPropertyChanged("TazakorEghdamKonande");
-					this.OnTazakorEghdamKonandeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TazakorMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
-		public string TazakorMoredTypeTitle
-		{
-			get
-			{
-				return this._TazakorMoredTypeTitle;
-			}
-			set
-			{
-				if ((this._TazakorMoredTypeTitle != value))
-				{
-					if (this._Mavared_Tbl.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnTazakorMoredTypeTitleChanging(value);
-					this.SendPropertyChanging();
-					this._TazakorMoredTypeTitle = value;
-					this.SendPropertyChanged("TazakorMoredTypeTitle");
-					this.OnTazakorMoredTypeTitleChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Tazakor_Tbl", Storage="_Student_Tbl", ThisKey="TazakorStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Student_Tbl Student_Tbl
-		{
-			get
-			{
-				return this._Student_Tbl.Entity;
-			}
-			set
-			{
-				Student_Tbl previousValue = this._Student_Tbl.Entity;
-				if (((previousValue != value) 
-							|| (this._Student_Tbl.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Student_Tbl.Entity = null;
-						previousValue.Tazakor_Tbls.Remove(this);
-					}
-					this._Student_Tbl.Entity = value;
-					if ((value != null))
-					{
-						value.Tazakor_Tbls.Add(this);
-						this._TazakorStudentCode = value.StudentCode;
-					}
-					else
-					{
-						this._TazakorStudentCode = default(string);
-					}
-					this.SendPropertyChanged("Student_Tbl");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Tazakor_Tbl", Storage="_Mavared_Tbl", ThisKey="TazakorMoredTypeTitle", OtherKey="MoredTitle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
-		public Mavared_Tbl Mavared_Tbl
-		{
-			get
-			{
-				return this._Mavared_Tbl.Entity;
-			}
-			set
-			{
-				Mavared_Tbl previousValue = this._Mavared_Tbl.Entity;
-				if (((previousValue != value) 
-							|| (this._Mavared_Tbl.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Mavared_Tbl.Entity = null;
-						previousValue.Tazakor_Tbls.Remove(this);
-					}
-					this._Mavared_Tbl.Entity = value;
-					if ((value != null))
-					{
-						value.Tazakor_Tbls.Add(this);
-						this._TazakorMoredTypeTitle = value.MoredTitle;
-					}
-					else
-					{
-						this._TazakorMoredTypeTitle = default(string);
-					}
-					this.SendPropertyChanged("Mavared_Tbl");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
+			this.SendPropertyChanging();
+			entity.Student_Tbl = null;
 		}
 	}
 	
@@ -1909,11 +1669,11 @@ namespace DataAccessLayer
 		
 		private double _MoredScore;
 		
-		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
+		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
 		
 		private EntitySet<Takhir_Tbl> _Takhir_Tbls;
 		
-		private EntitySet<Tazakor_Tbl> _Tazakor_Tbls;
+		private EntitySet<Gheybat_Tbl> _Gheybat_Tbls;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1931,9 +1691,9 @@ namespace DataAccessLayer
 		
 		public Mavared_Tbl()
 		{
-			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
-			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
 			this._Tazakor_Tbls = new EntitySet<Tazakor_Tbl>(new Action<Tazakor_Tbl>(this.attach_Tazakor_Tbls), new Action<Tazakor_Tbl>(this.detach_Tazakor_Tbls));
+			this._Takhir_Tbls = new EntitySet<Takhir_Tbl>(new Action<Takhir_Tbl>(this.attach_Takhir_Tbls), new Action<Takhir_Tbl>(this.detach_Takhir_Tbls));
+			this._Gheybat_Tbls = new EntitySet<Gheybat_Tbl>(new Action<Gheybat_Tbl>(this.attach_Gheybat_Tbls), new Action<Gheybat_Tbl>(this.detach_Gheybat_Tbls));
 			OnCreated();
 		}
 		
@@ -2017,16 +1777,16 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="MoredTitle", OtherKey="GheybatMoredTypeTitle")]
-		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="MoredTitle", OtherKey="TazakorMoredTypeTitle")]
+		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
 		{
 			get
 			{
-				return this._Gheybat_Tbls;
+				return this._Tazakor_Tbls;
 			}
 			set
 			{
-				this._Gheybat_Tbls.Assign(value);
+				this._Tazakor_Tbls.Assign(value);
 			}
 		}
 		
@@ -2043,16 +1803,16 @@ namespace DataAccessLayer
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Tazakor_Tbl", Storage="_Tazakor_Tbls", ThisKey="MoredTitle", OtherKey="TazakorMoredTypeTitle")]
-		public EntitySet<Tazakor_Tbl> Tazakor_Tbls
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Gheybat_Tbl", Storage="_Gheybat_Tbls", ThisKey="MoredTitle", OtherKey="GheybatMoredTypeTitle")]
+		public EntitySet<Gheybat_Tbl> Gheybat_Tbls
 		{
 			get
 			{
-				return this._Tazakor_Tbls;
+				return this._Gheybat_Tbls;
 			}
 			set
 			{
-				this._Tazakor_Tbls.Assign(value);
+				this._Gheybat_Tbls.Assign(value);
 			}
 		}
 		
@@ -2076,13 +1836,13 @@ namespace DataAccessLayer
 			}
 		}
 		
-		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
+		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Mavared_Tbl = this;
 		}
 		
-		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
+		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Mavared_Tbl = null;
@@ -2100,16 +1860,256 @@ namespace DataAccessLayer
 			entity.Mavared_Tbl = null;
 		}
 		
-		private void attach_Tazakor_Tbls(Tazakor_Tbl entity)
+		private void attach_Gheybat_Tbls(Gheybat_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Mavared_Tbl = this;
 		}
 		
-		private void detach_Tazakor_Tbls(Tazakor_Tbl entity)
+		private void detach_Gheybat_Tbls(Gheybat_Tbl entity)
 		{
 			this.SendPropertyChanging();
 			entity.Mavared_Tbl = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Gheybat_Tbl")]
+	public partial class Gheybat_Tbl : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _GheybatDate;
+		
+		private string _GheybatStudentCode;
+		
+		private string _GheybatStudentName;
+		
+		private string _GheybatMoredTypeTitle;
+		
+		private EntityRef<Mavared_Tbl> _Mavared_Tbl;
+		
+		private EntityRef<Student_Tbl> _Student_Tbl;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnGheybatDateChanging(string value);
+    partial void OnGheybatDateChanged();
+    partial void OnGheybatStudentCodeChanging(string value);
+    partial void OnGheybatStudentCodeChanged();
+    partial void OnGheybatStudentNameChanging(string value);
+    partial void OnGheybatStudentNameChanged();
+    partial void OnGheybatMoredTypeTitleChanging(string value);
+    partial void OnGheybatMoredTypeTitleChanged();
+    #endregion
+		
+		public Gheybat_Tbl()
+		{
+			this._Mavared_Tbl = default(EntityRef<Mavared_Tbl>);
+			this._Student_Tbl = default(EntityRef<Student_Tbl>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatDate", DbType="NVarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GheybatDate
+		{
+			get
+			{
+				return this._GheybatDate;
+			}
+			set
+			{
+				if ((this._GheybatDate != value))
+				{
+					this.OnGheybatDateChanging(value);
+					this.SendPropertyChanging();
+					this._GheybatDate = value;
+					this.SendPropertyChanged("GheybatDate");
+					this.OnGheybatDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatStudentCode", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string GheybatStudentCode
+		{
+			get
+			{
+				return this._GheybatStudentCode;
+			}
+			set
+			{
+				if ((this._GheybatStudentCode != value))
+				{
+					if (this._Student_Tbl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGheybatStudentCodeChanging(value);
+					this.SendPropertyChanging();
+					this._GheybatStudentCode = value;
+					this.SendPropertyChanged("GheybatStudentCode");
+					this.OnGheybatStudentCodeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatStudentName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string GheybatStudentName
+		{
+			get
+			{
+				return this._GheybatStudentName;
+			}
+			set
+			{
+				if ((this._GheybatStudentName != value))
+				{
+					this.OnGheybatStudentNameChanging(value);
+					this.SendPropertyChanging();
+					this._GheybatStudentName = value;
+					this.SendPropertyChanged("GheybatStudentName");
+					this.OnGheybatStudentNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GheybatMoredTypeTitle", DbType="NVarChar(150) NOT NULL", CanBeNull=false)]
+		public string GheybatMoredTypeTitle
+		{
+			get
+			{
+				return this._GheybatMoredTypeTitle;
+			}
+			set
+			{
+				if ((this._GheybatMoredTypeTitle != value))
+				{
+					if (this._Mavared_Tbl.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnGheybatMoredTypeTitleChanging(value);
+					this.SendPropertyChanging();
+					this._GheybatMoredTypeTitle = value;
+					this.SendPropertyChanged("GheybatMoredTypeTitle");
+					this.OnGheybatMoredTypeTitleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Mavared_Tbl_Gheybat_Tbl", Storage="_Mavared_Tbl", ThisKey="GheybatMoredTypeTitle", OtherKey="MoredTitle", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Mavared_Tbl Mavared_Tbl
+		{
+			get
+			{
+				return this._Mavared_Tbl.Entity;
+			}
+			set
+			{
+				Mavared_Tbl previousValue = this._Mavared_Tbl.Entity;
+				if (((previousValue != value) 
+							|| (this._Mavared_Tbl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Mavared_Tbl.Entity = null;
+						previousValue.Gheybat_Tbls.Remove(this);
+					}
+					this._Mavared_Tbl.Entity = value;
+					if ((value != null))
+					{
+						value.Gheybat_Tbls.Add(this);
+						this._GheybatMoredTypeTitle = value.MoredTitle;
+					}
+					else
+					{
+						this._GheybatMoredTypeTitle = default(string);
+					}
+					this.SendPropertyChanged("Mavared_Tbl");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Student_Tbl_Gheybat_Tbl", Storage="_Student_Tbl", ThisKey="GheybatStudentCode", OtherKey="StudentCode", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		public Student_Tbl Student_Tbl
+		{
+			get
+			{
+				return this._Student_Tbl.Entity;
+			}
+			set
+			{
+				Student_Tbl previousValue = this._Student_Tbl.Entity;
+				if (((previousValue != value) 
+							|| (this._Student_Tbl.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Student_Tbl.Entity = null;
+						previousValue.Gheybat_Tbls.Remove(this);
+					}
+					this._Student_Tbl.Entity = value;
+					if ((value != null))
+					{
+						value.Gheybat_Tbls.Add(this);
+						this._GheybatStudentCode = value.StudentCode;
+					}
+					else
+					{
+						this._GheybatStudentCode = default(string);
+					}
+					this.SendPropertyChanged("Student_Tbl");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

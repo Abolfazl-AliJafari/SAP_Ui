@@ -122,20 +122,28 @@ namespace FormComponent
 
         private void AddTakhir_Btn_Click(object sender, RoutedEventArgs e)
         {
-            Takhir_Tbl takhir = new Takhir_Tbl
+            try
             {
-                TakhirStudentName = TakhirChoozeName_CmBox.SelectedItem.ToString(),
-                TakhirMoredTypeTitle = TakhirTypeChoooze_CmBox.SelectedItem.ToString(),
-                TakhirDate = ShowDate_TxtBlock.Text,
-                TakhirStudentCode = studentsCode[TakhirChoozeName_CmBox.SelectedIndex],
-            };
+                Takhir_Tbl takhir = new Takhir_Tbl
+                {
+                    TakhirStudentName = TakhirChoozeName_CmBox.SelectedItem.ToString(),
+                    TakhirMoredTypeTitle = TakhirTypeChoooze_CmBox.SelectedItem.ToString(),
+                    TakhirDate = ShowDate_TxtBlock.Text,
+                    TakhirStudentCode = studentsCode[TakhirChoozeName_CmBox.SelectedIndex],
+                };
 
-            var result = Bll.Takhir.Insert(takhir);
-            if (!result.Success)
-            {
-                MessageBox.Show(result.Message);
+                var result = Bll.Takhir.Insert(takhir);
+                if (!result.Success)
+                {
+                    MessageBox.Show(result.Message);
+                }
+                TakhirNumber_Lbl.Content = FillTakhir() + "تاخیر ";
             }
-            TakhirNumber_Lbl.Content = FillTakhir() + "تاخیر ";
+            catch (Exception)
+            {
+                MessageBox.Show("فیلد ها را پر کنید");
+            }
+            
         }
 
         private void TakhirChoozeName_CmBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

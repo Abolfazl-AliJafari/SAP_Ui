@@ -184,19 +184,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Images\AppLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="AppLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\Person.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\Lock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\school-disciplinary-system-website-favicon-color 2 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="school-disciplinary-system-website-favicon-color 2 %281%29.png" />
@@ -216,52 +204,28 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Images\calendar_month %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="calendar_month %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\list_alt_add.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="list_alt_add.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Images\search %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="search %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\Frame 2608320 %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="User.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Images\Frame 2608321 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Lock.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Src\Images\Component 7 %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="ShowPass.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\Property 1=visibility_off %282%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="school-disciplinary-system-website-favicon-color.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Property 1=visibility_off %282%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Src\Images\add %283%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="add.png" />
